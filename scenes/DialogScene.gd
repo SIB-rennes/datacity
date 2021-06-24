@@ -1,25 +1,61 @@
 extends Node2D
 
+# A Reference to the Dialog label
+onready var dialog_line = $UI/TextPanel/DialogLine
+
+# Storing parser, data and block for the dialog parsing
+var parser
+var dialogue_data
+var block
+
 
 func _ready():
 	# create a parser
-	var parser = WhiskersParser.new()
+	parser = WhiskersParser.new()
 	
 	# Get the dialogue data
-	var dialogue_data = parser.open_whiskers("res://scenarios/dialog_intro.json")
+	dialogue_data = parser.open_whiskers("res://scenarios/dialog_intro.json")
 	
 	# Get the first dialog bloc
-	var block = parser.start_dialogue(dialogue_data)
+	block = parser.start_dialogue(dialogue_data)
 	
-	while not block.is_final:
+	# Update the dialog
+	update_dialog_line()
+
+
+# Process inputs
+func _input(event):
+	# if we touched the screen or the mouse
+	if event is InputEventScreenTouch or event is InputEventMouseButton:
+		if event.pressed:
+			process_player_click()
+			
+	# If we pressed space
+	elif event is InputEventKey:
+		if event.pressed and event.unicode == KEY_SPACE:
+			process_player_click()
+
+
+
+func process_player_click():
+	print("TOUCHED :D")
 	
-		print(block.text)
-		print(block.options)
+	if block.is_final:
+		print("That was the last dialog !")
+	else:
+		# TEMP ANSWER
+		var answer = 0
 		
-		if block.options.size() > 1:
-			block = parser.next(block.options[1].key)
+		# Change the Dialog
+		if block.options.size() > answer:
+			block = parser.next(block.options[answer].key)
 		else:
 			block = parser.next("")
 			
-	# Last print as it is the last block
-	print(block.text)
+		update_dialog_line()
+	
+
+
+func update_dialog_line():
+	# Set the dialog line on the UI
+	dialog_line.text = block.text
