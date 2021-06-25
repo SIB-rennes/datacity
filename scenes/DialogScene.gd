@@ -3,6 +3,17 @@ extends Node2D
 # A Reference to the Dialog label
 onready var dialog_line = $UI/TextPanel/DialogLine
 
+# The background sprite
+onready var background_sprite = $Background
+
+
+# The container for the answer buttons
+onready var answer_container = $UI/AnswerContainer
+
+# Preload the button model
+var answer_button = preload("res://ui/answer_button.tscn")
+
+
 # Storing parser, data and block for the dialog parsing
 var parser
 var dialogue_data
@@ -14,13 +25,16 @@ func _ready():
 	parser = WhiskersParser.new()
 	
 	# Get the dialogue data
-	dialogue_data = parser.open_whiskers("res://scenarios/dialog_intro.json")
+	dialogue_data = parser.open_whiskers("res://scenarios/dialog_conference.json")
 	
 	# Get the first dialog bloc
 	block = parser.start_dialogue(dialogue_data)
 	
+	# Set the background, contained in the first dialogue node
+	set_dialog_background()
+	
 	# Update the dialog
-	update_dialog_line()
+	update_dialog()
 
 
 # Process inputs
@@ -38,24 +52,66 @@ func _input(event):
 
 
 func process_player_click():
-	print("TOUCHED :D")
-	
+	#If this is the last block
 	if block.is_final:
 		print("That was the last dialog !")
-	else:
-		# TEMP ANSWER
-		var answer = 0
 		
+	# If we don't expect a call from a button
+	elif not expect_player_answer():
 		# Change the Dialog
-		if block.options.size() > answer:
-			block = parser.next(block.options[answer].key)
-		else:
-			block = parser.next("")
+		block = parser.next("")
 			
-		update_dialog_line()
+		update_dialog()
 	
 
 
-func update_dialog_line():
+func player_pushed_button(key):
+	block = parser.next(key)
+	
+	update_dialog()
+
+
+
+func update_dialog():
 	# Set the dialog line on the UI
 	dialog_line.text = block.text
+	
+	# Remove the old answer buttons
+	var old_buttons = answer_container.get_children()
+	for button in old_buttons:
+		answer_container.remove_child(button)
+		
+	# Add the new buttons
+	for answer in block.options:
+		# Instanciate
+		var button = answer_button.instance()
+		
+		# Set text
+		button.text = answer.text
+		
+		# Button action
+		button.connect("pressed", self, "player_pushed_button", [answer.key])
+
+		
+		# Add it to the container
+		answer_container.add_child(button)
+
+
+func expect_player_answer() -> bool:
+	return block.options.size() > 0
+
+
+func set_dialog_background():
+	# Get the path to the background texture
+	var texture_path = "res://assets/sprites/backgrounds/"+block.text
+	
+	# If it exists, change it
+	if ResourceLoader.exists(texture_path):
+		var texture = load(texture_path)
+		background_sprite.texture = texture
+		
+		# Switch to the next (true first) dialogue
+		block = parser.next("")
+		update_dialog()
+	else:
+		print("Unknown background picture " + texture_path)
