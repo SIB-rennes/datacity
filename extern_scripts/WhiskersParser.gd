@@ -220,7 +220,7 @@ func generate_block(node_key : String) -> Dictionary:
 			block.condition = process_condition(connected_node_key)
 			
 			var parse_condition = handle_condition(block.condition)
-			
+			print(block)
 			if 'Option' in parse_condition.key:
 				var option = {
 						key = parse_condition.key,

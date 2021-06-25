@@ -20,12 +20,13 @@ var dialogue_data
 var block
 
 
-func _ready():
+
+func start_dialog_event(dialog_json):
 	# create a parser
 	parser = WhiskersParser.new()
 	
 	# Get the dialogue data
-	dialogue_data = parser.open_whiskers("res://scenarios/dialog_conference.json")
+	dialogue_data = parser.open_whiskers(dialog_json)
 	
 	# Get the first dialog bloc
 	block = parser.start_dialogue(dialogue_data)
@@ -97,8 +98,10 @@ func update_dialog():
 		answer_container.add_child(button)
 
 
+
 func expect_player_answer() -> bool:
 	return block.options.size() > 0
+
 
 
 func set_dialog_background():
@@ -107,8 +110,7 @@ func set_dialog_background():
 	
 	# If it exists, change it
 	if ResourceLoader.exists(texture_path):
-		var texture = load(texture_path)
-		background_sprite.texture = texture
+		background_sprite.texture = load(texture_path)
 		
 		# Switch to the next (true first) dialogue
 		block = parser.next("")
