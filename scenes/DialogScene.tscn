@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/DialogScene.gd" type="Script" id=1]
-[ext_resource path="res://assets/fonts/fallingsky_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/fonts/fallingsky_font_dialogs.tres" type="DynamicFont" id=2]
 [ext_resource path="res://assets/sprites/backgrounds/road_1.jpg" type="Texture" id=3]
 
 [node name="DialogScene" type="Node2D"]
@@ -39,13 +39,12 @@ anchor_left = 0.023
 anchor_top = 0.19
 anchor_right = 0.981
 anchor_bottom = 0.81
-margin_left = 2.288
-margin_top = 0.809999
-margin_right = -7.06403
-margin_bottom = -3.81
+margin_left = 0.288
+margin_top = -6.19
+margin_right = -0.0640259
+margin_bottom = 7.19
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/mono_font = ExtResource( 2 )
 custom_fonts/normal_font = ExtResource( 2 )
 bbcode_enabled = true
 bbcode_text = "Je suis une petite patate !
