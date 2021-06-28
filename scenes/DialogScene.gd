@@ -20,6 +20,7 @@ var answer_button = preload("res://ui/answer_button.tscn")
 # Sound
 onready var sound_player = $SoundPlayer
 var sound_dialog_click = preload("res://assets/sounds/clic_dialog.wav")
+var sound_answer_click = preload("res://assets/sounds/clic_answer.wav")
 
 
 
@@ -114,6 +115,10 @@ func player_pushed_button(key):
 	# If enough time passed after the answers were displayed
 	if answer_delay >= DELAY_BEFORE_ANSWER:
 		block = parser.next(key)
+		
+		# Play the sound !
+		sound_player.stream = sound_answer_click
+		sound_player.play()
 		
 		# Process blocks with data
 		while process_data_block():
