@@ -6,6 +6,9 @@ onready var dialog_line = $UI/TextPanel/DialogLine
 # The background sprite
 onready var background_sprite = $Background
 
+# The character sprite
+onready var character_sprite = $Character
+
 
 # The container for the answer buttons
 onready var answer_container = $UI/AnswerContainer
@@ -54,9 +57,10 @@ func start_dialog_event(dialog_json):
 	# Get the first dialog bloc
 	block = parser.start_dialogue(dialogue_data)
 	
-	# Set the background, contained in the first dialogue node
-	set_dialog_background()
-	
+	# If it was not a block with data
+	while process_data_block():
+		print("Data block")
+		
 	# Update the dialog
 	update_dialog()
 
@@ -83,7 +87,7 @@ func _input(event):
 
 
 func process_player_click():
-	#If this is the last block
+	# If this is the last block
 	if block.is_final:
 		print("That was the last dialog !")
 		
@@ -95,7 +99,13 @@ func process_player_click():
 		# Play a soundy sound !
 		sound_player.stream = sound_dialog_click
 		sound_player.play()
+		
 			
+		# Process blocks with data
+		while process_data_block():
+			print("Data block")
+			
+		# Display the next dialog
 		update_dialog()
 	
 
@@ -104,6 +114,10 @@ func player_pushed_button(key):
 	# If enough time passed after the answers were displayed
 	if answer_delay >= DELAY_BEFORE_ANSWER:
 		block = parser.next(key)
+		
+		# Process blocks with data
+		while process_data_block():
+			print("Data block")
 		
 		update_dialog()
 	else:
@@ -157,16 +171,60 @@ func expect_player_answer() -> bool:
 
 
 
-func set_dialog_background():
+func set_dialog_background(fileName):
 	# Get the path to the background texture
-	var texture_path = "res://assets/sprites/backgrounds/"+block.text
+	var texture_path = "res://assets/sprites/backgrounds/"+fileName
 	
 	# If it exists, change it
 	if ResourceLoader.exists(texture_path):
 		background_sprite.texture = load(texture_path)
-		
-		# Switch to the next (true first) dialogue
-		block = parser.next("")
-		update_dialog()
 	else:
-		print("Unknown background picture " + texture_path)
+		print("Unknown background texture " + texture_path)
+		
+	# Switch to the next (true first) dialogue
+	block = parser.next("")
+
+
+
+func set_dialog_character(fileName):
+	# Get the path to the character texture
+	var texture_path = "res://assets/sprites/characters/"+fileName
+	
+	# If it exists, change it
+	if ResourceLoader.exists(texture_path):
+		character_sprite.texture = load(texture_path)
+	else:
+		print("Unknown character texture " + texture_path)
+		
+	# Switch to the next (true first) dialogue
+	block = parser.next("")
+
+
+
+func process_data_block():
+	# Get the block test
+	var text = block.text
+	
+	if text.begins_with("background="):
+		# Extract the file path
+		var bg_path = text.substr("background=".length())
+		print("Bg : " + bg_path)
+		
+		set_dialog_background(bg_path)
+		
+		# The block contained data
+		return true
+		
+	elif text.begins_with("character="):
+		# Extract the file path
+		var character_path = text.substr("character=".length())
+		print("Character : " + character_path)
+		
+		set_dialog_character(character_path)
+		
+		# The block contained data
+		return true
+		
+		
+	# Else
+	return false
