@@ -14,11 +14,26 @@ onready var answer_container = $UI/AnswerContainer
 var answer_button = preload("res://ui/answer_button.tscn")
 
 
+# Sound
+onready var sound_player = $SoundPlayer
+var sound_dialog_click = preload("res://assets/sounds/clic_dialog.wav")
+
+
+
 # Storing parser, data and block for the dialog parsing
 var parser
 var dialogue_data
 var block
 
+
+# Answer delay, to prevent clicking to fast on the buttons
+const DELAY_BEFORE_ANSWER = 1
+var answer_delay = 0.0
+
+
+func _ready():
+	# Load a dialogue by default
+	start_dialog_event("scenarios/dialog_conference.json")
 
 
 func start_dialog_event(dialog_json):
@@ -36,6 +51,13 @@ func start_dialog_event(dialog_json):
 	
 	# Update the dialog
 	update_dialog()
+
+
+
+func _physics_process(delta):
+	# Update the delay for the answers
+	answer_delay += delta
+
 
 
 # Process inputs
@@ -61,15 +83,23 @@ func process_player_click():
 	elif not expect_player_answer():
 		# Change the Dialog
 		block = parser.next("")
+		
+		# Play a soundy sound !
+		sound_player.stream = sound_dialog_click
+		sound_player.play()
 			
 		update_dialog()
 	
 
 
 func player_pushed_button(key):
-	block = parser.next(key)
-	
-	update_dialog()
+	# If enough time passed after the answers were displayed
+	if answer_delay >= DELAY_BEFORE_ANSWER:
+		block = parser.next(key)
+		
+		update_dialog()
+	else:
+		print("Not enough time passed")
 
 
 
@@ -96,6 +126,10 @@ func update_dialog():
 		
 		# Add it to the container
 		answer_container.add_child(button)
+		
+	# Reset the Answer delay
+	answer_delay = 0.0
+	print("Delay resetted")
 
 
 
