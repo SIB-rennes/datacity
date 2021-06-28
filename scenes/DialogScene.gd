@@ -26,14 +26,22 @@ var dialogue_data
 var block
 
 
+# Display delay, to prevent the answers from popping too fast
+const DELAY_BEFORE_DISPLAY = 1
+onready var timer_display = $TimerDisplay
+
+
 # Answer delay, to prevent clicking to fast on the buttons
-const DELAY_BEFORE_ANSWER = 1
+const DELAY_BEFORE_ANSWER = 0.5
 var answer_delay = 0.0
 
 
 func _ready():
 	# Load a dialogue by default
 	start_dialog_event("scenarios/dialog_conference.json")
+	
+	# Connect the timer to the correct method
+	timer_display.connect("timeout", self, "_add_buttons")
 
 
 func start_dialog_event(dialog_json):
@@ -112,6 +120,17 @@ func update_dialog():
 	for button in old_buttons:
 		answer_container.remove_child(button)
 		
+	
+	# If there is a need for answer buttons
+	if not block.options.empty():
+		# Add the buttons after a delay
+		timer_display.start(DELAY_BEFORE_DISPLAY)
+
+
+
+func _add_buttons():
+	print("Adding buttons !")
+	
 	# Add the new buttons
 	for answer in block.options:
 		# Instanciate

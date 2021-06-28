@@ -64,3 +64,6 @@ __meta__ = {
 }
 
 [node name="SoundPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="TimerDisplay" type="Timer" parent="."]
+one_shot = true
