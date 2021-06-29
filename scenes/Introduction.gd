@@ -1,15 +1,18 @@
 extends Node2D
 
-# Preload the Dialog scene
-var dialog_scene = preload("res://scenes/DialogScene.tscn").instance()
+# Get the Dialog scene
+onready var dialog_scene = $DialogScene
 
+
+func _ready():
+	# Deactivates the dialog scene
+	dialog_scene.set_process_input(false)
 
 
 func _input(event):
 	if event is InputEventScreenTouch or event is InputEventMouseButton:
 		if event.pressed:
 			process_player_click()
-
 
 
 func process_player_click():
