@@ -3,7 +3,10 @@ extends Node2D
 enum {
 	WAITING_TO_ZOOM,
 	ZOOMING,
-	SHOWING_1
+	SHOWING_1,
+	SHOWING_2,
+	SHOWING_3,
+	STARTING_DIALOG
 }
 
 # Current state
@@ -13,7 +16,8 @@ var current_state = WAITING_TO_ZOOM
 # Mouse cursor blinking
 onready var mouse_cursor = $MouseCursor
 
-
+# Newspapers
+onready var newspaper = [$newspaper_1, $newspaper_2, $newspaper_3]
 
 # Variable for elapsed time
 var elapsed_time : float
@@ -27,6 +31,9 @@ const TARGET_ROTATION = 0
 # Variation speed
 const ZOOM_TIME = 1.0
 
+# Pause before allowing to switch newspapers
+const PAUSE_TIME = 3.0
+
 
 var starting_pos = Vector2.ZERO
 var starting_scale = Vector2.ZERO
@@ -34,20 +41,34 @@ var starting_rotation = 0
 
 
 func _on_NewsPaper_input_event(viewport, event, shape_idx):
-	if current_state == WAITING_TO_ZOOM:
-		# Zoom the newspapers if the player click on them
-		if event is InputEventMouseButton:
-			if event.pressed and event.position:
-				trigger_zoom()
-		elif event is InputEventScreenTouch:
-			if event.pressed:
-				trigger_zoom()
+	# If mouse pressed
+	if event is InputEventMouseButton or event is InputEventScreenTouch:
+		if event.pressed:
+			# Switch to the next newspaper
+			match current_state:
+			# Zoom the newspapers if the player click on them
+				WAITING_TO_ZOOM:
+					trigger_zoom()
+				
+				# Switch to next newspaper
+				SHOWING_1, SHOWING_2, SHOWING_3:
+					print("Click !")
+					if elapsed_time >= PAUSE_TIME:
+						show_next_newspaper()
+
 
 
 func _process(delta):
 	elapsed_time += delta
-	if current_state == ZOOMING:
-		zoom()
+	match current_state:
+		ZOOMING:
+			zoom()
+			
+			# Once the zoom animation is done, switch state
+			if elapsed_time >= ZOOM_TIME:
+				current_state = SHOWING_1
+		
+		
 	
 	
 func trigger_zoom():
@@ -72,3 +93,29 @@ func zoom():
 	position = starting_pos.linear_interpolate(TARGET_POS, weight)
 	scale = starting_scale.linear_interpolate(TARGET_SCALE, weight)
 	rotation_degrees = lerp(rotation_degrees, TARGET_ROTATION, weight) #Linear interpolation for angle
+
+
+
+func show_next_newspaper():
+	# Reset elapsed time
+	elapsed_time = 0.0
+	
+	match current_state:
+		SHOWING_1:
+			current_state = SHOWING_2
+			
+			# Hide 1
+			newspaper[0].hide()
+			
+		SHOWING_2:
+			current_state = SHOWING_3
+			
+			# Hide 2
+			newspaper[1].hide()
+			
+		SHOWING_3:
+			current_state = STARTING_DIALOG
+			
+			# Hide 2
+			newspaper[2].hide()
+			
