@@ -36,7 +36,7 @@ onready var timer_display = $TimerDisplay
 
 
 # Answer delay, to prevent clicking to fast on the buttons
-const DELAY_BEFORE_ANSWER = 0.5
+const DELAY_BEFORE_ANSWER = 1.0
 var answer_delay = 0.0
 
 
@@ -88,8 +88,12 @@ func _input(event):
 
 
 func process_player_click():
+	# Quit if not enought time passed
+	if answer_delay < DELAY_BEFORE_ANSWER:
+		pass
+		
 	# If this is the last block
-	if block.is_final:
+	elif block.is_final:
 		print("That was the last dialog !")
 		
 	# If we don't expect a call from a button
@@ -138,7 +142,9 @@ func update_dialog():
 	var old_buttons = answer_container.get_children()
 	for button in old_buttons:
 		answer_container.remove_child(button)
-		
+	
+	# Reset the answer delay
+	answer_delay = 0.0
 	
 	# If there is a need for answer buttons
 	if not block.options.empty():
