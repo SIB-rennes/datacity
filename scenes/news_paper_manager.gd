@@ -1,5 +1,8 @@
 extends Node2D
 
+signal start_fade
+
+
 enum {
 	WAITING_TO_ZOOM,
 	ZOOMING,
@@ -111,6 +114,6 @@ func show_next_newspaper():
 			newspaper[2].animate()
 			
 			# Fading screen to dialogue
-			
+			emit_signal("start_fade")
 			
 

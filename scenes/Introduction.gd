@@ -19,12 +19,17 @@ func process_player_click():
 	pass
 
 
-func start_dialog():
+
+func _on_FadingScreen_fade_finished():
 	var dialog_conf = "res://scenarios/dialog_conference.json"
 	
-	# Adds the child to the conference
-	add_child(dialog_scene)
+	# Show the child
+	dialog_scene.show()
 	
 	# start the dialog for the conference
 	dialog_scene.start_dialog_event(dialog_conf)
-
+	
+	# Hide the newspapers, the background and the fading screen
+	$Background.hide()
+	$NewsPaper.hide()
+	$ZIndexer/FadingScreen.hide()
