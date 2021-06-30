@@ -12,12 +12,14 @@ enum {
 # Current state
 var current_state = WAITING_TO_ZOOM
 
+# Sound Player
+onready var sound_player = $SoundPlayer
 
 # Mouse cursor blinking
 onready var mouse_cursor = $MouseCursor
 
 # Newspapers
-onready var newspaper = [$newspaper_1, $newspaper_2, $newspaper_3]
+onready var newspaper = [$Newspaper_1, $Newspaper_2, $Newspaper_3]
 
 # Variable for elapsed time
 var elapsed_time : float
@@ -60,62 +62,55 @@ func _on_NewsPaper_input_event(viewport, event, shape_idx):
 
 func _process(delta):
 	elapsed_time += delta
-	match current_state:
-		ZOOMING:
-			zoom()
-			
-			# Once the zoom animation is done, switch state
-			if elapsed_time >= ZOOM_TIME:
-				current_state = SHOWING_1
-		
-		
-	
-	
+
+
+
 func trigger_zoom():
-	print("Zoom triggered")
-	
-	current_state = ZOOMING
-	elapsed_time = 0
-	
-	# Save position, scale and rotation for interpolation
-	starting_pos = position
-	starting_scale = scale
-	starting_rotation = rotation
+	# Play the animation
+	$ZoomPlayer.play("PaperZoom")
 	
 	# Deactivates the mouse animation
 	mouse_cursor.hide()
 	
-	
-func zoom():
-	# Animation weight
-	var weight = min(1.0, elapsed_time / ZOOM_TIME)
-	
-	position = starting_pos.linear_interpolate(TARGET_POS, weight)
-	scale = starting_scale.linear_interpolate(TARGET_SCALE, weight)
-	rotation_degrees = lerp(rotation_degrees, TARGET_ROTATION, weight) #Linear interpolation for angle
+	# Play a sound !
+	sound_player.play()
 
+
+
+func _on_ZoomPlayer_animation_finished(anim_name):
+	current_state = SHOWING_1
+	
+	print("Showing the first !")
+	
 
 
 func show_next_newspaper():
 	# Reset elapsed time
 	elapsed_time = 0.0
 	
+	# Play a sound !
+	sound_player.play()
+	
 	match current_state:
 		SHOWING_1:
 			current_state = SHOWING_2
 			
 			# Hide 1
-			newspaper[0].hide()
+			newspaper[0].animate()
 			
 		SHOWING_2:
 			current_state = SHOWING_3
 			
 			# Hide 2
-			newspaper[1].hide()
+			newspaper[1].animate()
 			
 		SHOWING_3:
 			current_state = STARTING_DIALOG
 			
-			# Hide 2
-			newspaper[2].hide()
+			# Zoom on the third
+			newspaper[2].animate()
 			
+			# Fading screen to dialogue
+			
+			
+

@@ -27,3 +27,4 @@ func start_dialog():
 	
 	# start the dialog for the conference
 	dialog_scene.start_dialog_event(dialog_conf)
+
