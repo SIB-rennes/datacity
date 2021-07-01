@@ -65,3 +65,6 @@ custom_fonts/font = ExtResource( 2 )
 text = "        Jouer        "
 
 [node name="ColorRect" parent="." instance=ExtResource( 5 )]
+
+[connection signal="pressed" from="VBoxContainer/ButtonContainer/Button" to="ColorRect" method="fade_in"]
+[connection signal="fade_finished" from="ColorRect" to="." method="on_fade_finished"]

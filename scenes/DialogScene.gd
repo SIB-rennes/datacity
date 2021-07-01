@@ -59,6 +59,8 @@ func start_dialog_event(dialog_json, show_tutorial = false):
 	if show_tutorial:
 		$MouseCursor.show()
 	
+	print("Opening " + dialog_json)
+	
 	# create a parser
 	parser = WhiskersParser.new()
 	
