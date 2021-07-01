@@ -1,11 +1,11 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/Introduction.gd" type="Script" id=1]
 [ext_resource path="res://scenes/DialogScene.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/sprites/backgrounds/desk.jpg" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/introduction/newspaper_1.png" type="Texture" id=4]
 [ext_resource path="res://scenes/news_paper_manager.gd" type="Script" id=5]
-[ext_resource path="res://assets/sprites/introduction/cursor_click.png" type="Texture" id=6]
+[ext_resource path="res://ui/blinking_mouse.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/sounds/paper_slide.wav" type="AudioStream" id=7]
 [ext_resource path="res://scenes/introduction/newspaper.gd" type="Script" id=8]
 [ext_resource path="res://ui/fading_screen.tscn" type="PackedScene" id=9]
@@ -52,7 +52,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0.782968, 0.782968 ), Vector2( 1.2, 1.2 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=3]
 resource_name = "put_back"
 length = 0.7
 tracks/0/type = "value"
@@ -92,7 +92,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0.821809, 0.821809 ), Vector2( 1.2, 1.2 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "put_back"
 length = 2.0
 tracks/0/type = "value"
@@ -144,8 +144,7 @@ tracks/3/keys = {
 "values": [ 3, 1 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "put_back"
+[sub_resource type="Animation" id=5]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -196,21 +195,6 @@ tracks/3/keys = {
 "values": [ 4, 0 ]
 }
 
-[sub_resource type="Animation" id=4]
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.8 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 0, 1 ]
-}
-
 [node name="Introduction" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -245,7 +229,7 @@ texture = ExtResource( 4 )
 script = ExtResource( 8 )
 
 [node name="Animation" type="AnimationPlayer" parent="NewsPaper/Newspaper_3"]
-anims/put_back = SubResource( 6 )
+anims/put_back = SubResource( 3 )
 
 [node name="Newspaper_2" type="Sprite" parent="NewsPaper"]
 position = Vector2( 458.248, 246.692 )
@@ -256,7 +240,7 @@ texture = ExtResource( 4 )
 script = ExtResource( 8 )
 
 [node name="Animation" type="AnimationPlayer" parent="NewsPaper/Newspaper_2"]
-anims/put_back = SubResource( 5 )
+anims/put_back = SubResource( 4 )
 
 [node name="Newspaper_1" type="Sprite" parent="NewsPaper"]
 position = Vector2( 458.248, 246.692 )
@@ -266,19 +250,9 @@ texture = ExtResource( 4 )
 script = ExtResource( 8 )
 
 [node name="Animation" type="AnimationPlayer" parent="NewsPaper/Newspaper_1"]
-anims/put_back = SubResource( 3 )
+anims/put_back = SubResource( 5 )
 
-[node name="MouseCursor" type="Sprite" parent="NewsPaper"]
-position = Vector2( 513.049, 366.107 )
-rotation = -0.184953
-scale = Vector2( 2.78389, 2.78389 )
-z_index = 5
-texture = ExtResource( 6 )
-hframes = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="NewsPaper/MouseCursor"]
-autoplay = "ask_clic"
-anims/ask_clic = SubResource( 4 )
+[node name="MouseCursor" parent="NewsPaper" instance=ExtResource( 6 )]
 
 [node name="DialogScene" parent="." instance=ExtResource( 2 )]
 visible = false
@@ -294,4 +268,4 @@ color = Color( 1, 1, 1, 0 )
 [connection signal="input_event" from="NewsPaper" to="NewsPaper" method="_on_NewsPaper_input_event"]
 [connection signal="start_fade" from="NewsPaper" to="ZIndexer/FadingScreen" method="fade_in"]
 [connection signal="animation_finished" from="NewsPaper/ZoomPlayer" to="NewsPaper" method="_on_ZoomPlayer_animation_finished"]
-[connection signal="fade_finished" from="ZIndexer/FadingScreen" to="." method="_on_FadingScreen_fade_finished"]
+[connection signal="fade_finished" from="ZIndexer/FadingScreen" to="." method="start_tuto_dialogs"]
