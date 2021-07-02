@@ -1,0 +1,21 @@
+[gd_scene format=2]
+
+[node name="CityBuilder" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 327.074
+margin_top = 188.159
+margin_right = 690.074
+margin_bottom = 366.159
+text = "City Builder
+
+Coming soon"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

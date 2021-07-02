@@ -76,5 +76,5 @@ func start_conference():
 
 
 func end_conference():
-	print("La conference est finie ! il faut charger la suite")
+	get_tree().change_scene("res://scenes/CityBuilder.tscn")
 	
