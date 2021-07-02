@@ -1,5 +1,11 @@
 extends Node2D
 
+
+# Signal when dialog is finished
+signal dialog_finished
+
+
+
 # A Reference to the Dialog label
 onready var dialog_line = $UI/TextPanel/DialogLine
 
@@ -31,24 +37,30 @@ var block
 
 
 # Display delay, to prevent the answers from popping too fast
-const DELAY_BEFORE_DISPLAY = 1
+const DELAY_BEFORE_DISPLAY = 0.0
 onready var timer_display = $TimerDisplay
 
 
 # Answer delay, to prevent clicking to fast on the buttons
-const DELAY_BEFORE_ANSWER = 0.5
+const DELAY_BEFORE_ANSWER = 0.0
 var answer_delay = 0.0
 
 
 func _ready():
 	# Load a dialogue by default
-	start_dialog_event("scenarios/dialog_conference.json")
+	start_dialog_event("scenarios/dialog_intro.json", true)
 	
 	# Connect the timer to the correct method
 	timer_display.connect("timeout", self, "_add_buttons")
 
 
-func start_dialog_event(dialog_json):
+func start_dialog_event(dialog_json, show_tutorial = false):
+	# Show the mouse cursor if a tutorial
+	if show_tutorial:
+		$MouseCursor.show()
+	
+	print("Opening " + dialog_json)
+	
 	# create a parser
 	parser = WhiskersParser.new()
 	
@@ -88,9 +100,14 @@ func _input(event):
 
 
 func process_player_click():
+	# Quit if not enought time passed
+	if answer_delay < DELAY_BEFORE_ANSWER:
+		pass
+		
 	# If this is the last block
-	if block.is_final:
+	elif block.empty() or block.is_final:
 		print("That was the last dialog !")
+		emit_signal("dialog_finished")
 		
 	# If we don't expect a call from a button
 	elif not expect_player_answer():
@@ -100,6 +117,9 @@ func process_player_click():
 		# Play a soundy sound !
 		sound_player.stream = sound_dialog_click
 		sound_player.play()
+		
+		# Hide the mouse
+		$MouseCursor.hide()
 		
 			
 		# Process blocks with data
@@ -113,18 +133,24 @@ func process_player_click():
 
 func player_pushed_button(key):
 	# If enough time passed after the answers were displayed
-	if answer_delay >= DELAY_BEFORE_ANSWER:
+	if answer_delay >= DELAY_BEFORE_ANSWER and not block.empty():
+		# Switch to the next block
 		block = parser.next(key)
 		
-		# Play the sound !
-		sound_player.stream = sound_answer_click
-		sound_player.play()
-		
-		# Process blocks with data
-		while process_data_block():
-			print("Data block")
-		
-		update_dialog()
+		# If the dialog line was the last, an empty dic is returned
+		if block.empty():
+			emit_signal("dialog_finished")
+			
+		else:
+			# Play the sound !
+			sound_player.stream = sound_answer_click
+			sound_player.play()
+			
+			# Process blocks with data
+			while process_data_block():
+				print("Data block")
+			
+			update_dialog()
 	else:
 		print("Not enough time passed")
 
@@ -138,7 +164,9 @@ func update_dialog():
 	var old_buttons = answer_container.get_children()
 	for button in old_buttons:
 		answer_container.remove_child(button)
-		
+	
+	# Reset the answer delay
+	answer_delay = 0.0
 	
 	# If there is a need for answer buttons
 	if not block.options.empty():
