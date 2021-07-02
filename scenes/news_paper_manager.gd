@@ -57,7 +57,6 @@ func _on_NewsPaper_input_event(viewport, event, shape_idx):
 				
 				# Switch to next newspaper
 				SHOWING_1, SHOWING_2, SHOWING_3:
-					print("Click !")
 					if elapsed_time >= PAUSE_TIME:
 						show_next_newspaper()
 
@@ -82,8 +81,6 @@ func trigger_zoom():
 
 func _on_ZoomPlayer_animation_finished(anim_name):
 	current_state = SHOWING_1
-	
-	print("Showing the first !")
 	
 
 

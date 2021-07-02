@@ -268,4 +268,4 @@ color = Color( 1, 1, 1, 0 )
 [connection signal="input_event" from="NewsPaper" to="NewsPaper" method="_on_NewsPaper_input_event"]
 [connection signal="start_fade" from="NewsPaper" to="ZIndexer/FadingScreen" method="fade_in"]
 [connection signal="animation_finished" from="NewsPaper/ZoomPlayer" to="NewsPaper" method="_on_ZoomPlayer_animation_finished"]
-[connection signal="fade_finished" from="ZIndexer/FadingScreen" to="." method="start_tuto_dialogs"]
+[connection signal="fade_finished" from="ZIndexer/FadingScreen" to="." method="start_next_state"]
