@@ -37,12 +37,12 @@ var block
 
 
 # Display delay, to prevent the answers from popping too fast
-const DELAY_BEFORE_DISPLAY = 0.0
+const DELAY_BEFORE_DISPLAY = 1.0
 onready var timer_display = $TimerDisplay
 
 
 # Answer delay, to prevent clicking to fast on the buttons
-const DELAY_BEFORE_ANSWER = 0.0
+const DELAY_BEFORE_ANSWER = 1.0
 var answer_delay = 0.0
 
 
