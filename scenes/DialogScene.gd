@@ -29,6 +29,10 @@ var sound_dialog_click = preload("res://assets/sounds/clic_dialog.wav")
 var sound_answer_click = preload("res://assets/sounds/clic_answer.wav")
 
 
+# Data for the scenarios
+var scenarios_data = ScenariosData.new()
+
+
 
 # Storing parser, data and block for the dialog parsing
 var parser
@@ -48,12 +52,15 @@ var answer_delay = 0.0
 
 func _ready():
 	# Load a dialogue by default
-	start_dialog_event("scenarios/dialog_intro.json", true)
+	start_dialog_event("scenarios/dialog_intro.json")
 	
 	# Connect the timer to the correct method
 	timer_display.connect("timeout", self, "_add_buttons")
 
 
+
+# Instance is the script that contains functions
+# and the variable declaration for Whiskers logic
 func start_dialog_event(dialog_json, show_tutorial = false):
 	# Show the mouse cursor if a tutorial
 	if show_tutorial:
@@ -61,8 +68,12 @@ func start_dialog_event(dialog_json, show_tutorial = false):
 	
 	print("Opening " + dialog_json)
 	
+	# Get the script instance
+	var instance = ScenariosData.get_scenario_instance(dialog_json)
+	
+	
 	# create a parser
-	parser = WhiskersParser.new()
+	parser = WhiskersParser.new(instance)
 	
 	# Get the dialogue data
 	dialogue_data = parser.open_whiskers(dialog_json)
