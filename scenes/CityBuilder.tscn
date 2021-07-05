@@ -1,13 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/textures/grass_background.png" type="Texture" id=1]
 [ext_resource path="res://tilesets/roads.tres" type="TileSet" id=2]
 [ext_resource path="res://ui/camera_controller.gd" type="Script" id=3]
 [ext_resource path="res://scenes/MapManager.gd" type="Script" id=4]
 [ext_resource path="res://assets/textures/occupied.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/buildings/house_1.png" type="Texture" id=6]
 
 [sub_resource type="TileSet" id=1]
-resource_name = "Occupied"
+resource_name = "Buildings"
 0/name = "Occupied"
 0/texture = ExtResource( 5 )
 0/tex_offset = Vector2( 0, 0 )
@@ -22,43 +23,64 @@ resource_name = "Occupied"
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
+1/name = "House1"
+1/texture = ExtResource( 6 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 16, 48, 640, 384 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
 
 [node name="CityBuilder" type="Node2D"]
 
-[node name="Map" type="Node2D" parent="."]
-script = ExtResource( 4 )
-
-[node name="grass_background" type="Sprite" parent="Map"]
-position = Vector2( -9.02148, 459.307 )
-scale = Vector2( 5.14248, 5.14248 )
+[node name="grass_background" type="Sprite" parent="."]
+position = Vector2( -45.1074, 2296.54 )
+scale = Vector2( 25.7124, 25.7124 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1023.87, 599.861 )
 
+[node name="Map" type="YSort" parent="."]
+scale = Vector2( 5, 5 )
+script = ExtResource( 4 )
+
 [node name="Roads" type="TileMap" parent="Map"]
+scale = Vector2( 1, 1 )
 mode = 1
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 128, 64 )
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 cell_tile_origin = 1
+cell_y_sort = true
 centered_textures = true
 format = 1
 tile_data = PoolIntArray( 0, 3, 0, 1, 12, 0, 2, 12, 0, 3, 12, 0, 4, 11, 0, 5, 12, 0, 6, 12, 0, 7, 12, 0, 8, 12, 0, 9, 11, 0, 10, 12, 0, 11, 12, 0, 12, 12, 0, 13, 4, 0, 65536, 13, 0, 65540, 13, 0, 65545, 13, 0, 65549, 13, 0, 131072, 13, 0, 131076, 13, 0, 131081, 13, 0, 131085, 13, 0, 196608, 13, 0, 196612, 13, 0, 196617, 13, 0, 196621, 13, 0, 262144, 10, 0, 262145, 12, 0, 262146, 12, 0, 262147, 12, 0, 262148, 7, 0, 262149, 12, 0, 262150, 5, 0, 262151, 12, 0, 262152, 12, 0, 262153, 6, 0, 262154, 12, 0, 262155, 12, 0, 262156, 12, 0, 262157, 9, 0, 327680, 13, 0, 327684, 13, 0, 327689, 13, 0, 327693, 13, 0, 393216, 13, 0, 393220, 13, 0, 393225, 13, 0, 393229, 13, 0, 458752, 13, 0, 458756, 13, 0, 458761, 13, 0, 458765, 13, 0, 524288, 13, 0, 524292, 13, 0, 524297, 13, 0, 524301, 13, 0, 589824, 10, 0, 589825, 12, 0, 589826, 12, 0, 589827, 12, 0, 589828, 6, 0, 589829, 12, 0, 589830, 12, 0, 589831, 5, 0, 589832, 12, 0, 589833, 7, 0, 589834, 12, 0, 589835, 12, 0, 589836, 12, 0, 589837, 9, 0, 655360, 13, 0, 655364, 13, 0, 655369, 13, 0, 655373, 13, 0, 720896, 13, 0, 720900, 13, 0, 720905, 13, 0, 720909, 13, 0, 786432, 13, 0, 786436, 13, 0, 786441, 13, 0, 786445, 13, 0, 851968, 1, 0, 851969, 12, 0, 851970, 12, 0, 851971, 12, 0, 851972, 8, 0, 851973, 12, 0, 851974, 12, 0, 851975, 12, 0, 851976, 12, 0, 851977, 8, 0, 851978, 12, 0, 851979, 12, 0, 851980, 12, 0, 851981, 2, 0 )
 
 [node name="Buildings" type="TileMap" parent="Map"]
+scale = Vector2( 0.2, 0.2 )
 mode = 1
 tile_set = SubResource( 1 )
-cell_size = Vector2( 128, 64 )
+cell_size = Vector2( 640, 320 )
+cell_y_sort = true
 centered_textures = true
 format = 1
+tile_data = PoolIntArray( 327685, 1, 0, 393221, 1, 0, 458757, 1, 0, 524293, 1, 0 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 0, 448 )
+position = Vector2( 0, 2240 )
 current = true
-limit_left = -1300
-limit_top = -352
-limit_right = 1300
-limit_bottom = 1248
+zoom = Vector2( 5, 5 )
+limit_left = -6200
+limit_top = -800
+limit_right = 6200
+limit_bottom = 5200
 smoothing_enabled = true
 smoothing_speed = 25.0
 editor_draw_limits = true
