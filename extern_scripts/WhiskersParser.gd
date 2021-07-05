@@ -220,13 +220,13 @@ func generate_block(node_key : String) -> Dictionary:
 			block.condition = process_condition(connected_node_key)
 			
 			var parse_condition = handle_condition(block.condition)
-			print(block)
-			if 'Option' in parse_condition.key:
-				var option = {
-						key = parse_condition.key,
-						text = data[parse_condition.key].text,
-					}
-				block.options.append(option)
+			if not parse_condition.empty():
+				if 'Option' in parse_condition.key:
+					var option = {
+							key = parse_condition.key,
+							text = data[parse_condition.key].text,
+						}
+					block.options.append(option)
 		
 		elif "Jump" in connected_node_key:
 			if not block.jump.empty():
