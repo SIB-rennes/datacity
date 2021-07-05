@@ -20,11 +20,9 @@ func _ready():
 
 
 
-func _input(event):
-	# if we touched the screen or the mouse
-	if event is InputEventScreenTouch or event is InputEventMouseButton:
-		if event.pressed:
-			process_player_click(event.position)
+func _process(delta):
+	if Input.is_action_just_pressed("MouseClic"):
+			process_player_click(get_global_mouse_position())
 
 
 
