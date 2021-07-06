@@ -6,6 +6,7 @@ const BUILDINGS = preload("res://tilesets/buildings.tres")
 
 
 # Dictionnary of building sizes (case occupied)
+# The buildings should always be placed at the lower case
 const SIZES = {
 	"PoliceDepartment": Vector2(2, 1),
 	"Hospital": Vector2(1, 2)

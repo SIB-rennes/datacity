@@ -47,7 +47,7 @@ func occupy_large_buildings():
 	var building_positions = buildings.get_used_cells()
 	
 	# The "occupied" cell
-	var occupied_val = buildings.tile_set.find_tile_by_name("Occupied")
+	occupied_val = buildings.tile_set.find_tile_by_name("Occupied")
 	
 	for pos in building_positions:
 		# Get the building size
@@ -55,8 +55,8 @@ func occupy_large_buildings():
 		var building_size = BuildingsData.get_size(building_index)
 		
 		# For each case of the building
-		for x in range(pos.x, pos.x + building_size.x):
-			for y in range(pos.y, pos.y + building_size.y):
+		for x in range(pos.x, pos.x - building_size.x, -1):
+			for y in range(pos.y, pos.y - building_size.y, -1):
 				# If not the main case
 				if x != pos.x or y != pos.y:
 					# Set Occupied

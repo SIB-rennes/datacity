@@ -40,11 +40,11 @@ func map_clicked(case_index, case_center_coords, occupied):
 
 func can_place(building, pos):
 	# Get the building size
-	var size = BuildingsData.get_size(building_to_place)
+	var size = BuildingsData.get_size(building)
 	
 	# Check each case
-	for x in range(pos.x, pos.x + size.x):
-		for y in range(pos.y, pos.y + size.y):
+	for x in range(pos.x, pos.x - size.x, -1):
+		for y in range(pos.y, pos.y - size.y, -1):
 			# If the case is not free
 			if buildings_map.get_cell(x, y) != TileMap.INVALID_CELL:
 				return false
