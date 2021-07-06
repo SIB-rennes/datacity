@@ -46,6 +46,7 @@ tile_data = PoolIntArray( 196613, 2, 0, 196615, 3, 0, 196619, 6, 0, 327685, 1, 0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, 2240 )
+scale = Vector2( 1, 1 )
 current = true
 zoom = Vector2( 5, 5 )
 limit_left = -6200
@@ -57,4 +58,29 @@ smoothing_speed = 25.0
 editor_draw_limits = true
 script = ExtResource( 3 )
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Build" type="Button" parent="CanvasLayer"]
+margin_left = 10.4769
+margin_top = 8.25449
+margin_right = 63.4769
+margin_bottom = 28.2545
+text = "Build !"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cancel" type="Button" parent="CanvasLayer"]
+visible = false
+margin_left = 9.84187
+margin_top = 7.93699
+margin_right = 63.8419
+margin_bottom = 27.937
+text = "Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="clicked_map" from="Map" to="." method="map_clicked"]
+[connection signal="pressed" from="CanvasLayer/Build" to="." method="choose_location" binds= [ 4 ]]
+[connection signal="pressed" from="CanvasLayer/Cancel" to="." method="cancel_choose_location"]

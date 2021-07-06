@@ -20,10 +20,9 @@ func _ready():
 	occupy_roads()
 	
 
-
-
-func _process(delta):
-	if Input.is_action_just_pressed("MouseClic"):
+##Use of unhandled to ignore events the GUI managed 
+func _unhandled_input(event):
+	if Input.is_action_just_released("MouseClic"):
 			process_player_click(get_global_mouse_position())
 
 
