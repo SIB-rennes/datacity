@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node",
+"class": "BuildingsData",
+"language": "GDScript",
+"path": "res://game_data/buildings_data.gd"
+}, {
+"base": "Node",
 "class": "ConferenceScript",
 "language": "GDScript",
 "path": "res://scenarios/dialog_conference_variables.gd"
@@ -25,6 +30,7 @@ _global_script_classes=[ {
 "path": "res://extern_scripts/WhiskersParser.gd"
 } ]
 _global_script_class_icons={
+"BuildingsData": "",
 "ConferenceScript": "",
 "ScenariosData": "",
 "WhiskersParser": ""
@@ -33,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="data_city"
-run/main_scene="res://scenes/MainMenu.tscn"
+run/main_scene="res://scenes/CityBuilder.tscn"
 config/icon="res://icon.png"
 
 [input]
