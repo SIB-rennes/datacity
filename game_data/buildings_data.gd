@@ -19,7 +19,5 @@ static func get_size(building_index):
 	# Get the building name
 	var building_name = BUILDINGS.tile_get_name(building_index)
 	
-	print(building_name)
-	
 	return SIZES.get(building_name, DEFAULT_SIZE)
 
