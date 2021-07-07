@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/sprites/ui/label_bg.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/icons/population_icon.png" type="Texture" id=2]
+
+[node name="NumberContainer" type="HBoxContainer"]
+margin_right = 148.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Number" type="MarginContainer" parent="."]
+margin_right = 119.0
+margin_bottom = 32.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Background" type="NinePatchRect" parent="Number"]
+margin_right = 119.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 32 )
+texture = ExtResource( 1 )
+region_rect = Rect2( 0.297867, -0.0405626, 119.414, 46.3137 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 6
+
+[node name="LabelContainer" type="MarginContainer" parent="Number"]
+margin_right = 119.0
+margin_bottom = 32.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 3
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Number/LabelContainer"]
+margin_left = 10.0
+margin_top = 3.0
+margin_right = 109.0
+margin_bottom = 29.0
+size_flags_horizontal = 0
+size_flags_vertical = 1
+text = "Population | 10"
+valign = 1
+
+[node name="Icon" type="TextureRect" parent="."]
+margin_left = 123.0
+margin_right = 148.0
+margin_bottom = 32.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 2 )
+stretch_mode = 3
