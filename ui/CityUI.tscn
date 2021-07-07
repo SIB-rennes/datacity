@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/sprites/icons/logout_icon.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/icons/settings_icon.png" type="Texture" id=2]
 [ext_resource path="res://assets/sprites/icons/build_icon.png" type="Texture" id=3]
-[ext_resource path="res://assets/sprites/icons/high_score_icon.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/icons/guide_icon.png" type="Texture" id=4]
 [ext_resource path="res://ui/data_points_display.tscn" type="PackedScene" id=5]
 [ext_resource path="res://ui/number_display.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/sprites/icons/notif_icon.png" type="Texture" id=7]
@@ -55,14 +55,14 @@ stretch_mode = 3
 [node name="TopRightContainer" type="HBoxContainer" parent="VBoxContainer/TopContainer"]
 margin_left = 792.0
 margin_right = 1004.0
-margin_bottom = 64.0
+margin_bottom = 68.0
 size_flags_horizontal = 10
 size_flags_vertical = 0
 custom_constants/separation = 10
 
-[node name="HighScoreButton" type="TextureButton" parent="VBoxContainer/TopContainer/TopRightContainer"]
+[node name="GuideButton" type="TextureButton" parent="VBoxContainer/TopContainer/TopRightContainer"]
 margin_right = 64.0
-margin_bottom = 64.0
+margin_bottom = 68.0
 texture_normal = ExtResource( 4 )
 
 [node name="SettingsButton" type="TextureButton" parent="VBoxContainer/TopContainer/TopRightContainer"]
@@ -77,7 +77,7 @@ texture_normal = ExtResource( 2 )
 [node name="LogoutButton" type="TextureButton" parent="VBoxContainer/TopContainer/TopRightContainer"]
 margin_left = 148.0
 margin_right = 212.0
-margin_bottom = 64.0
+margin_bottom = 68.0
 rect_min_size = Vector2( 32, 32 )
 texture_normal = ExtResource( 1 )
 
@@ -104,7 +104,7 @@ texture_normal = ExtResource( 3 )
 stretch_mode = 2
 
 [connection signal="pressed" from="VBoxContainer/TopContainer/TopLeftContainer/NotificationButton" to="." method="_on_NotificationButton_pressed"]
-[connection signal="pressed" from="VBoxContainer/TopContainer/TopRightContainer/HighScoreButton" to="." method="_on_HighScoreButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/TopContainer/TopRightContainer/GuideButton" to="." method="_on_GuideButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/TopContainer/TopRightContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/TopContainer/TopRightContainer/LogoutButton" to="." method="_on_LogoutButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/BottomContainer/BuildButton" to="." method="_on_BuildButton_pressed"]

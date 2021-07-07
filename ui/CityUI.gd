@@ -3,7 +3,7 @@ class_name CityUI
 
 # Custom signals
 signal open_notifications
-signal open_scores
+signal open_guide
 signal open_settings
 signal open_build
 signal logout
@@ -46,3 +46,7 @@ func _on_LogoutButton_pressed():
 
 func _on_BuildButton_pressed():
 	emit_signal("open_build")
+
+
+func _on_GuideButton_pressed():
+	emit_signal("open_guide")
