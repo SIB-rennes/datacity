@@ -22,4 +22,3 @@ text = "Datapoints | 42"
 margin_left = 124.0
 margin_right = 149.0
 texture = ExtResource( 1 )
-stretch_mode = 3

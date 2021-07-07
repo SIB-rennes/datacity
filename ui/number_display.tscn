@@ -1,23 +1,25 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/sprites/ui/label_bg.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/icons/population_icon.png" type="Texture" id=2]
+[ext_resource path="res://ui/number_display.gd" type="Script" id=3]
 
 [node name="NumberContainer" type="HBoxContainer"]
 margin_right = 148.0
 margin_bottom = 32.0
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Number" type="MarginContainer" parent="."]
-margin_right = 119.0
+margin_right = 148.0
 margin_bottom = 32.0
 size_flags_horizontal = 0
 size_flags_vertical = 4
 
 [node name="Background" type="NinePatchRect" parent="Number"]
-margin_right = 119.0
+margin_right = 148.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 0, 32 )
 texture = ExtResource( 1 )
@@ -28,7 +30,7 @@ patch_margin_right = 8
 patch_margin_bottom = 6
 
 [node name="LabelContainer" type="MarginContainer" parent="Number"]
-margin_right = 119.0
+margin_right = 148.0
 margin_bottom = 32.0
 custom_constants/margin_right = 10
 custom_constants/margin_top = 3
@@ -41,16 +43,18 @@ __meta__ = {
 [node name="Label" type="Label" parent="Number/LabelContainer"]
 margin_left = 10.0
 margin_top = 3.0
-margin_right = 109.0
+margin_right = 138.0
 margin_bottom = 29.0
+rect_min_size = Vector2( 128, 0 )
 size_flags_horizontal = 0
 size_flags_vertical = 1
 text = "Population | 10"
+align = 1
 valign = 1
 
 [node name="Icon" type="TextureRect" parent="."]
-margin_left = 123.0
-margin_right = 148.0
+margin_left = 152.0
+margin_right = 177.0
 margin_bottom = 32.0
 size_flags_horizontal = 0
 size_flags_vertical = 0

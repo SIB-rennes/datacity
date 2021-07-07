@@ -10,6 +10,9 @@ enum State {
 # Current State
 var state = State.STANDARD
 
+# Reference to the UI
+onready var ui = $CanvasLayer/CityUI
+
 # the buildings Tilemap
 onready var buildings_map = $Map/Buildings
 
@@ -140,3 +143,27 @@ func validate():
 	place(building_to_place, building_case)
 	
 	print("Validate place !")
+
+
+
+#========> UI Calls <========#
+
+func _on_CityUI_open_notifications():
+	print("Open Notifications !")
+
+
+func _on_CityUI_open_scores():
+	print("Open Scores !")
+
+
+func _on_CityUI_open_settings():
+	print("Open Settings !")
+
+
+func _on_CityUI_logout():
+	print("Logout !")
+	get_tree().quit()
+
+
+func _on_CityUI_open_build():
+	print("Open Build Menu !")
