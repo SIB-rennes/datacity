@@ -156,10 +156,6 @@ func _on_CityUI_open_scores():
 	print("Open Scores !")
 
 
-func _on_CityUI_open_settings():
-	print("Open Settings !")
-
-
 func _on_CityUI_logout():
 	print("Logout !")
 	get_tree().quit()
@@ -167,3 +163,7 @@ func _on_CityUI_logout():
 
 func _on_CityUI_open_build():
 	print("Open Build Menu !")
+
+
+func _on_CityUI_open_guide():
+	print("Open Guide !")
