@@ -63,9 +63,11 @@ script = ExtResource( 3 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CityUI" parent="CanvasLayer" instance=ExtResource( 7 )]
+mouse_filter = 2
 
 [node name="BuildMenu" parent="CanvasLayer" instance=ExtResource( 8 )]
 visible = false
+mouse_filter = 2
 
 [connection signal="clicked_map" from="Map" to="." method="map_clicked"]
 [connection signal="cancel_build" from="CanvasLayer/CityUI" to="." method="_on_CityUI_cancel_build"]
@@ -76,3 +78,5 @@ visible = false
 [connection signal="open_settings" from="CanvasLayer/CityUI" to="." method="_on_CityUI_open_settings"]
 [connection signal="unvalidate_position" from="CanvasLayer/CityUI" to="." method="_on_CityUI_unvalidate_position"]
 [connection signal="validate_position" from="CanvasLayer/CityUI" to="." method="_on_CityUI_validate_position"]
+[connection signal="exited_build_menu" from="CanvasLayer/BuildMenu" to="." method="_on_BuildMenu_exited_build_menu"]
+[connection signal="selected_building" from="CanvasLayer/BuildMenu" to="." method="_on_BuildMenu_selected_building"]

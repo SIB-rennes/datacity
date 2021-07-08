@@ -95,6 +95,7 @@ rect_min_size = Vector2( 250, 87.5 )
 size_flags_horizontal = 4
 size_flags_vertical = 10
 size_flags_stretch_ratio = 2.0
+popup_exclusive = true
 window_title = "Confirmez l'emplacement"
 dialog_text = "
 L'emplacement vous convient ?"

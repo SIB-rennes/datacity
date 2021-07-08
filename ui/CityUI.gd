@@ -37,7 +37,7 @@ func set_datapoints(points: int):
 
 
 
-func show_current_building(texture: Texture):
+func show_current_building(building: String):
 	# Hide the Build button
 	$VBoxContainer/BottomContainer/BuildButton.hide()
 	
@@ -45,13 +45,19 @@ func show_current_building(texture: Texture):
 	$VBoxContainer/BottomContainer/CancelContainer.show()
 	
 	# Set the button texture 
-	$VBoxContainer/BottomContainer/CancelContainer/MarginContainer/HBoxContainer/BuildingSprite.texture = texture
-	
+	if building in BuildingsData.TEXTURES:
+		var texture = BuildingsData.TEXTURES.get(building)
+		$VBoxContainer/BottomContainer/CancelContainer/MarginContainer/HBoxContainer/BuildingSprite.texture = texture
+	else:
+		print("No texture for the current building " + building)
 
 
 func show_build_button():
 	# Sho the Build button
 	$VBoxContainer/BottomContainer/BuildButton.show()
+	
+	# Hide the Cancel Contaienr
+	$VBoxContainer/BottomContainer/CancelContainer.hide()
 
 
 func show_validation_popup():
