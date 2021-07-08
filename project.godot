@@ -54,6 +54,10 @@ config/name="data_city"
 run/main_scene="res://scenes/CityBuilder.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerData="*res://game_data/player_data.gd"
+
 [input]
 
 move_camera={
