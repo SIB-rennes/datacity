@@ -7,7 +7,7 @@ const ZOOM_MAX = 2
 const DRAG_SPEED = 5
 
 
-func _input(event):
+func _unhandled_input(event):
 	# If the mouse moved and the button was pressed
 	if event is InputEventMouseMotion:
 		if Input.is_action_pressed("move_camera"):
