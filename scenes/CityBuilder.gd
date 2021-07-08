@@ -4,7 +4,7 @@ extends Node2D
 enum State {
 	STANDARD,
 	CHOOSING_PLACE,
-	VALIDATING_PLACE
+	ASK_VALIDATION
 }
 
 # Current State
@@ -12,6 +12,7 @@ var state = State.STANDARD
 
 # Reference to the UI
 onready var ui = $CanvasLayer/CityUI
+onready var build_menu = $CanvasLayer/BuildMenu
 
 # the buildings Tilemap
 onready var buildings_map = $Map/Buildings
@@ -36,7 +37,6 @@ func _ready():
 
 ## Called from the Map signal when the map is clicked
 func map_clicked(case_index, case_center_coords, _occupied):
-	
 	# If Choosing the place
 	if state == State.CHOOSING_PLACE:
 		if can_place(building_to_place, case_index):
@@ -79,41 +79,19 @@ func place(building: int, pos: Vector2):
 
 
 
-func choose_location(building: int):
-	# Defer the change of state so the 
-	state = State.CHOOSING_PLACE
-	
-	building_to_place = building
-	
-	# Show the Cancel Button
-	$CanvasLayer/Cancel.show()
-	$CanvasLayer/Build.hide()
-
-
-
-func cancel_choose_location():
-	# Defer the change of state so the 
-	state = State.STANDARD
-	
-	# Show the Cancel Button
-	$CanvasLayer/Cancel.hide()
-	$CanvasLayer/Validate.hide()
-	$CanvasLayer/Build.show()
-	
-	hide_preview()
-
-
-
-
 func ask_validation():
-	# Defer the change of state so the 
-	state = State.VALIDATING_PLACE
+	print("Ask for validation")
 	
-	# Show the Cancel Button
-	$CanvasLayer/Validate.show()
+	state = State.ASK_VALIDATION
 	
-	# Set the Preview
+	# Show the validation popup
+	ui.show_validation_popup()
+	
+	# show the preview emplacements
 	show_preview()
+	
+	# Disable the camera
+	$Camera2D.block_camera(false)
 
 
 
@@ -125,6 +103,7 @@ func show_preview():
 		for y in range(building_case.y, building_case.y - size.y, -1):
 			buildings_map.set_cell(x, y, preview_tile)
 
+
 func hide_preview():
 	# Get the building size
 	var size = BuildingsData.get_size(building_to_place)
@@ -135,25 +114,27 @@ func hide_preview():
 
 
 
-func validate():
-	#Call Cancel location as they do the same things
-	cancel_choose_location()
-	
-	# Place the building
-	place(building_to_place, building_case)
-	
-	print("Validate place !")
+func set_building_menu():
+	# Add random buildings
+	build_menu.add_building("Mairie", 1)
+	build_menu.add_building("Maison 2", 2)
+	build_menu.add_building("Hôpital", 1)
+	build_menu.add_building("Commissariat", 1)
 
 
 
 #========> UI Calls <========#
 
 func _on_CityUI_open_notifications():
+	# IGNORE IF NOT State.STANDARD
 	print("Open Notifications !")
 
 
-func _on_CityUI_open_scores():
-	print("Open Scores !")
+
+func _on_CityUI_open_settings():
+	# IGNORE IF NOT State.STANDARD
+	print("Open Settings !")
+
 
 
 func _on_CityUI_logout():
@@ -161,9 +142,81 @@ func _on_CityUI_logout():
 	get_tree().quit()
 
 
+
 func _on_CityUI_open_build():
-	print("Open Build Menu !")
+	ui.hide()
+	build_menu.show()
+	
+	# Set the buildings 
+	set_building_menu()
+	
+	# Disable the camera
+	$Camera2D.block_camera(true)
+
+
+
+func _on_BuildMenu_selected_building(building_name):
+	print("Selected : " + building_name)
+	
+	# Change state to choosing place
+	state = State.CHOOSING_PLACE
+	
+	# Save the building
+	building_to_place = buildings_map.tile_set.find_tile_by_name(building_name)
+	
+	# Update UI Elements displayed
+	ui.show()
+	build_menu.hide()
+	
+	# Set the ui to show the building
+	ui.show_current_building(building_name)
+	
+	
+	# Disable the camera
+	$Camera2D.block_camera(false)
+
+
+
+func _on_BuildMenu_exited_build_menu():
+	print("Exit build menu")
+	
+	ui.show()
+	build_menu.hide()
+	
+	# Disable the camera
+	$Camera2D.block_camera(false)
+
 
 
 func _on_CityUI_open_guide():
+	# IGNORE IF NOT State.STANDARD
 	print("Open Guide !")
+
+
+func _on_CityUI_cancel_build():
+	print("Cancel the build")
+	ui.show_build_button()
+
+
+func _on_CityUI_unvalidate_position():
+	print("Unvalidate position !")
+	
+	# Reset the UI
+	ui.show_build_button()
+	
+	# Hide the preview cases
+	hide_preview()
+	
+	state = State.STANDARD
+
+
+func _on_CityUI_validate_position():
+	print("Validate position !")
+	
+	# Place the building
+	place(building_to_place, building_case)
+	
+	# Reset the UI
+	ui.show_build_button()
+	
+	state = State.STANDARD

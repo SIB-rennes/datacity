@@ -21,9 +21,9 @@ func _ready():
 	
 
 ##Use of unhandled to ignore events the GUI managed 
-func _unhandled_input(_event):
+func _input(_event):
 	if Input.is_action_just_released("MouseClic"):
-			process_player_click(get_global_mouse_position())
+		process_player_click(get_global_mouse_position())
 
 
 

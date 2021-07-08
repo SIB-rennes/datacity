@@ -47,10 +47,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/normal_font = ExtResource( 2 )
 bbcode_enabled = true
-bbcode_text = "Je suis une petite patate !
-Et je n'ai pas beaucoup d'argent UwU"
-text = "Je suis une petite patate !
-Et je n'ai pas beaucoup d'argent UwU"
+bbcode_text = "Texte"
+text = "Texte"
 fit_content_height = true
 __meta__ = {
 "_edit_use_anchors_": false

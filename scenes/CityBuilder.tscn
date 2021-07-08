@@ -63,49 +63,20 @@ script = ExtResource( 3 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CityUI" parent="CanvasLayer" instance=ExtResource( 7 )]
-visible = false
+mouse_filter = 2
 
-[node name="Control" parent="CanvasLayer" instance=ExtResource( 8 )]
-
-[node name="Build" type="Button" parent="CanvasLayer"]
+[node name="BuildMenu" parent="CanvasLayer" instance=ExtResource( 8 )]
 visible = false
-margin_left = 10.4769
-margin_top = 8.25449
-margin_right = 63.4769
-margin_bottom = 28.2545
-text = "Build !"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Cancel" type="Button" parent="CanvasLayer"]
-visible = false
-margin_left = 9.84187
-margin_top = 7.93699
-margin_right = 63.8419
-margin_bottom = 27.937
-text = "Cancel"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Validate" type="Button" parent="CanvasLayer"]
-visible = false
-margin_left = 10.4769
-margin_top = 34.2687
-margin_right = 63.4769
-margin_bottom = 54.2687
-text = "Valider ?"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+mouse_filter = 2
 
 [connection signal="clicked_map" from="Map" to="." method="map_clicked"]
+[connection signal="cancel_build" from="CanvasLayer/CityUI" to="." method="_on_CityUI_cancel_build"]
 [connection signal="logout" from="CanvasLayer/CityUI" to="." method="_on_CityUI_logout"]
 [connection signal="open_build" from="CanvasLayer/CityUI" to="." method="_on_CityUI_open_build"]
 [connection signal="open_guide" from="CanvasLayer/CityUI" to="." method="_on_CityUI_open_guide"]
 [connection signal="open_notifications" from="CanvasLayer/CityUI" to="." method="_on_CityUI_open_notifications"]
 [connection signal="open_settings" from="CanvasLayer/CityUI" to="." method="_on_CityUI_open_settings"]
-[connection signal="pressed" from="CanvasLayer/Build" to="." method="choose_location" binds= [ 4 ]]
-[connection signal="pressed" from="CanvasLayer/Cancel" to="." method="cancel_choose_location"]
-[connection signal="pressed" from="CanvasLayer/Validate" to="." method="validate"]
+[connection signal="unvalidate_position" from="CanvasLayer/CityUI" to="." method="_on_CityUI_unvalidate_position"]
+[connection signal="validate_position" from="CanvasLayer/CityUI" to="." method="_on_CityUI_validate_position"]
+[connection signal="exited_build_menu" from="CanvasLayer/BuildMenu" to="." method="_on_BuildMenu_exited_build_menu"]
+[connection signal="selected_building" from="CanvasLayer/BuildMenu" to="." method="_on_BuildMenu_selected_building"]
