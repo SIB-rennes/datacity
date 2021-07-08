@@ -14,14 +14,13 @@ var building_button = preload("res://ui/building_button.tscn")
 onready var building_container = $ScrollMargin/VBoxContainer/ScrollContainer/BuildingContainer
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	add_building("Mairie", 1)
-	add_building("Maison 1", 4)
-	add_building("Maison 2", 2)
-	add_building("Maison 3", 42)
-	add_building("Hôpital", 1)
-	add_building("Commissariat", 1)
+
+func hide():
+	# Remove each building button
+	for child in building_container.get_children():
+		building_container.remove_child(child)
+	
+	.hide()
 
 
 ## Adds a building button
@@ -39,7 +38,6 @@ func add_building(building_name: String, left: int):
 
 
 func _on_selected_building(building_name):
-	print("Selected : " + building_name)
 	emit_signal("selected_building", building_name)
 
 
