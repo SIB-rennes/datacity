@@ -63,9 +63,9 @@ script = ExtResource( 3 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CityUI" parent="CanvasLayer" instance=ExtResource( 7 )]
-visible = false
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource( 8 )]
+visible = false
 
 [node name="Build" type="Button" parent="CanvasLayer"]
 visible = false
@@ -101,6 +101,7 @@ __meta__ = {
 }
 
 [connection signal="clicked_map" from="Map" to="." method="map_clicked"]
+[connection signal="cancel_build" from="CanvasLayer/CityUI" to="." method="_on_CityUI_cancel_build"]
 [connection signal="logout" from="CanvasLayer/CityUI" to="." method="_on_CityUI_logout"]
 [connection signal="open_build" from="CanvasLayer/CityUI" to="." method="_on_CityUI_open_build"]
 [connection signal="open_guide" from="CanvasLayer/CityUI" to="." method="_on_CityUI_open_guide"]

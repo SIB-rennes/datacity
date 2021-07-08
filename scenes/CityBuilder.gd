@@ -167,3 +167,7 @@ func _on_CityUI_open_build():
 
 func _on_CityUI_open_guide():
 	print("Open Guide !")
+
+
+func _on_CityUI_cancel_build():
+	print("Cancel the build")
