@@ -107,6 +107,8 @@ __meta__ = {
 [connection signal="open_guide" from="CanvasLayer/CityUI" to="." method="_on_CityUI_open_guide"]
 [connection signal="open_notifications" from="CanvasLayer/CityUI" to="." method="_on_CityUI_open_notifications"]
 [connection signal="open_settings" from="CanvasLayer/CityUI" to="." method="_on_CityUI_open_settings"]
+[connection signal="unvalidate_position" from="CanvasLayer/CityUI" to="." method="_on_CityUI_unvalidate_position"]
+[connection signal="validate_position" from="CanvasLayer/CityUI" to="." method="_on_CityUI_validate_position"]
 [connection signal="pressed" from="CanvasLayer/Build" to="." method="choose_location" binds= [ 4 ]]
 [connection signal="pressed" from="CanvasLayer/Cancel" to="." method="cancel_choose_location"]
 [connection signal="pressed" from="CanvasLayer/Validate" to="." method="validate"]

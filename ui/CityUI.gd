@@ -8,12 +8,22 @@ signal open_settings
 signal open_build
 signal logout
 signal cancel_build
-
+signal unvalidate_position
+signal validate_position
 
 
 # References to the UI Elements
 onready var population = $VBoxContainer/TopContainer/TopLeftContainer/Population
 onready var datapoints = $VBoxContainer/TopContainer/TopLeftContainer/DataPoints
+onready var confirmation_dialog = $VBoxContainer/ConfirmationDialog
+
+
+func _ready():
+	# Connect the Confirmation Dialog
+	confirmation_dialog.get_cancel().connect("pressed", self, "_unvalidate_pressed")
+	confirmation_dialog.get_ok().connect("pressed", self, "_validate_pressed")
+
+
 
 
 ## Sets the population label
@@ -44,6 +54,10 @@ func show_build_button():
 	$VBoxContainer/BottomContainer/BuildButton.show()
 
 
+func show_validation_popup():
+	confirmation_dialog.popup()
+
+
 #==========> Signal Senders <==========#
 
 func _on_NotificationButton_pressed():
@@ -72,3 +86,12 @@ func _on_GuideButton_pressed():
 
 func _on_CancelBuildButton_pressed():
 	emit_signal("cancel_build")
+
+
+
+func _validate_pressed():
+	emit_signal("validate_position")
+
+
+func _unvalidate_pressed():
+	emit_signal("unvalidate_position")

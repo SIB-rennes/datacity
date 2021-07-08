@@ -171,3 +171,11 @@ func _on_CityUI_open_guide():
 
 func _on_CityUI_cancel_build():
 	print("Cancel the build")
+
+
+func _on_CityUI_unvalidate_position():
+	print("Unvalidate position !")
+
+
+func _on_CityUI_validate_position():
+	print("Validate position !")
