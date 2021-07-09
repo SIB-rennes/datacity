@@ -10,6 +10,10 @@ enum State {
 # Current State
 var state = State.STANDARD
 
+# Manager for scenaristic events
+onready var event_manager = $EventManager
+
+
 # Reference to the UI
 onready var ui = $CanvasLayer/CityUI
 onready var build_menu = $CanvasLayer/BuildMenu
@@ -39,6 +43,11 @@ func _ready():
 	
 	# Update the UI
 	update_ui()
+
+# Tries to trigger a scenaristic
+func trigger_scenaristic_event():
+	print(event_manager.trigger_event(buildings_in_city))
+
 
 
 ## Called from the Map signal when the map is clicked
@@ -243,6 +252,9 @@ func _on_CityUI_validate_position():
 	
 	# Place the building
 	build(building_to_place, building_case)
+	
+	# Try to trigger an event
+	trigger_scenaristic_event()
 	
 	# Update the UI with player_data
 	update_ui()

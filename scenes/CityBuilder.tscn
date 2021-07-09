@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/textures/grass_background.png" type="Texture" id=1]
 [ext_resource path="res://tilesets/roads.tres" type="TileSet" id=2]
@@ -8,9 +8,13 @@
 [ext_resource path="res://scenes/CityBuilder.gd" type="Script" id=6]
 [ext_resource path="res://ui/CityUI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://ui/BuildMenu.tscn" type="PackedScene" id=8]
+[ext_resource path="res://game_data/scenaristic_events.gd" type="Script" id=9]
 
 [node name="CityBuilder" type="Node2D"]
 script = ExtResource( 6 )
+
+[node name="EventManager" type="Node" parent="."]
+script = ExtResource( 9 )
 
 [node name="grass_background" type="Sprite" parent="."]
 position = Vector2( -45.1074, 2296.54 )
