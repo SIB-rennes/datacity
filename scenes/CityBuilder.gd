@@ -28,6 +28,9 @@ var building_case : Vector2
 var build_case_center : Vector2
 
 
+# Dictionary to count each of the buildings
+var buildings_in_city : Dictionary
+
 
 func _ready():
 	#Save the value of the occupied Tile
@@ -80,8 +83,8 @@ func build(building: int, pos: Vector2):
 	
 	
 	# Remove from the player list
-	PlayerData.building_list[building_name_to_place] -= 1
-
+	PlayerData.use_building(building_name_to_place)
+	
 
 
 func ask_validation():
@@ -121,12 +124,12 @@ func hide_preview():
 
 func set_building_menu():
 	# Add random buildings
-	for building_name in PlayerData.building_list.keys():
+	for b in PlayerData.building_list.keys():
 		# Get the amount left
-		var count = PlayerData.building_list[building_name]
+		var count = PlayerData.building_list[b]
 		
-		if count > 0:
-			build_menu.add_building(building_name, count)
+		if count > 0 or count == PlayerData.INF_BUILDING:
+			build_menu.add_building(b, count)
 
 
 
