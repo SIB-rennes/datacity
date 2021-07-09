@@ -1,9 +1,18 @@
 extends Node
 
+
+#====> Possible conditions :
+	# (x) represents the function parameter
+
+# "built(x)" : Dictionnary {"Building": [min_count, max_count]}
+# "probability(x)" : number between 0 and 1
+# "population_space(x)" : [min, max]
+# "population(x)" : [min, max]
+
+
 # Dictionnary of events Names and conditions
 const EVENTS_CONDITIONS = {
 	"MairieConstruite": {
-		# (x) represents the function parameter
 		"built(x)": {"Mairie": [1, 1]}, 
 		"probability(x)": 1,
 		"population_space(x)": [10, 10],
@@ -11,8 +20,17 @@ const EVENTS_CONDITIONS = {
 }
 
 
-const EVENT_FILE = {
-	"MairieConstruite": "",
+const DIALOG_FILES = {
+	"MairieConstruite": "res://scenarios/beginning/mairie_built.json",
+}
+
+
+const OFFERED_BUILDINGS = {
+	"MairieConstruite": {
+		"Maison 1": 3,
+		"Maison 2": 2,
+		"Maison 3": 1,
+	}
 }
 
 
