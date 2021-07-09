@@ -23,16 +23,22 @@ var preview_tile : int
 
 # The building that will be placed
 var building_to_place : int
+var building_name_to_place : String
 var building_case : Vector2
 var build_case_center : Vector2
 
+
+# Dictionary to count each of the buildings
+var buildings_in_city : Dictionary
 
 
 func _ready():
 	#Save the value of the occupied Tile
 	occupied_tile = buildings_map.tile_set.find_tile_by_name("Occupied")
 	preview_tile = buildings_map.tile_set.find_tile_by_name("FantomBuilding")
-
+	
+	# Update the UI
+	update_ui()
 
 
 ## Called from the Map signal when the map is clicked
@@ -65,7 +71,7 @@ func can_place(building, pos):
 
 
 
-func place(building: int, pos: Vector2):
+func build(building: int, pos: Vector2):
 	# Get the building size
 	var size = BuildingsData.get_size(building)
 	
@@ -76,6 +82,22 @@ func place(building: int, pos: Vector2):
 			
 	# Set the building at the main position
 	buildings_map.set_cellv(pos, building)
+	
+	
+	# Remove from the player list
+	PlayerData.use_building(building_name_to_place)
+	
+	# Add it to the Dictionary
+	if not building_name_to_place in buildings_in_city:
+		buildings_in_city[building_name_to_place] = 1
+	else:
+		buildings_in_city[building_name_to_place] += 1
+
+
+func update_ui():
+	# set the population and datapoints
+	ui.set_population(PlayerData.population)
+	ui.set_datapoints(PlayerData.data_points)
 
 
 
@@ -116,10 +138,12 @@ func hide_preview():
 
 func set_building_menu():
 	# Add random buildings
-	build_menu.add_building("Mairie", 1)
-	build_menu.add_building("Maison 2", 2)
-	build_menu.add_building("Hôpital", 1)
-	build_menu.add_building("Commissariat", 1)
+	for b in PlayerData.building_list.keys():
+		# Get the amount left
+		var count = PlayerData.building_list[b]
+		
+		if count > 0 or count == PlayerData.INF_BUILDING:
+			build_menu.add_building(b, count)
 
 
 
@@ -162,6 +186,7 @@ func _on_BuildMenu_selected_building(building_name):
 	state = State.CHOOSING_PLACE
 	
 	# Save the building
+	building_name_to_place = building_name
 	building_to_place = buildings_map.tile_set.find_tile_by_name(building_name)
 	
 	# Update UI Elements displayed
@@ -213,10 +238,13 @@ func _on_CityUI_unvalidate_position():
 func _on_CityUI_validate_position():
 	print("Validate position !")
 	
-	# Place the building
-	place(building_to_place, building_case)
-	
 	# Reset the UI
 	ui.show_build_button()
+	
+	# Place the building
+	build(building_to_place, building_case)
+	
+	# Update the UI with player_data
+	update_ui()
 	
 	state = State.STANDARD
