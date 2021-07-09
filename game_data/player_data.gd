@@ -10,6 +10,16 @@ var building_list = {
 	"Maison 1" : INF_BUILDING
 }
 
+# City Population
+var population = 0
+
+# City population space
+var population_space = 0
+
+# Data points accumulated
+var data_points = 0
+
+
 
 func _ready():
 	print("Loaded player data !")

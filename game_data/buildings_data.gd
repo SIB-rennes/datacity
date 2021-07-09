@@ -22,6 +22,14 @@ const TEXTURES = {
 	"Commissariat": preload("res://assets/sprites/buildings/police_department.png")
 }
 
+# The increase in max popuation for each building
+const POPULATION_SPACE = {
+	"Mairie": 10,
+	"Maison 1": 10,
+	"Maison 2": 15,
+	"Maison 3": 20
+}
+
 
 
 # Default building size

@@ -36,7 +36,9 @@ func _ready():
 	#Save the value of the occupied Tile
 	occupied_tile = buildings_map.tile_set.find_tile_by_name("Occupied")
 	preview_tile = buildings_map.tile_set.find_tile_by_name("FantomBuilding")
-
+	
+	# Update the UI
+	update_ui()
 
 
 ## Called from the Map signal when the map is clicked
@@ -85,6 +87,18 @@ func build(building: int, pos: Vector2):
 	# Remove from the player list
 	PlayerData.use_building(building_name_to_place)
 	
+	# Add it to the Dictionary
+	if not building_name_to_place in buildings_in_city:
+		buildings_in_city[building_name_to_place] = 1
+	else:
+		buildings_in_city[building_name_to_place] += 1
+
+
+func update_ui():
+	# set the population and datapoints
+	ui.set_population(PlayerData.population)
+	ui.set_datapoints(PlayerData.data_points)
+
 
 
 func ask_validation():
@@ -224,10 +238,13 @@ func _on_CityUI_unvalidate_position():
 func _on_CityUI_validate_position():
 	print("Validate position !")
 	
+	# Reset the UI
+	ui.show_build_button()
+	
 	# Place the building
 	build(building_to_place, building_case)
 	
-	# Reset the UI
-	ui.show_build_button()
+	# Update the UI with player_data
+	update_ui()
 	
 	state = State.STANDARD
