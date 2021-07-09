@@ -107,3 +107,13 @@ func population_space(min_max: Array):
 	
 	# Returns true if the population space is in between
 	return PlayerData.population_space >= mini and PlayerData.population_space <= maxi 
+
+
+
+func population(min_max: Array):
+	# Get the bounds
+	var mini = min_max[0]
+	var maxi = min_max[1]
+	
+	# Returns true if the population space is in between
+	return PlayerData.population >= mini and PlayerData.population <= maxi 
