@@ -81,6 +81,7 @@ func start_dialog():
 		print("Dialogue to load : " + dialog_path)
 		
 		dialog_scene.show()
+		dialog_scene.set_process_input(true)
 		dialog_scene.start_dialog_event(dialog_path)
 
 
@@ -211,6 +212,8 @@ func _on_CityUI_open_notifications():
 	if state == State.STANDARD:
 		print("Open Notifications !")
 		
+		state = State.SHOWING_NOTIFICATION
+		
 		# Show the notification with the summary
 		var summary = event_manager.SUMMARIES.get(current_event, "No summary found for " + current_event)
 		ui.show_notifications(summary)
@@ -336,6 +339,8 @@ func _on_CityUI_close_notifications():
 
 
 func _on_DialogScene_dialog_finished():
+	print("Dialog finished")
+	
 	# Give the result of the event
 	give_event_result()
 	
@@ -346,7 +351,8 @@ func _on_DialogScene_dialog_finished():
 	# There is no notification waiting
 	ui.close_notifications(false)
 	
-	# Hide the dialog scene
+	# Hide the dialog scene and stop it from managin inputs
 	dialog_scene.hide()
+	dialog_scene.set_process_input(false)
 	
 	state = State.STANDARD
