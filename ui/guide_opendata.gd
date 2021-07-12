@@ -21,3 +21,6 @@ func _on_RichTextLabel_meta_clicked(meta):
 
 func _on_QuitButton_pressed():
 	emit_signal("close_guide")
+	
+	# reset the scrolling
+	text_label.scroll_to_line(0)
