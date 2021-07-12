@@ -4,11 +4,21 @@ extends Node2D
 enum State {
 	STANDARD,
 	CHOOSING_PLACE,
-	ASK_VALIDATION
+	ASK_VALIDATION,
+	SHOWING_NOTIFICATION,
+	SHOWING_DIALOG
 }
 
 # Current State
 var state = State.STANDARD
+
+# Manager for scenaristic events
+onready var event_manager = $EventManager
+onready var dialog_scene = $CanvasLayer/DialogScene
+
+# Name of current event
+var current_event = null
+
 
 # Reference to the UI
 onready var ui = $CanvasLayer/CityUI
@@ -32,6 +42,7 @@ var build_case_center : Vector2
 var buildings_in_city : Dictionary
 
 
+
 func _ready():
 	#Save the value of the occupied Tile
 	occupied_tile = buildings_map.tile_set.find_tile_by_name("Occupied")
@@ -39,6 +50,40 @@ func _ready():
 	
 	# Update the UI
 	update_ui()
+
+
+
+# Tries to trigger a scenaristic
+func trigger_scenaristic_event():
+	if current_event != null:
+		return
+	
+	# Tries to trigger an event
+	var event = event_manager.trigger_event(buildings_in_city)
+	
+	# If a scenaristic event occured
+	if event != null:
+		# Keep the event name
+		current_event = event
+		
+		ui.display_notification()
+		
+		# Add the event to the Player count
+		PlayerData.add_event_occurence(current_event)
+
+
+
+func start_dialog():
+	if event_manager.DIALOG_FILES.has(current_event):
+		state = State.SHOWING_DIALOG
+		
+		var dialog_path = event_manager.DIALOG_FILES[current_event]
+		print("Dialogue to load : " + dialog_path)
+		
+		dialog_scene.show()
+		dialog_scene.set_process_input(true)
+		dialog_scene.start_dialog_event(dialog_path)
+
 
 
 ## Called from the Map signal when the map is clicked
@@ -147,17 +192,39 @@ func set_building_menu():
 
 
 
+func give_event_result():
+	# Give the building to the player
+	var new_buildings = event_manager.OFFERED_BUILDINGS.get(current_event, {})
+	
+	# For each building to give
+	for b in new_buildings.keys():
+		# Get the count
+		var count = new_buildings[b]
+		# Add it
+		PlayerData.add_building(b, count)
+
+
+
 #========> UI Calls <========#
 
 func _on_CityUI_open_notifications():
-	# IGNORE IF NOT State.STANDARD
-	print("Open Notifications !")
+	# only if State.STANDARD
+	if state == State.STANDARD:
+		print("Open Notifications !")
+		
+		state = State.SHOWING_NOTIFICATION
+		
+		# Show the notification with the summary
+		var summary = event_manager.SUMMARIES.get(current_event, "No summary found for " + current_event)
+		ui.show_notifications(summary)
+
 
 
 
 func _on_CityUI_open_settings():
-	# IGNORE IF NOT State.STANDARD
-	print("Open Settings !")
+	# only if State.STANDARD
+	if state == State.STANDARD:
+		print("Open Settings !")
 
 
 
@@ -168,14 +235,15 @@ func _on_CityUI_logout():
 
 
 func _on_CityUI_open_build():
-	ui.hide()
-	build_menu.show()
-	
-	# Set the buildings 
-	set_building_menu()
-	
-	# Disable the camera
-	$Camera2D.block_camera(true)
+	if state == State.STANDARD:
+		ui.hide()
+		build_menu.show()
+		
+		# Set the buildings 
+		set_building_menu()
+		
+		# Disable the camera
+		$Camera2D.block_camera(true)
 
 
 
@@ -215,7 +283,8 @@ func _on_BuildMenu_exited_build_menu():
 
 func _on_CityUI_open_guide():
 	# IGNORE IF NOT State.STANDARD
-	print("Open Guide !")
+	if state == State.STANDARD:
+		print("Open Guide !")
 
 
 func _on_CityUI_cancel_build():
@@ -244,7 +313,46 @@ func _on_CityUI_validate_position():
 	# Place the building
 	build(building_to_place, building_case)
 	
+	# Try to trigger an event
+	trigger_scenaristic_event()
+	
 	# Update the UI with player_data
 	update_ui()
+	
+	state = State.STANDARD
+
+
+
+func _on_CityUI_start_dialog():
+	print("Start a dialog !")
+	start_dialog()
+	
+
+
+func _on_CityUI_close_notifications():
+	print("Closing notification")
+	
+	# There is still a waiitng notification
+	ui.close_notifications(true)
+	
+	state = State.STANDARD
+
+
+func _on_DialogScene_dialog_finished():
+	print("Dialog finished")
+	
+	# Give the result of the event
+	give_event_result()
+	
+	
+	# Clear the current event
+	current_event = null
+	
+	# There is no notification waiting
+	ui.close_notifications(false)
+	
+	# Hide the dialog scene and stop it from managin inputs
+	dialog_scene.hide()
+	dialog_scene.set_process_input(false)
 	
 	state = State.STANDARD
