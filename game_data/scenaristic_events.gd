@@ -12,13 +12,14 @@ extends Node
 
 # Dictionnary of events Names and conditions
 const EVENTS_CONDITIONS = {
-	"MairieConstruite": {
+	"MairieConstruite": { # Dialogues after the first building
 		"built(x)": {"Mairie": [1, 1]},
 		"population_space(x)": [10, 10],
 	},
-	"PremieresMaisons": {
+	"PremieresMaisons": { # Dialogues after the first houses
 		"built(x)": {"Mairie": [1, 1]},
-		"population_space(x)": [40, 40],
+		"population_space(x)": [40, 150],
+		"not had_event(x)": ["PremieresMaisons"],
 	}
 }
 
@@ -42,7 +43,7 @@ const OFFERED_BUILDINGS = {
 		"Maison 3": 1,
 	},
 	"PremieresMaisons": {
-		"Hospital": 1,
+		"Hôpital": 1,
 		"Commissariat": 1,
 	}
 }
@@ -131,3 +132,14 @@ func population(min_max: Array):
 	
 	# Returns true if the population space is in between
 	return PlayerData.population >= mini and PlayerData.population <= maxi 
+
+
+
+func had_event(event_names: Array):
+	# Check if each event occured
+	for event in event_names:
+		if not event in PlayerData.event_occured:
+			return false
+	
+	# All were found
+	return true
