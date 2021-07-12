@@ -25,6 +25,11 @@ const DIALOG_FILES = {
 }
 
 
+const SUMMARIES = {
+	"MairieConstruite": "La secrétaire de mairie veut vous voir.",
+}
+
+
 const OFFERED_BUILDINGS = {
 	"MairieConstruite": {
 		"Maison 1": 3,
