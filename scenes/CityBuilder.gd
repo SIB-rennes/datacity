@@ -6,7 +6,8 @@ enum State {
 	CHOOSING_PLACE,
 	ASK_VALIDATION,
 	SHOWING_NOTIFICATION,
-	SHOWING_DIALOG
+	SHOWING_DIALOG,
+	SHOWING_GUIDE
 }
 
 # Current State
@@ -285,6 +286,14 @@ func _on_CityUI_open_guide():
 	# IGNORE IF NOT State.STANDARD
 	if state == State.STANDARD:
 		print("Open Guide !")
+	
+		state = State.SHOWING_GUIDE
+		
+		ui.hide()
+		$CanvasLayer/GuideOpenData.show()
+		
+		# Disable the camera
+		$Camera2D.block_camera(true)
 
 
 func _on_CityUI_cancel_build():
@@ -356,3 +365,15 @@ func _on_DialogScene_dialog_finished():
 	dialog_scene.set_process_input(false)
 	
 	state = State.STANDARD
+
+
+func _on_GuidOpenData_close_guide():
+	print("Closing Guide")
+	
+	state = State.STANDARD
+	
+	ui.show()
+	$CanvasLayer/GuideOpenData.hide()
+
+	# Enable the camera
+	$Camera2D.block_camera(false)
