@@ -3,6 +3,8 @@ class_name CityUI
 
 # Custom signals
 signal open_notifications
+signal close_notifications
+signal start_dialog
 signal open_guide
 signal open_settings
 signal open_build
@@ -60,8 +62,43 @@ func show_build_button():
 	$VBoxContainer/BottomContainer/CancelContainer.hide()
 
 
+
 func show_validation_popup():
 	confirmation_dialog.popup()
+
+
+
+func display_notification():
+	#Show the active icon
+	$VBoxContainer/TopContainer/TopLeftContainer/NotificationButtonActive.show()
+	$VBoxContainer/TopContainer/TopLeftContainer/NotificationButton.hide()
+
+
+
+
+func show_notifications(text: String):
+	# Set the Notification text
+	$VBoxContainer/TopContainer/TopLeftContainer/EventMessage.set_string(text)
+	
+	# Show it
+	$VBoxContainer/TopContainer/TopLeftContainer/EventMessage.show()
+	
+	#Hides the buttons
+	$VBoxContainer/TopContainer/TopLeftContainer/NotificationButtonActive.hide()
+	$VBoxContainer/TopContainer/TopLeftContainer/NotificationButton.hide()
+
+
+# Has event is true if there is still an event in the notifications
+func close_notifications(has_event: bool):
+	# Hides the notifications details
+	$VBoxContainer/TopContainer/TopLeftContainer/EventMessage.hide()
+	
+	# Show the button 
+	if has_event:
+		$VBoxContainer/TopContainer/TopLeftContainer/NotificationButtonActive.show()
+	else:
+		$VBoxContainer/TopContainer/TopLeftContainer/NotificationButton.show()
+	
 
 
 #==========> Signal Senders <==========#
@@ -101,3 +138,11 @@ func _validate_pressed():
 
 func _unvalidate_pressed():
 	emit_signal("unvalidate_position")
+
+
+func _on_EventMessage_close_notification():
+	emit_signal("close_notifications")
+
+
+func _on_EventMessage_start_dialogue():
+	emit_signal("start_dialog")

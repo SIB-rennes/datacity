@@ -75,11 +75,13 @@ mouse_filter = 2
 
 [connection signal="clicked_map" from="Map" to="." method="map_clicked"]
 [connection signal="cancel_build" from="CanvasLayer/CityUI" to="." method="_on_CityUI_cancel_build"]
+[connection signal="close_notifications" from="CanvasLayer/CityUI" to="." method="_on_CityUI_close_notifications"]
 [connection signal="logout" from="CanvasLayer/CityUI" to="." method="_on_CityUI_logout"]
 [connection signal="open_build" from="CanvasLayer/CityUI" to="." method="_on_CityUI_open_build"]
 [connection signal="open_guide" from="CanvasLayer/CityUI" to="." method="_on_CityUI_open_guide"]
 [connection signal="open_notifications" from="CanvasLayer/CityUI" to="." method="_on_CityUI_open_notifications"]
 [connection signal="open_settings" from="CanvasLayer/CityUI" to="." method="_on_CityUI_open_settings"]
+[connection signal="start_dialog" from="CanvasLayer/CityUI" to="." method="_on_CityUI_start_dialog"]
 [connection signal="unvalidate_position" from="CanvasLayer/CityUI" to="." method="_on_CityUI_unvalidate_position"]
 [connection signal="validate_position" from="CanvasLayer/CityUI" to="." method="_on_CityUI_validate_position"]
 [connection signal="exited_build_menu" from="CanvasLayer/BuildMenu" to="." method="_on_BuildMenu_exited_build_menu"]

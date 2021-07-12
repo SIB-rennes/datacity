@@ -279,3 +279,12 @@ func _on_CityUI_validate_position():
 	update_ui()
 	
 	state = State.STANDARD
+
+
+func _on_CityUI_start_dialog():
+	print("Start a dialogue")
+	
+
+
+func _on_CityUI_close_notifications():
+	print("Close notifications")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/sprites/icons/logout_icon.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/icons/settings_icon.png" type="Texture" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://assets/sprites/buildings/city_hall.png" type="Texture" id=9]
 [ext_resource path="res://assets/sprites/icons/cancel_build_icon.png" type="Texture" id=10]
 [ext_resource path="res://assets/sprites/ui/building_city_background.png" type="Texture" id=11]
+[ext_resource path="res://ui/event_message.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/sprites/icons/notif_icon_active.png" type="Texture" id=13]
 
 [node name="CityUI" type="MarginContainer"]
 anchor_right = 1.0
@@ -55,6 +57,24 @@ margin_bottom = 136.0
 rect_min_size = Vector2( 0, 50 )
 texture_normal = ExtResource( 7 )
 stretch_mode = 3
+
+[node name="NotificationButtonActive" type="TextureButton" parent="VBoxContainer/TopContainer/TopLeftContainer"]
+visible = false
+margin_top = 72.0
+margin_right = 323.0
+margin_bottom = 136.0
+rect_min_size = Vector2( 0, 50 )
+texture_normal = ExtResource( 13 )
+stretch_mode = 3
+
+[node name="EventMessage" parent="VBoxContainer/TopContainer/TopLeftContainer" instance=ExtResource( 12 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 140.0
+margin_right = 323.0
+margin_bottom = 268.0
 
 [node name="TopRightContainer" type="HBoxContainer" parent="VBoxContainer/TopContainer"]
 margin_left = 792.0
@@ -168,7 +188,9 @@ size_flags_vertical = 8
 texture_normal = ExtResource( 3 )
 stretch_mode = 2
 
-[connection signal="pressed" from="VBoxContainer/TopContainer/TopLeftContainer/NotificationButton" to="." method="_on_NotificationButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/TopContainer/TopLeftContainer/NotificationButtonActive" to="." method="_on_NotificationButton_pressed"]
+[connection signal="close_notification" from="VBoxContainer/TopContainer/TopLeftContainer/EventMessage" to="." method="_on_EventMessage_close_notification"]
+[connection signal="start_dialogue" from="VBoxContainer/TopContainer/TopLeftContainer/EventMessage" to="." method="_on_EventMessage_start_dialogue"]
 [connection signal="pressed" from="VBoxContainer/TopContainer/TopRightContainer/GuideButton" to="." method="_on_GuideButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/TopContainer/TopRightContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/TopContainer/TopRightContainer/LogoutButton" to="." method="_on_LogoutButton_pressed"]
