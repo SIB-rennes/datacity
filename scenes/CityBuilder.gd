@@ -14,6 +14,9 @@ var state = State.STANDARD
 # Manager for scenaristic events
 onready var event_manager = $EventManager
 
+# Name of current event
+var current_event = null
+
 
 # Reference to the UI
 onready var ui = $CanvasLayer/CityUI
@@ -37,6 +40,7 @@ var build_case_center : Vector2
 var buildings_in_city : Dictionary
 
 
+
 func _ready():
 	#Save the value of the occupied Tile
 	occupied_tile = buildings_map.tile_set.find_tile_by_name("Occupied")
@@ -45,31 +49,39 @@ func _ready():
 	# Update the UI
 	update_ui()
 
-	
-	ui.show_notifications("Yolo !")
-	state = State.SHOWING_NOTIFICATION
 
 
 # Tries to trigger a scenaristic
 func trigger_scenaristic_event():
+	if current_event != null:
+		return
+	
 	# Tries to trigger an event
 	var event = event_manager.trigger_event(buildings_in_city)
 	
 	# If a scenaristic event occured
 	if event != null:
-		if event_manager.DIALOG_FILES.has(event):
-			var dialog_path = event_manager.DIALOG_FILES[event]
-			print("Dialogue to load : " + dialog_path)
-			
-			# Give the building to the player
-			var new_buildings = event_manager.OFFERED_BUILDINGS.get(event, {})
-			
-			# For each building to give
-			for b in new_buildings.keys():
-				# Get the count
-				var count = new_buildings[b]
-				# Add it
-				PlayerData.add_building(b, count)
+		# Keep the event name
+		current_event = event
+		
+		ui.display_notification()
+
+
+
+func start_dialog():
+	if event_manager.DIALOG_FILES.has(current_event):
+		var dialog_path = event_manager.DIALOG_FILES[current_event]
+		print("Dialogue to load : " + dialog_path)
+		
+		# Give the building to the player
+		var new_buildings = event_manager.OFFERED_BUILDINGS.get(current_event, {})
+		
+		# For each building to give
+		for b in new_buildings.keys():
+			# Get the count
+			var count = new_buildings[b]
+			# Add it
+			PlayerData.add_building(b, count)
 
 
 
