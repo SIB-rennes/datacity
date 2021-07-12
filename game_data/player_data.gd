@@ -9,6 +9,9 @@ var building_list = {
 	"Mairie" : 1
 }
 
+# A Dictionnary of the event that occured
+var event_occured = {}
+
 # City Population
 var population = 0
 
@@ -48,3 +51,13 @@ static func add_building(building_name: String, amount: int):
 	# Else if the building is not in infinite amount
 	elif PlayerData.building_list[building_name] != PlayerData.INF_BUILDING:
 		PlayerData.building_list[building_name] += amount
+
+
+
+static func add_event_occurence(event_name: String):
+	# Set the value to 1 for the first trigger
+	if not event_name in PlayerData.event_occured:
+		PlayerData.event_occured[event_name] = 1
+	# Increment the count
+	else:
+		PlayerData.event_occured[event_name] += 1

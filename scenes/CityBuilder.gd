@@ -67,6 +67,9 @@ func trigger_scenaristic_event():
 		current_event = event
 		
 		ui.display_notification()
+		
+		# Add the event to the Player count
+		PlayerData.add_event_occurence(current_event)
 
 
 
