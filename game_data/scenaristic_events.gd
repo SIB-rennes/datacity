@@ -13,20 +13,25 @@ extends Node
 # Dictionnary of events Names and conditions
 const EVENTS_CONDITIONS = {
 	"MairieConstruite": {
-		"built(x)": {"Mairie": [1, 1]}, 
-		"probability(x)": 1,
+		"built(x)": {"Mairie": [1, 1]},
 		"population_space(x)": [10, 10],
+	},
+	"PremieresMaisons": {
+		"built(x)": {"Mairie": [1, 1]},
+		"population_space(x)": [40, 40],
 	}
 }
 
 
 const DIALOG_FILES = {
 	"MairieConstruite": "res://scenarios/beginning/mairie_built.json",
+	"PremieresMaisons": "res://scenarios/beginning/premieres_maisons.json",
 }
 
 
 const SUMMARIES = {
 	"MairieConstruite": "La secrétaire de mairie veut vous voir.",
+	"PremieresMaisons": "La secrétaire de mairie veut vous voir.",
 }
 
 
@@ -35,6 +40,10 @@ const OFFERED_BUILDINGS = {
 		"Maison 1": 3,
 		"Maison 2": 2,
 		"Maison 3": 1,
+	},
+	"PremieresMaisons": {
+		"Hospital": 1,
+		"Commissariat": 1,
 	}
 }
 
