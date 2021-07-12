@@ -61,7 +61,7 @@ stretch_mode = 3
 [node name="NotificationButtonActive" type="TextureButton" parent="VBoxContainer/TopContainer/TopLeftContainer"]
 visible = false
 margin_top = 72.0
-margin_right = 323.0
+margin_right = 177.0
 margin_bottom = 136.0
 rect_min_size = Vector2( 0, 50 )
 texture_normal = ExtResource( 13 )

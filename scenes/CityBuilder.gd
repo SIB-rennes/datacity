@@ -4,7 +4,8 @@ extends Node2D
 enum State {
 	STANDARD,
 	CHOOSING_PLACE,
-	ASK_VALIDATION
+	ASK_VALIDATION,
+	SHOWING_NOTIFICATION
 }
 
 # Current State
@@ -44,6 +45,9 @@ func _ready():
 	# Update the UI
 	update_ui()
 
+	
+	ui.show_notifications("Yolo !")
+	state = State.SHOWING_NOTIFICATION
 
 
 # Tries to trigger a scenaristic
@@ -178,14 +182,19 @@ func set_building_menu():
 #========> UI Calls <========#
 
 func _on_CityUI_open_notifications():
-	# IGNORE IF NOT State.STANDARD
-	print("Open Notifications !")
+	# only if State.STANDARD
+	if state == State.STANDARD:
+		print("Open Notifications !")
+		
+		ui.show_notifications("Je suis le texte")
+	
 
 
 
 func _on_CityUI_open_settings():
-	# IGNORE IF NOT State.STANDARD
-	print("Open Settings !")
+	# only if State.STANDARD
+	if state == State.STANDARD:
+		print("Open Settings !")
 
 
 
@@ -196,14 +205,15 @@ func _on_CityUI_logout():
 
 
 func _on_CityUI_open_build():
-	ui.hide()
-	build_menu.show()
-	
-	# Set the buildings 
-	set_building_menu()
-	
-	# Disable the camera
-	$Camera2D.block_camera(true)
+	if state == State.STANDARD:
+		ui.hide()
+		build_menu.show()
+		
+		# Set the buildings 
+		set_building_menu()
+		
+		# Disable the camera
+		$Camera2D.block_camera(true)
 
 
 
@@ -243,7 +253,8 @@ func _on_BuildMenu_exited_build_menu():
 
 func _on_CityUI_open_guide():
 	# IGNORE IF NOT State.STANDARD
-	print("Open Guide !")
+	if state == State.STANDARD:
+		print("Open Guide !")
 
 
 func _on_CityUI_cancel_build():
@@ -281,10 +292,16 @@ func _on_CityUI_validate_position():
 	state = State.STANDARD
 
 
+
 func _on_CityUI_start_dialog():
 	print("Start a dialogue")
 	
 
 
 func _on_CityUI_close_notifications():
-	print("Close notifications")
+	print("Closing notification")
+	
+	# There is still a waiitng notification
+	ui.close_notifications(true)
+	
+	state = State.STANDARD
