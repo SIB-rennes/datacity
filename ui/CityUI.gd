@@ -72,7 +72,8 @@ func display_notification():
 	#Show the active icon
 	$VBoxContainer/TopContainer/TopLeftContainer/NotificationButtonActive.show()
 	$VBoxContainer/TopContainer/TopLeftContainer/NotificationButton.hide()
-
+	
+	$VBoxContainer/TopContainer/TopLeftContainer/NotificationPlayer.play()
 
 
 
