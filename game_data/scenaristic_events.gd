@@ -14,7 +14,7 @@ extends Node
 const EVENTS_CONDITIONS = {
 	"MairieConstruite": { # Dialogues after the first building
 		"built(x)": {"Mairie": [1, 1]},
-		"population_space(x)": [10, 10],
+		"not had_event(x)": ["MairieConstruite"],
 	},
 	"PremieresMaisons": { # Dialogues after the first houses
 		"built(x)": {"Mairie": [1, 1]},

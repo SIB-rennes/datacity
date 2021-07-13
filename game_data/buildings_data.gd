@@ -47,9 +47,9 @@ const TEXTURES = {
 # The increase in max popuation for each building
 const POPULATION_SPACE = {
 	"Mairie": 10,
-	"Maison 1": 10,
-	"Maison 2": 15,
-	"Maison 3": 20
+	"Maison1": 10,
+	"Maison2": 15,
+	"Maison3": 20
 }
 
 
