@@ -159,19 +159,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="VBoxContainer" parent="VBoxContainer/BottomContainer/CancelContainer/MarginContainer"]
-margin_right = 128.0
-margin_bottom = 128.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BuildingSprite" type="TextureRect" parent="VBoxContainer/BottomContainer/CancelContainer/MarginContainer/HBoxContainer"]
-margin_right = 128.0
-margin_bottom = 128.0
+[node name="BuildingSprite" type="TextureRect" parent="VBoxContainer/BottomContainer/CancelContainer/MarginContainer/Background"]
+anchor_left = 0.109
+anchor_top = 0.031
+anchor_right = 0.883
+anchor_bottom = 0.979
+margin_left = 0.0479994
+margin_top = 0.0239999
+margin_right = -0.0240021
+margin_bottom = 0.0159988
 size_flags_vertical = 3
 expand = true
 stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CancelBuildButton" type="TextureButton" parent="VBoxContainer/BottomContainer/CancelContainer"]
 margin_left = 132.0

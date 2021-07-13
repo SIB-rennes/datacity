@@ -299,6 +299,8 @@ func _on_CityUI_open_guide():
 func _on_CityUI_cancel_build():
 	print("Cancel the build")
 	ui.show_build_button()
+	
+	state = State.STANDARD
 
 
 func _on_CityUI_unvalidate_position():

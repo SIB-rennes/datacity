@@ -49,7 +49,7 @@ func show_current_building(building: String):
 	# Set the button texture 
 	if building in BuildingsData.TEXTURES:
 		var texture = BuildingsData.TEXTURES.get(building)
-		$VBoxContainer/BottomContainer/CancelContainer/MarginContainer/HBoxContainer/BuildingSprite.texture = texture
+		$VBoxContainer/BottomContainer/CancelContainer/MarginContainer/Background/BuildingSprite.texture = texture
 	else:
 		print("No texture for the current building " + building)
 
