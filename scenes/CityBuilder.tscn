@@ -18,13 +18,16 @@ script = ExtResource( 6 )
 [node name="EventManager" type="Node" parent="."]
 script = ExtResource( 9 )
 
-[node name="grass_background" type="Sprite" parent="."]
-position = Vector2( -45.1074, 2296.54 )
-scale = Vector2( 25.7124, 25.7124 )
-z_index = -5
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -8339.8
+margin_top = -2864.52
+margin_right = 8320.2
+margin_bottom = 7764.48
 texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 1023.87, 599.861 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Map" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )
@@ -51,6 +54,7 @@ cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 cell_y_sort = true
 centered_textures = true
 format = 1
+tile_data = PoolIntArray( 327686, 11, 0, 327687, 19, 0, 393221, 8, 0, 393222, 10, 0, 393224, 18, 0, 458755, 24, 0, 458757, 19, 0, 458759, 17, 0, 524291, 25, 0, 524293, 18, 0, 524295, 16, 0, 524296, 17, 0, 655363, 22, 0, 655368, 23, 0, 655370, 8, 0, 720902, 21, 0, 786437, 19, 0, 786438, 17, 0, 786439, 18, 0, 786440, 17, 0 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, 2240 )
