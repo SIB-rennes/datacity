@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/police_department.png-8f2c7009c1d138f0b15657aa848bc6d3.stex"
+path="res://.import/hopital.png-14623df1d09de86bdee23e9d6860003a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/buildings/police_department.png"
-dest_files=[ "res://.import/police_department.png-8f2c7009c1d138f0b15657aa848bc6d3.stex" ]
+source_file="res://assets/sprites/buildings/hopital.png"
+dest_files=[ "res://.import/hopital.png-14623df1d09de86bdee23e9d6860003a.stex" ]
 
 [params]
 

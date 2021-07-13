@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/sprites/buildings/city_hall.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/ui/building_background.png" type="Texture" id=2]
 [ext_resource path="res://assets/fonts/fallingsky_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://ui/building_button.gd" type="Script" id=4]
@@ -34,7 +33,6 @@ margin_bottom = 294.0
 margin_right = 231.0
 margin_bottom = 176.0
 size_flags_vertical = 3
-texture = ExtResource( 1 )
 expand = true
 stretch_mode = 6
 
@@ -47,7 +45,7 @@ size_flags_vertical = 8
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/line_spacing = 0
-text = "Mairie"
+text = "Nom Batiment"
 align = 1
 valign = 1
 
@@ -59,7 +57,7 @@ rect_min_size = Vector2( 0, 50 )
 size_flags_vertical = 8
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/line_spacing = 0
-text = "Restantes : 1"
+text = "Restants : ..."
 align = 1
 valign = 1
 

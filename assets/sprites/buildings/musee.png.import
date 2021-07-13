@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hospital.png-b34f6b995389b5ba715a7350626ad842.stex"
+path="res://.import/musee.png-e4cdc0319351f520c97bbbb7d3be1867.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/buildings/hospital.png"
-dest_files=[ "res://.import/hospital.png-b34f6b995389b5ba715a7350626ad842.stex" ]
+source_file="res://assets/sprites/buildings/musee.png"
+dest_files=[ "res://.import/musee.png-e4cdc0319351f520c97bbbb7d3be1867.stex" ]
 
 [params]
 

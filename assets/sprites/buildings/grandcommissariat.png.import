@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/city_hall.png-00a4019b6b35efbd884c8dd264d73a79.stex"
+path="res://.import/grandcommissariat.png-70e623d77f3b0e7dfc70d63bccb2476f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/buildings/city_hall.png"
-dest_files=[ "res://.import/city_hall.png-00a4019b6b35efbd884c8dd264d73a79.stex" ]
+source_file="res://assets/sprites/buildings/grandcommissariat.png"
+dest_files=[ "res://.import/grandcommissariat.png-70e623d77f3b0e7dfc70d63bccb2476f.stex" ]
 
 [params]
 
