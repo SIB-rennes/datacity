@@ -32,9 +32,9 @@ const TEXTURES = {
 	"Grand Hopital": preload("res://assets/sprites/buildings/grandhopital.png"),
 	"Mairie": preload("res://assets/sprites/buildings/mairiegauche.png"),
 	"Hopital": preload("res://assets/sprites/buildings/hopital.png"),
-	"Maison1": preload("res://assets/sprites/buildings/maison1droite.png"),
-	"Maison2": preload("res://assets/sprites/buildings/maison2droite.png"),
-	"Maison3": preload("res://assets/sprites/buildings/maison3gauche.png"),
+	"Maison 1": preload("res://assets/sprites/buildings/maison1droite.png"),
+	"Maison 2": preload("res://assets/sprites/buildings/maison2droite.png"),
+	"Maison 3": preload("res://assets/sprites/buildings/maison3gauche.png"),
 	"Immeuble": preload("res://assets/sprites/buildings/batiment.png"),
 	"Musee": preload("res://assets/sprites/buildings/musee.png"),
 	"Parc": preload("res://assets/sprites/buildings/parcdroit.png"),
@@ -46,9 +46,9 @@ const TEXTURES = {
 
 # The increase in max popuation for each building
 const POPULATION_SPACE = {
-	"Maison1": 10,
-	"Maison2": 15,
-	"Maison3": 25,
+	"Maison 1": 10,
+	"Maison 2": 15,
+	"Maison 3": 25,
 	"Immeuble": 80
 }
 
@@ -77,8 +77,33 @@ const LOISIRS_POINTS = {
 
 # The increase in Securite for each building
 const SECURITE_POINTS = {
-	"Commissariat": 100,
-	"Grand Commissariat": 250,
+	"Commissariat": 250,
+	"Grand Commissariat": 600,
+}
+
+
+
+# Buildings given every time the *population* gets to a certain level
+const BUILDINGS_FROM_POP = {
+	"Maison 1": 30,
+	"Maison 2": 40,
+	"Maison 3": 50,
+	"Immeuble": 100,
+}
+
+# Buildings given every time the *MAX population* gets to a certain level
+const BUILDINGS_FROM_MAX_POP = {
+	"Pharmacie": 50,
+	"Hopital": 100,
+	
+	"Ecole": 140,
+	
+	"Cafe": 50,
+	"Grand Cafe": 100,
+	"Parc": 200,
+	"Theatre": 300,
+	
+	"Commissariat": 180
 }
 
 
