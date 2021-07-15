@@ -3,6 +3,15 @@ extends Node
 # Infinite amount of buildings
 const INF_BUILDING = -1
 
+# Constant Strings
+const POPULATION = "Population"
+const POPULATION_MAX = "Population max"
+const SANTE = "Santé"
+const EDUCATION = "Education"
+const LOISIRS = "Loisirs"
+const SECURITE = "Sécurité"
+
+
 
 # List of building the player can build
 var building_list = {
@@ -12,11 +21,17 @@ var building_list = {
 # A Dictionnary of the event that occured
 var event_occured = {}
 
-# City Population
-var population = 0
 
-# City population space
-var population_space = 0
+# City data
+var city_data = {
+	POPULATION: 0, # The population
+	POPULATION_MAX: 0, # Max population
+	SANTE: 0,
+	EDUCATION: 0,
+	LOISIRS: 0,
+	SECURITE: 0,
+}
+
 
 # Data points accumulated
 var data_points = 0
@@ -36,10 +51,10 @@ static func use_building(building_name):
 	
 	# Increase population space
 	if building_name in BuildingsData.POPULATION_SPACE:
-		PlayerData.population_space += BuildingsData.POPULATION_SPACE[building_name]
+		PlayerData.city_data[PlayerData.POPULATION_MAX] += BuildingsData.POPULATION_SPACE[building_name]
 		
 		# TEMP
-		PlayerData.population = PlayerData.population_space
+		PlayerData.city_data[PlayerData.POPULATION] = PlayerData.city_data[PlayerData.POPULATION_MAX]
 
 
 
