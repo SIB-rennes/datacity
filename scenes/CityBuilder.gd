@@ -146,6 +146,9 @@ func update_ui():
 	var pop_max = PlayerData.city_data[PlayerData.POPULATION_MAX]
 	ui.set_population(pop, pop_max)
 	ui.set_datapoints(PlayerData.data_points)
+	
+	# Update the bars from the player data
+	ui.update_bars()
 
 
 
