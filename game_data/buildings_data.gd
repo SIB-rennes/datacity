@@ -46,10 +46,39 @@ const TEXTURES = {
 
 # The increase in max popuation for each building
 const POPULATION_SPACE = {
-	"Mairie": 10,
 	"Maison1": 10,
 	"Maison2": 15,
-	"Maison3": 20
+	"Maison3": 25,
+	"Immeuble": 80
+}
+
+# The increase in Sante for each building
+const SANTE_POINTS = {
+	"Pharmacie": 50,
+	"Hopital": 100,
+	"GrandHopital": 250,
+}
+
+# The increase in Education for each building
+const EDUCATION_POINTS = {
+	"Ecole": 200,
+	"GrandeEcole": 400,
+}
+
+# The increase in Loisirs for each building
+const LOISIRS_POINTS = {
+	"Cafe": 50,
+	"GrandCafe": 100,
+	"Theatre": 100,
+	"Parc": 100,
+	"Restaurant": 250,
+	"Musee": 250,
+}
+
+# The increase in Securite for each building
+const SECURITE_POINTS = {
+	"Commissariat": 100,
+	"GrandCommissariat": 250,
 }
 
 
