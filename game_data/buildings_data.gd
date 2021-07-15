@@ -24,7 +24,6 @@ const SIZES = {
 
 # Preload all textures
 const TEXTURES = {
-	"Batiment": preload("res://assets/sprites/buildings/batiment.png"),
 	"Cafe": preload("res://assets/sprites/buildings/cafe.png"),
 	"GrandCafe": preload("res://assets/sprites/buildings/cafe2.png"),
 	"Commissariat": preload("res://assets/sprites/buildings/commissariat.png"),
@@ -36,6 +35,7 @@ const TEXTURES = {
 	"Maison1": preload("res://assets/sprites/buildings/maison1droite.png"),
 	"Maison2": preload("res://assets/sprites/buildings/maison2droite.png"),
 	"Maison3": preload("res://assets/sprites/buildings/maison3gauche.png"),
+	"Immeuble": preload("res://assets/sprites/buildings/batiment.png"),
 	"Musee": preload("res://assets/sprites/buildings/musee.png"),
 	"Parc": preload("res://assets/sprites/buildings/parcdroit.png"),
 	"Pharmacie": preload("res://assets/sprites/buildings/pharmacie.png"),
@@ -93,3 +93,25 @@ static func get_size(building_index):
 	
 	return SIZES.get(building_name, DEFAULT_SIZE)
 
+
+# Returns a pair [category, value]
+static func get_building_bonus(building: String):
+	var res = ["", -1]
+	
+	# Max Population
+	if building in POPULATION_SPACE:
+		res = [PlayerData.POPULATION_MAX, POPULATION_SPACE[building]]
+	# Sante
+	elif building in SANTE_POINTS:
+		res = [PlayerData.SANTE, SANTE_POINTS[building]]
+	# Education
+	elif building in EDUCATION_POINTS:
+		res = [PlayerData.EDUCATION, EDUCATION_POINTS[building]]
+	# Loisirs
+	elif building in LOISIRS_POINTS:
+		res = [PlayerData.LOISIRS, LOISIRS_POINTS[building]]
+	# Securite
+	elif building in SECURITE_POINTS:
+		res = [PlayerData.SECURITE, SECURITE_POINTS[building]]
+	
+	return res

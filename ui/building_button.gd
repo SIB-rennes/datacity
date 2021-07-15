@@ -16,14 +16,28 @@ func set_building(building : String, left: int = PlayerData.INF_BUILDING):
 		return
 	
 	# Set the button display
-	$Building/BuildingSprite.texture = BuildingsData.TEXTURES.get(building)
+	$Building/BuildingContainer/BuildingSprite.texture = BuildingsData.TEXTURES.get(building)
 	$Building/Name.text = building
 	
 	if left == PlayerData.INF_BUILDING:
 		$Building/Left.text = ""
 	else:
 		$Building/Left.text = "Restant : " + String(left)
+		
 	
+	# Set the building bonus
+	set_building_bonus(building)
+
+
+
+func set_building_bonus(building : String):
+	var bonus = BuildingsData.get_building_bonus(building)
+	
+	# If there is a bonus
+	if not bonus[0].empty():
+		$Building/Bonus.text = bonus[0] + " +" + String(bonus[1])
+	else:
+		$Building/Bonus.hide()
 
 
 func _on_Button_pressed():
