@@ -38,9 +38,9 @@ const SUMMARIES = {
 
 const OFFERED_BUILDINGS = {
 	"MairieConstruite": {
-		"Maison1": 1,
-		"Maison2": 1,
-		"Maison3": 1,
+		"Maison 1": 1,
+		"Maison 2": 1,
+		"Maison 3": 1,
 	},
 	"PremieresMaisons": {
 		"Hopital": 1,
