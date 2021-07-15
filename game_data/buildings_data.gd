@@ -77,8 +77,33 @@ const LOISIRS_POINTS = {
 
 # The increase in Securite for each building
 const SECURITE_POINTS = {
-	"Commissariat": 100,
-	"Grand Commissariat": 250,
+	"Commissariat": 250,
+	"Grand Commissariat": 600,
+}
+
+
+
+# Buildings given every time the *population* gets to a certain level
+const BUILDINGS_FROM_POP = {
+	"Maison 1": 20,
+	"Maison 2": 30,
+	"Maison 3": 50,
+	"Immeuble": 100,
+}
+
+# Buildings given every time the *MAX population* gets to a certain level
+const BUILDINGS_FROM_MAX_POP = {
+	"Pharmacie": 50,
+	"Hopital": 100,
+	
+	"Ecole": 140,
+	
+	"Cafe": 50,
+	"Grand Cafe": 100,
+	"Parc": 200,
+	"Theatre": 300,
+	
+	"Commissariat": 180
 }
 
 

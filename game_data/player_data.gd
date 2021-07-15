@@ -15,24 +15,7 @@ const SECURITE = "Sécurité"
 
 # List of building the player can build
 var building_list = {
-	"Mairie" : 1,
-	"Maison1" : 1,
-	"Maison2" : 1,
-	"Maison3" : 1,
-	"Immeuble" : 1,
-	"Pharmacie": 50,
-	"Hopital": 100,
-	"Grand Hopital": 250,
-	"Ecole": 200,
-	"Grande Ecole": 400,
-	"Cafe": 50,
-	"Grand Cafe": 100,
-	"Theatre": 100,
-	"Parc": 100,
-	"Restaurant": 250,
-	"Musee": 250,
-	"Commissariat": 100,
-	"Grand Commissariat": 250,
+	"Mairie" : 1 # Starts with only the Mairie
 }
 
 # A Dictionnary of the event that occured
@@ -69,15 +52,23 @@ static func use_building(building_name):
 	# Get the building bonus
 	var bonus = BuildingsData.get_building_bonus(building_name)
 	
-	print(bonus)
-	
 	# Update the city data
 	if bonus[0] in PlayerData.city_data: 
+		# Save old populations
+		var old_pop = PlayerData.city_data[POPULATION]
+		var old_pop_max = PlayerData.city_data[POPULATION_MAX]
+		
 		PlayerData.city_data[bonus[0]] += bonus[1]
 		
 		# Get the population difference
-		var diff_pop = update_population()
-		print("Diff pop : " + String(diff_pop))
+		update_population()
+		
+		# Save populations
+		var pop = PlayerData.city_data[POPULATION]
+		var pop_max = PlayerData.city_data[POPULATION_MAX]
+		
+		# Give new buildings
+		give_new_buildings(pop, old_pop, pop_max, old_pop_max)
 	else:
 		print("Can't find the bonus " + bonus[0])
 
@@ -105,9 +96,6 @@ static func add_event_occurence(event_name: String):
 
 # update the population count and returns the difference
 static func update_population():
-	# The old ppulation
-	var old_pop = PlayerData.city_data[POPULATION]
-	
 	# Get the minimum of the constraints
 	var tab = 	[PlayerData.city_data[POPULATION_MAX], 
 				PlayerData.city_data[SANTE], 
@@ -118,5 +106,32 @@ static func update_population():
 	# The new population value
 	var population = tab.min()
 	PlayerData.city_data[POPULATION] = population
-	
-	return population - old_pop
+
+
+
+static func give_new_buildings(pop, old_pop, pop_max, old_pop_max):
+	## POPULATION
+	# For each building depending on POPULATION
+	for building in BuildingsData.BUILDINGS_FROM_POP.keys():
+		# Get the step
+		var step = BuildingsData.BUILDINGS_FROM_POP[building]
+		
+		# Get the value before and after the construction
+		var old_amount = floor(old_pop / step)
+		var new_amount = floor(pop / step)
+		
+		#Give the buildings
+		add_building(building, new_amount - old_amount)
+		
+	## MAX POPULATION
+	# For each building depending on POPULATION_MAX
+	for building in BuildingsData.BUILDINGS_FROM_MAX_POP.keys():
+		# Get the step
+		var step = BuildingsData.BUILDINGS_FROM_MAX_POP[building]
+		
+		# Get the value before and after the construction
+		var old_amount = floor(old_pop_max / step)
+		var new_amount = floor(pop_max / step)
+		
+		#Give the buildings
+		add_building(building, new_amount - old_amount)
