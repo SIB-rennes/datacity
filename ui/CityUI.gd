@@ -29,8 +29,18 @@ func _ready():
 
 
 ## Sets the population label
-func set_population(pop: int):
-	population.set_text("Population | " + String(pop))
+func set_population(pop: int, pop_max: int):
+	# Population string
+	var pop_str = String(pop)
+	if pop == 0:
+		pop_str = "-"
+		
+	# Max Population string
+	var pop_max_str = String(pop_max)
+	if pop_max == 0:
+		pop_max_str = "-"
+	
+	population.set_text("Population | " + pop_str + " / " + pop_max_str)
 
 
 ## Sets the population label
