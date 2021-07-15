@@ -9,11 +9,11 @@ const BUILDINGS = preload("res://tilesets/buildings.tres")
 # The buildings should always be placed at the lower case
 # (x, y) : x to the top left, y to the top right
 const SIZES = {
-	"GrandCafe": Vector2(1, 2),
+	"Grand Cafe": Vector2(1, 2),
 	"Commissariat": Vector2(2, 1),
-	"GrandCommissariat": Vector2(2, 1),
-	"GrandeEcole": Vector2(1, 2),
-	"GrandHopital": Vector2(2, 2),
+	"Grand Commissariat": Vector2(2, 1),
+	"Grande Ecole": Vector2(2, 1),
+	"Grand Hopital": Vector2(2, 2),
 	"Hopital": Vector2(1, 2),
 	"Mairie": Vector2(2, 1),
 	"Musee": Vector2(2, 1),
@@ -25,11 +25,11 @@ const SIZES = {
 # Preload all textures
 const TEXTURES = {
 	"Cafe": preload("res://assets/sprites/buildings/cafe.png"),
-	"GrandCafe": preload("res://assets/sprites/buildings/cafe2.png"),
+	"Grand Cafe": preload("res://assets/sprites/buildings/cafe2.png"),
 	"Commissariat": preload("res://assets/sprites/buildings/commissariat.png"),
-	"GrandCommissariat": preload("res://assets/sprites/buildings/grandcommissariat.png"),
-	"GrandeEcole": preload("res://assets/sprites/buildings/grandeecole.png"),
-	"GrandHopital": preload("res://assets/sprites/buildings/grandhopital.png"),
+	"Grand Commissariat": preload("res://assets/sprites/buildings/grandcommissariat.png"),
+	"Grande Ecole": preload("res://assets/sprites/buildings/grandeecole.png"),
+	"Grand Hopital": preload("res://assets/sprites/buildings/grandhopital.png"),
 	"Mairie": preload("res://assets/sprites/buildings/mairiegauche.png"),
 	"Hopital": preload("res://assets/sprites/buildings/hopital.png"),
 	"Maison1": preload("res://assets/sprites/buildings/maison1droite.png"),
@@ -56,19 +56,19 @@ const POPULATION_SPACE = {
 const SANTE_POINTS = {
 	"Pharmacie": 50,
 	"Hopital": 100,
-	"GrandHopital": 250,
+	"Grand Hopital": 250,
 }
 
 # The increase in Education for each building
 const EDUCATION_POINTS = {
 	"Ecole": 200,
-	"GrandeEcole": 400,
+	"Grande Ecole": 400,
 }
 
 # The increase in Loisirs for each building
 const LOISIRS_POINTS = {
 	"Cafe": 50,
-	"GrandCafe": 100,
+	"Grand Cafe": 100,
 	"Theatre": 100,
 	"Parc": 100,
 	"Restaurant": 250,
@@ -78,7 +78,7 @@ const LOISIRS_POINTS = {
 # The increase in Securite for each building
 const SECURITE_POINTS = {
 	"Commissariat": 100,
-	"GrandCommissariat": 250,
+	"Grand Commissariat": 250,
 }
 
 

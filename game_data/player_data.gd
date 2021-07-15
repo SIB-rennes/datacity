@@ -15,7 +15,24 @@ const SECURITE = "Sécurité"
 
 # List of building the player can build
 var building_list = {
-	"Mairie" : 1
+	"Mairie" : 1,
+	"Maison1" : 1,
+	"Maison2" : 1,
+	"Maison3" : 1,
+	"Immeuble" : 1,
+	"Pharmacie": 50,
+	"Hopital": 100,
+	"Grand Hopital": 250,
+	"Ecole": 200,
+	"Grande Ecole": 400,
+	"Cafe": 50,
+	"Grand Cafe": 100,
+	"Theatre": 100,
+	"Parc": 100,
+	"Restaurant": 250,
+	"Musee": 250,
+	"Commissariat": 100,
+	"Grand Commissariat": 250,
 }
 
 # A Dictionnary of the event that occured
