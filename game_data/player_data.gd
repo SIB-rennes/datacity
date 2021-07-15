@@ -66,12 +66,20 @@ static func use_building(building_name):
 		PlayerData.building_list[building_name] -= 1
 	
 	
-	# Increase population space
-	if building_name in BuildingsData.POPULATION_SPACE:
-		PlayerData.city_data[PlayerData.POPULATION_MAX] += BuildingsData.POPULATION_SPACE[building_name]
+	# Get the building bonus
+	var bonus = BuildingsData.get_building_bonus(building_name)
+	
+	print(bonus)
+	
+	# Update the city data
+	if bonus[0] in PlayerData.city_data: 
+		PlayerData.city_data[bonus[0]] += bonus[1]
 		
-		# TEMP
-		PlayerData.city_data[PlayerData.POPULATION] = PlayerData.city_data[PlayerData.POPULATION_MAX]
+		# Get the population difference
+		var diff_pop = update_population()
+		print("Diff pop : " + String(diff_pop))
+	else:
+		print("Can't find the bonus " + bonus[0])
 
 
 
@@ -93,3 +101,22 @@ static func add_event_occurence(event_name: String):
 	# Increment the count
 	else:
 		PlayerData.event_occured[event_name] += 1
+
+
+# update the population count and returns the difference
+static func update_population():
+	# The old ppulation
+	var old_pop = PlayerData.city_data[POPULATION]
+	
+	# Get the minimum of the constraints
+	var tab = 	[PlayerData.city_data[POPULATION_MAX], 
+				PlayerData.city_data[SANTE], 
+				PlayerData.city_data[EDUCATION], 
+				PlayerData.city_data[LOISIRS], 
+				PlayerData.city_data[SECURITE]]
+				
+	# The new population value
+	var population = tab.min()
+	PlayerData.city_data[POPULATION] = population
+	
+	return population - old_pop
