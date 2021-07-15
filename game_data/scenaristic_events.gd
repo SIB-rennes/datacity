@@ -120,8 +120,9 @@ func population_space(min_max: Array):
 	var mini = min_max[0]
 	var maxi = min_max[1]
 	
-	# Returns true if the population space is in between
-	return PlayerData.population_space >= mini and PlayerData.population_space <= maxi 
+	# Returns true if the max population is in between
+	var pop_max = PlayerData.city_data[PlayerData.POPULATION_MAX]
+	return pop_max >= mini and pop_max <= maxi 
 
 
 

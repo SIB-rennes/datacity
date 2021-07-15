@@ -142,7 +142,9 @@ func build(building: int, pos: Vector2):
 
 func update_ui():
 	# set the population and datapoints
-	ui.set_population(PlayerData.population)
+	var pop = PlayerData.city_data[PlayerData.POPULATION]
+	var pop_max = PlayerData.city_data[PlayerData.POPULATION_MAX]
+	ui.set_population(pop, pop_max)
 	ui.set_datapoints(PlayerData.data_points)
 
 
