@@ -66,6 +66,10 @@ func start_dialog_event(dialog_json, show_tutorial = false):
 	if show_tutorial:
 		$MouseCursor.show()
 	
+	# Hides the name by default
+	$UI/NameContainer.hide()
+	
+	
 	print("Opening " + dialog_json)
 	
 	# Get the script instance
@@ -84,7 +88,11 @@ func start_dialog_event(dialog_json, show_tutorial = false):
 	# If it was not a block with data
 	while process_data_block():
 		print("Data block")
+		print(block.text)
 		
+		block = parser.next()
+		
+	print(block.text)
 	# Update the dialog
 	update_dialog()
 
@@ -136,6 +144,9 @@ func process_player_click():
 		# Process blocks with data
 		while process_data_block():
 			print("Data block")
+			print(block.text)
+			
+			block = parser.next()
 			
 		# Display the next dialog
 		update_dialog()
@@ -160,6 +171,9 @@ func player_pushed_button(key):
 			# Process blocks with data
 			while process_data_block():
 				print("Data block")
+				print(block.text)
+				
+				block = parser.next()
 			
 			update_dialog()
 	else:
@@ -224,9 +238,6 @@ func set_dialog_background(fileName):
 		background_sprite.texture = load(texture_path)
 	else:
 		print("Unknown background texture " + texture_path)
-		
-	# Switch to the next (true first) dialogue
-	block = parser.next("")
 
 
 
@@ -239,9 +250,14 @@ func set_dialog_character(fileName):
 		character_sprite.texture = load(texture_path)
 	else:
 		print("Unknown character texture " + texture_path)
-		
-	# Switch to the next (true first) dialogue
-	block = parser.next("")
+
+
+
+func set_character_name(name: String):
+	#Show the Container
+	$UI/NameContainer.show()
+	
+	$UI/NameContainer/NamePanel/Name.text = name
 
 
 
@@ -252,7 +268,6 @@ func process_data_block():
 	if text.begins_with("background="):
 		# Extract the file path
 		var bg_path = text.substr("background=".length())
-		print("Bg : " + bg_path)
 		
 		set_dialog_background(bg_path)
 		
@@ -262,9 +277,17 @@ func process_data_block():
 	elif text.begins_with("character="):
 		# Extract the file path
 		var character_path = text.substr("character=".length())
-		print("Character : " + character_path)
 		
 		set_dialog_character(character_path)
+		
+		# The block contained data
+		return true
+		
+	elif text.begins_with("name="):
+		# Extract the file path
+		var name = text.substr("name=".length())
+		
+		set_character_name(name)
 		
 		# The block contained data
 		return true
