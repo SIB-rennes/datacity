@@ -1,5 +1,3 @@
-image: barichello/godot-ci:3.3
-
 stages:
   - export
   - image
@@ -11,6 +9,7 @@ variables:
   no_proxy: sib.fr
 
 web:
+  image: barichello/godot-ci:3.3
   stage: export
   variables:
     EXPORT_NAME: DataCity
