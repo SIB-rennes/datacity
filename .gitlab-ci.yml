@@ -1,3 +1,5 @@
+image: barichello/godot-ci:3.3
+
 stages:
   - export
   - image
@@ -9,7 +11,6 @@ variables:
   no_proxy: sib.fr
 
 web:
-  image: barichello/godot-ci:3.2
   stage: export
   variables:
     EXPORT_NAME: DataCity
@@ -20,6 +21,7 @@ web:
     paths:
       - build/web
     expire_in: 15 min
+
 
 build-image:
   stage: image
