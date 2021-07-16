@@ -45,7 +45,7 @@ var starting_scale = Vector2.ZERO
 var starting_rotation = 0
 
 
-func _on_NewsPaper_input_event(viewport, event, shape_idx):
+func _on_NewsPaper_input_event(_viewport, event, _shape_idx):
 	# If mouse pressed
 	if event is InputEventMouseButton or event is InputEventScreenTouch:
 		if event.pressed:
@@ -79,7 +79,7 @@ func trigger_zoom():
 
 
 
-func _on_ZoomPlayer_animation_finished(anim_name):
+func _on_ZoomPlayer_animation_finished(_anim_name):
 	current_state = SHOWING_1
 	
 
