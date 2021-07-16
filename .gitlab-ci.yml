@@ -11,6 +11,7 @@ variables:
 web:
   image: barichello/godot-ci:3.3
   stage: export
+  image: barichello/godot-ci:3.3
   variables:
     EXPORT_NAME: DataCity
   script:
