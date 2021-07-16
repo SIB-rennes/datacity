@@ -50,17 +50,17 @@ valign = 1
 uppercase = true
 
 [node name="ButtonContainer" type="MarginContainer" parent="VBoxContainer"]
-margin_left = 350.0
+margin_left = 421.0
 margin_top = 340.0
-margin_right = 614.0
-margin_bottom = 403.0
+margin_right = 542.0
+margin_bottom = 369.0
 size_flags_horizontal = 4
 size_flags_vertical = 2
 size_flags_stretch_ratio = 2.0
 
 [node name="Button" type="Button" parent="VBoxContainer/ButtonContainer"]
-margin_right = 264.0
-margin_bottom = 63.0
+margin_right = 121.0
+margin_bottom = 29.0
 custom_fonts/font = ExtResource( 2 )
 text = "        Jouer        "
 
