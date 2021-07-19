@@ -2,7 +2,7 @@ extends MarginContainer
 
 signal close_guide
 
-onready var text_label = $ScrollMargin/VBoxContainer/ScrollContainer/RichTextLabel
+onready var text_label = $MainContainer/ScrollMargin/VBoxContainer/MarginContainer/ScrollContainer2/RichTextLabel
 
 func _ready():
 	# If not a web export, connect urls to OS shell open

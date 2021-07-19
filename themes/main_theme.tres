@@ -4,7 +4,8 @@
 [ext_resource path="res://assets/fonts/main_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://themes/button_background.tres" type="StyleBox" id=3]
 [ext_resource path="res://themes/button_background_active.tres" type="StyleBox" id=4]
-[ext_resource path="res://assets/sprites/ui/scroll/barre_de_scroll-24.png" type="Texture" id=5]
+[ext_resource path="res://themes/scrollbar.tres" type="StyleBox" id=5]
+[ext_resource path="res://themes/scrollbar_grabber.tres" type="StyleBox" id=6]
 
 [sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 1 )
@@ -13,14 +14,6 @@ margin_left = 30.0413
 margin_right = 22.8314
 margin_top = 32.5823
 margin_bottom = 29.5143
-
-[sub_resource type="StyleBoxTexture" id=3]
-texture = ExtResource( 5 )
-region_rect = Rect2( 0, 0, 33, 389 )
-margin_left = 7.45371
-margin_right = 8.09627
-margin_top = 24.3006
-margin_bottom = 20.3049
 
 [resource]
 default_font = ExtResource( 2 )
@@ -50,8 +43,8 @@ VScrollBar/icons/decrement = null
 VScrollBar/icons/decrement_highlight = null
 VScrollBar/icons/increment = null
 VScrollBar/icons/increment_highlight = null
-VScrollBar/styles/grabber = null
-VScrollBar/styles/grabber_highlight = null
-VScrollBar/styles/grabber_pressed = null
-VScrollBar/styles/scroll = SubResource( 3 )
+VScrollBar/styles/grabber = ExtResource( 6 )
+VScrollBar/styles/grabber_highlight = ExtResource( 6 )
+VScrollBar/styles/grabber_pressed = ExtResource( 6 )
+VScrollBar/styles/scroll = ExtResource( 5 )
 VScrollBar/styles/scroll_focus = null
