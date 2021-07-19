@@ -2,17 +2,31 @@
 
 [ext_resource path="res://scenes/DialogScene.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/fallingsky_font_dialogs.tres" type="DynamicFont" id=2]
-[ext_resource path="res://assets/sprites/backgrounds/road_intersection.jpg" type="Texture" id=3]
 [ext_resource path="res://ui/blinking_mouse.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/fonts/fallingsky_font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/sprites/backgrounds/conference.png" type="Texture" id=6]
 
-[node name="DialogScene" type="Node2D"]
+[node name="DialogScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Background" type="Sprite" parent="."]
-texture = ExtResource( 3 )
-centered = false
-region_rect = Rect2( 0, 0, 12, 12 )
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Character" type="Sprite" parent="."]
 position = Vector2( 40.035, 100 )
