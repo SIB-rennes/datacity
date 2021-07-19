@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/desk.jpg-44f66182dd97719db71ed5c6dcdd9066.stex"
+path="res://.import/bureau_de_haut-01.png-20dcf518628b03965dc872a1f9eafde0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/backgrounds/desk.jpg"
-dest_files=[ "res://.import/desk.jpg-44f66182dd97719db71ed5c6dcdd9066.stex" ]
+source_file="res://assets/sprites/backgrounds/bureau_de_haut-01.png"
+dest_files=[ "res://.import/bureau_de_haut-01.png-20dcf518628b03965dc872a1f9eafde0.stex" ]
 
 [params]
 

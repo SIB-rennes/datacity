@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/newspaper_1.png-5aba6aac8e31c9c9a51a8b394386b9c8.stex"
+path="res://.import/journaux-02.png-ac84bfa0198597dea10d44b3e87aaabd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/introduction/newspaper_1.png"
-dest_files=[ "res://.import/newspaper_1.png-5aba6aac8e31c9c9a51a8b394386b9c8.stex" ]
+source_file="res://assets/sprites/introduction/journaux-02.png"
+dest_files=[ "res://.import/journaux-02.png-ac84bfa0198597dea10d44b3e87aaabd.stex" ]
 
 [params]
 
