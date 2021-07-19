@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/clic_answer.wav-a032a1f83696ec2af1f14f4ec4ef230e.sample"
+
+[deps]
+
+source_file="res://assets/sounds/clic_answer.wav"
+dest_files=[ "res://.import/clic_answer.wav-a032a1f83696ec2af1f14f4ec4ef230e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

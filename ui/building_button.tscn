@@ -1,0 +1,96 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/sprites/ui/building_background.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/fallingsky_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://ui/building_button.gd" type="Script" id=4]
+
+[node name="BuildingButton" type="MarginContainer"]
+margin_right = 251.0
+margin_bottom = 304.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 241.0
+margin_bottom = 294.0
+texture = ExtResource( 2 )
+
+[node name="Building" type="VBoxContainer" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 241.0
+margin_bottom = 294.0
+
+[node name="BuildingContainer" type="MarginContainer" parent="Building"]
+margin_right = 231.0
+margin_bottom = 162.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+
+[node name="BuildingSprite" type="TextureRect" parent="Building/BuildingContainer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 226.0
+margin_bottom = 157.0
+size_flags_vertical = 3
+expand = true
+stretch_mode = 6
+
+[node name="Name" type="Label" parent="Building"]
+margin_top = 166.0
+margin_right = 231.0
+margin_bottom = 216.0
+rect_min_size = Vector2( 0, 50 )
+size_flags_vertical = 8
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = 0
+text = "Nom Batiment"
+align = 1
+valign = 1
+
+[node name="Bonus" type="Label" parent="Building"]
+margin_top = 220.0
+margin_right = 231.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_vertical = 8
+custom_colors/font_color = Color( 0, 0.513726, 0.184314, 1 )
+custom_constants/line_spacing = 0
+text = "Population +..."
+align = 1
+valign = 1
+
+[node name="Left" type="Label" parent="Building"]
+margin_top = 254.0
+margin_right = 231.0
+margin_bottom = 284.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_vertical = 8
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/line_spacing = 0
+text = "Restants : ..."
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="."]
+modulate = Color( 0, 0, 0, 0 )
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 241.0
+margin_bottom = 294.0
+shortcut_in_tooltip = false
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

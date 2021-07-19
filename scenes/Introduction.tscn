@@ -1,0 +1,271 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scenes/Introduction.gd" type="Script" id=1]
+[ext_resource path="res://scenes/DialogScene.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/sprites/backgrounds/desk.jpg" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/introduction/newspaper_1.png" type="Texture" id=4]
+[ext_resource path="res://scenes/news_paper_manager.gd" type="Script" id=5]
+[ext_resource path="res://ui/blinking_mouse.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/sounds/paper_slide.wav" type="AudioStream" id=7]
+[ext_resource path="res://scenes/introduction/newspaper.gd" type="Script" id=8]
+[ext_resource path="res://ui/fading_screen.tscn" type="PackedScene" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 257.189, 203.165 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "PaperZoom"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 0.707107 ),
+"update": 0,
+"values": [ Vector2( 101.456, -163.785 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 0.466517 ),
+"update": 0,
+"values": [ 10.597, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.782968, 0.782968 ), Vector2( 1.2, 1.2 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "put_back"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 458.248, 246.692 ), Vector2( 458.248, 330.781 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 5.60539, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.821809, 0.821809 ), Vector2( 1.2, 1.2 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "put_back"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9, 2 ),
+"transitions": PoolRealArray( 1, 0.435275, 1.41421 ),
+"update": 0,
+"values": [ Vector2( 458.248, 246.692 ), Vector2( 142.623, 210.023 ), Vector2( 350.806, 75.275 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.9, 2 ),
+"transitions": PoolRealArray( 1, 0.535887, 1.7411 ),
+"update": 0,
+"values": [ -4.0, 4.83176, 10.8368 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.9, 2 ),
+"transitions": PoolRealArray( 1, 0.517633, 1.6245 ),
+"update": 0,
+"values": [ Vector2( 0.821809, 0.821809 ), Vector2( 0.657137, 0.657137 ), Vector2( 0.509681, 0.509681 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 3, 1 ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9, 2 ),
+"transitions": PoolRealArray( 1, 0.435275, 1.41421 ),
+"update": 0,
+"values": [ Vector2( 458.248, 246.692 ), Vector2( 142.623, 210.023 ), Vector2( 350.806, 75.275 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.9, 2 ),
+"transitions": PoolRealArray( 1, 0.535887, 1.7411 ),
+"update": 0,
+"values": [ 0.0, 4.83176, 10.8368 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.9, 2 ),
+"transitions": PoolRealArray( 1, 0.517633, 1.6245 ),
+"update": 0,
+"values": [ Vector2( 0.821809, 0.821809 ), Vector2( 0.657137, 0.657137 ), Vector2( 0.509681, 0.509681 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 4, 0 ]
+}
+
+[node name="Introduction" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="NewsPaper" type="Area2D" parent="."]
+position = Vector2( 101.456, -163.785 )
+rotation = 0.184953
+scale = Vector2( 0.782968, 0.782968 )
+script = ExtResource( 5 )
+
+[node name="Shape" type="CollisionShape2D" parent="NewsPaper"]
+position = Vector2( 449.356, 240.994 )
+rotation = 1.57079
+shape = SubResource( 1 )
+
+[node name="SoundPlayer" type="AudioStreamPlayer" parent="NewsPaper"]
+stream = ExtResource( 7 )
+volume_db = -20.642
+
+[node name="ZoomPlayer" type="AnimationPlayer" parent="NewsPaper"]
+anims/PaperZoom = SubResource( 2 )
+
+[node name="Newspaper_3" type="Sprite" parent="NewsPaper"]
+position = Vector2( 458.248, 246.692 )
+rotation = 0.0978325
+scale = Vector2( 0.821809, 0.821809 )
+z_index = 2
+texture = ExtResource( 4 )
+script = ExtResource( 8 )
+
+[node name="Animation" type="AnimationPlayer" parent="NewsPaper/Newspaper_3"]
+anims/put_back = SubResource( 3 )
+
+[node name="Newspaper_2" type="Sprite" parent="NewsPaper"]
+position = Vector2( 458.248, 246.692 )
+rotation = -0.0698132
+scale = Vector2( 0.821809, 0.821809 )
+z_index = 3
+texture = ExtResource( 4 )
+script = ExtResource( 8 )
+
+[node name="Animation" type="AnimationPlayer" parent="NewsPaper/Newspaper_2"]
+anims/put_back = SubResource( 4 )
+
+[node name="Newspaper_1" type="Sprite" parent="NewsPaper"]
+position = Vector2( 458.248, 246.692 )
+scale = Vector2( 0.821809, 0.821809 )
+z_index = 4
+texture = ExtResource( 4 )
+script = ExtResource( 8 )
+
+[node name="Animation" type="AnimationPlayer" parent="NewsPaper/Newspaper_1"]
+anims/put_back = SubResource( 5 )
+
+[node name="MouseCursor" parent="NewsPaper" instance=ExtResource( 6 )]
+
+[node name="DialogScene" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[node name="ZIndexer" type="Node2D" parent="."]
+z_index = 15
+
+[node name="FadingScreen" parent="ZIndexer" instance=ExtResource( 9 )]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 1, 1, 1, 0 )
+
+[connection signal="input_event" from="NewsPaper" to="NewsPaper" method="_on_NewsPaper_input_event"]
+[connection signal="start_fade" from="NewsPaper" to="ZIndexer/FadingScreen" method="fade_in"]
+[connection signal="animation_finished" from="NewsPaper/ZoomPlayer" to="NewsPaper" method="_on_ZoomPlayer_animation_finished"]
+[connection signal="fade_finished" from="ZIndexer/FadingScreen" to="." method="start_next_state"]

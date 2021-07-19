@@ -1,0 +1,103 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/textures/grass_background.png" type="Texture" id=1]
+[ext_resource path="res://tilesets/roads.tres" type="TileSet" id=2]
+[ext_resource path="res://ui/camera_controller.gd" type="Script" id=3]
+[ext_resource path="res://scenes/MapManager.gd" type="Script" id=4]
+[ext_resource path="res://tilesets/buildings.tres" type="TileSet" id=5]
+[ext_resource path="res://scenes/CityBuilder.gd" type="Script" id=6]
+[ext_resource path="res://ui/CityUI.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ui/BuildMenu.tscn" type="PackedScene" id=8]
+[ext_resource path="res://game_data/scenaristic_events.gd" type="Script" id=9]
+[ext_resource path="res://scenes/DialogScene.tscn" type="PackedScene" id=10]
+[ext_resource path="res://ui/guide_opendata.tscn" type="PackedScene" id=11]
+
+[node name="CityBuilder" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="EventManager" type="Node" parent="."]
+script = ExtResource( 9 )
+
+[node name="BackgroundHolder" type="Node2D" parent="."]
+position = Vector2( -8339.8, -2864.52 )
+z_index = -1
+
+[node name="TextureRect" type="TextureRect" parent="BackgroundHolder"]
+margin_right = 16660.0
+margin_bottom = 10629.0
+texture = ExtResource( 1 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Map" type="Node2D" parent="."]
+scale = Vector2( 5, 5 )
+script = ExtResource( 4 )
+
+[node name="Roads" type="TileMap" parent="Map"]
+scale = Vector2( 1, 1.15 )
+mode = 1
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 128, 64 )
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+cell_tile_origin = 1
+cell_y_sort = true
+centered_textures = true
+format = 1
+tile_data = PoolIntArray( 0, 3, 0, 1, 12, 0, 2, 12, 0, 3, 12, 0, 4, 11, 0, 5, 12, 0, 6, 12, 0, 7, 12, 0, 8, 12, 0, 9, 11, 0, 10, 12, 0, 11, 12, 0, 12, 12, 0, 13, 4, 0, 65536, 13, 0, 65540, 13, 0, 65545, 13, 0, 65549, 13, 0, 131072, 13, 0, 131076, 13, 0, 131081, 13, 0, 131085, 13, 0, 196608, 13, 0, 196612, 13, 0, 196617, 13, 0, 196621, 13, 0, 262144, 10, 0, 262145, 12, 0, 262146, 12, 0, 262147, 12, 0, 262148, 7, 0, 262149, 12, 0, 262150, 5, 0, 262151, 12, 0, 262152, 12, 0, 262153, 6, 0, 262154, 12, 0, 262155, 12, 0, 262156, 12, 0, 262157, 9, 0, 327680, 13, 0, 327684, 13, 0, 327689, 13, 0, 327693, 13, 0, 393216, 13, 0, 393220, 13, 0, 393225, 13, 0, 393229, 13, 0, 458752, 13, 0, 458756, 13, 0, 458761, 13, 0, 458765, 13, 0, 524288, 13, 0, 524292, 13, 0, 524297, 13, 0, 524301, 13, 0, 589824, 10, 0, 589825, 12, 0, 589826, 12, 0, 589827, 12, 0, 589828, 6, 0, 589829, 12, 0, 589830, 12, 0, 589831, 5, 0, 589832, 12, 0, 589833, 7, 0, 589834, 12, 0, 589835, 12, 0, 589836, 12, 0, 589837, 9, 0, 655360, 13, 0, 655364, 13, 0, 655369, 13, 0, 655373, 13, 0, 720896, 13, 0, 720900, 13, 0, 720905, 13, 0, 720909, 13, 0, 786432, 13, 0, 786436, 13, 0, 786441, 13, 0, 786445, 13, 0, 851968, 1, 0, 851969, 12, 0, 851970, 12, 0, 851971, 12, 0, 851972, 8, 0, 851973, 12, 0, 851974, 12, 0, 851975, 12, 0, 851976, 12, 0, 851977, 8, 0, 851978, 12, 0, 851979, 12, 0, 851980, 12, 0, 851981, 2, 0 )
+
+[node name="Buildings" type="TileMap" parent="Map"]
+scale = Vector2( 0.2, 0.2 )
+z_as_relative = false
+mode = 1
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 640, 370 )
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+cell_y_sort = true
+centered_textures = true
+format = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, 2240 )
+current = true
+zoom = Vector2( 5, 5 )
+limit_left = -6200
+limit_top = -800
+limit_right = 6200
+limit_bottom = 6000
+smoothing_enabled = true
+smoothing_speed = 25.0
+editor_draw_limits = true
+script = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CityUI" parent="CanvasLayer" instance=ExtResource( 7 )]
+mouse_filter = 2
+
+[node name="BuildMenu" parent="CanvasLayer" instance=ExtResource( 8 )]
+visible = false
+mouse_filter = 2
+
+[node name="GuideOpenData" parent="CanvasLayer" instance=ExtResource( 11 )]
+visible = false
+
+[node name="DialogScene" parent="CanvasLayer" instance=ExtResource( 10 )]
+visible = false
+
+[connection signal="clicked_map" from="Map" to="." method="map_clicked"]
+[connection signal="cancel_build" from="CanvasLayer/CityUI" to="." method="_on_CityUI_cancel_build"]
+[connection signal="close_notifications" from="CanvasLayer/CityUI" to="." method="_on_CityUI_close_notifications"]
+[connection signal="logout" from="CanvasLayer/CityUI" to="." method="_on_CityUI_logout"]
+[connection signal="open_build" from="CanvasLayer/CityUI" to="." method="_on_CityUI_open_build"]
+[connection signal="open_guide" from="CanvasLayer/CityUI" to="." method="_on_CityUI_open_guide"]
+[connection signal="open_notifications" from="CanvasLayer/CityUI" to="." method="_on_CityUI_open_notifications"]
+[connection signal="open_settings" from="CanvasLayer/CityUI" to="." method="_on_CityUI_open_settings"]
+[connection signal="start_dialog" from="CanvasLayer/CityUI" to="." method="_on_CityUI_start_dialog"]
+[connection signal="unvalidate_position" from="CanvasLayer/CityUI" to="." method="_on_CityUI_unvalidate_position"]
+[connection signal="validate_position" from="CanvasLayer/CityUI" to="." method="_on_CityUI_validate_position"]
+[connection signal="exited_build_menu" from="CanvasLayer/BuildMenu" to="." method="_on_BuildMenu_exited_build_menu"]
+[connection signal="selected_building" from="CanvasLayer/BuildMenu" to="." method="_on_BuildMenu_selected_building"]
+[connection signal="close_guide" from="CanvasLayer/GuideOpenData" to="." method="_on_GuidOpenData_close_guide"]
+[connection signal="dialog_finished" from="CanvasLayer/DialogScene" to="." method="_on_DialogScene_dialog_finished"]
