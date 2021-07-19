@@ -4,6 +4,6 @@
 
 [resource]
 resource_local_to_scene = true
-size = 36
+size = 24
 use_filter = true
 font_data = ExtResource( 1 )

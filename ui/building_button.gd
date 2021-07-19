@@ -37,7 +37,7 @@ func set_building_bonus(building : String):
 	if not bonus[0].empty():
 		$Building/Bonus.text = bonus[0] + " +" + String(bonus[1])
 	else:
-		$Building/Bonus.hide()
+		$Building/Bonus.text = ""
 
 
 func _on_Button_pressed():

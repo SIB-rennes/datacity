@@ -78,7 +78,6 @@ mouse_filter = 2
 
 [node name="BuildMenu" parent="CanvasLayer" instance=ExtResource( 8 )]
 visible = false
-mouse_filter = 2
 
 [node name="GuideOpenData" parent="CanvasLayer" instance=ExtResource( 11 )]
 visible = false
