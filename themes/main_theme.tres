@@ -7,7 +7,7 @@
 [ext_resource path="res://themes/scrollbar.tres" type="StyleBox" id=5]
 [ext_resource path="res://themes/scrollbar_grabber.tres" type="StyleBox" id=6]
 
-[sub_resource type="StyleBoxTexture" id=2]
+[sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 1 )
 region_rect = Rect2( 4.63223, 27.6966, 1724.79, 285.089 )
 margin_left = 30.0413
@@ -39,7 +39,7 @@ Label/constants/shadow_offset_y = 1
 Label/fonts/DialogLine = ExtResource( 2 )
 Label/fonts/font = ExtResource( 2 )
 Label/styles/normal = null
-Panel/styles/panel = SubResource( 2 )
+Panel/styles/panel = SubResource( 1 )
 VScrollBar/icons/decrement = null
 VScrollBar/icons/decrement_highlight = null
 VScrollBar/icons/increment = null

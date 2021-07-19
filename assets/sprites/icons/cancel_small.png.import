@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/high_score_icon.png-e3718a93757525c18a94869926e192e1.stex"
+path="res://.import/cancel_small.png-955675ef011a39182ad7e74ad3867923.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/icons/high_score_icon.png"
-dest_files=[ "res://.import/high_score_icon.png-e3718a93757525c18a94869926e192e1.stex" ]
+source_file="res://assets/sprites/icons/cancel_small.png"
+dest_files=[ "res://.import/cancel_small.png-955675ef011a39182ad7e74ad3867923.stex" ]
 
 [params]
 
