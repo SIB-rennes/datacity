@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/building_background.png-0d75ba9e8f3b6d9002f177eb4172dd6e.stex"
+path="res://.import/bg_construire.png-c34c85894368082e0fab3ab7b5499fde.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ui/building_background.png"
-dest_files=[ "res://.import/building_background.png-0d75ba9e8f3b6d9002f177eb4172dd6e.stex" ]
+source_file="res://assets/sprites/ui/dialogs/bg_construire.png"
+dest_files=[ "res://.import/bg_construire.png-c34c85894368082e0fab3ab7b5499fde.stex" ]
 
 [params]
 

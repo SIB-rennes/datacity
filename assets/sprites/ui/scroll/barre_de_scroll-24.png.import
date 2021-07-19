@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/building_background.png-0d75ba9e8f3b6d9002f177eb4172dd6e.stex"
+path="res://.import/barre_de_scroll-24.png-1c0d2472ad1952afa3d21a49da793bdb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ui/building_background.png"
-dest_files=[ "res://.import/building_background.png-0d75ba9e8f3b6d9002f177eb4172dd6e.stex" ]
+source_file="res://assets/sprites/ui/scroll/barre_de_scroll-24.png"
+dest_files=[ "res://.import/barre_de_scroll-24.png-1c0d2472ad1952afa3d21a49da793bdb.stex" ]
 
 [params]
 
