@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=2]
+
+[ext_resource path="res://assets/sprites/ui/dialogs/choix_unselected.png" type="Texture" id=1]
+
+[resource]
+texture = ExtResource( 1 )
+region_rect = Rect2( 10, 12, 516.858, 77 )
+margin_left = 11.5354
+margin_right = 11.2446
+margin_top = 12.1494
+margin_bottom = 11.4546
