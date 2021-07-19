@@ -67,7 +67,7 @@ func start_dialog_event(dialog_json, show_tutorial = false):
 		$MouseCursor.show()
 	
 	# Hides the name by default
-	$UI/NameContainer.hide()
+	$UI/Name.hide()
 	
 	
 	print("Opening " + dialog_json)
@@ -255,9 +255,9 @@ func set_dialog_character(fileName):
 
 func set_character_name(name: String):
 	#Show the Container
-	$UI/NameContainer.show()
+	$UI/Name.show()
 	
-	$UI/NameContainer/NamePanel/Name.text = name
+	$UI/Name.text = name
 
 
 
