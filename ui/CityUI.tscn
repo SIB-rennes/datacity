@@ -19,7 +19,7 @@
 [ext_resource path="res://assets/fonts/main_font.tres" type="DynamicFont" id=17]
 [ext_resource path="res://assets/fonts/main_font.ttf" type="DynamicFontData" id=18]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=1]
 resource_local_to_scene = true
 size = 18
 outline_color = Color( 0.784314, 0.188235, 0.188235, 1 )
@@ -27,7 +27,7 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 18 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=2]
 resource_local_to_scene = true
 size = 18
 outline_color = Color( 0.784314, 0.188235, 0.188235, 1 )
@@ -35,7 +35,7 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 18 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=3]
 resource_local_to_scene = true
 size = 18
 outline_color = Color( 0.784314, 0.188235, 0.188235, 1 )
@@ -43,7 +43,7 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 18 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=4]
 resource_local_to_scene = true
 size = 18
 outline_color = Color( 0.784314, 0.188235, 0.188235, 1 )
@@ -51,7 +51,7 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 18 )
 
-[sub_resource type="StyleBoxTexture" id=2]
+[sub_resource type="StyleBoxTexture" id=5]
 texture = ExtResource( 15 )
 region_rect = Rect2( 0, 0, 538, 102 )
 margin_left = 29.1794
@@ -59,7 +59,7 @@ margin_right = 25.9373
 margin_top = 6.89296
 margin_bottom = 7.57372
 
-[sub_resource type="StyleBoxTexture" id=1]
+[sub_resource type="StyleBoxTexture" id=6]
 texture = ExtResource( 16 )
 region_rect = Rect2( 0, 0, 538, 92 )
 margin_left = 29.1794
@@ -67,15 +67,14 @@ margin_right = 25.9373
 margin_top = 2.7018
 margin_bottom = 4.32288
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=7]
 resource_local_to_scene = true
-resource_name = "Font"
 size = 24
 use_filter = true
 font_data = ExtResource( 18 )
 
-[sub_resource type="Theme" id=3]
-default_font = SubResource( 4 )
+[sub_resource type="Theme" id=8]
+default_font = SubResource( 7 )
 Button/colors/font_color = Color( 1, 0.568627, 0.184314, 1 )
 Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 Button/colors/font_color_hover = Color( 1, 0.568627, 0.184314, 1 )
@@ -83,10 +82,10 @@ Button/colors/font_color_pressed = Color( 1, 0.568627, 0.184314, 1 )
 Button/constants/hseparation = 0
 Button/fonts/font = null
 Button/styles/disabled = null
-Button/styles/focus = SubResource( 2 )
-Button/styles/hover = SubResource( 1 )
-Button/styles/normal = SubResource( 2 )
-Button/styles/pressed = SubResource( 2 )
+Button/styles/focus = SubResource( 5 )
+Button/styles/hover = SubResource( 6 )
+Button/styles/normal = SubResource( 5 )
+Button/styles/pressed = SubResource( 5 )
 WindowDialog/colors/title_color = Color( 0, 0, 0, 1 )
 WindowDialog/constants/close_h_ofs = 18
 WindowDialog/constants/close_v_ofs = 18
@@ -115,16 +114,16 @@ __meta__ = {
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 1014.0
-margin_bottom = 639.0
+margin_bottom = 590.0
 
 [node name="TopContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 1004.0
-margin_bottom = 217.0
+margin_bottom = 267.0
 size_flags_horizontal = 3
 
 [node name="TopLeftContainer" type="VBoxContainer" parent="VBoxContainer/TopContainer"]
 margin_right = 487.0
-margin_bottom = 217.0
+margin_bottom = 267.0
 
 [node name="Points" type="HBoxContainer" parent="VBoxContainer/TopContainer/TopLeftContainer"]
 margin_right = 487.0
@@ -157,14 +156,14 @@ margin_right = 66.0
 [node name="VBoxContainer" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Sante" index="0"]
 margin_right = 63.0
 
-[node name="TextureProgress" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Sante/VBoxContainer" index="0"]
+[node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Sante/VBoxContainer" index="0"]
+margin_right = 60.0
+custom_fonts/font = SubResource( 1 )
+text = "Santé"
+
+[node name="TextureProgress" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Sante/VBoxContainer" index="1"]
 margin_left = 0.0
 margin_right = 60.0
-
-[node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Sante/VBoxContainer" index="1"]
-margin_right = 60.0
-custom_fonts/font = SubResource( 5 )
-text = "Santé"
 
 [node name="Education" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer" instance=ExtResource( 9 )]
 margin_left = 71.0
@@ -173,14 +172,14 @@ margin_right = 166.0
 [node name="VBoxContainer" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Education" index="0"]
 margin_right = 92.0
 
-[node name="TextureProgress" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Education/VBoxContainer" index="0"]
+[node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Education/VBoxContainer" index="0"]
+margin_right = 89.0
+custom_fonts/font = SubResource( 2 )
+text = "Education"
+
+[node name="TextureProgress" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Education/VBoxContainer" index="1"]
 margin_left = 14.0
 margin_right = 74.0
-
-[node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Education/VBoxContainer" index="1"]
-margin_right = 89.0
-custom_fonts/font = SubResource( 6 )
-text = "Education"
 
 [node name="Loisirs" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer" instance=ExtResource( 9 )]
 margin_top = 46.0
@@ -190,14 +189,14 @@ margin_bottom = 92.0
 [node name="VBoxContainer" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Loisirs" index="0"]
 margin_right = 63.0
 
-[node name="TextureProgress" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Loisirs/VBoxContainer" index="0"]
+[node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Loisirs/VBoxContainer" index="0"]
+margin_right = 60.0
+custom_fonts/font = SubResource( 3 )
+text = "Loisirs"
+
+[node name="TextureProgress" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Loisirs/VBoxContainer" index="1"]
 margin_left = 0.0
 margin_right = 60.0
-
-[node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Loisirs/VBoxContainer" index="1"]
-margin_right = 60.0
-custom_fonts/font = SubResource( 7 )
-text = "Loisirs"
 
 [node name="Securite" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer" instance=ExtResource( 9 )]
 margin_left = 71.0
@@ -208,19 +207,19 @@ margin_bottom = 92.0
 [node name="VBoxContainer" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Securite" index="0"]
 margin_right = 92.0
 
-[node name="TextureProgress" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Securite/VBoxContainer" index="0"]
+[node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Securite/VBoxContainer" index="0"]
+margin_right = 89.0
+custom_fonts/font = SubResource( 4 )
+text = "Sécurité"
+
+[node name="TextureProgress" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Securite/VBoxContainer" index="1"]
 margin_left = 14.0
 margin_right = 74.0
-
-[node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Securite/VBoxContainer" index="1"]
-margin_right = 89.0
-custom_fonts/font = SubResource( 8 )
-text = "Sécurité"
 
 [node name="NotificationButton" type="TextureButton" parent="VBoxContainer/TopContainer/TopLeftContainer"]
 margin_top = 153.0
 margin_right = 487.0
-margin_bottom = 217.0
+margin_bottom = 267.0
 rect_min_size = Vector2( 0, 50 )
 texture_normal = ExtResource( 7 )
 stretch_mode = 3
@@ -283,14 +282,14 @@ texture_normal = ExtResource( 4 )
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="VBoxContainer"]
 visible = true
 margin_left = 309.0
-margin_top = 331.0
+margin_top = 282.0
 margin_right = 694.0
-margin_bottom = 459.0
+margin_bottom = 410.0
 rect_min_size = Vector2( 250, 87.5 )
 size_flags_horizontal = 4
 size_flags_vertical = 10
 size_flags_stretch_ratio = 2.0
-theme = SubResource( 3 )
+theme = SubResource( 8 )
 popup_exclusive = true
 window_title = ""
 dialog_text = "
@@ -298,9 +297,9 @@ L'emplacement vous convient ?"
 
 [node name="BottomContainer" type="MarginContainer" parent="VBoxContainer"]
 margin_left = 838.0
-margin_top = 463.0
+margin_top = 414.0
 margin_right = 1004.0
-margin_bottom = 629.0
+margin_bottom = 580.0
 mouse_filter = 1
 size_flags_horizontal = 8
 size_flags_vertical = 10
