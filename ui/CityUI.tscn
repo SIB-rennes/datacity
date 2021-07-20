@@ -319,7 +319,6 @@ stretch_mode = 2
 [connection signal="pressed" from="VBoxContainer/TopContainer/TopRightContainer/GuideButton" to="." method="_on_GuideButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/TopContainer/TopRightContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/TopContainer/TopRightContainer/LogoutButton" to="." method="_on_LogoutButton_pressed"]
-[connection signal="popup_hide" from="VBoxContainer/ConfirmationDialog" to="." method="_unvalidate_pressed"]
 [connection signal="pressed" from="VBoxContainer/BottomContainer/CancelContainer/CancelBuildButton" to="." method="_on_CancelBuildButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/BottomContainer/BuildButton" to="." method="_on_BuildButton_pressed"]
 
