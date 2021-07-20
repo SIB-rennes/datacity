@@ -115,7 +115,7 @@ __meta__ = {
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 1014.0
-margin_bottom = 590.0
+margin_bottom = 639.0
 
 [node name="TopContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 1004.0
@@ -147,6 +147,9 @@ size_flags_vertical = 0
 custom_constants/vseparation = 0
 custom_constants/hseparation = 5
 columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Sante" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer" instance=ExtResource( 9 )]
 margin_right = 66.0
@@ -280,9 +283,9 @@ texture_normal = ExtResource( 4 )
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="VBoxContainer"]
 visible = true
 margin_left = 309.0
-margin_top = 282.0
+margin_top = 331.0
 margin_right = 694.0
-margin_bottom = 410.0
+margin_bottom = 459.0
 rect_min_size = Vector2( 250, 87.5 )
 size_flags_horizontal = 4
 size_flags_vertical = 10
@@ -295,9 +298,9 @@ L'emplacement vous convient ?"
 
 [node name="BottomContainer" type="MarginContainer" parent="VBoxContainer"]
 margin_left = 838.0
-margin_top = 414.0
+margin_top = 463.0
 margin_right = 1004.0
-margin_bottom = 580.0
+margin_bottom = 629.0
 mouse_filter = 1
 size_flags_horizontal = 8
 size_flags_vertical = 10
