@@ -4,7 +4,7 @@
 [ext_resource path="res://ui/guide_opendata.gd" type="Script" id=2]
 [ext_resource path="res://assets/sprites/ui/dialogs/bg_construire.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/ui/close.png" type="Texture" id=4]
-[ext_resource path="res://assets/fonts/main_font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/fonts/guide_title.tres" type="DynamicFont" id=5]
 [ext_resource path="res://assets/fonts/font_infos.tres" type="DynamicFont" id=6]
 
 [node name="GuideOpenData" type="MarginContainer"]
