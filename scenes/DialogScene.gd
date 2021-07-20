@@ -234,7 +234,7 @@ func set_dialog_background(fileName):
 	var texture_path = "res://assets/sprites/backgrounds/"+fileName
 	
 	# If it exists, change it
-	if ResourceLoader.exists(texture_path):
+	if ResourceLoader.exists(texture_path):		
 		background_sprite.texture = load(texture_path)
 	else:
 		print("Unknown background texture " + texture_path)

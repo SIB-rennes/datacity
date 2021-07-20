@@ -54,14 +54,14 @@ uppercase = true
 margin_left = 374.0
 margin_top = 340.0
 margin_right = 588.78
-margin_bottom = 406.604
+margin_bottom = 421.604
 size_flags_horizontal = 4
 size_flags_vertical = 2
 size_flags_stretch_ratio = 2.0
 
 [node name="Button" type="Button" parent="VBoxContainer/ButtonContainer"]
 margin_right = 214.78
-margin_bottom = 66.604
+margin_bottom = 81.604
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 6 )
 text = "     Jouer     "
