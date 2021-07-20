@@ -19,7 +19,7 @@
 [ext_resource path="res://assets/fonts/main_font.tres" type="DynamicFont" id=17]
 [ext_resource path="res://assets/fonts/main_font.ttf" type="DynamicFontData" id=18]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=9]
 resource_local_to_scene = true
 size = 18
 outline_color = Color( 0.784314, 0.188235, 0.188235, 1 )
@@ -27,7 +27,7 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 18 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=10]
 resource_local_to_scene = true
 size = 18
 outline_color = Color( 0.784314, 0.188235, 0.188235, 1 )
@@ -35,7 +35,7 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 18 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=11]
 resource_local_to_scene = true
 size = 18
 outline_color = Color( 0.784314, 0.188235, 0.188235, 1 )
@@ -43,7 +43,7 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 18 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=12]
 resource_local_to_scene = true
 size = 18
 outline_color = Color( 0.784314, 0.188235, 0.188235, 1 )
@@ -158,7 +158,7 @@ margin_right = 63.0
 
 [node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Sante/VBoxContainer" index="0"]
 margin_right = 60.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 9 )
 text = "Santé"
 
 [node name="TextureProgress" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Sante/VBoxContainer" index="1"]
@@ -174,7 +174,7 @@ margin_right = 92.0
 
 [node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Education/VBoxContainer" index="0"]
 margin_right = 89.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 10 )
 text = "Education"
 
 [node name="TextureProgress" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Education/VBoxContainer" index="1"]
@@ -191,7 +191,7 @@ margin_right = 63.0
 
 [node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Loisirs/VBoxContainer" index="0"]
 margin_right = 60.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 11 )
 text = "Loisirs"
 
 [node name="TextureProgress" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Loisirs/VBoxContainer" index="1"]
@@ -209,7 +209,7 @@ margin_right = 92.0
 
 [node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Securite/VBoxContainer" index="0"]
 margin_right = 89.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 12 )
 text = "Sécurité"
 
 [node name="TextureProgress" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Securite/VBoxContainer" index="1"]
@@ -226,21 +226,18 @@ stretch_mode = 3
 
 [node name="NotificationButtonActive" type="TextureButton" parent="VBoxContainer/TopContainer/TopLeftContainer"]
 visible = false
-margin_top = 72.0
-margin_right = 177.0
-margin_bottom = 136.0
+margin_top = 271.0
+margin_right = 487.0
+margin_bottom = 385.0
 rect_min_size = Vector2( 0, 50 )
 texture_normal = ExtResource( 13 )
 stretch_mode = 3
 
 [node name="EventMessage" parent="VBoxContainer/TopContainer/TopLeftContainer" instance=ExtResource( 12 )]
 visible = false
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 0.0
-margin_top = 140.0
-margin_right = 323.0
-margin_bottom = 268.0
+margin_top = 389.0
+margin_right = 487.0
+margin_bottom = 517.0
 
 [node name="NotificationPlayer" type="AudioStreamPlayer" parent="VBoxContainer/TopContainer/TopLeftContainer"]
 stream = ExtResource( 14 )
@@ -312,7 +309,7 @@ custom_constants/margin_bottom = 10
 visible = false
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 288.0
+margin_right = 274.0
 margin_bottom = 156.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BottomContainer/CancelContainer"]
@@ -347,7 +344,8 @@ __meta__ = {
 
 [node name="CancelBuildButton" type="TextureButton" parent="VBoxContainer/BottomContainer/CancelContainer"]
 margin_left = 132.0
-margin_right = 278.0
+margin_top = 14.0
+margin_right = 264.0
 margin_bottom = 146.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
