@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/sprites/icons/guide_small.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/icons/construct_small.png" type="Texture" id=2]
@@ -9,15 +9,59 @@
 [ext_resource path="res://assets/sprites/icons/notif_icon.png" type="Texture" id=7]
 [ext_resource path="res://ui/CityUI.gd" type="Script" id=8]
 [ext_resource path="res://ui/bar.tscn" type="PackedScene" id=9]
+[ext_resource path="res://themes/main_theme.tres" type="Theme" id=10]
 [ext_resource path="res://assets/sprites/ui/building_city_background.png" type="Texture" id=11]
 [ext_resource path="res://ui/event_message.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/sprites/icons/notif_icon_active.png" type="Texture" id=13]
 [ext_resource path="res://assets/sounds/notification.mp3" type="AudioStream" id=14]
+[ext_resource path="res://assets/sprites/ui/dialogs/choix_unselected.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/ui/dialogs/choix_selected.png" type="Texture" id=16]
+[ext_resource path="res://assets/fonts/main_font.tres" type="DynamicFont" id=17]
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 538, 102 )
+margin_left = 29.1794
+margin_right = 25.9373
+margin_top = 6.89296
+margin_bottom = 7.57372
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 16 )
+region_rect = Rect2( 0, 0, 538, 92 )
+margin_left = 29.1794
+margin_right = 25.9373
+margin_top = 2.7018
+margin_bottom = 4.32288
+
+[sub_resource type="Theme" id=3]
+default_font = ExtResource( 17 )
+Button/colors/font_color = Color( 1, 0.568627, 0.184314, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 1, 0.568627, 0.184314, 1 )
+Button/colors/font_color_pressed = Color( 1, 0.568627, 0.184314, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = SubResource( 2 )
+Button/styles/hover = SubResource( 1 )
+Button/styles/normal = SubResource( 2 )
+Button/styles/pressed = SubResource( 2 )
+WindowDialog/colors/title_color = Color( 0, 0, 0, 1 )
+WindowDialog/constants/close_h_ofs = 18
+WindowDialog/constants/close_v_ofs = 18
+WindowDialog/constants/scaleborder_size = 4
+WindowDialog/constants/title_height = 20
+WindowDialog/fonts/title_font = ExtResource( 17 )
+WindowDialog/icons/close = null
+WindowDialog/icons/close_highlight = null
+WindowDialog/styles/panel = null
 
 [node name="CityUI" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 1
+theme = ExtResource( 10 )
 custom_constants/margin_right = 10
 custom_constants/margin_top = 10
 custom_constants/margin_left = 10
@@ -35,28 +79,30 @@ margin_bottom = 590.0
 
 [node name="TopContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 1004.0
-margin_bottom = 178.0
+margin_bottom = 211.0
 size_flags_horizontal = 3
 
 [node name="TopLeftContainer" type="VBoxContainer" parent="VBoxContainer/TopContainer"]
-margin_right = 358.0
-margin_bottom = 178.0
+margin_right = 453.0
+margin_bottom = 211.0
 
 [node name="Points" type="HBoxContainer" parent="VBoxContainer/TopContainer/TopLeftContainer"]
-margin_right = 358.0
-margin_bottom = 32.0
+margin_right = 453.0
+margin_bottom = 35.0
 
 [node name="Population" parent="VBoxContainer/TopContainer/TopLeftContainer/Points" instance=ExtResource( 6 )]
-margin_right = 177.0
+margin_right = 224.0
+margin_bottom = 35.0
 
 [node name="DataPoints" parent="VBoxContainer/TopContainer/TopLeftContainer/Points" instance=ExtResource( 5 )]
-margin_left = 181.0
-margin_right = 358.0
+margin_left = 228.0
+margin_right = 453.0
+margin_bottom = 35.0
 
 [node name="NeedContainer" type="GridContainer" parent="VBoxContainer/TopContainer/TopLeftContainer"]
-margin_top = 36.0
-margin_right = 139.0
-margin_bottom = 110.0
+margin_top = 39.0
+margin_right = 218.0
+margin_bottom = 143.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_constants/vseparation = 0
@@ -64,45 +110,65 @@ custom_constants/hseparation = 5
 columns = 2
 
 [node name="Sante" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer" instance=ExtResource( 9 )]
-margin_right = 66.0
-margin_bottom = 37.0
+margin_right = 87.0
+margin_bottom = 52.0
+
+[node name="VBoxContainer" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Sante" index="0"]
+margin_right = 71.0
+margin_bottom = 49.0
 
 [node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Sante/VBoxContainer" index="1"]
+margin_right = 68.0
+margin_bottom = 46.0
 text = "Santé"
 
 [node name="Education" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer" instance=ExtResource( 9 )]
-margin_left = 71.0
-margin_right = 139.0
-margin_bottom = 37.0
+margin_left = 92.0
+margin_right = 218.0
+margin_bottom = 52.0
 
 [node name="VBoxContainer" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Education" index="0"]
-margin_right = 65.0
+margin_right = 123.0
+margin_bottom = 49.0
 
 [node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Education/VBoxContainer" index="1"]
-margin_right = 62.0
+margin_right = 120.0
+margin_bottom = 46.0
 text = "Education"
 
 [node name="Loisirs" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer" instance=ExtResource( 9 )]
-margin_top = 37.0
-margin_right = 66.0
-margin_bottom = 74.0
+margin_top = 52.0
+margin_right = 87.0
+margin_bottom = 104.0
+
+[node name="VBoxContainer" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Loisirs" index="0"]
+margin_right = 84.0
+margin_bottom = 49.0
 
 [node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Loisirs/VBoxContainer" index="1"]
+margin_right = 81.0
+margin_bottom = 46.0
 text = "Loisirs"
 
 [node name="Securite" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer" instance=ExtResource( 9 )]
-margin_left = 71.0
-margin_top = 37.0
-margin_right = 139.0
-margin_bottom = 74.0
+margin_left = 92.0
+margin_top = 52.0
+margin_right = 218.0
+margin_bottom = 104.0
+
+[node name="VBoxContainer" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Securite" index="0"]
+margin_right = 103.0
+margin_bottom = 49.0
 
 [node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Securite/VBoxContainer" index="1"]
+margin_right = 100.0
+margin_bottom = 46.0
 text = "Sécurité"
 
 [node name="NotificationButton" type="TextureButton" parent="VBoxContainer/TopContainer/TopLeftContainer"]
-margin_top = 114.0
-margin_right = 358.0
-margin_bottom = 178.0
+margin_top = 147.0
+margin_right = 453.0
+margin_bottom = 211.0
 rect_min_size = Vector2( 0, 50 )
 texture_normal = ExtResource( 7 )
 stretch_mode = 3
@@ -164,16 +230,17 @@ texture_normal = ExtResource( 4 )
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="VBoxContainer"]
 visible = true
-margin_left = 377.0
-margin_top = 322.5
-margin_right = 627.0
+margin_left = 309.0
+margin_top = 282.0
+margin_right = 694.0
 margin_bottom = 410.0
 rect_min_size = Vector2( 250, 87.5 )
 size_flags_horizontal = 4
 size_flags_vertical = 10
 size_flags_stretch_ratio = 2.0
+theme = SubResource( 3 )
 popup_exclusive = true
-window_title = "Confirmez l'emplacement"
+window_title = ""
 dialog_text = "
 L'emplacement vous convient ?"
 
@@ -194,7 +261,7 @@ custom_constants/margin_bottom = 10
 visible = false
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 270.0
+margin_right = 288.0
 margin_bottom = 156.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BottomContainer/CancelContainer"]
@@ -252,6 +319,7 @@ stretch_mode = 2
 [connection signal="pressed" from="VBoxContainer/TopContainer/TopRightContainer/GuideButton" to="." method="_on_GuideButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/TopContainer/TopRightContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/TopContainer/TopRightContainer/LogoutButton" to="." method="_on_LogoutButton_pressed"]
+[connection signal="popup_hide" from="VBoxContainer/ConfirmationDialog" to="." method="_unvalidate_pressed"]
 [connection signal="pressed" from="VBoxContainer/BottomContainer/CancelContainer/CancelBuildButton" to="." method="_on_CancelBuildButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/BottomContainer/BuildButton" to="." method="_on_BuildButton_pressed"]
 

@@ -30,8 +30,11 @@ func _ready():
 	# Connect the Confirmation Dialog
 	confirmation_dialog.get_cancel().connect("pressed", self, "_unvalidate_pressed")
 	confirmation_dialog.get_ok().connect("pressed", self, "_validate_pressed")
-
-
+	confirmation_dialog.get_ok().focus_mode = FOCUS_NONE # Unfocus the OK button
+	confirmation_dialog.get_cancel().focus_mode = FOCUS_NONE # Unfocus the OK button
+	
+	# Hides the close button
+	confirmation_dialog.get_close_button().hide()
 
 
 ## Sets the population label
