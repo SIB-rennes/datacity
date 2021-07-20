@@ -43,7 +43,6 @@ var build_case_center : Vector2
 var buildings_in_city : Dictionary
 
 
-
 func _ready():
 	#Save the value of the occupied Tile
 	occupied_tile = buildings_map.tile_set.find_tile_by_name("Occupied")
@@ -157,15 +156,16 @@ func ask_validation():
 	
 	state = State.ASK_VALIDATION
 	
-	# Show the validation popup
-	ui.show_validation_popup()
-	
 	# show the preview emplacements
 	show_preview()
 	
 	# Disable the camera
 	$Camera2D.block_camera(false)
-
+	
+	
+	# Show the validation popup after a small delay
+	yield(get_tree().create_timer(1.5), "timeout") # Delay
+	ui.show_validation_popup()
 
 
 func show_preview():
@@ -384,3 +384,4 @@ func _on_GuidOpenData_close_guide():
 
 	# Enable the camera
 	$Camera2D.block_camera(false)
+
