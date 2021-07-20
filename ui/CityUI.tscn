@@ -119,30 +119,29 @@ margin_bottom = 590.0
 
 [node name="TopContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 1004.0
-margin_bottom = 228.0
+margin_bottom = 217.0
 size_flags_horizontal = 3
 
 [node name="TopLeftContainer" type="VBoxContainer" parent="VBoxContainer/TopContainer"]
-margin_right = 623.0
-margin_bottom = 228.0
+margin_right = 487.0
+margin_bottom = 217.0
 
 [node name="Points" type="HBoxContainer" parent="VBoxContainer/TopContainer/TopLeftContainer"]
-margin_right = 623.0
-margin_bottom = 64.0
+margin_right = 487.0
+margin_bottom = 53.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="Population" parent="VBoxContainer/TopContainer/TopLeftContainer/Points" instance=ExtResource( 6 )]
-margin_right = 308.0
-margin_bottom = 64.0
 
 [node name="DataPoints" parent="VBoxContainer/TopContainer/TopLeftContainer/Points" instance=ExtResource( 5 )]
-margin_left = 312.0
-margin_right = 623.0
-margin_bottom = 64.0
+margin_left = 274.0
+margin_right = 487.0
 
 [node name="NeedContainer" type="GridContainer" parent="VBoxContainer/TopContainer/TopLeftContainer"]
-margin_top = 68.0
+margin_top = 57.0
 margin_right = 166.0
-margin_bottom = 160.0
+margin_bottom = 149.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_constants/vseparation = 0
@@ -216,9 +215,9 @@ custom_fonts/font = SubResource( 8 )
 text = "Sécurité"
 
 [node name="NotificationButton" type="TextureButton" parent="VBoxContainer/TopContainer/TopLeftContainer"]
-margin_top = 164.0
-margin_right = 623.0
-margin_bottom = 228.0
+margin_top = 153.0
+margin_right = 487.0
+margin_bottom = 217.0
 rect_min_size = Vector2( 0, 50 )
 texture_normal = ExtResource( 7 )
 stretch_mode = 3
