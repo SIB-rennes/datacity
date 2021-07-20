@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/DialogScene.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/fallingsky_font_dialogs.tres" type="DynamicFont" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/fonts/fallingsky_font.tres" type="DynamicFont" id=5]
 [ext_resource path="res://assets/sprites/backgrounds/conference.png" type="Texture" id=6]
 [ext_resource path="res://assets/sprites/ui/dialogs/libelle_personnage.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/characters/adjointe.png" type="Texture" id=8]
 
 [sub_resource type="Theme" id=1]
 
@@ -39,8 +40,8 @@ __meta__ = {
 }
 
 [node name="Character" type="Sprite" parent="."]
-position = Vector2( 40.035, 100 )
-scale = Vector2( 0.2, 0.2 )
+scale = Vector2( 0.245065, 0.245065 )
+texture = ExtResource( 8 )
 centered = false
 
 [node name="UI" type="Control" parent="."]

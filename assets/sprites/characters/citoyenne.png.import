@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lambda_person.png-3a1cf371eb563896f497f1cb2d63cbb1.stex"
+path="res://.import/citoyenne.png-85f49b28b53b9d9abdbf21a935105bc8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characters/lambda_person.png"
-dest_files=[ "res://.import/lambda_person.png-3a1cf371eb563896f497f1cb2d63cbb1.stex" ]
+source_file="res://assets/sprites/characters/citoyenne.png"
+dest_files=[ "res://.import/citoyenne.png-85f49b28b53b9d9abdbf21a935105bc8.stex" ]
 
 [params]
 
