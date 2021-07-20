@@ -58,7 +58,7 @@ mouse_filter = 2
 
 [node name="Label" type="Label" parent="MainContainer"]
 margin_right = 924.0
-margin_bottom = 53.0
+margin_bottom = 58.0
 theme = ExtResource( 1 )
 custom_fonts/font = ExtResource( 5 )
 text = "Guide Open Data"
@@ -66,7 +66,7 @@ align = 1
 valign = 1
 
 [node name="ScrollMargin" type="MarginContainer" parent="MainContainer"]
-margin_top = 57.0
+margin_top = 62.0
 margin_right = 924.0
 margin_bottom = 550.0
 mouse_filter = 2
@@ -80,13 +80,13 @@ custom_constants/margin_bottom = 20
 margin_left = 20.0
 margin_top = 40.0
 margin_right = 904.0
-margin_bottom = 473.0
+margin_bottom = 468.0
 mouse_filter = 2
 size_flags_horizontal = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="MainContainer/ScrollMargin/VBoxContainer"]
 margin_right = 884.0
-margin_bottom = 433.0
+margin_bottom = 428.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 1 )
@@ -96,14 +96,14 @@ custom_constants/margin_left = 15
 [node name="ScrollContainer2" type="ScrollContainer" parent="MainContainer/ScrollMargin/VBoxContainer/MarginContainer"]
 margin_left = 15.0
 margin_right = 869.0
-margin_bottom = 433.0
+margin_bottom = 428.0
 size_flags_vertical = 3
 theme = ExtResource( 1 )
 scroll_horizontal_enabled = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MainContainer/ScrollMargin/VBoxContainer/MarginContainer/ScrollContainer2"]
 margin_right = 854.0
-margin_bottom = 433.0
+margin_bottom = 428.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/mono_font = ExtResource( 6 )

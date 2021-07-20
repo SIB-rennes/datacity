@@ -4,8 +4,9 @@
 
 [resource]
 resource_local_to_scene = true
-resource_name = "Font"
 size = 36
+outline_color = Color( 0.784314, 0.188235, 0.188235, 1 )
+use_mipmaps = true
 use_filter = true
-extra_spacing_top = 15
+extra_spacing_top = 5
 font_data = ExtResource( 1 )

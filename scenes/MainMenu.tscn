@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/fonts/kilogram_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://scenes/main_menu.gd" type="Script" id=4]
 [ext_resource path="res://ui/fading_screen.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/fonts/main_font.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/fonts/main_button.tres" type="DynamicFont" id=6]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -54,14 +54,14 @@ uppercase = true
 margin_left = 374.0
 margin_top = 340.0
 margin_right = 588.78
-margin_bottom = 421.604
+margin_bottom = 411.604
 size_flags_horizontal = 4
 size_flags_vertical = 2
 size_flags_stretch_ratio = 2.0
 
 [node name="Button" type="Button" parent="VBoxContainer/ButtonContainer"]
 margin_right = 214.78
-margin_bottom = 81.604
+margin_bottom = 71.604
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 6 )
 text = "     Jouer     "
