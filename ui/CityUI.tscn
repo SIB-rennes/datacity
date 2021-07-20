@@ -118,12 +118,12 @@ margin_bottom = 590.0
 
 [node name="TopContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 1004.0
-margin_bottom = 267.0
+margin_bottom = 275.0
 size_flags_horizontal = 3
 
 [node name="TopLeftContainer" type="VBoxContainer" parent="VBoxContainer/TopContainer"]
 margin_right = 487.0
-margin_bottom = 267.0
+margin_bottom = 275.0
 
 [node name="Points" type="HBoxContainer" parent="VBoxContainer/TopContainer/TopLeftContainer"]
 margin_right = 487.0
@@ -139,8 +139,8 @@ margin_right = 487.0
 
 [node name="NeedContainer" type="GridContainer" parent="VBoxContainer/TopContainer/TopLeftContainer"]
 margin_top = 57.0
-margin_right = 166.0
-margin_bottom = 149.0
+margin_right = 201.0
+margin_bottom = 157.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_constants/vseparation = 0
@@ -151,75 +151,61 @@ __meta__ = {
 }
 
 [node name="Sante" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer" instance=ExtResource( 9 )]
-margin_right = 66.0
-
-[node name="VBoxContainer" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Sante" index="0"]
-margin_right = 63.0
+margin_right = 96.0
+margin_bottom = 50.0
 
 [node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Sante/VBoxContainer" index="0"]
-margin_right = 60.0
 custom_fonts/font = SubResource( 9 )
-text = "Santé"
-
-[node name="TextureProgress" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Sante/VBoxContainer" index="1"]
-margin_left = 0.0
-margin_right = 60.0
+text = " Santé"
 
 [node name="Education" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer" instance=ExtResource( 9 )]
-margin_left = 71.0
-margin_right = 166.0
+margin_left = 101.0
+margin_right = 201.0
+margin_bottom = 50.0
 
 [node name="VBoxContainer" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Education" index="0"]
-margin_right = 92.0
+margin_right = 97.0
 
 [node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Education/VBoxContainer" index="0"]
-margin_right = 89.0
+margin_right = 94.0
 custom_fonts/font = SubResource( 10 )
-text = "Education"
+text = " Education"
 
 [node name="TextureProgress" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Education/VBoxContainer" index="1"]
-margin_left = 14.0
-margin_right = 74.0
-
-[node name="Loisirs" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer" instance=ExtResource( 9 )]
-margin_top = 46.0
-margin_right = 66.0
-margin_bottom = 92.0
-
-[node name="VBoxContainer" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Loisirs" index="0"]
-margin_right = 63.0
-
-[node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Loisirs/VBoxContainer" index="0"]
-margin_right = 60.0
-custom_fonts/font = SubResource( 11 )
-text = "Loisirs"
-
-[node name="TextureProgress" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Loisirs/VBoxContainer" index="1"]
-margin_left = 0.0
-margin_right = 60.0
-
-[node name="Securite" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer" instance=ExtResource( 9 )]
-margin_left = 71.0
-margin_top = 46.0
-margin_right = 166.0
-margin_bottom = 92.0
-
-[node name="VBoxContainer" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Securite" index="0"]
+margin_left = 2.0
 margin_right = 92.0
 
+[node name="Loisirs" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer" instance=ExtResource( 9 )]
+margin_top = 50.0
+margin_right = 96.0
+margin_bottom = 100.0
+
+[node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Loisirs/VBoxContainer" index="0"]
+custom_fonts/font = SubResource( 11 )
+text = " Loisirs"
+
+[node name="Securite" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer" instance=ExtResource( 9 )]
+margin_left = 101.0
+margin_top = 50.0
+margin_right = 201.0
+margin_bottom = 100.0
+
+[node name="VBoxContainer" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Securite" index="0"]
+margin_right = 97.0
+
 [node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Securite/VBoxContainer" index="0"]
-margin_right = 89.0
+margin_right = 94.0
 custom_fonts/font = SubResource( 12 )
-text = "Sécurité"
+text = " Sécurité"
 
 [node name="TextureProgress" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Securite/VBoxContainer" index="1"]
-margin_left = 14.0
-margin_right = 74.0
+margin_left = 2.0
+margin_right = 92.0
 
 [node name="NotificationButton" type="TextureButton" parent="VBoxContainer/TopContainer/TopLeftContainer"]
-margin_top = 153.0
+margin_top = 161.0
 margin_right = 487.0
-margin_bottom = 267.0
+margin_bottom = 275.0
 rect_min_size = Vector2( 0, 50 )
 texture_normal = ExtResource( 7 )
 stretch_mode = 3

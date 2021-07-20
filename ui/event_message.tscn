@@ -141,6 +141,9 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = SubResource( 1 )
 texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="VBoxContainer/MessageMargins/Background/StartDialog"]
 anchor_left = 0.028
