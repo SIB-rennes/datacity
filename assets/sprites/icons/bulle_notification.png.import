@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/background_event.png-470478f1adcec892cbae16a25bcdcc26.stex"
+path="res://.import/bulle_notification.png-8b6885dbec16c26278ff6c995c1d6eb9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/icons/background_event.png"
-dest_files=[ "res://.import/background_event.png-470478f1adcec892cbae16a25bcdcc26.stex" ]
+source_file="res://assets/sprites/icons/bulle_notification.png"
+dest_files=[ "res://.import/bulle_notification.png-8b6885dbec16c26278ff6c995c1d6eb9.stex" ]
 
 [params]
 

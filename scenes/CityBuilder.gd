@@ -164,7 +164,7 @@ func ask_validation():
 	
 	
 	# Show the validation popup after a small delay
-	yield(get_tree().create_timer(1.5), "timeout") # Delay
+	yield(get_tree().create_timer(1.0), "timeout") # Delay
 	ui.show_validation_popup()
 
 
