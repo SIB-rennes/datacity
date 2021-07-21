@@ -50,9 +50,15 @@ const DELAY_BEFORE_ANSWER = 1.0
 var answer_delay = 0.0
 
 
+# Data stored during the scenario
+var points_gained: int # Points gained during the scenario
+var redo: bool # If the scenario must trigger again or not
+var buildings_gained: Array
+
+
 func _ready():
 	# Load a dialogue by default
-	start_dialog_event("scenarios/dialog_intro.json")
+	start_dialog_event("scenarios/pedagogical/publier_donnees_transports.json")
 	
 	# Connect the timer to the correct method
 	timer_display.connect("timeout", self, "_add_buttons")
@@ -68,6 +74,11 @@ func start_dialog_event(dialog_json, show_tutorial = false):
 	
 	# Hides the name by default
 	$UI/Name.hide()
+	
+	# Reset the previous data
+	redo = false
+	points_gained = 0
+	buildings_gained.clear()
 	
 	
 	print("Opening " + dialog_json)
@@ -86,11 +97,7 @@ func start_dialog_event(dialog_json, show_tutorial = false):
 	block = parser.start_dialogue(dialogue_data)
 	
 	# If it was not a block with data
-	while process_data_block():
-		print("Data block")
-		print(block.text)
-		
-		block = parser.next()
+	process_data_blocks()
 		
 	print(block.text)
 	# Update the dialog
@@ -142,14 +149,14 @@ func process_player_click():
 		
 			
 		# Process blocks with data
-		while process_data_block():
-			print("Data block")
-			print(block.text)
+		process_data_blocks()
 			
-			block = parser.next()
-			
-		# Display the next dialog
-		update_dialog()
+		# Display the next dialog if not finished
+		if block.empty() or block.is_final:
+			print("That was the last dialog !")
+			emit_signal("dialog_finished")
+		else:
+			update_dialog()
 	
 
 
@@ -169,13 +176,14 @@ func player_pushed_button(key):
 			sound_player.play()
 			
 			# Process blocks with data
-			while process_data_block():
-				print("Data block")
-				print(block.text)
-				
-				block = parser.next()
+			process_data_blocks()
 			
-			update_dialog()
+			# Display the next dialog if not finished
+			if block.empty() or block.is_final:
+				print("That was the last dialog !")
+				emit_signal("dialog_finished")
+			else:
+				update_dialog()
 	else:
 		print("Not enough time passed")
 
@@ -209,7 +217,7 @@ func _add_buttons():
 		var button = answer_button.instance()
 		
 		# Set text
-		button.text = answer.text
+		button.set_text(answer.text)
 		
 		# Button action
 		button.connect("pressed", self, "player_pushed_button", [answer.key])
@@ -261,7 +269,24 @@ func set_character_name(name: String):
 
 
 
-func process_data_block():
+func process_data_blocks():
+	while process_single_data_block():
+		print("Data block")
+		print(block.text)
+		
+		# Leave the loop if last block
+		if block.empty() or block.is_final:
+			print("Last block")
+			break
+			
+		# Else it is not the last dialog : switch
+		else:
+			block = parser.next()
+
+
+
+
+func process_single_data_block():
 	# Get the block test
 	var text = block.text
 	
@@ -289,6 +314,43 @@ func process_data_block():
 		
 		set_character_name(name)
 		
+		# The block contained data
+		return true
+		
+	elif text.begins_with("datapoints="):
+		# Extract the points
+		var points = text.substr("datapoints=".length())
+		
+		# Cast points to int
+		points = int(points)
+		
+		# Add points
+		points_gained += points
+		
+		# The block contained data
+		return true
+	
+	elif text.begins_with("redo="):
+		# Extract the value
+		var v = text.substr("redo=".length())
+		
+		if v == "false":
+			redo = false
+		elif v == "true":
+			redo = true
+		else:
+			print("Unknown redo value : " + v)
+			
+		# The block contained data
+		return true
+	
+	elif text.begins_with("building="):
+		# Extract the building name
+		var building = text.substr("building=".length())
+		
+		# Add it to the Array
+		buildings_gained.append(building)
+			
 		# The block contained data
 		return true
 		
