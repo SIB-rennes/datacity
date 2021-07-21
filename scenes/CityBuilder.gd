@@ -67,9 +67,6 @@ func trigger_scenaristic_event():
 		current_event = event
 		
 		ui.display_notification()
-		
-		# Add the event to the Player count
-		PlayerData.add_event_occurence(current_event)
 
 
 
@@ -212,7 +209,6 @@ func give_event_result():
 	
 	# Print the dialog infos
 	print("Dialog results :")
-	print("Redo : " + String(dialog_scene.must_redo_dialog()))
 	print("Points gained : " + String(dialog_scene.get_points_gained()))
 	print("Event buildings : " + String(dialog_scene.get_buildings_gained()))
 
@@ -366,6 +362,12 @@ func _on_DialogScene_dialog_finished():
 	
 	# Give the result of the event
 	give_event_result()
+	
+	
+	# If the Dialog must not be done again, save it
+	if not dialog_scene.must_redo_dialog():
+		# Add the event to the Player count
+		PlayerData.add_event_occurence(current_event)
 	
 	
 	# Clear the current event
