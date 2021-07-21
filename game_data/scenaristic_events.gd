@@ -17,12 +17,15 @@ const EVENTS_CONDITIONS = {
 		"not had_event(x)": ["MairieConstruite"],
 	},
 	"PremieresMaisons": { # Dialogues after the first houses
-		"built(x)": {"Mairie": [1, 1]},
-		"population_space(x)": [40, 150],
+		"built(x)": {"Maison 1": [1, 1], "Maison 2": [1, 1], "Maison 3": [1, 1]},
 		"not had_event(x)": ["PremieresMaisons"],
 	},
+	### <=====> ###  Pedagogical events
 	"PublierDonneesTransports": {
-		"had_event(x)": ["PremieresMaisons"]
+		"had_event(x)": ["PremieresMaisons"],
+		"not had_event(x)": ["PublierDonneesTransports"], # Not again 
+		"probability(x)": .3, # 30% chance after each building
+		"population_over(x)": 50 # The event won't trigger if the population count is under x
 	}
 }
 
@@ -141,6 +144,10 @@ func population(min_max: Array):
 	# Returns true if the population space is in between
 	return PlayerData.population >= mini and PlayerData.population <= maxi 
 
+
+func population_over(mini: int):
+	# Check if the Player population is over a given value
+	return PlayerData.population >= mini
 
 
 func had_event(event_names: Array):
