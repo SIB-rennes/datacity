@@ -151,12 +151,8 @@ func process_player_click():
 		# Process blocks with data
 		process_data_blocks()
 			
-		# Display the next dialog if not finished
-		if block.empty() or block.is_final:
-			print("That was the last dialog !")
-			emit_signal("dialog_finished")
-		else:
-			update_dialog()
+			
+		update_dialog()
 	
 
 
@@ -190,8 +186,9 @@ func player_pushed_button(key):
 
 
 func update_dialog():
-	# Set the dialog line on the UI
-	dialog_line.text = block.text
+	# Set the dialog line on the UI (if not a data block)
+	if not is_data_block():
+		dialog_line.text = block.text
 	
 	# Remove the old answer buttons
 	var old_buttons = answer_container.get_children()
@@ -277,12 +274,18 @@ func process_data_blocks():
 		# Leave the loop if last block
 		if block.empty() or block.is_final:
 			print("Last block")
+			emit_signal("dialog_finished")
 			break
 			
 		# Else it is not the last dialog : switch
 		else:
 			block = parser.next()
 
+
+
+func is_data_block():
+	# Check if there is a "=" in the block text
+	return '=' in block.text
 
 
 
@@ -357,3 +360,17 @@ func process_single_data_block():
 		
 	# Else
 	return false
+
+
+
+func get_points_gained():
+	return points_gained
+
+
+func get_buildings_gained():
+	return buildings_gained
+
+
+# Return true if the dialog must occur again in the future
+func must_redo_dialog():
+	return redo

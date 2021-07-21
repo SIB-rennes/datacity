@@ -20,6 +20,9 @@ const EVENTS_CONDITIONS = {
 		"built(x)": {"Mairie": [1, 1]},
 		"population_space(x)": [40, 150],
 		"not had_event(x)": ["PremieresMaisons"],
+	},
+	"PublierDonneesTransports": {
+		"had_event(x)": ["PremieresMaisons"]
 	}
 }
 
@@ -27,15 +30,18 @@ const EVENTS_CONDITIONS = {
 const DIALOG_FILES = {
 	"MairieConstruite": "res://scenarios/beginning/mairie_built.json",
 	"PremieresMaisons": "res://scenarios/beginning/premieres_maisons.json",
+	"PublierDonneesTransports": "res://scenarios/pedagogical/publier_donnees_transports.json",
 }
 
 
 const SUMMARIES = {
 	"MairieConstruite": "La secrétaire de mairie veut vous voir.",
 	"PremieresMaisons": "La secrétaire de mairie veut vous voir.",
+	"PublierDonneesTransports": "Vous croisez un citoyen dans un parc.",
 }
 
 
+# Buildings offered at the end of the dialog, no matter the result
 const OFFERED_BUILDINGS = {
 	"MairieConstruite": {
 		"Maison 1": 1,

@@ -199,7 +199,7 @@ func set_building_menu():
 
 
 func give_event_result():
-	# Give the building to the player
+	# Give the building to the player *(given no matter the result)*
 	var new_buildings = event_manager.OFFERED_BUILDINGS.get(current_event, {})
 	
 	# For each building to give
@@ -208,6 +208,13 @@ func give_event_result():
 		var count = new_buildings[b]
 		# Add it
 		PlayerData.add_building(b, count)
+		
+	
+	# Print the dialog infos
+	print("Dialog results :")
+	print("Redo : " + String(dialog_scene.must_redo_dialog()))
+	print("Points gained : " + String(dialog_scene.get_points_gained()))
+	print("Event buildings : " + String(dialog_scene.get_buildings_gained()))
 
 
 
