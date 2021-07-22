@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/sprites/backgrounds/road_intersection.jpg" type="Texture" id=1]
 [ext_resource path="res://themes/main_theme.tres" type="Theme" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/main_menu.gd" type="Script" id=4]
 [ext_resource path="res://ui/fading_screen.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/fonts/main_button.tres" type="DynamicFont" id=6]
+[ext_resource path="res://ui/cluf.tscn" type="PackedScene" id=7]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -67,6 +68,8 @@ custom_fonts/font = ExtResource( 6 )
 text = "     Jouer     "
 
 [node name="ColorRect" parent="." instance=ExtResource( 5 )]
+
+[node name="CLUF" parent="." instance=ExtResource( 7 )]
 
 [connection signal="pressed" from="VBoxContainer/ButtonContainer/Button" to="ColorRect" method="fade_in"]
 [connection signal="fade_finished" from="ColorRect" to="." method="on_fade_finished"]
