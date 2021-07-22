@@ -7,7 +7,8 @@ enum State {
 	ASK_VALIDATION,
 	SHOWING_NOTIFICATION,
 	SHOWING_DIALOG,
-	SHOWING_GUIDE
+	SHOWING_GUIDE,
+	SHOWING_RESULTS
 }
 
 # Current State
@@ -211,6 +212,32 @@ func give_event_result():
 	print("Dialog results :")
 	print("Points gained : " + String(dialog_scene.get_points_gained()))
 	print("Event buildings : " + String(dialog_scene.get_buildings_gained()))
+	
+	# Show the Result window
+	show_results(dialog_scene.get_points_gained(), dialog_scene.get_buildings_gained())
+
+
+
+func show_results(points_gained: int, buildings_gained: Array):
+	# If no points and no buildings, just leave
+	if points_gained == 0 and buildings_gained.empty():
+		state = State.STANDARD
+		return
+	
+	
+	# Set the logical state
+	state = State.SHOWING_RESULTS
+	
+	# Show the window
+	ui.hide()
+	$CanvasLayer/EventResult.show()
+	
+	# Set the point display
+	$CanvasLayer/EventResult.set_points_gained(dialog_scene.get_points_gained())
+	
+	# Set the buildings gained
+	for building in dialog_scene.get_buildings_gained():
+		$CanvasLayer/EventResult.add_building(building)
 
 
 
@@ -360,6 +387,9 @@ func _on_CityUI_close_notifications():
 func _on_DialogScene_dialog_finished():
 	print("Dialog finished")
 	
+	# For the time being, switch to Standard state
+	state = State.STANDARD
+	
 	# Give the result of the event
 	give_event_result()
 	
@@ -379,8 +409,6 @@ func _on_DialogScene_dialog_finished():
 	# Hide the dialog scene and stop it from managin inputs
 	dialog_scene.hide()
 	dialog_scene.set_process_input(false)
-	
-	state = State.STANDARD
 
 
 func _on_GuidOpenData_close_guide():
@@ -394,3 +422,16 @@ func _on_GuidOpenData_close_guide():
 	# Enable the camera
 	$Camera2D.block_camera(false)
 
+
+
+func _on_EventResult_close_results():
+	print("Closing Results")
+	
+	state = State.STANDARD
+	
+	# Show the ui and hide the results
+	ui.show()
+	$CanvasLayer/EventResult.hide()
+
+	# Enable the camera
+	$Camera2D.block_camera(false)

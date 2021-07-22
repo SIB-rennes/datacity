@@ -227,6 +227,10 @@ script = ExtResource( 3 )
 mouse_filter = 2
 theme = SubResource( 2 )
 
+[node name="EventResult" parent="CanvasLayer" instance=ExtResource( 19 )]
+visible = false
+theme = SubResource( 9 )
+
 [node name="BuildMenu" parent="CanvasLayer" instance=ExtResource( 8 )]
 visible = false
 theme = SubResource( 5 )
@@ -249,6 +253,7 @@ theme = SubResource( 7 )
 [connection signal="start_dialog" from="CanvasLayer/CityUI" to="." method="_on_CityUI_start_dialog"]
 [connection signal="unvalidate_position" from="CanvasLayer/CityUI" to="." method="_on_CityUI_unvalidate_position"]
 [connection signal="validate_position" from="CanvasLayer/CityUI" to="." method="_on_CityUI_validate_position"]
+[connection signal="close_results" from="CanvasLayer/EventResult" to="." method="_on_EventResult_close_results"]
 [connection signal="exited_build_menu" from="CanvasLayer/BuildMenu" to="." method="_on_BuildMenu_exited_build_menu"]
 [connection signal="selected_building" from="CanvasLayer/BuildMenu" to="." method="_on_BuildMenu_selected_building"]
 [connection signal="close_guide" from="CanvasLayer/GuideOpenData" to="." method="_on_GuidOpenData_close_guide"]

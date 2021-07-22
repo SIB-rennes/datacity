@@ -22,7 +22,9 @@ func hide():
 
 
 func set_points_gained(points: int):
+	# No points => no text
 	if points == 0:
+		$ScrollMargin/VBoxContainer/PointsGained.text = ""
 		return
 	
 	# Create the text
