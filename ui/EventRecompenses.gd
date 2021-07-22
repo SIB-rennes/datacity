@@ -32,8 +32,6 @@ func set_points_gained(points: int):
 	
 	if points > 0:
 		text += "+"
-	else:
-		text += "-"
 	
 	text += String(points)
 	

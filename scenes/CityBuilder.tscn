@@ -73,16 +73,16 @@ WindowDialog/icons/close = null
 WindowDialog/icons/close_highlight = null
 WindowDialog/styles/panel = ExtResource( 18 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=3]
 resource_local_to_scene = true
 resource_name = "Font"
 size = 28
 use_filter = true
 font_data = ExtResource( 13 )
 
-[sub_resource type="Theme" id=9]
+[sub_resource type="Theme" id=4]
 resource_local_to_scene = true
-default_font = SubResource( 8 )
+default_font = SubResource( 3 )
 Button/colors/font_color = Color( 1, 0.568627, 0.184314, 1 )
 Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
@@ -103,8 +103,8 @@ Label/constants/line_spacing = 3
 Label/constants/shadow_as_outline = 0
 Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
-Label/fonts/DialogLine = SubResource( 8 )
-Label/fonts/font = SubResource( 8 )
+Label/fonts/DialogLine = SubResource( 3 )
+Label/fonts/font = SubResource( 3 )
 Label/styles/normal = null
 Panel/styles/panel = ExtResource( 18 )
 PopupDialog/styles/panel = ExtResource( 18 )
@@ -127,13 +127,13 @@ WindowDialog/icons/close = null
 WindowDialog/icons/close_highlight = null
 WindowDialog/styles/panel = ExtResource( 18 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=5]
 resource_local_to_scene = true
 size = 36
 use_filter = true
 font_data = ExtResource( 13 )
 
-[sub_resource type="StyleBoxTexture" id=4]
+[sub_resource type="StyleBoxTexture" id=6]
 texture = ExtResource( 12 )
 region_rect = Rect2( 4.63223, 27.6966, 1724.79, 285.089 )
 margin_left = 30.0413
@@ -141,9 +141,9 @@ margin_right = 22.8314
 margin_top = 32.5823
 margin_bottom = 29.5143
 
-[sub_resource type="Theme" id=5]
+[sub_resource type="Theme" id=7]
 resource_local_to_scene = true
-default_font = SubResource( 3 )
+default_font = SubResource( 5 )
 Button/colors/font_color = Color( 1, 0.568627, 0.184314, 1 )
 Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
@@ -162,10 +162,10 @@ Label/constants/line_spacing = 3
 Label/constants/shadow_as_outline = 0
 Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
-Label/fonts/DialogLine = SubResource( 3 )
-Label/fonts/font = SubResource( 3 )
+Label/fonts/DialogLine = SubResource( 5 )
+Label/fonts/font = SubResource( 5 )
 Label/styles/normal = null
-Panel/styles/panel = SubResource( 4 )
+Panel/styles/panel = SubResource( 6 )
 VScrollBar/icons/decrement = null
 VScrollBar/icons/decrement_highlight = null
 VScrollBar/icons/increment = null
@@ -176,15 +176,15 @@ VScrollBar/styles/grabber_pressed = ExtResource( 17 )
 VScrollBar/styles/scroll = ExtResource( 14 )
 VScrollBar/styles/scroll_focus = null
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=8]
 resource_local_to_scene = true
 size = 36
 use_filter = true
 font_data = ExtResource( 13 )
 
-[sub_resource type="Theme" id=7]
+[sub_resource type="Theme" id=9]
 resource_local_to_scene = true
-default_font = SubResource( 6 )
+default_font = SubResource( 8 )
 Button/colors/font_color = Color( 1, 0.568627, 0.184314, 1 )
 Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
@@ -203,10 +203,10 @@ Label/constants/line_spacing = 3
 Label/constants/shadow_as_outline = 0
 Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
-Label/fonts/DialogLine = SubResource( 6 )
-Label/fonts/font = SubResource( 6 )
+Label/fonts/DialogLine = SubResource( 8 )
+Label/fonts/font = SubResource( 8 )
 Label/styles/normal = null
-Panel/styles/panel = SubResource( 4 )
+Panel/styles/panel = SubResource( 6 )
 VScrollBar/icons/decrement = null
 VScrollBar/icons/decrement_highlight = null
 VScrollBar/icons/increment = null
@@ -284,18 +284,18 @@ theme = SubResource( 2 )
 
 [node name="EventResult" parent="CanvasLayer" instance=ExtResource( 19 )]
 visible = false
-theme = SubResource( 9 )
+theme = SubResource( 4 )
 
 [node name="BuildMenu" parent="CanvasLayer" instance=ExtResource( 8 )]
 visible = false
-theme = SubResource( 5 )
+theme = SubResource( 7 )
 
 [node name="GuideOpenData" parent="CanvasLayer" instance=ExtResource( 11 )]
 visible = false
 
 [node name="DialogScene" parent="CanvasLayer" instance=ExtResource( 10 )]
 visible = false
-theme = SubResource( 7 )
+theme = SubResource( 9 )
 
 [connection signal="clicked_map" from="Map" to="." method="map_clicked"]
 [connection signal="cancel_build" from="CanvasLayer/CityUI" to="." method="_on_CityUI_cancel_build"]

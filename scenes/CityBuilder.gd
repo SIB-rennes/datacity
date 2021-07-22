@@ -208,13 +208,17 @@ func give_event_result():
 		PlayerData.add_building(b, count)
 		
 	
-	# Print the dialog infos
-	print("Dialog results :")
-	print("Points gained : " + String(dialog_scene.get_points_gained()))
-	print("Event buildings : " + String(dialog_scene.get_buildings_gained()))
-	
 	# Show the Result window
 	show_results(dialog_scene.get_points_gained(), dialog_scene.get_buildings_gained())
+	
+	
+	# Update the Player Points
+	PlayerData.data_points += dialog_scene.get_points_gained()
+	
+	# Give the buildings
+	for building in dialog_scene.get_buildings_gained():
+		PlayerData.add_building(building, 1)
+
 
 
 
@@ -409,6 +413,9 @@ func _on_DialogScene_dialog_finished():
 	# Hide the dialog scene and stop it from managin inputs
 	dialog_scene.hide()
 	dialog_scene.set_process_input(false)
+	
+	# Update the UI with the new scores
+	update_ui()
 
 
 func _on_GuidOpenData_close_guide():
