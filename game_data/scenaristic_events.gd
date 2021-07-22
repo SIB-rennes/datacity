@@ -142,12 +142,14 @@ func population(min_max: Array):
 	var maxi = min_max[1]
 	
 	# Returns true if the population space is in between
-	return PlayerData.population >= mini and PlayerData.population <= maxi 
+	var population = PlayerData.city_data[PlayerData.POPULATION]
+	return population >= mini and population <= maxi 
 
 
 func population_over(mini: int):
 	# Check if the Player population is over a given value
-	return PlayerData.population >= mini
+	var population = PlayerData.city_data[PlayerData.POPULATION]
+	return population >= mini
 
 
 func had_event(event_names: Array):
