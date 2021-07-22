@@ -19,7 +19,7 @@
 [ext_resource path="res://assets/fonts/main_font.tres" type="DynamicFont" id=17]
 [ext_resource path="res://assets/fonts/main_font.ttf" type="DynamicFontData" id=18]
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=1]
 resource_local_to_scene = true
 size = 18
 outline_color = Color( 0.784314, 0.188235, 0.188235, 1 )
@@ -27,7 +27,7 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 18 )
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=2]
 resource_local_to_scene = true
 size = 18
 outline_color = Color( 0.784314, 0.188235, 0.188235, 1 )
@@ -35,7 +35,7 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 18 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=3]
 resource_local_to_scene = true
 size = 18
 outline_color = Color( 0.784314, 0.188235, 0.188235, 1 )
@@ -43,7 +43,7 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 18 )
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=4]
 resource_local_to_scene = true
 size = 18
 outline_color = Color( 0.784314, 0.188235, 0.188235, 1 )
@@ -155,7 +155,7 @@ margin_right = 96.0
 margin_bottom = 50.0
 
 [node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Sante/VBoxContainer" index="0"]
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 1 )
 text = " Santé"
 
 [node name="Education" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer" instance=ExtResource( 9 )]
@@ -168,7 +168,7 @@ margin_right = 97.0
 
 [node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Education/VBoxContainer" index="0"]
 margin_right = 94.0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 2 )
 text = " Education"
 
 [node name="TextureProgress" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Education/VBoxContainer" index="1"]
@@ -181,7 +181,7 @@ margin_right = 96.0
 margin_bottom = 100.0
 
 [node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Loisirs/VBoxContainer" index="0"]
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 3 )
 text = " Loisirs"
 
 [node name="Securite" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer" instance=ExtResource( 9 )]
@@ -195,7 +195,7 @@ margin_right = 97.0
 
 [node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Securite/VBoxContainer" index="0"]
 margin_right = 94.0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 4 )
 text = " Sécurité"
 
 [node name="TextureProgress" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Securite/VBoxContainer" index="1"]
@@ -221,9 +221,9 @@ stretch_mode = 3
 
 [node name="EventMessage" parent="VBoxContainer/TopContainer/TopLeftContainer" instance=ExtResource( 12 )]
 visible = false
-margin_top = 389.0
+margin_top = 279.0
 margin_right = 487.0
-margin_bottom = 517.0
+margin_bottom = 429.0
 
 [node name="NotificationPlayer" type="AudioStreamPlayer" parent="VBoxContainer/TopContainer/TopLeftContainer"]
 stream = ExtResource( 14 )
