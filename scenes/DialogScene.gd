@@ -58,7 +58,7 @@ var buildings_gained: Array
 
 func _ready():
 	# Load a dialogue by default
-	start_dialog_event("scenarios/pedagogical/publier_donnees_transports.json")
+	start_dialog_event("res://scenarios/pedagogical/publier_donnees_transports.json")
 	
 	# Connect the timer to the correct method
 	timer_display.connect("timeout", self, "_add_buttons")
