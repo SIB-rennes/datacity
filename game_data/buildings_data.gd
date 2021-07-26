@@ -13,7 +13,7 @@ const SIZES = {
 	"Commissariat": Vector2(2, 1),
 	"Grand Commissariat": Vector2(2, 1),
 	"Grande Ecole": Vector2(2, 1),
-	"Grand Hopital": Vector2(2, 2),
+	"Grand Hôpital": Vector2(2, 2),
 	"Hopital": Vector2(1, 2),
 	"Mairie": Vector2(2, 1),
 	"Musee": Vector2(2, 1),
@@ -29,7 +29,7 @@ const TEXTURES = {
 	"Commissariat": preload("res://assets/sprites/buildings/commissariat.png"),
 	"Grand Commissariat": preload("res://assets/sprites/buildings/grandcommissariat.png"),
 	"Grande Ecole": preload("res://assets/sprites/buildings/grandeecole.png"),
-	"Grand Hopital": preload("res://assets/sprites/buildings/grandhopital.png"),
+	"Grand Hôpital": preload("res://assets/sprites/buildings/grandhopital.png"),
 	"Mairie": preload("res://assets/sprites/buildings/mairiegauche.png"),
 	"Hopital": preload("res://assets/sprites/buildings/hopital.png"),
 	"Maison 1": preload("res://assets/sprites/buildings/maison1droite.png"),
@@ -56,7 +56,7 @@ const POPULATION_SPACE = {
 const SANTE_POINTS = {
 	"Pharmacie": 50,
 	"Hopital": 100,
-	"Grand Hopital": 250,
+	"Grand Hôpital": 250,
 }
 
 # The increase in Education for each building
