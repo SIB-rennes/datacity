@@ -58,7 +58,7 @@ __meta__ = {
 
 [node name="TextPanel" type="Panel" parent="UI"]
 margin_left = 33.0
-margin_top = 466.0
+margin_top = 452.0
 margin_right = 983.0
 margin_bottom = 584.0
 __meta__ = {
@@ -71,9 +71,9 @@ anchor_top = 0.129
 anchor_right = 0.977
 anchor_bottom = 0.881
 margin_left = -9.85
-margin_top = -12.222
+margin_top = -10.028
 margin_right = -0.150024
-margin_bottom = 7.042
+margin_bottom = 7.708
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/normal_font = SubResource( 1 )
@@ -99,9 +99,9 @@ __meta__ = {
 
 [node name="Name" type="Label" parent="UI"]
 margin_left = 73.0
-margin_top = 426.0
+margin_top = 414.8
 margin_right = 335.0
-margin_bottom = 471.0
+margin_bottom = 459.8
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource( 2 )
