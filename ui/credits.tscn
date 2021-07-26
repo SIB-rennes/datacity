@@ -148,10 +148,10 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 12 )
 custom_constants/margin_right = 15
-custom_constants/margin_left = 15
+custom_constants/margin_left = 50
 
 [node name="ScrollContainer2" type="ScrollContainer" parent="MainContainer/ScrollMargin/VBoxContainer/MarginContainer"]
-margin_left = 15.0
+margin_left = 50.0
 margin_right = 869.0
 margin_bottom = 408.0
 size_flags_vertical = 3
@@ -159,7 +159,7 @@ theme = ExtResource( 12 )
 scroll_horizontal_enabled = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MainContainer/ScrollMargin/VBoxContainer/MarginContainer/ScrollContainer2"]
-margin_right = 854.0
+margin_right = 819.0
 margin_bottom = 408.0
 mouse_filter = 1
 size_flags_horizontal = 3
@@ -171,7 +171,71 @@ custom_fonts/bold_font = ExtResource( 4 )
 custom_fonts/normal_font = ExtResource( 4 )
 custom_colors/default_color = Color( 0.266667, 0.113725, 0, 1 )
 bbcode_enabled = true
-bbcode_text = "[center]Insérer les crédits ici.[/center]"
-text = "Insérer les crédits ici."
+bbcode_text = "[center]
+Data City est un Serious Game sur l'Open Data, développé par le SIB : [color=#539CC7][url=sib.fr]sib.fr[/url][/color]
+
+
+[b][u]Encadrants[/u][/b]
+
+Anne-Gaëlle LE GUEN
+Claudie DAVID
+
+
+[b][u]Développement[/u][/b]
+
+Mathis ROBERT
+
+
+[b][u]Graphismes[/u][/b]
+
+Sophie RHORBAL
+
+
+
+
+[b][u]Ressources visuelles[/u][/b]
+
+Fonds créés par [color=#539CC7][url=https://www.freepik.com/upklyak]upklyak / Freepik[/url][/color]
+
+Bâtiments créés par [color=#539CC7][url=http://www.freepik.com/macrovector]macrovector / Freepik[/url][/color]
+
+Icônes créées par [color=#539CC7][url=http://www.freepik.com]Freepik[/url][/color] à partir de [color=#539CC7][url=https://www.flaticon.com/]Flaticon[/url][/color]
+
+[/center]
+
+"
+text = "
+Data City est un Serious Game sur l'Open Data, développé par le SIB : sib.fr
+
+
+Encadrants
+
+Anne-Gaëlle LE GUEN
+Claudie DAVID
+
+
+Développement
+
+Mathis ROBERT
+
+
+Graphismes
+
+Sophie RHORBAL
+
+
+
+
+Ressources visuelles
+
+Fonds créés par upklyak / Freepik
+
+Bâtiments créés par macrovector / Freepik
+
+Icônes créées par Freepik à partir de Flaticon
+
+
+
+"
 
 [connection signal="pressed" from="Background/Button" to="." method="_on_Button_pressed"]
