@@ -7,7 +7,8 @@ enum State {
 	ASK_VALIDATION,
 	SHOWING_NOTIFICATION,
 	SHOWING_DIALOG,
-	SHOWING_GUIDE
+	SHOWING_GUIDE,
+	SHOWING_RESULTS
 }
 
 # Current State
@@ -43,7 +44,6 @@ var build_case_center : Vector2
 var buildings_in_city : Dictionary
 
 
-
 func _ready():
 	#Save the value of the occupied Tile
 	occupied_tile = buildings_map.tile_set.find_tile_by_name("Occupied")
@@ -68,9 +68,6 @@ func trigger_scenaristic_event():
 		current_event = event
 		
 		ui.display_notification()
-		
-		# Add the event to the Player count
-		PlayerData.add_event_occurence(current_event)
 
 
 
@@ -157,15 +154,16 @@ func ask_validation():
 	
 	state = State.ASK_VALIDATION
 	
-	# Show the validation popup
-	ui.show_validation_popup()
-	
 	# show the preview emplacements
 	show_preview()
 	
 	# Disable the camera
 	$Camera2D.block_camera(false)
-
+	
+	
+	# Show the validation popup after a small delay
+	yield(get_tree().create_timer(1.0), "timeout") # Delay
+	ui.show_validation_popup()
 
 
 func show_preview():
@@ -199,7 +197,7 @@ func set_building_menu():
 
 
 func give_event_result():
-	# Give the building to the player
+	# Give the building to the player *(given no matter the result)*
 	var new_buildings = event_manager.OFFERED_BUILDINGS.get(current_event, {})
 	
 	# For each building to give
@@ -208,6 +206,42 @@ func give_event_result():
 		var count = new_buildings[b]
 		# Add it
 		PlayerData.add_building(b, count)
+		
+	
+	# Show the Result window
+	show_results(dialog_scene.get_points_gained(), dialog_scene.get_buildings_gained())
+	
+	
+	# Update the Player Points
+	PlayerData.data_points += dialog_scene.get_points_gained()
+	
+	# Give the buildings
+	for building in dialog_scene.get_buildings_gained():
+		PlayerData.add_building(building, 1)
+
+
+
+
+func show_results(points_gained: int, buildings_gained: Array):
+	# If no points and no buildings, just leave
+	if points_gained == 0 and buildings_gained.empty():
+		state = State.STANDARD
+		return
+	
+	
+	# Set the logical state
+	state = State.SHOWING_RESULTS
+	
+	# Show the window
+	ui.hide()
+	$CanvasLayer/EventResult.show()
+	
+	# Set the point display
+	$CanvasLayer/EventResult.set_points_gained(dialog_scene.get_points_gained())
+	
+	# Set the buildings gained
+	for building in dialog_scene.get_buildings_gained():
+		$CanvasLayer/EventResult.add_building(building)
 
 
 
@@ -357,8 +391,17 @@ func _on_CityUI_close_notifications():
 func _on_DialogScene_dialog_finished():
 	print("Dialog finished")
 	
+	# For the time being, switch to Standard state
+	state = State.STANDARD
+	
 	# Give the result of the event
 	give_event_result()
+	
+	
+	# If the Dialog must not be done again, save it
+	if not dialog_scene.must_redo_dialog():
+		# Add the event to the Player count
+		PlayerData.add_event_occurence(current_event)
 	
 	
 	# Clear the current event
@@ -371,7 +414,8 @@ func _on_DialogScene_dialog_finished():
 	dialog_scene.hide()
 	dialog_scene.set_process_input(false)
 	
-	state = State.STANDARD
+	# Update the UI with the new scores
+	update_ui()
 
 
 func _on_GuidOpenData_close_guide():
@@ -381,6 +425,20 @@ func _on_GuidOpenData_close_guide():
 	
 	ui.show()
 	$CanvasLayer/GuideOpenData.hide()
+
+	# Enable the camera
+	$Camera2D.block_camera(false)
+
+
+
+func _on_EventResult_close_results():
+	print("Closing Results")
+	
+	state = State.STANDARD
+	
+	# Show the ui and hide the results
+	ui.show()
+	$CanvasLayer/EventResult.hide()
 
 	# Enable the camera
 	$Camera2D.block_camera(false)

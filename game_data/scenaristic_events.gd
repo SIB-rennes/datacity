@@ -17,9 +17,15 @@ const EVENTS_CONDITIONS = {
 		"not had_event(x)": ["MairieConstruite"],
 	},
 	"PremieresMaisons": { # Dialogues after the first houses
-		"built(x)": {"Mairie": [1, 1]},
-		"population_space(x)": [40, 150],
+		"built(x)": {"Maison 1": [1, 1], "Maison 2": [1, 1], "Maison 3": [1, 1]},
 		"not had_event(x)": ["PremieresMaisons"],
+	},
+	### <=====> ###  Pedagogical events
+	"PublierDonneesTransports": {
+		"had_event(x)": ["PremieresMaisons"],
+		"not had_event(x)": ["PublierDonneesTransports"], # Not again 
+		"probability(x)": .3, # 30% chance after each building
+		"population_over(x)": 50 # The event won't trigger if the population count is under x
 	}
 }
 
@@ -27,15 +33,18 @@ const EVENTS_CONDITIONS = {
 const DIALOG_FILES = {
 	"MairieConstruite": "res://scenarios/beginning/mairie_built.json",
 	"PremieresMaisons": "res://scenarios/beginning/premieres_maisons.json",
+	"PublierDonneesTransports": "res://scenarios/pedagogical/publier_donnees_transports.json",
 }
 
 
 const SUMMARIES = {
 	"MairieConstruite": "La secrétaire de mairie veut vous voir.",
 	"PremieresMaisons": "La secrétaire de mairie veut vous voir.",
+	"PublierDonneesTransports": "Vous croisez un citoyen dans un parc.",
 }
 
 
+# Buildings offered at the end of the dialog, no matter the result
 const OFFERED_BUILDINGS = {
 	"MairieConstruite": {
 		"Maison 1": 1,
@@ -133,8 +142,14 @@ func population(min_max: Array):
 	var maxi = min_max[1]
 	
 	# Returns true if the population space is in between
-	return PlayerData.population >= mini and PlayerData.population <= maxi 
+	var population = PlayerData.city_data[PlayerData.POPULATION]
+	return population >= mini and population <= maxi 
 
+
+func population_over(mini: int):
+	# Check if the Player population is over a given value
+	var population = PlayerData.city_data[PlayerData.POPULATION]
+	return population >= mini
 
 
 func had_event(event_names: Array):

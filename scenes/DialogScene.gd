@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 
 # Signal when dialog is finished
@@ -50,9 +50,15 @@ const DELAY_BEFORE_ANSWER = 1.0
 var answer_delay = 0.0
 
 
+# Data stored during the scenario
+var points_gained: int # Points gained during the scenario
+var redo: bool # If the scenario must trigger again or not
+var buildings_gained: Array
+
+
 func _ready():
 	# Load a dialogue by default
-	start_dialog_event("scenarios/dialog_intro.json")
+	start_dialog_event("res://scenarios/pedagogical/publier_donnees_transports.json")
 	
 	# Connect the timer to the correct method
 	timer_display.connect("timeout", self, "_add_buttons")
@@ -67,7 +73,12 @@ func start_dialog_event(dialog_json, show_tutorial = false):
 		$MouseCursor.show()
 	
 	# Hides the name by default
-	$UI/NameContainer.hide()
+	$UI/Name.hide()
+	
+	# Reset the previous data
+	redo = false
+	points_gained = 0
+	buildings_gained.clear()
 	
 	
 	print("Opening " + dialog_json)
@@ -86,11 +97,7 @@ func start_dialog_event(dialog_json, show_tutorial = false):
 	block = parser.start_dialogue(dialogue_data)
 	
 	# If it was not a block with data
-	while process_data_block():
-		print("Data block")
-		print(block.text)
-		
-		block = parser.next()
+	process_data_blocks()
 		
 	print(block.text)
 	# Update the dialog
@@ -142,13 +149,9 @@ func process_player_click():
 		
 			
 		# Process blocks with data
-		while process_data_block():
-			print("Data block")
-			print(block.text)
+		process_data_blocks()
 			
-			block = parser.next()
 			
-		# Display the next dialog
 		update_dialog()
 	
 
@@ -169,21 +172,23 @@ func player_pushed_button(key):
 			sound_player.play()
 			
 			# Process blocks with data
-			while process_data_block():
-				print("Data block")
-				print(block.text)
-				
-				block = parser.next()
+			process_data_blocks()
 			
-			update_dialog()
+			# Display the next dialog if not finished
+			if block.empty() or block.is_final:
+				print("That was the last dialog !")
+				emit_signal("dialog_finished")
+			else:
+				update_dialog()
 	else:
 		print("Not enough time passed")
 
 
 
 func update_dialog():
-	# Set the dialog line on the UI
-	dialog_line.text = block.text
+	# Set the dialog line on the UI (if not a data block)
+	if not is_data_block():
+		dialog_line.text = block.text
 	
 	# Remove the old answer buttons
 	var old_buttons = answer_container.get_children()
@@ -209,7 +214,7 @@ func _add_buttons():
 		var button = answer_button.instance()
 		
 		# Set text
-		button.text = answer.text
+		button.set_text(answer.text)
 		
 		# Button action
 		button.connect("pressed", self, "player_pushed_button", [answer.key])
@@ -234,7 +239,7 @@ func set_dialog_background(fileName):
 	var texture_path = "res://assets/sprites/backgrounds/"+fileName
 	
 	# If it exists, change it
-	if ResourceLoader.exists(texture_path):
+	if ResourceLoader.exists(texture_path):		
 		background_sprite.texture = load(texture_path)
 	else:
 		print("Unknown background texture " + texture_path)
@@ -255,13 +260,36 @@ func set_dialog_character(fileName):
 
 func set_character_name(name: String):
 	#Show the Container
-	$UI/NameContainer.show()
+	$UI/Name.show()
 	
-	$UI/NameContainer/NamePanel/Name.text = name
+	$UI/Name.text = name
 
 
 
-func process_data_block():
+func process_data_blocks():
+	while process_single_data_block():
+		print("Data block")
+		print(block.text)
+		
+		# Leave the loop if last block
+		if block.empty() or block.is_final:
+			print("Last block")
+			emit_signal("dialog_finished")
+			break
+			
+		# Else it is not the last dialog : switch
+		else:
+			block = parser.next()
+
+
+
+func is_data_block():
+	# Check if there is a "=" in the block text
+	return '=' in block.text
+
+
+
+func process_single_data_block():
 	# Get the block test
 	var text = block.text
 	
@@ -292,6 +320,57 @@ func process_data_block():
 		# The block contained data
 		return true
 		
+	elif text.begins_with("datapoints="):
+		# Extract the points
+		var points = text.substr("datapoints=".length())
+		
+		# Cast points to int
+		points = int(points)
+		
+		# Add points
+		points_gained += points
+		
+		# The block contained data
+		return true
+	
+	elif text.begins_with("redo="):
+		# Extract the value
+		var v = text.substr("redo=".length())
+		
+		if v == "false":
+			redo = false
+		elif v == "true":
+			redo = true
+		else:
+			print("Unknown redo value : " + v)
+			
+		# The block contained data
+		return true
+	
+	elif text.begins_with("building="):
+		# Extract the building name
+		var building = text.substr("building=".length())
+		
+		# Add it to the Array
+		buildings_gained.append(building)
+			
+		# The block contained data
+		return true
+		
 		
 	# Else
 	return false
+
+
+
+func get_points_gained():
+	return points_gained
+
+
+func get_buildings_gained():
+	return buildings_gained
+
+
+# Return true if the dialog must occur again in the future
+func must_redo_dialog():
+	return redo

@@ -30,8 +30,11 @@ func _ready():
 	# Connect the Confirmation Dialog
 	confirmation_dialog.get_cancel().connect("pressed", self, "_unvalidate_pressed")
 	confirmation_dialog.get_ok().connect("pressed", self, "_validate_pressed")
-
-
+	confirmation_dialog.get_ok().focus_mode = FOCUS_NONE # Unfocus the OK button
+	confirmation_dialog.get_cancel().focus_mode = FOCUS_NONE # Unfocus the OK button
+	
+	# Hides the close button
+	confirmation_dialog.get_close_button().hide()
 
 
 ## Sets the population label
@@ -46,12 +49,12 @@ func set_population(pop: int, pop_max: int):
 	if pop_max == 0:
 		pop_max_str = "-"
 	
-	population.set_text("Population | " + pop_str + " / " + pop_max_str)
+	population.set_text(pop_str + " / " + pop_max_str)
 
 
 ## Sets the population label
 func set_datapoints(points: int):
-	datapoints.set_text("Datapoints | " + String(points))
+	datapoints.set_text(String(points))
 
 
 
