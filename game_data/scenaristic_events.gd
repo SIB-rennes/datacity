@@ -90,6 +90,13 @@ const EVENTS_CONDITIONS = {
 		"probability(x)": .2, # 30% chance after each building
 		"population_over(x)": 80 # The event won't trigger if the population count is under x
 	},
+	
+	
+	# Dernier Scénario
+	"DernierScenario": {
+		"had_event(x)":  ["AutomatiserDonnees", "CitoyenEnerve", "RetourConferencier_3", "DonneesHopitaux", "DroitsDonnees"],
+		"not had_event(x)": ["DernierScenario"], # Not again 
+	},
 }
 
 
@@ -111,6 +118,8 @@ const DIALOG_FILES = {
 	"DonneesHopitaux": "res://scenarios/pedagogical/donnees_hopitaux.json",
 	
 	"DroitsDonnees": "res://scenarios/pedagogical/droits_donnees.json",
+		
+	"DernierScenario": "res://scenarios/last_dialog.json",
 }
 
 
@@ -132,6 +141,8 @@ const SUMMARIES = {
 	"DonneesHopitaux": "Votre adjointe a une proposition à vous faire.",
 	
 	"DroitsDonnees": "Votre adjointe veut vous parler.",
+	
+	"DernierScenario": "Votre adjointe a un message pour vous.",
 }
 
 
