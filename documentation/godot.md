@@ -2,36 +2,108 @@
 
 [Retourner au Sommaire]
 
+### Liens Godot
+
+[Site officiel de Godot]: https://godotengine.org/
+[Site officiel de Godot]
+
+[Documentation Godot]: https://docs.godotengine.org/en/stable/index.html
+[Documentation Godot]
+
 
 ### Qu'est-ce que Godot
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et lorem arcu. Nunc malesuada sem sit amet luctus luctus. Fusce tincidunt ex id finibus placerat. Aliquam et semper massa, sed condimentum sapien. Aenean facilisis id turpis sed eleifend. Mauris sagittis varius venenatis. Mauris scelerisque dolor nec dui consequat scelerisque. Vivamus lorem sapien, interdum in molestie at, eleifend in massa. Pellentesque mauris tellus, tincidunt ac pretium quis, consequat ut lectus. Aenean suscipit efficitur enim, quis dictum massa sollicitudin a. Sed non velit non nisl mollis venenatis vel ac eros. Suspendisse at pretium arcu, eu imperdiet nunc. Suspendisse pulvinar tellus libero. Suspendisse potenti. Integer neque justo, ultricies eget sem vitae, volutpat consectetur risus.
+Godot est un moteur de jeu open source, capable de créer des projets 2D comme 3D. Il peut être utilisé pour créer des jeux, mais aussi des applications, qu’il est ensuite possible d’exporter sur ordinateur, sur mobile ou sur une plateforme web.
 
+L’installation de Godot ne contient qu’un exécutable, qui contient le moteur et un éditeur, qui permet de créer les jeux.
 
 
 ### Système de scènes et de noeuds
-Morbi euismod porta cursus. Suspendisse vitae auctor ante. Integer imperdiet velit non efficitur interdum. Donec sagittis arcu vitae consectetur feugiat. Fusce rhoncus a mauris quis ultrices. Aenean id ornare dui. Morbi ultrices non enim sit amet ultrices. Donec mattis tempor massa, ut tristique augue egestas ut. Donec eget ante leo.
+L’éditeur de Godot permet de modifier des Scènes.
+Dans Godot, une scène est un ensemble de Nœuds, représenté sous forme d’arbre.
 
+Chacun de ces nœuds est un élément capable de s’occuper d’une tâche spécifique. Ce sont les briques essentielles qui implémentent les fonctionnalités du moteur. Par exemple, il existe des nœuds pour l’affichage d’une image ou d’un texte, pour chronométrer des tâches ou pour gérer les caméras du jeu.
+
+Les scènes permettent donc de créer des comportements complexes grâce à chacun de leurs nœuds. On peut créer l’intégralité du jeu grâce à elles : interfaces utilisateurs, personnages, niveaux, tout peut être représenté sous forme de scène.
+
+[Documentation Godot sur les scènes et les noeuds]: https://docs.godotengine.org/en/stable/getting_started/step_by_step/scenes_and_nodes.html
+[Documentation Godot sur les scènes et les noeuds]
 
 
 ### Scripts
-Suspendisse arcu felis, cursus ac dolor id, aliquam suscipit risus. Sed eros purus, dignissim vel turpis vel, gravida auctor mi. Integer tristique felis vel tellus aliquet hendrerit. Sed lobortis purus ac ligula hendrerit, tristique posuere magna interdum. Vestibulum ac enim id diam faucibus semper eget ut dui. Aliquam volutpat orci eget nulla tincidunt, vel auctor nisl volutpat. Nam nec maximus libero. Aenean ut vehicula dui, vitae elementum nunc. Pellentesque tincidunt pellentesque turpis vitae dapibus. Ut dignissim lectus a arcu mattis ornare. Maecenas mattis eleifend faucibus. Fusce ultrices augue sit amet urna varius, at pretium nunc dapibus.
+Les nœuds ne suffisent parfois pas à créer la logique du jeu. Il convient donc alors de les étendre grâce à des scripts.
 
+Dans Godot, les scripts étendent les fonctionnalités du Nœud auxquels ils sont attachés, en fournissant des variables et des fonctions.
+
+
+Les scripts sont souvent codés avec GdScript (le langage natif à Godot), ou en C#.
+Mais il est aussi possible de développer en C/C++, ou de lier du code d’autres langages grâce à GDNative.
+
+[Documentation Godot sur les Scripts]: https://docs.godotengine.org/en/stable/getting_started/step_by_step/scripting.html
+[Documentation Godot sur les Scripts]
 
 
 ### Aperçu Editeur
-Pellentesque porta quis orci eu efficitur. Cras ut neque congue urna tincidunt congue ut sed purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus volutpat, risus interdum rutrum rutrum, nisl dui accumsan est, id ultrices nisi tellus ac sapien. Curabitur congue ac felis non congue. Duis ultrices, erat ac pulvinar mollis, nisi dui blandit purus, et consectetur nunc ex quis sapien. Praesent interdum consequat justo, vitae bibendum nunc interdum eu. Vivamus sed sapien odio. Maecenas et viverra dui. Fusce faucibus eleifend sollicitudin. Nulla lobortis euismod mauris, lacinia varius diam ornare ut. Aliquam in mauris eu arcu facilisis pellentesque. Aliquam vitae placerat nibh. In et blandit mauris, sit amet luctus magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam lorem augue, egestas vel sodales vel, dignissim id quam.
 
+![](godot/godot_ui.png)
+
+Le *Scene Editor* (éditeur de scène) est la fenêtre principale de Godot. Elle permet d’organiser les scènes 2D comme 3D. Elle permet aussi d’éditer les scripts attachés aux différents nœuds.
+
+L’*Inspector* (inspecteur) permet de voir et de modifier les propriétés du nœud sélectionné.
+
+Le *Node Tree* (arbre des nœuds) montre la hiérarchie de la scène actuellement ouverte, avec l’ensemble des nœuds qui la compose et leur organisation.
+
+L’onglet *File System* donne accès aux fichiers du projet ouvert.
+
+
+[Introduction à l'éditeur de Godot]: https://docs.godotengine.org/en/stable/getting_started/step_by_step/intro_to_the_editor_interface.html
+[Introduction à l'éditeur de Godot]
 
 
 ### Télécharger Godot
-Maecenas rhoncus mauris eget bibendum rhoncus. Duis eu ultrices arcu. Nullam vel laoreet libero. Aliquam erat volutpat. Quisque nec malesuada purus. In sodales lacus eget est tincidunt tristique. Sed mi tortor, vulputate nec porta et, mattis egestas turpis. Ut sed diam iaculis, blandit tortor quis, molestie est. Nullam fermentum eros a elit condimentum, a pharetra nisi commodo. Vivamus ultrices, odio in tristique rutrum, nisi turpis sagittis odio, sed ullamcorper justo ex vitae erat. In molestie at ante eget euismod. Ut porta nibh ultrices, venenatis mauris sed, euismod dolor. Duis maximus ullamcorper lacus, id laoreet nulla maximus ut. Fusce ullamcorper magna est, ut vehicula dolor sodales sed.
 
+[Télécharger Godot]: https://godotengine.org/download
+
+Le moteur de jeu Godot peut être téléchargé depuis sont site officiel : [Télécharger Godot].
+
+Le moteur est constitué d'un unique exécutable, qui ne requiert pas d'installation ni de droits d'administrateur.
+
+Il en existe 2 versions :
+- Une version Standard
+- Une version Mono, pour développer en C#
 
 
 ### Comment importer le projet
-Proin faucibus lacus sed sem aliquet convallis. Etiam imperdiet felis augue, ultrices dignissim elit imperdiet quis. Donec aliquet aliquam ante id dapibus. Praesent auctor, neque at consectetur dapibus, nisl eros tincidunt eros, id viverra nunc tellus eu ante. Mauris metus nunc, hendrerit a aliquet ac, dapibus at turpis. Nam pulvinar congue felis a imperdiet. Donec imperdiet tellus vel suscipit fringilla. Quisque quis purus vel dolor imperdiet consectetur vitae a dolor. Aliquam commodo augue sit amet mi sagittis euismod non sed risus. Donec vel lacus vel neque lobortis blandit ut quis neque. Maecenas tempor non erat sed luctus.
 
+##### Note sur la version de Godot
+Le projet de Serious Game : Data City a été développé sous Godot 3.3.2.
+Cette version est recommandée pour effectuer des modifications du projet, même si utiliser une autre version 3.3 ne posera pas de problème.
+
+La version 4 de Godot risque de changer fortement le moteur et elle ne permettra peut-être plus d'éditer le projet.
+Les versions plus anciennes du moteur peuvent être téléchargées depuis le site officiel de godot.
+
+
+#### Importer un projet
+1. Télécharger les sources du projet
+2. Lancer Godot
+3. Sur la page *Project Manager*, cliquer "Importer" à droite
+4. Sélectionner le fichier project.godot à la racine du projet
+5. Cliquer sur "Import and Edit" pour ouvrir le projet
+
+Dorénavant, le projet apparaitra dans la liste du *Project Manager*.
 
 
 ### Comment exporter le projet
-Nam pulvinar interdum nisl tincidunt vulputate. Fusce id vehicula neque. Donec fringilla finibus maximus. Aenean imperdiet posuere dictum. Maecenas accumsan vitae lorem nec molestie. Donec ornare nunc tellus, id vehicula ipsum euismod efficitur. Pellentesque consectetur in orci vulputate ornare. Vivamus elementum bibendum turpis, vel facilisis odio ultrices vel. Etiam fermentum libero eu lectus accumsan, et dignissim augue ornare. Ut eu eros eget quam tincidunt iaculis id eget ante.
+
+Une fois le projet ouvert :
+1. Aller dans Project > Export...
+2. Ajoutez la plateforme de destination voulue (ex: HTML5)
+3. Dans l'onglet *Ressources*, ajouter \*.json dans la première ligne pour exporter les dialogues
+4. Choisissez le lien d'exportation (de préférence un dossier vide)
+5. Cliquer ensuite sur *Export All* pour exporter sur toutes les plateformes ou *Export Project* pour exporter le projet
+
+
+#### Notes
+Si le projet est exporté sur windows, il faut
+
+[Documentation sur l'exportation avec Godot]: https://docs.godotengine.org/en/stable/getting_started/workflow/export/index.html
+[Documentation sur l'exportation avec Godot]

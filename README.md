@@ -2,6 +2,7 @@
 
 ### Godot
 
+- [Liens Godot]
 - [Qu'est-ce que Godot]
 - [Système de scènes et de noeuds]
 - [Scripts]
@@ -25,7 +26,7 @@
 - [Modifier un événement scénaristique]
 - [Ajouter un événement scénaristique]
 
-
+[Liens Godot]: /documentation/godot.md#liens-godot
 [Qu'est-ce que Godot]: /documentation/godot.md#quest-ce-que-godot
 [Système de scènes et de noeuds]: /documentation/godot.md#système-de-scènes-et-de-noeuds
 [Scripts]: /documentation/godot.md#scripts
