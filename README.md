@@ -15,6 +15,7 @@
 
 - [Qu'est-ce que Whiskers]
 - [Les noeuds Whiskers]
+- [Exportation]
 - [Parcours du graphe]
 - [Notes importantes]
 
@@ -37,6 +38,7 @@
 
 [Qu'est-ce que Whiskers]: /documentation/whiskers.md#quest-ce-que-whiskers
 [Les noeuds Whiskers]: /documentation/whiskers.md#les-noeuds-whiskers
+[Exportation]: /documentation/whiskers.md#exportation
 [Parcours du graphe]: /documentation/whiskers.md#parcours-du-graphe
 [Notes importantes]: /documentation/whiskers.md#notes-importantes
 

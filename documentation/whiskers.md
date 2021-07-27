@@ -2,18 +2,132 @@
 
 [Retourner au Sommaire]
 
-
 ### Qu'est-ce que Whiskers
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et lorem arcu. Nunc malesuada sem sit amet luctus luctus. Fusce tincidunt ex id finibus placerat. Aliquam et semper massa, sed condimentum sapien. Aenean facilisis id turpis sed eleifend. Mauris sagittis varius venenatis. Mauris scelerisque dolor nec dui consequat scelerisque. Vivamus lorem sapien, interdum in molestie at, eleifend in massa. Pellentesque mauris tellus, tincidunt ac pretium quis, consequat ut lectus. Aenean suscipit efficitur enim, quis dictum massa sollicitudin a. Sed non velit non nisl mollis venenatis vel ac eros. Suspendisse at pretium arcu, eu imperdiet nunc. Suspendisse pulvinar tellus libero. Suspendisse potenti. Integer neque justo, ultricies eget sem vitae, volutpat consectetur risus.
+
+Whiskers est un logiciel open source conçu pour éditer visuellement des dialogues.
+
+Les sources viennent avec quelques exemples qui permettent de comprendre le fonctionnement du logiciel.
+
+Whiskers permet de construire des dialogues grâce à un système de nœuds, formant alors des graphes.
+
+![](whiskers/apercu_whiskers.png)
+
+Le code Whiskers peut-être téléchargé depuis Github : https://github.com/LittleMouseGames/whiskers
+
+
+##### Avoir Whiskers en logiciel
+
+Pour avoir Whiskers sous forme d'un logiciel, la méthode la plus simple est de télécharger ses sources depuis Github et de les exporter avec Godot sous le format voulu.
 
 
 ### Les noeuds Whiskers
-Morbi euismod porta cursus. Suspendisse vitae auctor ante. Integer imperdiet velit non efficitur interdum. Donec sagittis arcu vitae consectetur feugiat. Fusce rhoncus a mauris quis ultrices. Aenean id ornare dui. Morbi ultrices non enim sit amet ultrices. Donec mattis tempor massa, ut tristique augue egestas ut. Donec eget ante leo.
+
+![](whiskers/noeuds_whiskers.png)
+
+
+#### Dialog Nodes
+Les Dialogue Nodes contiennent les principales lignes de dialogues. Chaque nouvelle bulle contient une nouvelle réplique.
+
+
+##### Paramètres des dialogues
+Dans le Serious Game sur l’Open Data, les Dialog Nodes servent aussi à décrire des informations sur le dialogue, comme par exemple le fond à afficher.
+
+Il ne peut y avoir qu'une seule information par noeud.
+
+Actuellement, il est possible de choisir :
+-	L’image de fond : background=fichier_image (l’image doit être dans le dossier assets/sprites/backgrounds)
+-	Le personnage à afficher : character=fichier_image, avec l’image dans le dossier assets/sprites/characters
+- Le nom à afficher : name=Nom
+- Les points à donner à la fin de la branche de dialogue: datapoints=10
+- Les bâtiments à donner à la fin de la branche de dialogue: building=Nom Bâtiment
+
+Les noms des bâtiments sont les noms donnés aux tuiles du tileset (voir [Ajouter un Bâtiment]).
+
+[Ajouter un Bâtiment]: /serious-game.md#ajouter-un-bâtiment
+
+Pour voir comment utiliser ces noeuds, le plus simple est d'ouvrir un des dialogues déjà existant.
+
+![](whiskers/noeuds_donnees.png)
+
+
+
+#### Option Nodes
+
+Les Option Nodes permettent de donner les choix de réponses possibles pour le joueur.
+
+![](whiskers/option_nodes.png)
+
+
+#### Jump Nodes
+
+Les Jump Nodes permettent de faire des sauts dans le graphe.
+
+Quand le dialogue atteint l’un des Jump Node, il retournera au premier qui possède le même nom.
+Pour éviter les conflits, il est déconseillé de donner le même nom à deux Jump Node destinataires.
+
+![](whiskers/jump_nodes.png)
+
+#### Nœuds utilitaires
+Chaque graphe a un *Start Node*, qui indique le début du dialogue.
+Les *End Nodes* servent à indiquer la fin des branches.
+
+Les *Comment Nodes* sont utilisés pour commenter le graphe.
+
+##### /!\\ *Attention* /!\\
+
+Lors de la sauvegarde, toutes les branches qui ne terminent pas par un *End Node* risquent d'être supprimées.
+
+
+#### Nœuds Logiques
+
+Les deux autres types de nœuds, *Conditional Nodes* et *Expression Nodes*, sont utilisés pour ajouter de la logique au graphe.
+
+L'évènement *scenarios/dialog_conference.json* (qui contient le dialogue de la conférence) y fait appel.
+
+[Lien vers le script pour la conférence].
+
+[Lien vers le script pour la conférence]: ../scenarios/dialog_conference_variables.gd
+
+
+
+Les *Expression Node* contiennent une expression Godot, qui peut être interprété à l'éxécution. On peut ainsi appeler des méthodes par exemple. Ils utilisent un script externe, codé en GDScript, pour déclarer les fonctions et les variables.
+
+Les *Conditional Nodes* prennent en entrée ces expressions et vérifient leur valeur, avant de choisir la branche de sortie.
+Là encore, les deux branches de sorties doivent être reliées à un autre nœud, ou à un *End Node*.
+
+![](whiskers/expression_nodes.png)
+
+Dans le Serious Game Open Data, il faut déclarer le lien vers le script dans le fichier *scenarios/scenarios_data.gd*.
+
+![](whiskers/scenarios_instances.png)
+
+
+### Exportation
+
+Une fois le graphe construit, il peut être sauvegardé sous forme d’un fichier au format JSON. Ce fichier contient toute les informations du graphe et peut être ouvert par Whiskers pour ajouter des modifications.
+
+C’est ce fichier JSON qui est utilisé par la scène *DialogScene* pour afficher les dialogues et les réponses.
+
 
 
 ### Parcours du graphe
-Suspendisse arcu felis, cursus ac dolor id, aliquam suscipit risus. Sed eros purus, dignissim vel turpis vel, gravida auctor mi. Integer tristique felis vel tellus aliquet hendrerit. Sed lobortis purus ac ligula hendrerit, tristique posuere magna interdum. Vestibulum ac enim id diam faucibus semper eget ut dui. Aliquam volutpat orci eget nulla tincidunt, vel auctor nisl volutpat. Nam nec maximus libero. Aenean ut vehicula dui, vitae elementum nunc. Pellentesque tincidunt pellentesque turpis vitae dapibus. Ut dignissim lectus a arcu mattis ornare. Maecenas mattis eleifend faucibus. Fusce ultrices augue sit amet urna varius, at pretium nunc dapibus.
+
+Pour parcourir les fichiers, il faut utiliser un parser capable de parcourir le graphe contenu dans le fichier JSON.
+
+Le Serious Game sur l’Open Data utilise un parser pour Whiskers développé par un membre de la communauté Godot, accessible ici : https://github.com/LittleMouseGames/whiskers-parser.
+
+Les dialogues sont aussi analysés dans le script de *DialogScene* lors de leur affichage, pour vérifier s’ils contiennent des données ou si ils ne sont qu'une ligne de dialogue habituelle.
 
 
 ### Notes importantes
-Pellentesque porta quis orci eu efficitur. Cras ut neque congue urna tincidunt congue ut sed purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus volutpat, risus interdum rutrum rutrum, nisl dui accumsan est, id ultrices nisi tellus ac sapien. Curabitur congue ac felis non congue. Duis ultrices, erat ac pulvinar mollis, nisi dui blandit purus, et consectetur nunc ex quis sapien. Praesent interdum consequat justo, vitae bibendum nunc interdum eu. Vivamus sed sapien odio. Maecenas et viverra dui. Fusce faucibus eleifend sollicitudin. Nulla lobortis euismod mauris, lacinia varius diam ornare ut. Aliquam in mauris eu arcu facilisis pellentesque. Aliquam vitae placerat nibh. In et blandit mauris, sit amet luctus magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam lorem augue, egestas vel sodales vel, dignissim id quam.
+
+##### En développement
+Whiskers est en développement et contient donc sûrement des bugs, comme le souligne son auteur. Néanmoins, aucun souci n’a été constaté lors de son utilisation pendant le stage.
+
+
+##### Connecter la fin de tous les noeuds
+Il est important de toujours connecter la fin des nœuds. Si aucun nœud de dialogue ne les suit, il faut alors les connecter à un *End Node*.
+
+Si certains nœuds ne sont pas connectés, des problèmes peuvent survenir lors de l’exportation ou du parcours du graphe. Il est même possible de perdre les changements en cours ou d'avoir des problèmes à l'ouverture.
+
+![](whiskers/connect_end.png)
