@@ -19,13 +19,12 @@
 
 ### Serious Game
 
-- [Visuels]
-- [Bâtiments]
-- [Evénements scénaristiques]
+- [Changer des visuels]
+- [Mettre à jour un bâtiment]
+- [Ajouter un bâtiment]
+- [Modifier un événement scénaristique]
+- [Ajouter un événement scénaristique]
 
-
-
-![](assets/sprites/backgrounds/bureau_maire.png)
 
 [Qu'est-ce que Godot]: /documentation/godot.md#quest-ce-que-godot
 [Système de scènes et de noeuds]: /documentation/godot.md#système-de-scènes-et-de-noeuds
@@ -35,11 +34,13 @@
 [Comment importer le projet]: /documentation/godot.md#comment-importer-le-projet
 [Comment exporter le projet]: /documentation/godot.md#comment-exporter-le-projet
 
-[Qu'est-ce que Whiskers]: <>
-[Les noeuds Whiskers]: <>
-[Parcours du graphe]: <>
-[Notes importantes]: <>
+[Qu'est-ce que Whiskers]: /documentation/whiskers.md#quest-ce-que-whiskers
+[Les noeuds Whiskers]: /documentation/whiskers.md#les-noeuds-whiskers
+[Parcours du graphe]: /documentation/whiskers.md#parcours-du-graphe
+[Notes importantes]: /documentation/whiskers.md#notes-importantes
 
-[Visuels]: <>
-[Bâtiments]: <>
-[Evénements scénaristiques]: <>
+[Changer des visuels]: /documentation/serious-game.md#changer-des-visuels
+[Mettre à jour un bâtiment]: /documentation/serious-game.md#mettre-à-jour-un-bâtiment
+[Ajouter un bâtiment]: /documentation/serious-game.md#ajouter-un-bâtiment
+[Modifier un événement scénaristique]: /documentation/serious-game.md#modifier-un-événement-scénaristique
+[Ajouter un événement scénaristique]: /documentation/serious-game.md#ajouter-un-événement-scénaristique
