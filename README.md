@@ -3,12 +3,12 @@
 ### Godot
 
 - [Qu'est-ce que Godot]
-- [Système de scènes et de noeuds](#godot-nodes)
-- [Scripts](#godot-scripts)
-- [Aperçu Editeur](#godot-editor)
-- [Télécharger Godot](#godot-download)
-- [Comment importer le projet](#godot-import-game)
-- [Comment exporter le projet](#godot-export-game)
+- [Système de scènes et de noeuds]
+- [Scripts]
+- [Aperçu Editeur]
+- [Télécharger Godot]
+- [Comment importer le projet]
+- [Comment exporter le projet]
 
 ### Whiskers (éditeur de dialogues)
 
@@ -28,12 +28,12 @@
 ![](assets/sprites/backgrounds/bureau_maire.png)
 
 [Qu'est-ce que Godot]: /documentation/godot.md#godot-about
-[Système de scènes et de noeuds]: /documentation/godot.md
-[Scripts]: /documentation/godot.md
-[Aperçu Editeur]: /documentation/godot.md
-[Télécharger Godot]: /documentation/godot.md
-[Comment importer le projet]: /documentation/godot.md
-[Comment exporter le projet]: /documentation/godot.md
+[Système de scènes et de noeuds]: /documentation/godot.md#godot-nodes
+[Scripts]: /documentation/godot.md#godot-scripts
+[Aperçu Editeur]: /documentation/godot.md#godot-editor
+[Télécharger Godot]: /documentation/godot.md#godot-download
+[Comment importer le projet]: /documentation/godot.md#godot-import-game
+[Comment exporter le projet]: /documentation/godot.md#godot-export-game
 
 [Qu'est-ce que Whiskers]: <>
 [Les noeuds Whiskers]: <>
