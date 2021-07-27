@@ -6,7 +6,7 @@ const BUILDINGS = preload("res://tilesets/buildings.tres")
 
 
 # Dictionnary of building sizes (case occupied)
-# The buildings should always be placed at the lower case
+# The main case of a building should always be the bottom case
 # (x, y) : x to the top left, y to the top right
 const SIZES = {
 	"Grand Cafe": Vector2(1, 2),

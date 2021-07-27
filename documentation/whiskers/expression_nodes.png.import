@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/expression_nodes.PNG-6b10bc53d7996d65405a72dd7c25308b.stex"
+path="res://.import/expression_nodes.png-3a233f1882de5e67792a0986813eb54a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://documentation/whiskers/expression_nodes.PNG"
-dest_files=[ "res://.import/expression_nodes.PNG-6b10bc53d7996d65405a72dd7c25308b.stex" ]
+source_file="res://documentation/whiskers/expression_nodes.png"
+dest_files=[ "res://.import/expression_nodes.png-3a233f1882de5e67792a0986813eb54a.stex" ]
 
 [params]
 

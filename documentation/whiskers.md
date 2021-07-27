@@ -38,8 +38,9 @@ Actuellement, il est possible de choisir :
 -	L’image de fond : background=fichier_image (l’image doit être dans le dossier assets/sprites/backgrounds)
 -	Le personnage à afficher : character=fichier_image, avec l’image dans le dossier assets/sprites/characters
 - Le nom à afficher : name=Nom
-- Les points à donner à la fin de la branche de dialogue: datapoints=10
-- Les bâtiments à donner à la fin de la branche de dialogue: building=Nom Bâtiment
+- Les points à donner à la fin de la branche de dialogue : datapoints=10
+- Les bâtiments à donner à la fin de la branche de dialogue : building=Nom Bâtiment
+- Si le dialogue doit apparaître de nouveau (il ne sera pas sauvegardé dans le profil du joueur cette fois) : redo=true
 
 Les noms des bâtiments sont les noms donnés aux tuiles du tileset (voir [Ajouter un Bâtiment]).
 

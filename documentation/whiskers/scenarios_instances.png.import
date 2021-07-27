@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scenarios_instances.PNG-f7291444ea6f7f25f087e741d262f350.stex"
+path="res://.import/scenarios_instances.png-b8e96d34088fcf8fa659146da0972b5a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://documentation/whiskers/scenarios_instances.PNG"
-dest_files=[ "res://.import/scenarios_instances.PNG-f7291444ea6f7f25f087e741d262f350.stex" ]
+source_file="res://documentation/whiskers/scenarios_instances.png"
+dest_files=[ "res://.import/scenarios_instances.png-b8e96d34088fcf8fa659146da0972b5a.stex" ]
 
 [params]
 

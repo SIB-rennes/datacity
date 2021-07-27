@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/jump_nodes.PNG-8ec342252e495c3ed82289f7ea546685.stex"
+path="res://.import/jump_nodes.png-a8cc6e950e3de0c0cfee05084d1771ae.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://documentation/whiskers/jump_nodes.PNG"
-dest_files=[ "res://.import/jump_nodes.PNG-8ec342252e495c3ed82289f7ea546685.stex" ]
+source_file="res://documentation/whiskers/jump_nodes.png"
+dest_files=[ "res://.import/jump_nodes.png-a8cc6e950e3de0c0cfee05084d1771ae.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/noeuds_donnees.PNG-b4f8a8f38c7b8edf3500b8b48d482e27.stex"
+path="res://.import/noeuds_donnees.png-d6a407013a75ee1a7e3259c2b4b6f2cb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://documentation/whiskers/noeuds_donnees.PNG"
-dest_files=[ "res://.import/noeuds_donnees.PNG-b4f8a8f38c7b8edf3500b8b48d482e27.stex" ]
+source_file="res://documentation/whiskers/noeuds_donnees.png"
+dest_files=[ "res://.import/noeuds_donnees.png-d6a407013a75ee1a7e3259c2b4b6f2cb.stex" ]
 
 [params]
 
