@@ -2,7 +2,7 @@
 
 ### Godot
 
-- [Qu'est-ce que Godot](#godot-about)
+- [Qu'est-ce que Godot]
 - [Système de scènes et de noeuds](#godot-nodes)
 - [Scripts](#godot-scripts)
 - [Aperçu Editeur](#godot-editor)
@@ -27,7 +27,7 @@
 
 ![](assets/sprites/backgrounds/bureau_maire.png)
 
-[Qu'est-ce que Godot]: /documentation/godot.md
+[Qu'est-ce que Godot]: /documentation/godot.md#godot-about
 [Système de scènes et de noeuds]: /documentation/godot.md
 [Scripts]: /documentation/godot.md
 [Aperçu Editeur]: /documentation/godot.md
