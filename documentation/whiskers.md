@@ -49,14 +49,11 @@ Pour voir comment utiliser ces noeuds, le plus simple est d'ouvrir un des dialog
 
 ![](whiskers/noeuds_donnees.png)
 
-
-
 #### Option Nodes
 
 Les Option Nodes permettent de donner les choix de réponses possibles pour le joueur.
 
 ![](whiskers/option_nodes.png)
-
 
 #### Jump Nodes
 
@@ -77,20 +74,18 @@ Les *Comment Nodes* sont utilisés pour commenter le graphe.
 
 Lors de la sauvegarde, toutes les branches qui ne terminent pas par un *End Node* risquent d'être supprimées.
 
-
 #### Nœuds Logiques
 
 Les deux autres types de nœuds, *Conditional Nodes* et *Expression Nodes*, sont utilisés pour ajouter de la logique au graphe.
 
 L'évènement *scenarios/dialog_conference.json* (qui contient le dialogue de la conférence) y fait appel.
 
+
+Les *Expression Node* contiennent une expression Godot, qui peut être interprété à l'éxécution. On peut ainsi appeler des méthodes par exemple. Ils utilisent un script externe, codé en GDScript, pour déclarer les fonctions et les variables.
+
 [Lien vers le script pour la conférence].
 
 [Lien vers le script pour la conférence]: ../scenarios/dialog_conference_variables.gd
-
-
-
-Les *Expression Node* contiennent une expression Godot, qui peut être interprété à l'éxécution. On peut ainsi appeler des méthodes par exemple. Ils utilisent un script externe, codé en GDScript, pour déclarer les fonctions et les variables.
 
 Les *Conditional Nodes* prennent en entrée ces expressions et vérifient leur valeur, avant de choisir la branche de sortie.
 Là encore, les deux branches de sorties doivent être reliées à un autre nœud, ou à un *End Node*.

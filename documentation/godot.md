@@ -79,7 +79,7 @@ Le projet de Serious Game : Data City a été développé sous Godot 3.3.2.
 Cette version est recommandée pour effectuer des modifications du projet, même si utiliser une autre version 3.3 ne posera pas de problème.
 
 La version 4 de Godot risque de changer fortement le moteur et elle ne permettra peut-être plus d'éditer le projet.
-Les versions plus anciennes du moteur peuvent être téléchargées depuis le site officiel de godot.
+Les versions plus anciennes du moteur peuvent être téléchargées depuis le site officiel de Godot.
 
 
 #### Importer un projet
