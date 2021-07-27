@@ -172,7 +172,7 @@ custom_fonts/normal_font = ExtResource( 4 )
 custom_colors/default_color = Color( 0.266667, 0.113725, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]
-Data City est un Serious Game sur l'Open Data, développé par le SIB : [color=#539CC7][url=sib.fr]sib.fr[/url][/color]
+Data City est un Serious Game sur l'Open Data, développé par le SIB : [color=#539CC7][url=www.sib.fr]www.sib.fr[/url][/color]
 
 
 [b][u]Encadrants[/u][/b]
@@ -201,11 +201,16 @@ Bâtiments créés par [color=#539CC7][url=http://www.freepik.com/macrovector]ma
 
 Icônes créées par [color=#539CC7][url=http://www.freepik.com]Freepik[/url][/color] à partir de [color=#539CC7][url=https://www.flaticon.com/]Flaticon[/url][/color]
 
-[/center]
 
-"
+[b][u]Dialogues[/u][/b]
+
+Dialogues créés avec [color=#539CC7][url=https://github.com/LittleMouseGames/whiskers]Whiskers[/url][/color] 
+et parcourus avec l'aide de [color=#539CC7][url=https://github.com/LittleMouseGames/whiskers-parser]Whiskers Parser[/url][/color]
+
+
+[/center]"
 text = "
-Data City est un Serious Game sur l'Open Data, développé par le SIB : sib.fr
+Data City est un Serious Game sur l'Open Data, développé par le SIB : www.sib.fr
 
 
 Encadrants
@@ -234,6 +239,11 @@ Bâtiments créés par macrovector / Freepik
 
 Icônes créées par Freepik à partir de Flaticon
 
+
+Dialogues
+
+Dialogues créés avec Whiskers 
+et parcourus avec l'aide de Whiskers Parser
 
 
 "
