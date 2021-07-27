@@ -40,7 +40,28 @@ Sur la grille des bâtiments, une case fait 530 pixels de large par 320 de haut.
 
 #### Changer la taille sur la grille
 
-Si la taille du bâtiment doit changer, il faut modifier sa taille sur la grille dans *game_data/buildings_data.gd*.
+Si la taille occupée par le bâtiment sur la grille doit changer, il faut modifier sa taille dans *game_data/buildings_data.gd*. Le dictionnaire à mettre à jour est SIZES.
+
+#### Changer la texture d'un bâtiment
+
+Pour changer la texture d'un bâtiment :
+1. Remplacer la texture par la nouvelle dans les fichiers du projet.
+
+2. Ouvrir le projet avec Godot, qui doit alors lancer l'importation de la nouvelle texture.
+3. Mettre à jour le dictionnaire SIZES si besoin dans *game_data/buildings_data.gd*.
+
+#### Changer les bonus
+
+Les bonus d'un bâtiment peuvent être modifiés dans le fichier *game_data/buildings_data.gd*. (Voir [Ajouter ses caractéristiques]).
+
+[Ajouter ses caractéristiques]: #ajouter-ses-caractéristiques
+
+#### Changer les seuils d'obtention
+
+Les seuils d'obtention d'un bâtiment peuvent être modifiés dans le fichier *game_data/buildings_data.gd*. (Voir [Ajouter ses caractéristiques]).
+
+[Ajouter ses caractéristiques]: #ajouter-ses-caractéristiques
+
 
 
 ### Ajouter un bâtiment
