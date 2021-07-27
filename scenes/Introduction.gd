@@ -1,7 +1,7 @@
 ## The goal of this file is to manage the Introduction scene
 ## And the sequence of dialogs in it 
 
-extends Node2D
+extends Control
 
 # Get the Dialog scene
 onready var dialog_scene = $DialogScene

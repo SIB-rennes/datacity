@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scenes/Introduction.gd" type="Script" id=1]
 [ext_resource path="res://scenes/DialogScene.tscn" type="PackedScene" id=2]
@@ -11,6 +11,12 @@
 [ext_resource path="res://ui/fading_screen.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/sprites/introduction/journaux-03.png" type="Texture" id=10]
 [ext_resource path="res://assets/sprites/introduction/journaux-02.png" type="Texture" id=11]
+[ext_resource path="res://assets/fonts/main_font.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://themes/panel.tres" type="StyleBox" id=13]
+[ext_resource path="res://themes/scrollbar.tres" type="StyleBox" id=14]
+[ext_resource path="res://themes/button_background_active.tres" type="StyleBox" id=15]
+[ext_resource path="res://themes/button_background.tres" type="StyleBox" id=16]
+[ext_resource path="res://themes/scrollbar_grabber.tres" type="StyleBox" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 257.189, 203.165 )
@@ -197,13 +203,77 @@ tracks/3/keys = {
 "values": [ 4, 0 ]
 }
 
-[node name="Introduction" type="Node2D"]
-script = ExtResource( 1 )
+[sub_resource type="DynamicFont" id=6]
+resource_local_to_scene = true
+resource_name = "Font"
+size = 28
+use_filter = true
+font_data = ExtResource( 12 )
 
-[node name="Background" type="Sprite" parent="."]
-scale = Vector2( 0.500991, 0.50099 )
+[sub_resource type="Theme" id=7]
+resource_local_to_scene = true
+default_font = SubResource( 6 )
+Button/colors/font_color = Color( 1, 0.568627, 0.184314, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = ExtResource( 16 )
+Button/styles/focus = ExtResource( 16 )
+Button/styles/hover = ExtResource( 15 )
+Button/styles/normal = ExtResource( 16 )
+Button/styles/pressed = ExtResource( 15 )
+Dialogs/constants/button_margin = 32
+Dialogs/constants/margin = 8
+Label/colors/font_color = Color( 0.992157, 0.568627, 0.180392, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/DialogLine = SubResource( 6 )
+Label/fonts/font = SubResource( 6 )
+Label/styles/normal = null
+Panel/styles/panel = ExtResource( 13 )
+PopupDialog/styles/panel = ExtResource( 13 )
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/styles/grabber = ExtResource( 17 )
+VScrollBar/styles/grabber_highlight = ExtResource( 17 )
+VScrollBar/styles/grabber_pressed = ExtResource( 17 )
+VScrollBar/styles/scroll = ExtResource( 14 )
+VScrollBar/styles/scroll_focus = null
+WindowDialog/colors/title_color = Color( 0, 0, 0, 1 )
+WindowDialog/constants/close_h_ofs = 18
+WindowDialog/constants/close_v_ofs = 18
+WindowDialog/constants/scaleborder_size = 4
+WindowDialog/constants/title_height = 20
+WindowDialog/fonts/title_font = null
+WindowDialog/icons/close = null
+WindowDialog/icons/close_highlight = null
+WindowDialog/styles/panel = ExtResource( 13 )
+
+[node name="Introduction" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 texture = ExtResource( 3 )
-centered = false
+expand = true
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="NewsPaper" type="Area2D" parent="."]
 position = Vector2( -111.496, 368.065 )
@@ -259,6 +329,7 @@ anims/put_back = SubResource( 5 )
 
 [node name="DialogScene" parent="." instance=ExtResource( 2 )]
 visible = false
+theme = SubResource( 7 )
 
 [node name="ZIndexer" type="Node2D" parent="."]
 z_index = 15
