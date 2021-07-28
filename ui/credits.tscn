@@ -172,7 +172,7 @@ custom_fonts/normal_font = ExtResource( 4 )
 custom_colors/default_color = Color( 0.266667, 0.113725, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]
-Data City est un Serious Game sur l'Open Data, développé par le SIB : [color=#539CC7][url=www.sib.fr]www.sib.fr[/url][/color]
+Data City est un Serious Game sur l'Open Data, développé par le SIB : [color=#539CC7][url=https://www.sib.fr]www.sib.fr[/url][/color]
 
 
 [b][u]Encadrants[/u][/b]
