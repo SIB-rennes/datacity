@@ -45,7 +45,10 @@ var starting_scale = Vector2.ZERO
 var starting_rotation = 0
 
 
-func _on_NewsPaper_input_event(_viewport, event, _shape_idx):
+
+
+func _input(event):
+	print("Received event")
 	# If mouse pressed
 	if event is InputEventMouseButton or event is InputEventScreenTouch:
 		if event.pressed:
@@ -70,6 +73,8 @@ func _process(delta):
 func trigger_zoom():
 	# Play the animation
 	$ZoomPlayer.play("PaperZoom")
+	
+	print("Playing zoom !")
 	
 	# Deactivates the mouse animation
 	mouse_cursor.hide()
