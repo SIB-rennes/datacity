@@ -102,8 +102,5 @@ Une fois le projet ouvert :
 5. Cliquer ensuite sur *Export All* pour exporter sur toutes les plateformes ou *Export Project* pour exporter le projet
 
 
-#### Notes
-Si le projet est exporté sur windows, il faut
-
 [Documentation sur l'exportation avec Godot]: https://docs.godotengine.org/en/stable/getting_started/workflow/export/index.html
 [Documentation sur l'exportation avec Godot]

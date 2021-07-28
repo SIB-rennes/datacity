@@ -3,6 +3,100 @@
 [Retourner au Sommaire]
 
 
+
+### Organisation du projet
+
+Le projet est organisé en plusieurs dossiers.
+
+A la racine se trouve le fichier *project.godot* qui contient les informations liés au projet Godot.
+
+#### *assets/*
+Le dossiers *assets/* contient les ressources visuelles et sonores du jeu.
+
+On y retrouve les polices de caractères, les sons, mais aussi les images (*sprites*) affichés au cours du jeu.
+
+#### *documentation/*
+
+Ce dossier contient les documents et images pour la documentation sur GitLab (il n'a aucun intérêt sur Godot).
+
+#### *extern_scripts/*
+
+Ce dossier contient le script permettant de parcourir des dialogues.*
+
+
+#### *game_data/*
+
+Le dossier *game_data/* contient des informations utilisées pendant l'exécution du jeu.
+
+On y retrouve les données sur les bâtiments ainsi que les données sur les événements et leurs conditions d'apparition.
+
+De plus, le fichier *game_data/player_data* déclare les variables permettant de stocker la progression du joueur au fil du jeu.
+
+#### *scenarios/*
+
+Le dossier *scenarios/* contient les fichier JSON générés par Whiskers et contenant les dialogues.
+In contient aussi les scripts dont ont besoin certains dialogues pour leur partie logique.
+
+#### *scenes/*
+
+Le dossier *scenes/* contient les scènes principales :
+* La scène du menu au démarrage ;
+* La scène d'introduction (journaux et conférence) ;
+* La scène de construction de ville ;
+* La scène permettant d'afficher un dialogue.
+
+Il y a aussi quelques scènes annexes servant à ces scènes principales, ainsi que les scripts qui y sont liés.
+
+#### *themes/*
+
+Le dossier *themes/* contient les modèles des thèmes utilisé par l'UI.
+
+Voir [comment utiliser les Themes avec Godot].
+
+[comment utiliser les Themes avec Godot]: https://docs.godotengine.org/en/stable/tutorials/gui/gui_skinning.html
+
+
+#### *tilesets/*
+
+Le dossier *tilesets/* contient les TileSets pour les rues de la ville et pour les bâtiments.
+
+Voir [comment utiliser les TileMaps].
+
+[comment utiliser les TileMaps]: https://docs.godotengine.org/en/stable/tutorials/2d/using_tilemaps.html
+
+
+#### *ui/*
+
+Le dossier *ui/* contient beaucoup de scènes différentes, servant à afficher les éléments de l'interface du jeu, ainsi que des scènes d'importance moindre, comme par exemple la CLUF.
+
+
+### Modifier le guide OpenData
+
+Pour modifier le guide OpenData, il faut ouvrir la scène *ui/guide_opendata.tscn* avec Godot.
+
+Dans l'arborascence à gauche, sélectionnez le Noeud nommé *RichTextLabel*. C'est lui qui contient le texte du guide.
+
+Enfin, dans la catégorie BbCode de l'Inspecteur, le texte du Label peut être édité. Le texte est déjà préformaté (police et couleur) et une ScrollBar apparaîtra automatiquement quand le texte dépassera le cadre du jeu.
+
+Vous pouvez voir et parcourir le Guide OpenData en lançant la scène *ui/guide_opendata.tscn* (F6 ou icône en haut à droite de Godot).
+
+Pour avoir plus d'informations sur les fonctionnalités offertes par les *RichTextLabel* et BbCode,  allez voir la [Documentation Godot sur BbCode].
+
+[Documentation Godot sur BbCode]: https://docs.godotengine.org/en/stable/tutorials/gui/bbcode_in_richtextlabel.html
+
+
+### Modifer la CLUF
+
+Pour modifier la CLUF, la procédure est la même que pour le [Guide OpenData], mais en ouvrant la scène *ui/cluf.tscn*.
+
+[Guide OpenData]: #modifier-le-guide-opendata
+
+
+### Modifier les crédits
+
+Pour modifier les crédits, la procédure est la même que pour la [Guide OpenData], mais en ouvrant la scène *ui/credits.tscn*.
+
+
 ### Changer des visuels
 
 D'une manière générale, il est déconseillé de changer la taille des éléments.Cela peut avoir des impacts sur l'apparence du jeu et impliquer des modifications des différentes scènes.
