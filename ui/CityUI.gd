@@ -27,6 +27,9 @@ onready var bar_securite = $VBoxContainer/TopContainer/TopLeftContainer/NeedCont
 
 
 func _ready():
+	# Hides the UI elements until the Tutorial is closed
+	$VBoxContainer.hide()
+	
 	# Connect the Confirmation Dialog
 	confirmation_dialog.get_cancel().connect("pressed", self, "_unvalidate_pressed")
 	confirmation_dialog.get_ok().connect("pressed", self, "_validate_pressed")
@@ -192,3 +195,8 @@ func _on_EventMessage_close_notification():
 
 func _on_EventMessage_start_dialogue():
 	emit_signal("start_dialog")
+
+
+func _on_TutorialCity_close_tutorial():
+	# Show the UI
+	$VBoxContainer.show()

@@ -48,7 +48,6 @@ var starting_rotation = 0
 
 
 func _input(event):
-	print("Received event")
 	# If mouse pressed
 	if event is InputEventMouseButton or event is InputEventScreenTouch:
 		if event.pressed:
