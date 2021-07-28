@@ -175,12 +175,6 @@ bbcode_text = "[center]
 Data City est un Serious Game sur l'Open Data, développé par le SIB : [color=#539CC7][url=https://www.sib.fr]www.sib.fr[/url][/color]
 
 
-[b][u]Encadrants[/u][/b]
-
-Anne-Gaëlle LE GUEN
-Claudie DAVID
-
-
 [b][u]Développement[/u][/b]
 
 Mathis ROBERT
@@ -189,6 +183,13 @@ Mathis ROBERT
 [b][u]Graphismes[/u][/b]
 
 Sophie RHORBAL
+
+
+[b][u]Encadrants[/u][/b]
+
+Anne-Gaëlle LE GUEN
+Claudie DAVID
+
 
 
 
@@ -207,6 +208,7 @@ Icônes créées par [color=#539CC7][url=http://www.freepik.com]Freepik[/url][/c
 Dialogues créés avec [color=#539CC7][url=https://github.com/LittleMouseGames/whiskers]Whiskers[/url][/color] 
 et parcourus avec l'aide de [color=#539CC7][url=https://github.com/LittleMouseGames/whiskers-parser]Whiskers Parser[/url][/color]
 
+
 [b][u]Sons[/u][/b]
 
 Notifications obtenus sur [color=#539CC7][url=https://notificationsounds.com/notification-sounds/definite-555]NotificationSounds.com[/url][/color] 
@@ -214,12 +216,6 @@ Notifications obtenus sur [color=#539CC7][url=https://notificationsounds.com/not
 [/center]"
 text = "
 Data City est un Serious Game sur l'Open Data, développé par le SIB : www.sib.fr
-
-
-Encadrants
-
-Anne-Gaëlle LE GUEN
-Claudie DAVID
 
 
 Développement
@@ -230,6 +226,13 @@ Mathis ROBERT
 Graphismes
 
 Sophie RHORBAL
+
+
+Encadrants
+
+Anne-Gaëlle LE GUEN
+Claudie DAVID
+
 
 
 
@@ -247,6 +250,7 @@ Dialogues
 
 Dialogues créés avec Whiskers 
 et parcourus avec l'aide de Whiskers Parser
+
 
 Sons
 

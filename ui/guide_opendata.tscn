@@ -122,7 +122,7 @@ Evidemment, ces données ne sont pas nominatives ou confidentielles. Les donnée
 
 [b][u]Principes essentiels de l'Open Data[/u][/b]
 
-D'après [color=#539CC7][url=https://www.oecd.org/gov/digital-government/open-government-data.htm]l'Open Government Data[/url][/color] (en 2007), l'Open Data est caractérisée par 8 principes fondamentaux :
+D'après [color=#539CC7][url=https://www.oecd.org/gov/digital-government/open-government-data.htm]l'Open Government Data[/url][/color] (en 2007), l'Open Data est caractérisée par 8 principes fondamentaux.
 
 Les données mises à disposition doivent être :
 
@@ -169,14 +169,25 @@ En France, l'Open Data est régie par 3 lois principales :
 [b][u]Exemples de projets'Open Data[/u][/b]
 [indent]
 
+- \"Ca reste ouvert\", les magasin ouverts pendant le confinement : [color=#539CC7][url=https://www.caresteouvert.fr/]https://www.caresteouvert.fr/[/url][/color]
+
 - Demandes de valeur foncière : [color=#539CC7][url=https://app.dvf.etalab.gouv.fr/]https://app.dvf.etalab.gouv.fr/[/url][/color]
 
 - Trajets pour les personnes avec handicap : [color=#539CC7][url=http://www.handimap.org/rennes]http://www.handimap.org/rennes[/url][/color]
 
-- Mise à disposition des documents d'urbanisme : 	[color=#539CC7][url=https://geobretagne.fr/mviewer/?config=/apps/gpu/config.xml#]https://geobretagne.fr/mviewer/?config=/apps/gpu/config.xml#[/url][/color]
+- Mise à disposition des documents d'urbanisme : [color=#539CC7][url=https://geobretagne.fr/mviewer/?config=/apps/gpu/config.xml#]https://geobretagne.fr/mviewer/?config=/apps/gpu/config.xml#[/url][/color]
 
-[/indent]
-"
+- Téléchargement du cadastre des zones en Bretagne : [color=#539CC7][url=https://geobretagne.fr/mviewer/?x=-326922&y=6144666&z=9&l=telechargement_pci%2A&lb=osm_google&config=/pub/dgfip/apps/telechargement/pci.xml&mode=s]https://geobretagne.fr/mviewer/?x=-326922&y=6144666&z=9&l=telechargement_pci%2A&lb=osm_google&config=/pub/dgfip/apps/telechargement/pci.xml&mode=s[/url][/color]
+
+-Entretien de mobiliers publics grâce aux signalements des citoyens : 
+[color=#539CC7][url=https://kartenn.region-bretagne.fr/vn/#]https://kartenn.region-bretagne.fr/vn/#[/url][/color]
+[color=#539CC7][url=https://canaux.bretagne.bzh/equipements-de-service/vos-demandes/]https://canaux.bretagne.bzh/equipements-de-service/vos-demandes/[/url][/color]
+
+- Observatoire DPE (ADEME) : https://www.observatoire-dpe.fr/index.php/statistique 
+[color=#539CC7][url=https://www.observatoire-dpe.fr/index.php/statistique]https://www.observatoire-dpe.fr/index.php/statistique[/url][/color]
+
+
+[/indent]"
 text = "Définition de l'Open Data
 
 L'Open Data, ou données ouvertes, représente les données auxquelles l’accès est totalement public et libre de droit, au même titre que leur exploitation et leur réutilisation. 
@@ -186,7 +197,7 @@ Evidemment, ces données ne sont pas nominatives ou confidentielles. Les donnée
 
 Principes essentiels de l'Open Data
 
-D'après l'Open Government Data (en 2007), l'Open Data est caractérisée par 8 principes fondamentaux :
+D'après l'Open Government Data (en 2007), l'Open Data est caractérisée par 8 principes fondamentaux.
 
 Les données mises à disposition doivent être :
 
@@ -233,11 +244,22 @@ En France, l'Open Data est régie par 3 lois principales :
 Exemples de projets'Open Data
 	
 
+- \"Ca reste ouvert\", les magasin ouverts pendant le confinement : https://www.caresteouvert.fr/
+
 - Demandes de valeur foncière : https://app.dvf.etalab.gouv.fr/
 
 - Trajets pour les personnes avec handicap : http://www.handimap.org/rennes
 
-- Mise à disposition des documents d'urbanisme : 	https://geobretagne.fr/mviewer/?config=/apps/gpu/config.xml#
+- Mise à disposition des documents d'urbanisme : https://geobretagne.fr/mviewer/?config=/apps/gpu/config.xml#
+
+- Téléchargement du cadastre des zones en Bretagne : https://geobretagne.fr/mviewer/?x=-326922&y=6144666&z=9&l=telechargement_pci%2A&lb=osm_google&config=/pub/dgfip/apps/telechargement/pci.xml&mode=s
+
+-Entretien de mobiliers publics grâce aux signalements des citoyens : 
+https://kartenn.region-bretagne.fr/vn/#
+https://canaux.bretagne.bzh/equipements-de-service/vos-demandes/
+
+- Observatoire DPE (ADEME) : https://www.observatoire-dpe.fr/index.php/statistique 
+https://www.observatoire-dpe.fr/index.php/statistique
 
 
 "
