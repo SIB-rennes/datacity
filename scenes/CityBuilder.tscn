@@ -300,6 +300,7 @@ theme = SubResource( 9 )
 [connection signal="clicked_map" from="Map" to="." method="map_clicked"]
 [connection signal="cancel_build" from="CanvasLayer/CityUI" to="." method="_on_CityUI_cancel_build"]
 [connection signal="close_notifications" from="CanvasLayer/CityUI" to="." method="_on_CityUI_close_notifications"]
+[connection signal="closed_tutorial" from="CanvasLayer/CityUI" to="." method="_on_CityUI_closed_tutorial"]
 [connection signal="logout" from="CanvasLayer/CityUI" to="." method="_on_CityUI_logout"]
 [connection signal="open_build" from="CanvasLayer/CityUI" to="." method="_on_CityUI_open_build"]
 [connection signal="open_guide" from="CanvasLayer/CityUI" to="." method="_on_CityUI_open_guide"]

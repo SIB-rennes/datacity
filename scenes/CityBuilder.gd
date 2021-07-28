@@ -51,6 +51,10 @@ func _ready():
 	
 	# Update the UI
 	update_ui()
+	
+	
+	# Enable the camera
+	$Camera2D.block_camera(true)
 
 
 
@@ -440,5 +444,10 @@ func _on_EventResult_close_results():
 	ui.show()
 	$CanvasLayer/EventResult.hide()
 
+	# Enable the camera
+	$Camera2D.block_camera(false)
+
+
+func _on_CityUI_closed_tutorial():
 	# Enable the camera
 	$Camera2D.block_camera(false)

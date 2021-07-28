@@ -12,6 +12,7 @@ signal logout
 signal cancel_build
 signal unvalidate_position
 signal validate_position
+signal closed_tutorial
 
 
 ## References to the UI Elements
@@ -200,3 +201,5 @@ func _on_EventMessage_start_dialogue():
 func _on_TutorialCity_close_tutorial():
 	# Show the UI
 	$VBoxContainer.show()
+	
+	emit_signal("closed_tutorial")
