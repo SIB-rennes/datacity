@@ -6,9 +6,7 @@ onready var text_label = $MainContainer/ScrollMargin/VBoxContainer/MarginContain
 
 
 func _ready():
-	# If not a web export, connect urls to OS shell open
-	if OS.get_name() != "HTML5":
-		text_label.connect("meta_clicked", self, "_on_RichTextLabel_meta_clicked")
+	text_label.connect("meta_clicked", self, "_on_RichTextLabel_meta_clicked")
 		
 
 
