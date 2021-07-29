@@ -45,16 +45,33 @@ var buildings_in_city : Dictionary
 
 
 func _ready():
+	# Tries to load a save
+	if PlayerData.must_load_save:
+		print ("Must load save")
+		if load_save():
+			print("Save loaded !")
+			
+			# Hides the tutorial
+			ui.close_tutorial()
+			update_ui()
+		# Problem while loaing, go back to introduction
+		else:
+			print("Could not load save")
+			
+			PlayerData.must_load_save = false
+			
+			# Start the introduction
+			get_tree().change_scene("res://scenes/Introduction.tscn")
+	else:
+		print ("Must not load save")
+	
+	
 	#Save the value of the occupied Tile
 	occupied_tile = buildings_map.tile_set.find_tile_by_name("Occupied")
 	preview_tile = buildings_map.tile_set.find_tile_by_name("FantomBuilding")
 	
 	# Update the UI
 	update_ui()
-	
-	
-	# Enable the camera
-	$Camera2D.block_camera(true)
 
 
 
@@ -86,6 +103,7 @@ func trigger_scenaristic_event():
 		current_event = event
 		
 		ui.display_notification()
+		
 
 
 
@@ -167,6 +185,10 @@ func update_ui():
 	
 	# Update the bars from the player data
 	ui.update_bars()
+	
+	
+	if current_event != null:
+		ui.display_notification()
 
 
 
@@ -383,6 +405,9 @@ func _on_CityUI_validate_position():
 	update_ui()
 	
 	state = State.STANDARD
+	
+	# Save the game 
+	save()
 
 
 
@@ -424,6 +449,10 @@ func _on_DialogScene_dialog_finished():
 	
 	# Update the UI with the new scores
 	update_ui()
+	
+	
+	# Save the game state
+	save()
 
 
 func _on_GuidOpenData_close_guide():
@@ -451,3 +480,67 @@ func _on_EventResult_close_results():
 func _on_CityUI_closed_tutorial():
 	# Enable the camera
 	$Camera2D.block_camera(false)
+
+
+func save():
+	# Save data
+	var save_dict = {
+		# Save data from PlayerData
+		"building_list": PlayerData.building_list,
+		"event_occured": PlayerData.event_occured,
+		"city_data": PlayerData.city_data,
+		"data_points": PlayerData.data_points,
+		
+		# Currently waiting event
+		"current_event": current_event,
+		
+		# Grid of buildings
+		"buildings": buildings_map.save_string()
+	}
+	
+	# Save 
+	var save_game = File.new()
+	save_game.open(PlayerData.SAVEFILE, File.WRITE)
+	save_game.store_line(to_json(save_dict))
+	
+	# Close the file
+	save_game.close()
+	
+	print("Saved !")
+
+
+
+func load_save():
+	# Open the save
+	var file = File.new()
+	var err = file.open(PlayerData.SAVEFILE, File.READ)
+	
+	# An error occured
+	if err:
+		return false
+	
+	# Check if all keys are in the save
+	var dic = Dictionary(parse_json(file.get_line()))
+
+	# Key list
+	var keys = ["building_list", "event_occured",
+	"city_data","data_points","current_event","buildings"]
+	
+	# Check each key	
+	for k in keys:
+		if not k in dic.keys():
+			return false
+	
+	# Try to load the buildings
+	if not buildings_map.load_string(dic["buildings"]):
+		return false
+	
+	PlayerData.building_list = dic["building_list"]
+	PlayerData.event_occured = dic["event_occured"]
+	PlayerData.city_data = dic["city_data"]
+	PlayerData.data_points = dic["data_points"]
+	
+	current_event = dic["current_event"]
+	
+	
+	return true
