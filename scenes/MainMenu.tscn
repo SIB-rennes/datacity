@@ -107,6 +107,9 @@ margin_bottom = 20.0
 flat = true
 clip_text = true
 expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CLUF" parent="." instance=ExtResource( 7 )]
 

@@ -151,6 +151,14 @@ func close_notifications(has_event: bool):
 	
 
 
+func close_tutorial():
+	# Removes the tutorial
+	$TutorialCity.queue_free()
+	
+	# Execute as if the user had closed it
+	_on_TutorialCity_close_tutorial()
+
+
 #==========> Signal Senders <==========#
 
 func _on_NotificationButton_pressed():

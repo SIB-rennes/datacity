@@ -11,7 +11,7 @@ const EDUCATION = "Education"
 const LOISIRS = "Loisirs"
 const SECURITE = "Sécurité"
 
-
+const SAVEFILE = "user://savegame.save"
 
 # List of building the player can build
 var building_list = {
@@ -36,6 +36,8 @@ var city_data = {
 # Data points accumulated
 var data_points = 0
 
+
+var must_load_save = true
 
 
 func _ready():
