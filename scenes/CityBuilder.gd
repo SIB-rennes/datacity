@@ -104,6 +104,9 @@ func start_dialog():
 
 ## Called from the Map signal when the map is clicked
 func map_clicked(case_index, case_center_coords, _occupied):
+	# Wait for 1/10 second, for the potential cancel build signal
+	yield(get_tree().create_timer(0.1), "timeout") # Delay
+	
 	# If Choosing the place
 	if state == State.CHOOSING_PLACE:
 		if can_place(building_to_place, case_index):
@@ -302,8 +305,6 @@ func _on_CityUI_open_build():
 
 
 func _on_BuildMenu_selected_building(building_name):
-	# Change state to choosing place
-	state = State.CHOOSING_PLACE
 	
 	# Save the building
 	building_name_to_place = building_name
@@ -316,9 +317,16 @@ func _on_BuildMenu_selected_building(building_name):
 	# Set the ui to show the building
 	ui.show_current_building(building_name)
 	
-	
 	# Disable the camera
 	$Camera2D.block_camera(false)
+	
+	
+	# Wait for 1/10 second, before changing the state
+	yield(get_tree().create_timer(0.1), "timeout") # Delay
+	
+	# Change state to choosing place
+	state = State.CHOOSING_PLACE
+	
 
 
 
@@ -344,13 +352,13 @@ func _on_CityUI_open_guide():
 
 
 func _on_CityUI_cancel_build():
-	ui.show_build_button()
-	
-	state = State.STANDARD
+	if state == State.CHOOSING_PLACE:
+		ui.show_build_button()
+		
+		state = State.STANDARD
 
 
 func _on_CityUI_unvalidate_position():
-	
 	# Reset the UI
 	ui.show_build_button()
 	
