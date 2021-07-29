@@ -206,8 +206,6 @@ func update_dialog():
 
 
 func _add_buttons():
-	print("Adding buttons !")
-	
 	# Add the new buttons
 	for answer in block.options:
 		# Instanciate
