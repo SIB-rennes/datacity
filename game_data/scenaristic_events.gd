@@ -108,8 +108,8 @@ const DIALOG_FILES = {
 	"DonneesUrbanisme": "res://scenarios/pedagogical/donnees_urbanisme.json",
 	"AutomatiserDonnees": "res://scenarios/pedagogical/automatiser_publication_donnes.json",
 	
-	"InfosConference": "res://scenarios/beginning/infos_conference.json",
-	"CitoyenEnerve": "res://scenarios/beginning/citoyen_enerve.json",
+	"InfosConference": "res://scenarios/pedagogical/infos_conference.json",
+	"CitoyenEnerve": "res://scenarios/pedagogical/citoyen_enerve.json",
 	
 	"RetourConferencier_1": "res://scenarios/pedagogical/retour_conferencier_1.json",
 	"RetourConferencier_2": "res://scenarios/pedagogical/retour_conferencier_2.json",

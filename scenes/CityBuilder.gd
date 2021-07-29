@@ -66,8 +66,22 @@ func trigger_scenaristic_event():
 	# Tries to trigger an event
 	var event = event_manager.trigger_event(buildings_in_city)
 	
-	# If a scenaristic event occured
+	# If a scenaristic event occured and the dialog has a file
 	if event != null:
+		# If there is no corresponding dialog file
+		if not event_manager.DIALOG_FILES.has(event):
+			print("ERROR : no dialogue file specified for " + event)
+			return
+		
+		
+		# Get the dialogue file and check if it exists
+		var file_path = event_manager.DIALOG_FILES.get(event, null)
+		
+		if not File.new().file_exists(file_path):
+			print("ERROR : the dialogue file for " + event + " doesn't exist")
+			return
+		
+		
 		# Keep the event name
 		current_event = event
 		
