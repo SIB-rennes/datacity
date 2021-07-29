@@ -168,8 +168,6 @@ func update_ui():
 
 
 func ask_validation():
-	print("Ask for validation")
-	
 	state = State.ASK_VALIDATION
 	
 	# show the preview emplacements
@@ -268,8 +266,6 @@ func show_results(points_gained: int, buildings_gained: Array):
 func _on_CityUI_open_notifications():
 	# only if State.STANDARD
 	if state == State.STANDARD:
-		print("Open Notifications !")
-		
 		state = State.SHOWING_NOTIFICATION
 		
 		# Show the notification with the summary
@@ -282,12 +278,12 @@ func _on_CityUI_open_notifications():
 func _on_CityUI_open_settings():
 	# only if State.STANDARD
 	if state == State.STANDARD:
-		print("Open Settings !")
+		# Here, open the Settings (not used)
+		pass
 
 
 
 func _on_CityUI_logout():
-	print("Logout !")
 	get_tree().quit()
 
 
@@ -306,8 +302,6 @@ func _on_CityUI_open_build():
 
 
 func _on_BuildMenu_selected_building(building_name):
-	print("Selected : " + building_name)
-	
 	# Change state to choosing place
 	state = State.CHOOSING_PLACE
 	
@@ -329,8 +323,6 @@ func _on_BuildMenu_selected_building(building_name):
 
 
 func _on_BuildMenu_exited_build_menu():
-	print("Exit build menu")
-	
 	ui.show()
 	build_menu.hide()
 	
@@ -342,8 +334,6 @@ func _on_BuildMenu_exited_build_menu():
 func _on_CityUI_open_guide():
 	# IGNORE IF NOT State.STANDARD
 	if state == State.STANDARD:
-		print("Open Guide !")
-	
 		state = State.SHOWING_GUIDE
 		
 		ui.hide()
@@ -354,14 +344,12 @@ func _on_CityUI_open_guide():
 
 
 func _on_CityUI_cancel_build():
-	print("Cancel the build")
 	ui.show_build_button()
 	
 	state = State.STANDARD
 
 
 func _on_CityUI_unvalidate_position():
-	print("Unvalidate position !")
 	
 	# Reset the UI
 	ui.show_build_button()
@@ -373,7 +361,6 @@ func _on_CityUI_unvalidate_position():
 
 
 func _on_CityUI_validate_position():
-	print("Validate position !")
 	
 	# Reset the UI
 	ui.show_build_button()
@@ -392,14 +379,11 @@ func _on_CityUI_validate_position():
 
 
 func _on_CityUI_start_dialog():
-	print("Start a dialog !")
 	start_dialog()
 	
 
 
-func _on_CityUI_close_notifications():
-	print("Closing notification")
-	
+func _on_CityUI_close_notifications():	
 	# There is still a waiitng notification
 	ui.close_notifications(true)
 	
@@ -407,8 +391,6 @@ func _on_CityUI_close_notifications():
 
 
 func _on_DialogScene_dialog_finished():
-	print("Dialog finished")
-	
 	# For the time being, switch to Standard state
 	state = State.STANDARD
 	
@@ -437,8 +419,6 @@ func _on_DialogScene_dialog_finished():
 
 
 func _on_GuidOpenData_close_guide():
-	print("Closing Guide")
-	
 	state = State.STANDARD
 	
 	ui.show()
@@ -450,8 +430,6 @@ func _on_GuidOpenData_close_guide():
 
 
 func _on_EventResult_close_results():
-	print("Closing Results")
-	
 	state = State.STANDARD
 	
 	# Show the ui and hide the results
