@@ -101,9 +101,16 @@ __meta__ = {
 [node name="Credits" parent="." instance=ExtResource( 8 )]
 visible = false
 
+[node name="SkipIntro" type="TextureButton" parent="."]
+margin_right = 10.0
+margin_bottom = 10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="CLUF" parent="." instance=ExtResource( 7 )]
-visible = false
 
 [connection signal="pressed" from="VBoxContainer/ButtonContainer/Button" to="ColorRect" method="fade_in"]
 [connection signal="pressed" from="CreditButton" to="Credits" method="show"]
 [connection signal="fade_finished" from="ColorRect" to="." method="on_fade_finished"]
+[connection signal="pressed" from="SkipIntro" to="." method="_on_SkipIntro_pressed"]
