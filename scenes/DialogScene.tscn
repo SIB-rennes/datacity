@@ -43,13 +43,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Character" type="Sprite" parent="."]
-visible = false
-scale = Vector2( 0.245065, 0.245065 )
-texture = ExtResource( 8 )
-centered = false
-
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Character" type="TextureRect" parent="."]
 anchor_left = 0.228
 anchor_top = 1.0
 anchor_right = 0.228
