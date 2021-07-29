@@ -101,12 +101,12 @@ __meta__ = {
 [node name="Credits" parent="." instance=ExtResource( 8 )]
 visible = false
 
-[node name="SkipIntro" type="TextureButton" parent="."]
-margin_right = 10.0
-margin_bottom = 10.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="SkipIntro" type="Button" parent="."]
+margin_right = 20.0
+margin_bottom = 20.0
+flat = true
+clip_text = true
+expand_icon = true
 
 [node name="CLUF" parent="." instance=ExtResource( 7 )]
 
