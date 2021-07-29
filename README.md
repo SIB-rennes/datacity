@@ -30,6 +30,7 @@
 - [Ajouter un bâtiment]
 - [Modifier un événement scénaristique]
 - [Ajouter un événement scénaristique]
+- [Système de sauvegarde]
 
 
 
@@ -61,3 +62,4 @@
 [Ajouter un bâtiment]: /documentation/serious-game.md#ajouter-un-bâtiment
 [Modifier un événement scénaristique]: /documentation/serious-game.md#modifier-un-événement-scénaristique
 [Ajouter un événement scénaristique]: /documentation/serious-game.md#ajouter-un-événement-scénaristique
+[Système de sauvegarde]: /documentation/serious-game.md#système-de-sauvegarde

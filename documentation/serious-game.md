@@ -271,3 +271,38 @@ Ces bâtiments sont marqués dans le dictionnaire OFFERED_BUILDINGS.
 Pour plus d'informations sur les réglages, voir la partie [Modifier un événement scénaristique].
 
 [Modifier un événement scénaristique]: #modifier-un-événement-scénaristique
+
+
+### Système de sauvegarde
+
+Le projet Serious Game Open Data utilise le système de sauvegarde de Godot, décrit dans [ce tutoriel].
+Le système de sauvegarde et de chargement se déroule dans le script *scenes/CityBuilder.gd* (fonctions *save()* et *load_save()*).
+
+[ce tutoriel]: https://docs.godotengine.org/en/stable/tutorials/io/saving_games.html
+
+Les données sont pour le moment stockées en local, dans le répertoire virtuel *user://* mis à disposition par Godot.
+
+Dans la pratique, ce répertoire se trouve à différents endroits, suivant le système sur lequel tourne le jeu :
+- Sur Windows, le dossier se trouve dans *%appdata%/Godot*.
+
+- Sur navigateur, une base de donnée locale */userfs* est créée et le fichier de sauvegarde est stocké dedans.
+
+Le fichier de sauvegarde contient :
+- La grille des bâtiments placés
+- La liste des bâtiments dans l'inventaire du joueur
+- L'événement en attente
+- La liste des événements déjà réalisés
+- Le score en DataPoints
+- La population et la population maximum
+- Les valeurs de remplissage des besoins
+
+Certaines de ces valeurs sont stockées pour faciliter le code, elles pourraient être recalculées à partir des bâtiments posés.
+
+
+Après avoir cliqué sur le bouton Jouer, le jeu regarde l'existence du fichier de sauvegarde, tente de le charger, et lance l'introduction s'il échoue.
+
+
+##### Note sécurité
+Le fichier de sauvegarde n'est ni sécurisé ni chiffré (ce qui implique la possibilité de le modifier directement).
+
+Une façon simple de rendre sa lecture et sa modification plus compliquée serait de le chiffrer (La classe *File* de Godot propose pour cela une fonction *open_encrypted*).
