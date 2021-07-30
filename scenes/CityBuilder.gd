@@ -45,15 +45,21 @@ var buildings_in_city : Dictionary
 
 
 func _ready():
+	# Blocks the camera if there is a tutorial
+	$Camera2D.block_camera(true)
+	
 	# Tries to load a save
 	if PlayerData.must_load_save:
 		print ("Must load save")
 		if load_save():
 			print("Save loaded !")
-			
 			# Hides the tutorial
 			ui.close_tutorial()
 			update_ui()
+			
+			# Unblock the camera
+			$Camera2D.block_camera(false)
+			
 		# Problem while loaing, go back to introduction
 		else:
 			print("Could not load save")

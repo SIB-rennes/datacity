@@ -158,7 +158,6 @@ func close_tutorial():
 	# Execute as if the user had closed it
 	_on_TutorialCity_close_tutorial()
 
-
 #==========> Signal Senders <==========#
 
 func _on_NotificationButton_pressed():
