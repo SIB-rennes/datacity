@@ -208,13 +208,13 @@ Si le bâtiment n'est pas centré, il est toujours possible de modifier son Tex 
 
 
 #### Modifier le contenu
-Pour modifier le contenu d'un dialogue, il suffit d'ouvrir le fichierdu dialogue avec Whiskers et de mettre à jour le graphe du dialogue.
+Pour modifier le contenu d'un dialogue, il suffit d'ouvrir le fichier du dialogue avec Whiskers et de mettre à jour le graphe du dialogue.
 
 #### Modifier les réglages
 
 Les paramètres des événements se trouvent dans le fichier *game_data/scenaristic_events.gd*.
 
-Le nom des événements n'est pas défini à un endroit particulier, aussi faut-il faire attention à utiliser le même nom pour une événement spécifique.
+Le nom des événements n'est pas défini à un endroit particulier. Il faut donc faire attention à utiliser le même nom à chaque endroit .
 
 ##### Conditions d'apparition
 
