@@ -171,7 +171,7 @@ custom_fonts/bold_font = ExtResource( 5 )
 custom_fonts/normal_font = ExtResource( 5 )
 custom_colors/default_color = Color( 0.266667, 0.113725, 0, 1 )
 bbcode_enabled = true
-bbcode_text = "[center](vide)[/center]"
+bbcode_text = "[center]en cours[/center]"
 text = "(vide)"
 
 [connection signal="pressed" from="Background/Button" to="." method="_on_Button_pressed"]
