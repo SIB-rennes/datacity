@@ -11,12 +11,13 @@ variables:
 web:
   image: barichello/godot-ci:3.3
   stage: export
-  image: barichello/godot-ci:3.3
   variables:
     EXPORT_NAME: DataCity
   script:
     - mkdir -v -p build/web
     - godot -v --export "HTML5" ./build/web/index.html
+    # bidouille pour avoir une ligne dans les logs nginx à chaque affichage de la page
+    - sed -i '/<\/script>/i fetch("/?" + Date.now());' ./build/web/index.html
   artifacts:
     paths:
       - build/web
