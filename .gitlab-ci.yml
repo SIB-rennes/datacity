@@ -8,6 +8,16 @@ variables:
   https_proxy: http://pro01.sib.fr:3128
   no_proxy: sib.fr
 
+workflow:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      variables:
+        VERSION: 'main'
+    - if: '$CI_COMMIT_BRANCH == "beta"'
+      variables:
+        VERSION: 'beta'
+
+
 web:
   image: barichello/godot-ci:3.3
   stage: export
@@ -23,11 +33,10 @@ web:
       - build/web
     expire_in: 15 min
 
-
 build-image:
   stage: image
   variables:
-      IMAGE: $DOCKER_REGISTRY_DEV/data-city:latest
+      IMAGE: $DOCKER_REGISTRY_DEV/data-city:$VERSION
   script:
     - docker build . -t $IMAGE
     - docker push $IMAGE
@@ -41,4 +50,4 @@ deploy:
         export DOCKER_REGISTRY_DEV=${DOCKER_REGISTRY_DEV}
         docker network create -d overlay --attachable data-city-network || true
         docker stack deploy --compose-file - serious-game
-      " < docker-compose.yml
+      " < stack/${VERSION}/docker-compose.yml

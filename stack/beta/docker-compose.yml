@@ -7,9 +7,9 @@ networks:
 
 services:
   data-city:
-    image: $DOCKER_REGISTRY_DEV/data-city:latest
+    image: $DOCKER_REGISTRY_DEV/data-city:beta
     ports:
-      - "60004:80"
+      - "60005:80"
     deploy:
       mode: replicated
       replicas: 1
