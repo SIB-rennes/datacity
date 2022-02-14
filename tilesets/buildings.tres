@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=21 format=2]
+[gd_resource type="TileSet" load_steps=22 format=2]
 
 [ext_resource path="res://assets/sprites/buildings/musee.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/buildings/grandeecole.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://assets/sprites/buildings/theatre.png" type="Texture" id=18]
 [ext_resource path="res://assets/sprites/buildings/grandcommissariat.png" type="Texture" id=19]
 [ext_resource path="res://assets/sprites/buildings/mairiegauche.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/buildings/centre_asso.png" type="Texture" id=21]
 
 [resource]
 resource_name = "Buildings"
@@ -81,9 +82,9 @@ resource_name = "Buildings"
 9/z_index = 0
 10/name = "Cafe"
 10/texture = ExtResource( 17 )
-10/tex_offset = Vector2( 0, -100 )
+10/tex_offset = Vector2( -30, -30 )
 10/modulate = Color( 1, 1, 1, 1 )
-10/region = Rect2( 0, 0, 640, 576 )
+10/region = Rect2( -3, -3, 540, 402 )
 10/tile_mode = 0
 10/occluder_offset = Vector2( 0, 0 )
 10/navigation_offset = Vector2( 0, 0 )
@@ -95,9 +96,9 @@ resource_name = "Buildings"
 10/z_index = 0
 11/name = "Commissariat"
 11/texture = ExtResource( 16 )
-11/tex_offset = Vector2( -100, -140 )
+11/tex_offset = Vector2( -180, -180 )
 11/modulate = Color( 1, 1, 1, 1 )
-11/region = Rect2( 0, 0, 640, 640 )
+11/region = Rect2( -32, 0, 864, 672 )
 11/tile_mode = 0
 11/occluder_offset = Vector2( 0, 0 )
 11/navigation_offset = Vector2( 0, 0 )
@@ -163,25 +164,11 @@ resource_name = "Buildings"
 15/shape_one_way_margin = 0.0
 15/shapes = [  ]
 15/z_index = 0
-16/name = "Mairie"
-16/texture = ExtResource( 20 )
-16/tex_offset = Vector2( -180, -210 )
-16/modulate = Color( 1, 1, 1, 1 )
-16/region = Rect2( 0, 0, 576, 576 )
-16/tile_mode = 0
-16/occluder_offset = Vector2( 0, 0 )
-16/navigation_offset = Vector2( 0, 0 )
-16/shape_offset = Vector2( 0, 0 )
-16/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-16/shape_one_way = false
-16/shape_one_way_margin = 0.0
-16/shapes = [  ]
-16/z_index = 0
 17/name = "Maison 1"
 17/texture = ExtResource( 9 )
 17/tex_offset = Vector2( -10, -64 )
 17/modulate = Color( 1, 1, 1, 1 )
-17/region = Rect2( 0, 64, 576, 512 )
+17/region = Rect2( 0, 0, 544, 480 )
 17/tile_mode = 0
 17/occluder_offset = Vector2( 0, 0 )
 17/navigation_offset = Vector2( 0, 0 )
@@ -249,9 +236,9 @@ resource_name = "Buildings"
 21/z_index = 0
 22/name = "Pharmacie"
 22/texture = ExtResource( 15 )
-22/tex_offset = Vector2( 0, -100 )
+22/tex_offset = Vector2( -20, -60 )
 22/modulate = Color( 1, 1, 1, 1 )
-22/region = Rect2( 0, 0, 640, 576 )
+22/region = Rect2( -2, -7, 536, 446 )
 22/tile_mode = 0
 22/occluder_offset = Vector2( 0, 0 )
 22/navigation_offset = Vector2( 0, 0 )
@@ -261,11 +248,11 @@ resource_name = "Buildings"
 22/shape_one_way_margin = 0.0
 22/shapes = [  ]
 22/z_index = 0
-23/name = "Restaurant"
+23/name = "Supermarche"
 23/texture = ExtResource( 12 )
-23/tex_offset = Vector2( -180, -180 )
+23/tex_offset = Vector2( 135, -440 )
 23/modulate = Color( 1, 1, 1, 1 )
-23/region = Rect2( 64, 0, 704, 576 )
+23/region = Rect2( 0, 0, 1600, 1248 )
 23/tile_mode = 0
 23/occluder_offset = Vector2( 0, 0 )
 23/navigation_offset = Vector2( 0, 0 )
@@ -303,3 +290,31 @@ resource_name = "Buildings"
 25/shape_one_way_margin = 0.0
 25/shapes = [  ]
 25/z_index = 0
+28/name = "Mairie"
+28/texture = ExtResource( 20 )
+28/tex_offset = Vector2( 50, -350 )
+28/modulate = Color( 1, 1, 1, 1 )
+28/region = Rect2( 0, 0, 736, 672 )
+28/tile_mode = 0
+28/occluder_offset = Vector2( 0, 0 )
+28/navigation_offset = Vector2( 0, 0 )
+28/shape_offset = Vector2( 0, 0 )
+28/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+28/shape_one_way = false
+28/shape_one_way_margin = 0.0
+28/shapes = [  ]
+28/z_index = 0
+29/name = "Centre Associatif"
+29/texture = ExtResource( 21 )
+29/tex_offset = Vector2( 0, -350 )
+29/modulate = Color( 1, 1, 1, 1 )
+29/region = Rect2( 0, 0, 1056, 864 )
+29/tile_mode = 0
+29/occluder_offset = Vector2( 0, 0 )
+29/navigation_offset = Vector2( 0, 0 )
+29/shape_offset = Vector2( 0, 0 )
+29/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+29/shape_one_way = false
+29/shape_one_way_margin = 0.0
+29/shapes = [  ]
+29/z_index = 0

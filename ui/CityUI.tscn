@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/sprites/icons/guide_small.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/icons/construct_small.png" type="Texture" id=2]
@@ -21,30 +21,6 @@
 [ext_resource path="res://ui/tutorial_city.tscn" type="PackedScene" id=19]
 
 [sub_resource type="DynamicFont" id=1]
-resource_local_to_scene = true
-size = 18
-outline_color = Color( 0.784314, 0.188235, 0.188235, 1 )
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 18 )
-
-[sub_resource type="DynamicFont" id=2]
-resource_local_to_scene = true
-size = 18
-outline_color = Color( 0.784314, 0.188235, 0.188235, 1 )
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 18 )
-
-[sub_resource type="DynamicFont" id=3]
-resource_local_to_scene = true
-size = 18
-outline_color = Color( 0.784314, 0.188235, 0.188235, 1 )
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 18 )
-
-[sub_resource type="DynamicFont" id=4]
 resource_local_to_scene = true
 size = 18
 outline_color = Color( 0.784314, 0.188235, 0.188235, 1 )
@@ -119,12 +95,12 @@ margin_bottom = 590.0
 
 [node name="TopContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 1004.0
-margin_bottom = 275.0
+margin_bottom = 225.0
 size_flags_horizontal = 3
 
 [node name="TopLeftContainer" type="VBoxContainer" parent="VBoxContainer/TopContainer"]
 margin_right = 487.0
-margin_bottom = 275.0
+margin_bottom = 225.0
 
 [node name="Points" type="HBoxContainer" parent="VBoxContainer/TopContainer/TopLeftContainer"]
 margin_right = 487.0
@@ -140,8 +116,8 @@ margin_right = 487.0
 
 [node name="NeedContainer" type="GridContainer" parent="VBoxContainer/TopContainer/TopLeftContainer"]
 margin_top = 57.0
-margin_right = 201.0
-margin_bottom = 157.0
+margin_right = 111.0
+margin_bottom = 107.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_constants/vseparation = 0
@@ -151,62 +127,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sante" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer" instance=ExtResource( 9 )]
-margin_right = 96.0
+[node name="Satisfaction" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer" instance=ExtResource( 9 )]
+margin_right = 111.0
 margin_bottom = 50.0
 
-[node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Sante/VBoxContainer" index="0"]
+[node name="VBoxContainer" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Satisfaction" index="0"]
+margin_right = 108.0
+
+[node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Satisfaction/VBoxContainer" index="0"]
+margin_right = 105.0
 custom_fonts/font = SubResource( 1 )
-text = " Santé"
+text = "Satisfaction"
 
-[node name="Education" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer" instance=ExtResource( 9 )]
-margin_left = 101.0
-margin_right = 201.0
-margin_bottom = 50.0
-
-[node name="VBoxContainer" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Education" index="0"]
+[node name="TextureProgress" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Satisfaction/VBoxContainer" index="1"]
+margin_left = 7.0
 margin_right = 97.0
-
-[node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Education/VBoxContainer" index="0"]
-margin_right = 94.0
-custom_fonts/font = SubResource( 2 )
-text = " Education"
-
-[node name="TextureProgress" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Education/VBoxContainer" index="1"]
-margin_left = 2.0
-margin_right = 92.0
-
-[node name="Loisirs" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer" instance=ExtResource( 9 )]
-margin_top = 50.0
-margin_right = 96.0
-margin_bottom = 100.0
-
-[node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Loisirs/VBoxContainer" index="0"]
-custom_fonts/font = SubResource( 3 )
-text = " Loisirs"
-
-[node name="Securite" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer" instance=ExtResource( 9 )]
-margin_left = 101.0
-margin_top = 50.0
-margin_right = 201.0
-margin_bottom = 100.0
-
-[node name="VBoxContainer" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Securite" index="0"]
-margin_right = 97.0
-
-[node name="Label" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Securite/VBoxContainer" index="0"]
-margin_right = 94.0
-custom_fonts/font = SubResource( 4 )
-text = " Sécurité"
-
-[node name="TextureProgress" parent="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Securite/VBoxContainer" index="1"]
-margin_left = 2.0
-margin_right = 92.0
 
 [node name="NotificationButton" type="TextureButton" parent="VBoxContainer/TopContainer/TopLeftContainer"]
-margin_top = 161.0
+margin_top = 111.0
 margin_right = 487.0
-margin_bottom = 275.0
+margin_bottom = 225.0
 rect_min_size = Vector2( 0, 50 )
 texture_normal = ExtResource( 7 )
 stretch_mode = 3
@@ -222,9 +162,9 @@ stretch_mode = 3
 
 [node name="EventMessage" parent="VBoxContainer/TopContainer/TopLeftContainer" instance=ExtResource( 12 )]
 visible = false
-margin_top = 279.0
+margin_top = 229.0
 margin_right = 487.0
-margin_bottom = 429.0
+margin_bottom = 379.0
 
 [node name="NotificationPlayer" type="AudioStreamPlayer" parent="VBoxContainer/TopContainer/TopLeftContainer"]
 stream = ExtResource( 14 )
@@ -367,7 +307,4 @@ margin_bottom = 590.0
 [connection signal="pressed" from="VBoxContainer/BottomContainer/BuildButton" to="." method="_on_BuildButton_pressed"]
 [connection signal="close_tutorial" from="TutorialCity" to="." method="_on_TutorialCity_close_tutorial"]
 
-[editable path="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Sante"]
-[editable path="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Education"]
-[editable path="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Loisirs"]
-[editable path="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Securite"]
+[editable path="VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Satisfaction"]

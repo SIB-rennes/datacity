@@ -29,6 +29,8 @@ var next_state = State.TUTO_DIALOG
 
 
 func _ready():
+	#skip intro: debug
+#	get_tree().change_scene("res://scenes/CityBuilder.tscn")
 	# Deactivates the dialog scene
 	dialog_scene.set_process_input(false)
 	
@@ -47,7 +49,6 @@ func start_next_state():
 	
 	# Hide the fading screen
 	$ZIndexer/FadingScreen.hide()
-	
 	
 	match current_state:
 		# Starts the Dialog with a tutorial

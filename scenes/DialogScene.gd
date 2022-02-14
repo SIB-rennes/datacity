@@ -123,8 +123,6 @@ func _input(event):
 		if event.pressed and event.unicode == KEY_SPACE:
 			process_player_click()
 
-
-
 func process_player_click():
 	# Quit if not enought time passed
 	if answer_delay < DELAY_BEFORE_ANSWER:
@@ -317,7 +315,7 @@ func process_single_data_block():
 		
 		# The block contained data
 		return true
-		
+
 	elif text.begins_with("datapoints="):
 		# Extract the points
 		var points = text.substr("datapoints=".length())
@@ -327,7 +325,6 @@ func process_single_data_block():
 		
 		# Add points
 		points_gained += points
-		
 		# The block contained data
 		return true
 	

@@ -333,29 +333,29 @@ func _on_CityUI_open_build():
 
 
 func _on_BuildMenu_selected_building(building_name):
-	
+	if PlayerData.data_points - BuildingsData.PRIX[building_name] < 0:
+		open_no_datapoints()
+	else:
 	# Save the building
-	building_name_to_place = building_name
-	building_to_place = buildings_map.tile_set.find_tile_by_name(building_name)
-	
-	# Update UI Elements displayed
-	ui.show()
-	build_menu.hide()
-	
-	# Set the ui to show the building
-	ui.show_current_building(building_name)
-	
-	# Disable the camera
-	$Camera2D.block_camera(false)
-	
-	
-	# Wait for 1/10 second, before changing the state
-	yield(get_tree().create_timer(0.1), "timeout") # Delay
-	
-	# Change state to choosing place
-	state = State.CHOOSING_PLACE
-	
-
+		building_name_to_place = building_name
+		building_to_place = buildings_map.tile_set.find_tile_by_name(building_name)
+		
+		# Update UI Elements displayed
+		ui.show()
+		build_menu.hide()
+		
+		# Set the ui to show the building
+		ui.show_current_building(building_name)
+		
+		# Disable the camera
+		$Camera2D.block_camera(false)
+		
+		
+		# Wait for 1/10 second, before changing the state
+		yield(get_tree().create_timer(0.1), "timeout") # Delay
+		
+		# Change state to choosing place
+		state = State.CHOOSING_PLACE
 
 
 func _on_BuildMenu_exited_build_menu():
@@ -422,7 +422,7 @@ func _on_CityUI_start_dialog():
 	
 
 
-func _on_CityUI_close_notifications():	
+func _on_CityUI_close_notifications():
 	# There is still a waiitng notification
 	ui.close_notifications(true)
 	
@@ -481,6 +481,16 @@ func _on_EventResult_close_results():
 
 	# Enable the camera
 	$Camera2D.block_camera(false)
+
+func _on_No_Datapoints_close_no_datapoints():
+	state = State.STANDARD
+	
+	# Show the ui and hide the results
+	$CanvasLayer/No_Datapoints.hide()
+
+	# Enable the camera
+	$Camera2D.block_camera(false)
+
 
 
 func _on_CityUI_closed_tutorial():
@@ -550,3 +560,11 @@ func load_save():
 	
 	
 	return true
+
+
+func open_no_datapoints():
+	if state == State.STANDARD:
+		$CanvasLayer/No_Datapoints.show()
+		
+		# Disable the camera
+		$Camera2D.block_camera(true)

@@ -1,0 +1,151 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/fonts/main_font.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://themes/scrollbar.tres" type="StyleBox" id=2]
+[ext_resource path="res://themes/button_background_active.tres" type="StyleBox" id=3]
+[ext_resource path="res://themes/button_background.tres" type="StyleBox" id=4]
+[ext_resource path="res://themes/scrollbar_grabber.tres" type="StyleBox" id=5]
+[ext_resource path="res://themes/panel.tres" type="StyleBox" id=6]
+[ext_resource path="res://assets/sprites/ui/dialogs/bg_construire.png" type="Texture" id=7]
+[ext_resource path="res://assets/fonts/main_font.tres" type="DynamicFont" id=8]
+[ext_resource path="res://ui/no_datapoints.gd" type="Script" id=9]
+[ext_resource path="res://themes/main_theme.tres" type="Theme" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+resource_local_to_scene = true
+resource_name = "Font"
+size = 28
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+resource_local_to_scene = true
+default_font = SubResource( 1 )
+Button/colors/font_color = Color( 1, 0.568627, 0.184314, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = ExtResource( 4 )
+Button/styles/focus = ExtResource( 4 )
+Button/styles/hover = ExtResource( 3 )
+Button/styles/normal = ExtResource( 4 )
+Button/styles/pressed = ExtResource( 3 )
+Dialogs/constants/button_margin = 32
+Dialogs/constants/margin = 8
+Label/colors/font_color = Color( 0.992157, 0.568627, 0.180392, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/DialogLine = ExtResource( 8 )
+Label/fonts/font = ExtResource( 8 )
+Label/styles/normal = null
+Panel/styles/panel = ExtResource( 6 )
+PopupDialog/styles/panel = ExtResource( 6 )
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/styles/grabber = ExtResource( 5 )
+VScrollBar/styles/grabber_highlight = ExtResource( 5 )
+VScrollBar/styles/grabber_pressed = ExtResource( 5 )
+VScrollBar/styles/scroll = ExtResource( 2 )
+VScrollBar/styles/scroll_focus = null
+WindowDialog/colors/title_color = Color( 0, 0, 0, 1 )
+WindowDialog/constants/close_h_ofs = 18
+WindowDialog/constants/close_v_ofs = 18
+WindowDialog/constants/scaleborder_size = 4
+WindowDialog/constants/title_height = 20
+WindowDialog/fonts/title_font = null
+WindowDialog/icons/close = null
+WindowDialog/icons/close_highlight = null
+WindowDialog/styles/panel = ExtResource( 6 )
+
+[node name="No_Datapoints" type="MarginContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -362.0
+margin_top = -100.0
+margin_right = 362.0
+margin_bottom = 100.0
+mouse_filter = 2
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="NinePatchRect" parent="."]
+margin_right = 724.0
+margin_bottom = 200.0
+texture = ExtResource( 7 )
+patch_margin_left = 11
+patch_margin_top = 11
+patch_margin_right = 11
+patch_margin_bottom = 11
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+margin_right = 724.0
+margin_bottom = 200.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="MainContainer"]
+margin_right = 724.0
+margin_bottom = 33.0
+theme = ExtResource( 10 )
+text = "Attention"
+align = 1
+valign = 1
+
+[node name="ScrollMargin" type="MarginContainer" parent="MainContainer"]
+margin_top = 37.0
+margin_right = 724.0
+margin_bottom = 200.0
+mouse_filter = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainContainer/ScrollMargin"]
+margin_right = 724.0
+margin_bottom = 163.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/ScrollMargin/VBoxContainer"]
+margin_right = 724.0
+margin_bottom = 163.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 10 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MainContainer/ScrollMargin/VBoxContainer/MarginContainer"]
+margin_right = 724.0
+margin_bottom = 163.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.266667, 0.113725, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "
+[center] Vous n'avez pas assez de Data Points ![/center]"
+text = "
+ Vous n'avez pas assez de Data Points !"
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 724.0
+margin_bottom = 200.0
+
+[node name="Button" type="Button" parent="Panel"]
+margin_left = 275.0
+margin_top = 164.406
+margin_right = 449.0
+margin_bottom = 221.406
+theme = SubResource( 2 )
+text = "Fermer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]

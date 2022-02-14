@@ -41,9 +41,9 @@ margin_right = 285.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 0, 50 )
 size_flags_vertical = 8
-custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.266667, 0.113725, 0, 1 )
 custom_constants/line_spacing = 0
+custom_fonts/font = ExtResource( 2 )
 text = "Nom Batiment"
 align = 1
 valign = 1
@@ -51,7 +51,7 @@ valign = 1
 [node name="BuildingContainer" type="MarginContainer" parent="Building"]
 margin_top = 54.0
 margin_right = 285.0
-margin_bottom = 255.0
+margin_bottom = 250.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.5
@@ -63,34 +63,50 @@ custom_constants/margin_bottom = 0
 [node name="BuildingSprite" type="TextureRect" parent="Building/BuildingContainer"]
 margin_left = 12.0
 margin_right = 273.0
-margin_bottom = 201.0
+margin_bottom = 196.0
 size_flags_vertical = 3
 expand = true
 stretch_mode = 6
 
 [node name="Bonus" type="Label" parent="Building"]
-margin_top = 259.0
+margin_top = 254.0
 margin_right = 285.0
-margin_bottom = 317.0
+margin_bottom = 284.0
 rect_min_size = Vector2( 0, 30 )
-size_flags_vertical = 11
-custom_fonts/font = ExtResource( 3 )
+size_flags_vertical = 9
 custom_colors/font_color = Color( 0.823529, 0.32549, 0.301961, 1 )
 custom_constants/line_spacing = 0
+custom_fonts/font = ExtResource( 3 )
 text = "Population +..."
 align = 1
 valign = 1
 
-[node name="Left" type="Label" parent="Building"]
-margin_top = 321.0
+[node name="Prix" type="Label" parent="Building"]
+margin_top = 288.0
 margin_right = 285.0
-margin_bottom = 351.0
+margin_bottom = 318.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_vertical = 8
+custom_colors/font_color = Color( 0.823529, 0.32549, 0.301961, 1 )
+custom_constants/line_spacing = 0
+custom_fonts/font = ExtResource( 3 )
+text = "Prix: ..."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left" type="Label" parent="Building"]
+margin_top = 322.0
+margin_right = 285.0
+margin_bottom = 352.0
 rect_min_size = Vector2( 0, 30 )
 rect_pivot_offset = Vector2( -7.89821, -350.894 )
 size_flags_vertical = 2
-custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.823529, 0.32549, 0.301961, 1 )
 custom_constants/line_spacing = 0
+custom_fonts/font = ExtResource( 3 )
 text = "Restants : ..."
 align = 1
 valign = 1

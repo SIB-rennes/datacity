@@ -1,7 +1,7 @@
 extends Camera2D
 
 const ZOOM_SPEED = 0.5
-const ZOOM_MIN = 10
+const ZOOM_MIN = 13
 const ZOOM_MAX = 2
 
 const DRAG_SPEED = 5

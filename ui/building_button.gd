@@ -2,10 +2,7 @@ extends MarginContainer
 
 
 signal selected_building
-
-
-
-
+ 
 ## Set the building display
 ## building_name is the displayed name of the building
 ## If the number left is -1, consider infinite
@@ -27,7 +24,7 @@ func set_building(building : String, left: int = PlayerData.INF_BUILDING):
 	
 	# Set the building bonus
 	set_building_bonus(building)
-
+	set_building_prix(building)
 
 
 func set_building_bonus(building : String):
@@ -39,6 +36,9 @@ func set_building_bonus(building : String):
 	else:
 		$Building/Bonus.text = ""
 
+func set_building_prix(building : String):
+	var prix = BuildingsData.get_buildings_price(building)
+	$Building/Prix.text = str("Prix: ", + BuildingsData.PRIX[building], " Datapoints")
 
 func _on_Button_pressed():
 	emit_signal("selected_building")

@@ -1,0 +1,429 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/formulaire.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/backgrounds/bureau_3.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/backgrounds/bureau_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/backgrounds/bureau_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/formulaire/mairesse_place_holder.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/backgrounds/bureau_ordi.jpg" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/formulaire/maire_place_older.png" type="Texture" id=7]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 1920, 1280 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+
+[node name="formulaire" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.470276
+margin_top = 1.4108
+margin_right = 0.470215
+margin_bottom = 1.41077
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="Panel" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel_part1" type="Panel" parent="."]
+margin_left = 287.0
+margin_top = 16.0
+margin_right = 744.0
+margin_bottom = 587.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label" type="Label" parent="Panel_part1"]
+margin_left = 51.0
+margin_top = 85.0
+margin_right = 91.0
+margin_bottom = 99.0
+rect_scale = Vector2( 1.09679, 1.09679 )
+text = "Nom :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nom" type="TextEdit" parent="Panel_part1/label"]
+margin_left = -1.56201
+margin_top = 16.7275
+margin_right = 149.438
+margin_bottom = 47.7275
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label2" type="Label" parent="Panel_part1"]
+margin_left = 51.0
+margin_top = 149.0
+margin_right = 109.0
+margin_bottom = 163.0
+rect_scale = Vector2( 1.08, 1.08 )
+text = "Prenom :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="prenom" type="TextEdit" parent="Panel_part1/label2"]
+margin_left = -0.715515
+margin_top = 18.9914
+margin_right = 150.284
+margin_bottom = 49.9914
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label3" type="Label" parent="Panel_part1"]
+margin_left = 51.6334
+margin_top = 213.806
+margin_right = 180.633
+margin_bottom = 227.806
+text = "Nom de votre ville / commune:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nom_ville" type="TextEdit" parent="Panel_part1/label3"]
+margin_top = 17.0
+margin_right = 300.0
+margin_bottom = 48.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="def_femme" type="Button" parent="Panel_part1"]
+margin_left = 54.0
+margin_top = 288.0
+margin_right = 213.0
+margin_bottom = 541.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="femme" type="Sprite" parent="Panel_part1/def_femme"]
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 72.501, 127.437 )
+scale = Vector2( 0.12419, 0.12419 )
+texture = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="Panel_part1/def_femme/femme"]
+margin_left = -70.124
+margin_top = -18.9385
+margin_right = -62.124
+margin_bottom = -4.93848
+rect_scale = Vector2( 22.519, 22.519 )
+text = "F"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="def_homme" type="Button" parent="Panel_part1"]
+margin_left = 235.0
+margin_top = 288.0
+margin_right = 394.0
+margin_bottom = 541.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="homme" type="Sprite" parent="Panel_part1/def_homme"]
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 79.03, 133.75 )
+scale = Vector2( 0.11867, 0.11867 )
+texture = ExtResource( 7 )
+
+[node name="Label2" type="Label" parent="Panel_part1/def_homme/homme"]
+margin_left = -158.234
+margin_top = -59.6255
+margin_right = -146.234
+margin_bottom = -45.6255
+rect_scale = Vector2( 22.519, 22.519 )
+text = "M"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sexe" type="Label" parent="Panel_part1"]
+margin_left = 198.214
+margin_top = 265.239
+margin_right = 238.214
+margin_bottom = 279.239
+rect_scale = Vector2( 1.2684, 1.2684 )
+text = "sexe :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="next" type="Button" parent="Panel_part1"]
+margin_left = 408.706
+margin_top = 528.608
+margin_right = 438.706
+margin_bottom = 558.608
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel_part1/next"]
+margin_left = 4.42413
+margin_top = 11.1243
+margin_right = 44.4241
+margin_bottom = 25.1243
+rect_scale = Vector2( 0.661057, 0.661057 )
+text = "Suite"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel_part2" type="Panel" parent="."]
+visible = false
+margin_left = 287.35
+margin_top = 15.7145
+margin_right = 744.35
+margin_bottom = 586.714
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="question" type="Label" parent="Panel_part2"]
+margin_left = 30.7244
+margin_top = 41.3191
+margin_right = 235.724
+margin_bottom = 55.3191
+rect_scale = Vector2( 1.90364, 1.90364 )
+text = "Quel bureau souhaitez-vous ?"
+
+[node name="bureau1" type="Button" parent="Panel_part2"]
+margin_left = 41.5946
+margin_top = 84.5946
+margin_right = 411.595
+margin_bottom = 222.595
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Panel_part2/bureau1"]
+position = Vector2( 184.521, 70.6259 )
+scale = Vector2( 0.114402, 0.114402 )
+texture = ExtResource( 3 )
+
+[node name="bureau2" type="Button" parent="Panel_part2"]
+margin_left = 42.614
+margin_top = 238.001
+margin_right = 411.614
+margin_bottom = 375.001
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Panel_part2/bureau2"]
+position = Vector2( 186.622, 69.5906 )
+scale = Vector2( 0.0995075, 0.0995075 )
+texture = ExtResource( 4 )
+
+[node name="bureau3" type="Button" parent="Panel_part2"]
+margin_left = 44.2957
+margin_top = 390.203
+margin_right = 413.296
+margin_bottom = 527.203
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Panel_part2/bureau3"]
+position = Vector2( 186.854, 67.915 )
+scale = Vector2( 0.0521054, 0.0521054 )
+texture = ExtResource( 2 )
+
+[node name="return_panel_part2" type="Button" parent="Panel_part2"]
+margin_left = 10.0
+margin_top = 534.0
+margin_right = 60.0
+margin_bottom = 564.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel_part2/return_panel_part2"]
+margin_left = 3.06815
+margin_top = 8.24078
+margin_right = 45.0681
+margin_bottom = 22.2408
+text = "Retour"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="next_panel_part2" type="Button" parent="Panel_part2"]
+margin_left = 406.0
+margin_top = 534.0
+margin_right = 447.0
+margin_bottom = 564.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel_part2/next_panel_part2"]
+margin_left = 5.4801
+margin_top = 9.19238
+margin_right = 45.4801
+margin_bottom = 23.1924
+text = "Suite"
+
+[node name="Panel_confirmation" type="Panel" parent="."]
+visible = false
+margin_left = 262.917
+margin_top = 92.2024
+margin_right = 835.917
+margin_bottom = 494.202
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nom" type="Label" parent="Panel_confirmation"]
+margin_left = 46.1895
+margin_top = 61.9385
+margin_right = 182.19
+margin_bottom = 75.9385
+rect_scale = Vector2( 2.067, 2.067 )
+text = "Nom:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="prenom" type="Label" parent="Panel_confirmation"]
+margin_left = 47.0304
+margin_top = 95.5744
+margin_right = 183.03
+margin_bottom = 109.574
+rect_scale = Vector2( 2.067, 2.067 )
+text = "Prenom:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ville" type="Label" parent="Panel_confirmation"]
+margin_left = 49.5531
+margin_top = 129.21
+margin_right = 185.553
+margin_bottom = 143.21
+rect_scale = Vector2( 2.067, 2.067 )
+text = "Ville:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sexe" type="Label" parent="Panel_confirmation"]
+margin_left = 49.5531
+margin_top = 161.164
+margin_right = 185.553
+margin_bottom = 175.164
+rect_scale = Vector2( 2.067, 2.067 )
+text = "Sexe:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="confirmer" type="Button" parent="Panel_confirmation"]
+margin_left = 353.257
+margin_top = 249.502
+margin_right = 532.257
+margin_bottom = 303.502
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel_confirmation/confirmer"]
+margin_left = 23.5717
+margin_top = 12.9083
+margin_right = 86.5717
+margin_bottom = 26.9083
+rect_scale = Vector2( 2.12, 2.12 )
+text = "Confirmer"
+
+[node name="return_panel_confirmation" type="Button" parent="Panel_confirmation"]
+margin_left = 355.257
+margin_top = 316.502
+margin_right = 534.257
+margin_bottom = 370.502
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel_confirmation/return_panel_confirmation"]
+margin_left = 42.5717
+margin_top = 12.9083
+margin_right = 105.572
+margin_bottom = 26.9083
+rect_scale = Vector2( 2.12, 2.12 )
+text = "Retour"
+
+[node name="Sprite_bureau" type="Panel" parent="Panel_confirmation"]
+margin_left = 50.1784
+margin_top = 208.941
+margin_right = 310.178
+margin_bottom = 374.941
+custom_styles/panel = SubResource( 2 )
+
+[node name="Panel_alert" type="Panel" parent="."]
+visible = false
+margin_left = 318.298
+margin_top = 187.763
+margin_right = 690.298
+margin_bottom = 379.763
+
+[node name="erreur" type="Label" parent="Panel_alert"]
+margin_left = 122.319
+margin_top = 15.2785
+margin_right = 178.319
+margin_bottom = 29.2785
+rect_scale = Vector2( 2.55499, 2.55499 )
+text = "ERREUR !"
+
+[node name="message" type="Label" parent="Panel_alert"]
+margin_left = 74.2475
+margin_top = 64.5
+margin_right = 294.247
+margin_bottom = 112.5
+rect_scale = Vector2( 1.08, 1.08 )
+text = "Vous devez avoir donné toutes les
+informations demandé, avant de
+passer à la suite."
+align = 1
+
+[node name="return_panel_alert" type="Button" parent="Panel_alert"]
+margin_left = 121.0
+margin_top = 153.0
+margin_right = 267.0
+margin_bottom = 177.0
+
+[node name="Label" type="Label" parent="Panel_alert/return_panel_alert"]
+margin_left = 50.5
+margin_top = 5.75
+margin_right = 92.5
+margin_bottom = 19.75
+text = "Retour"
+
+[connection signal="text_changed" from="Panel_part1/label/nom" to="." method="_on_nom_text_changed"]
+[connection signal="text_changed" from="Panel_part1/label2/prenom" to="." method="_on_prenom_text_changed"]
+[connection signal="text_changed" from="Panel_part1/label3/nom_ville" to="." method="_on_nom_ville_text_changed"]
+[connection signal="pressed" from="Panel_part1/def_femme" to="." method="_on_def_femme_pressed"]
+[connection signal="pressed" from="Panel_part1/def_homme" to="." method="_on_def_homme_pressed"]
+[connection signal="pressed" from="Panel_part1/next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Panel_part2/bureau1" to="." method="_on_bureau1_pressed"]
+[connection signal="pressed" from="Panel_part2/bureau2" to="." method="_on_bureau2_pressed"]
+[connection signal="pressed" from="Panel_part2/bureau3" to="." method="_on_bureau3_pressed"]
+[connection signal="pressed" from="Panel_part2/return_panel_part2" to="." method="_on_return_panel_part2_pressed"]
+[connection signal="pressed" from="Panel_part2/next_panel_part2" to="." method="_on_next_panel_part2_pressed"]
+[connection signal="pressed" from="Panel_confirmation/confirmer" to="." method="_on_confirmer_pressed"]
+[connection signal="pressed" from="Panel_confirmation/return_panel_confirmation" to="." method="_on_return_panel_confirmation_pressed"]
+[connection signal="pressed" from="Panel_alert/return_panel_alert" to="." method="_on_return_panel_alert_pressed"]

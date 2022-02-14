@@ -15,11 +15,12 @@ const SIZES = {
 	"Grande Ecole": Vector2(2, 1),
 	"Grand Hôpital": Vector2(2, 2),
 	"Hopital": Vector2(1, 2),
-	"Mairie": Vector2(2, 1),
+	"Mairie": Vector2(2, 2),
 	"Musee": Vector2(2, 1),
 	"Parc": Vector2(2, 2),
-	"Restaurant": Vector2(2, 1),
+	"Supermarche": Vector2(2, 3),
 	"Ecole": Vector2(1, 2),
+	"Centre Associatif": Vector2(2,2)
 }
 
 # Preload all textures
@@ -39,9 +40,10 @@ const TEXTURES = {
 	"Musee": preload("res://assets/sprites/buildings/musee.png"),
 	"Parc": preload("res://assets/sprites/buildings/parcdroit.png"),
 	"Pharmacie": preload("res://assets/sprites/buildings/pharmacie.png"),
-	"Restaurant": preload("res://assets/sprites/buildings/restaurantgauche.png"),
+	"Supermarche": preload("res://assets/sprites/buildings/restaurantgauche.png"),
 	"Ecole": preload("res://assets/sprites/buildings/school.png"),
-	"Theatre": preload("res://assets/sprites/buildings/theatre.png")
+	"Theatre": preload("res://assets/sprites/buildings/theatre.png"),
+	"Centre Associatif": preload("res://assets/sprites/buildings/centre_asso.png")
 }
 
 # The increase in max popuation for each building
@@ -52,53 +54,40 @@ const POPULATION_SPACE = {
 	"Immeuble": 80
 }
 
-# The increase in Sante for each building
-const SANTE_POINTS = {
-	"Pharmacie": 50,
-	"Hopital": 100,
-	"Grand Hôpital": 250,
+# The increase in Satisfaction for each building
+const SATISFACTION_POINTS = {
+	"Pharmacie": 30,
+	"Hopital": 30,
+	"Grand Hôpital": 30,
+	"Cafe": 30,
+	"Grand Cafe": 20,
+	"Commissariat": 20,
+	"Grand Commissariat": 30,
+	"Grande Ecole": 20,
+	"Musee": 50,
+	"Parc": 20,
+	"Supermarche": 20,
+	"Ecole": 30,
+	"Theatre": 20,
+	"Centre Associatif": 20
 }
-
-# The increase in Education for each building
-const EDUCATION_POINTS = {
-	"Ecole": 200,
-	"Grande Ecole": 400,
-}
-
-# The increase in Loisirs for each building
-const LOISIRS_POINTS = {
-	"Cafe": 50,
-	"Grand Cafe": 100,
-	"Theatre": 100,
-	"Parc": 100,
-	"Restaurant": 250,
-	"Musee": 250,
-}
-
-# The increase in Securite for each building
-const SECURITE_POINTS = {
-	"Commissariat": 250,
-	"Grand Commissariat": 600,
-}
-
-
 
 # Buildings given every time the *population* gets to a certain level
 const BUILDINGS_FROM_POP = {
-	"Maison 1": 30,
-	"Maison 2": 40,
-	"Maison 3": 50,
+	"Maison 1": 10,
+	"Maison 2": 10,
+	"Maison 3": 10,
 	"Immeuble": 100,
 }
 
 # Buildings given every time the *MAX population* gets to a certain level
 const BUILDINGS_FROM_MAX_POP = {
-	"Pharmacie": 50,
-	"Hopital": 100,
+	"Pharmacie": 40,
+	"Hopital": 50,
+	"Supermarche":100,
+	"Ecole": 40,
 	
-	"Ecole": 140,
-	
-	"Cafe": 50,
+	"Cafe": 40,
 	"Grand Cafe": 100,
 	"Parc": 200,
 	"Theatre": 300,
@@ -106,7 +95,33 @@ const BUILDINGS_FROM_MAX_POP = {
 	"Commissariat": 180
 }
 
+const PRIX = {
+	"Maison 1": 10,
+	"Maison 2": 10,
+	"Maison 3": 10,
+	"Immeuble": 50,
+	"Mairie": 0,
+	"Cafe":10,
+	"Grand Cafe": 20,
+	"Commissariat": 10,
+	"Grande Ecole": 10,
+	"Grand Commissariat": 15,
+	"Grand Hôpital": 15,
+	"Hopital": 10,
+	"Musee": 20,
+	"Parc": 5,
+	"Pharmacie": 5,
+	"Supermarche": 5,
+	"Ecole": 5,
+	"Theatre": 10,
+	"Centre Associatif": 20
+}
 
+static func buildings_price(building: String):
+	PlayerData.data_points -= PRIX[building]
+
+static func get_buildings_price(building: String):
+	var buildings_price = PRIX[building]
 
 # Default building size
 const DEFAULT_SIZE = Vector2.ONE
@@ -126,17 +141,8 @@ static func get_building_bonus(building: String):
 	# Max Population
 	if building in POPULATION_SPACE:
 		res = [PlayerData.POPULATION_MAX, POPULATION_SPACE[building]]
-	# Sante
-	elif building in SANTE_POINTS:
-		res = [PlayerData.SANTE, SANTE_POINTS[building]]
-	# Education
-	elif building in EDUCATION_POINTS:
-		res = [PlayerData.EDUCATION, EDUCATION_POINTS[building]]
-	# Loisirs
-	elif building in LOISIRS_POINTS:
-		res = [PlayerData.LOISIRS, LOISIRS_POINTS[building]]
-	# Securite
-	elif building in SECURITE_POINTS:
-		res = [PlayerData.SECURITE, SECURITE_POINTS[building]]
-	
+	# Satisfaction
+	elif building in SATISFACTION_POINTS:
+		res = [PlayerData.SATISFACTION,SATISFACTION_POINTS[building]]
+
 	return res

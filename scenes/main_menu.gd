@@ -11,7 +11,7 @@ func on_fade_finished():
 		PlayerData.must_load_save = false
 		
 		# If no save was found
-		get_tree().change_scene("res://scenes/Introduction.tscn")
+		get_tree().change_scene("res://scenes/formulaire.tscn")
 
 
 func _on_SkipIntro_pressed():

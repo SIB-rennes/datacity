@@ -20,39 +20,49 @@ const EVENTS_CONDITIONS = {
 		"built(x)": {"Maison 1": [1, 1], "Maison 2": [1, 1], "Maison 3": [1, 1]},
 		"not had_event(x)": ["PremieresMaisons"],
 	},
-	
 	### <=====> ###  Pedagogical events
+	"CentreAssociatif":{
+		"had_event(x)": ["PremieresMaisons"],
+		"not had_event(x)": ["CentreAssociatif"],
+	},
+
+	"CentreAssociatif_construit":{
+		"built(x)": {"centre_asso": [1, 1]},
+		"not had_event(x)": ["CentreAssociatif_construit"],
+		"probability(x)": 1,
+		"population_over(x)": 0
+	},
+	
 	"PublierDonneesTransports": {
 		"had_event(x)": ["PremieresMaisons"],
 		"not had_event(x)": ["PublierDonneesTransports"], # Not again 
 		"probability(x)": .3, # 30% chance after each building
-		"population_over(x)": 50 # The event won't trigger if the population count is under x
+		"population_over(x)": 20 # The event won't trigger if the population count is under x
 	},
 	"DonneesUrbanisme": {
 		"had_event(x)": ["PremieresMaisons"],
 		"not had_event(x)": ["DonneesUrbanisme"], # Not again 
 		"probability(x)": .3, # 30% chance after each building
-		"population_over(x)": 50 # The event won't trigger if the population count is under x
+		"population_over(x)": 20 # The event won't trigger if the population count is under x
 	},
 	"AutomatiserDonnees": {
 		"had_event(x)": ["PublierDonneesTransports", "DonneesUrbanisme"],
 		"not had_event(x)": ["AutomatiserDonnees"], # Not again 
 		"probability(x)": .3, # 30% chance after each building
-		"population_over(x)": 80 # The event won't trigger if the population count is under x
+		"population_over(x)": 20 # The event won't trigger if the population count is under x
 	},
-	
-	
+
 	"InfosConference": {
 		"had_event(x)": ["PremieresMaisons"],
 		"not had_event(x)": ["InfosConference"], # Not again 
 		"probability(x)": .3, # 30% chance after each building
-		"population_over(x)": 50 # The event won't trigger if the population count is under x
+		"population_over(x)": 20 # The event won't trigger if the population count is under x
 	},
 	"CitoyenEnerve": {
 		"had_event(x)": ["InfosConference"],
 		"not had_event(x)": ["CitoyenEnerve"], # Not again 
 		"probability(x)": .5, # 30% chance after each building
-		"population_over(x)": 120 # The event won't trigger if the population count is under x
+		"population_over(x)": 20 # The event won't trigger if the population count is under x
 	},
 	
 	
@@ -60,19 +70,19 @@ const EVENTS_CONDITIONS = {
 		"had_event(x)":  ["PremieresMaisons"],
 		"not had_event(x)": ["RetourConferencier_1"], # Not again 
 		"probability(x)": .3, # 30% chance after each building
-		"population_over(x)": 50 # The event won't trigger if the population count is under x
+		"population_over(x)": 20 # The event won't trigger if the population count is under x
 	},
 	"RetourConferencier_2": {
 		"had_event(x)":  ["RetourConferencier_1"], # Need the previous Event
 		"not had_event(x)": ["RetourConferencier_2"], # Not again 
 		"probability(x)": .3, # 30% chance after each building
-		"population_over(x)": 80 # The event won't trigger if the population count is under x
+		"population_over(x)": 20 # The event won't trigger if the population count is under x
 	},
 	"RetourConferencier_3": {
 		"had_event(x)":  ["RetourConferencier_2"], # Need the previous Event
 		"not had_event(x)": ["RetourConferencier_3"], # Not again 
 		"probability(x)": .5, # 30% chance after each building
-		"population_over(x)": 120
+		"population_over(x)": 20
 	},
 	
 	
@@ -103,7 +113,8 @@ const EVENTS_CONDITIONS = {
 const DIALOG_FILES = {
 	"MairieConstruite": "res://scenarios/beginning/mairie_built.json",
 	"PremieresMaisons": "res://scenarios/beginning/premieres_maisons.json",
-	
+	"CentreAssociatif": "res://scenarios/beginning/CentreAssociatif.json",
+	"CentreAssociatif_construit":"res://scenarios/pedagogical/CentreAssociatif_construit.json",
 	"PublierDonneesTransports": "res://scenarios/pedagogical/publier_donnees_transports.json",
 	"DonneesUrbanisme": "res://scenarios/pedagogical/donnees_urbanisme.json",
 	"AutomatiserDonnees": "res://scenarios/pedagogical/automatiser_publication_donnes.json",
@@ -126,7 +137,8 @@ const DIALOG_FILES = {
 const SUMMARIES = {
 	"MairieConstruite": "Votre adjointe veut vous voir.",
 	"PremieresMaisons": "Votre adjointe veut vous voir.",
-	
+	"CentreAssociatif": "L'adjointe souhaite s'entretenir avec vous.",
+	"CentreAssociatif_construit": "Le représentant du centre associatif souhaite vous voir.",
 	"PublierDonneesTransports": "Vous croisez un citoyen dans un parc.",
 	"DonneesUrbanisme": "Une citoyenne est venue vous voir.",
 	"AutomatiserDonnees": "Un citoyen est venu vous proposer un projet.",
@@ -157,6 +169,9 @@ const OFFERED_BUILDINGS = {
 		"Hopital": 1,
 		"Commissariat": 1,
 		"Ecole": 1,
+	},
+	"CentreAssociatif": {
+		"Centre Associatif": 1,
 	}
 }
 

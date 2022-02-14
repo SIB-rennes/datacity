@@ -97,6 +97,10 @@ __meta__ = {
 }
 
 [node name="ColorRect" parent="." instance=ExtResource( 5 )]
+margin_left = 24.0
+margin_top = 631.0
+margin_right = 9240.0
+margin_bottom = 6031.0
 
 [node name="Credits" parent="." instance=ExtResource( 8 )]
 visible = false
@@ -112,6 +116,7 @@ __meta__ = {
 }
 
 [node name="CLUF" parent="." instance=ExtResource( 7 )]
+visible = false
 
 [connection signal="pressed" from="VBoxContainer/ButtonContainer/Button" to="ColorRect" method="fade_in"]
 [connection signal="pressed" from="CreditButton" to="Credits" method="show"]

@@ -6,10 +6,9 @@ const INF_BUILDING = -1
 # Constant Strings
 const POPULATION = "Population"
 const POPULATION_MAX = "Population max"
-const SANTE = "Santé"
-const EDUCATION = "Education"
-const LOISIRS = "Loisirs"
-const SECURITE = "Sécurité"
+const SATISFACTION = "Satisfaction"
+const PRIX = "Prix"
+
 
 const SAVEFILE = "user://savegame.save"
 
@@ -26,16 +25,13 @@ var event_occured = {}
 var city_data = {
 	POPULATION: 0, # The population
 	POPULATION_MAX: 0, # Max population
-	SANTE: 0,
-	EDUCATION: 0,
-	LOISIRS: 0,
-	SECURITE: 0,
+	SATISFACTION: 0,
+	PRIX: 0,
 }
 
 
 # Data points accumulated
-var data_points = 0
-
+var data_points = 3000
 
 var must_load_save = true
 
@@ -53,6 +49,7 @@ static func use_building(building_name):
 	
 	# Get the building bonus
 	var bonus = BuildingsData.get_building_bonus(building_name)
+	BuildingsData.buildings_price(building_name)
 	
 	# Update the city data
 	if bonus[0] in PlayerData.city_data: 
@@ -100,14 +97,14 @@ static func add_event_occurence(event_name: String):
 static func update_population():
 	# Get the minimum of the constraints
 	var tab = 	[PlayerData.city_data[POPULATION_MAX], 
-				PlayerData.city_data[SANTE], 
-				PlayerData.city_data[EDUCATION], 
-				PlayerData.city_data[LOISIRS], 
-				PlayerData.city_data[SECURITE]]
-				
+				PlayerData.city_data[SATISFACTION]]
+#				PlayerData.city_data[PRIX]]
+
 	# The new population value
 	var population = tab.min()
+#	var population = PlayerData.city_data[SATISFACTION]
 	PlayerData.city_data[POPULATION] = population
+	
 
 
 

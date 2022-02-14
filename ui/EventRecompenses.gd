@@ -38,8 +38,6 @@ func set_points_gained(points: int):
 	# Set the text
 	$ScrollMargin/VBoxContainer/PointsGained.text = text
 
-
-
 ## Adds a building button
 ## building_name is the displayed name of the building
 func add_building(building_name: String):

@@ -21,11 +21,7 @@ onready var datapoints = $VBoxContainer/TopContainer/TopLeftContainer/Points/Dat
 onready var confirmation_dialog = $VBoxContainer/ConfirmationDialog
 
 # Bars
-onready var bar_sante = $VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Sante
-onready var bar_education = $VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Education
-onready var bar_loisirs = $VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Loisirs
-onready var bar_securite = $VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Securite
-
+onready var bar_satisfaction = $VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Satisfaction
 
 func _ready():
 	# Hides the UI elements until the Tutorial is closed
@@ -69,24 +65,9 @@ func update_bars():
 	if max_pop == 0:
 		return
 	
-	# Sante
-	var sante_percent = (50.0 * PlayerData.city_data[PlayerData.SANTE]) / max_pop
-	bar_sante.set_percentage(sante_percent)
-	
-	# Education
-	var educ_percent = (50.0 * PlayerData.city_data[PlayerData.EDUCATION]) / max_pop
-	bar_education.set_percentage(educ_percent)
-	
-	# Sante
-	var loisirs_percent = (50.0 * PlayerData.city_data[PlayerData.LOISIRS]) / max_pop
-	bar_loisirs.set_percentage(loisirs_percent)
-	
-	# Sante
-	var securite_percent = (50.0 * PlayerData.city_data[PlayerData.SECURITE]) / max_pop
-	bar_securite.set_percentage(securite_percent)
-	
-
-
+	# Satisfaction
+	var satisfaction_percent = (50.0 * PlayerData.city_data[PlayerData.SATISFACTION]) / max_pop
+	bar_satisfaction.set_percentage(satisfaction_percent)
 
 func show_current_building(building: String):
 	# Hide the Build button

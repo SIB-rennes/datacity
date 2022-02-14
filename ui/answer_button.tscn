@@ -11,8 +11,8 @@ margin_bottom = 276.0
 rect_min_size = Vector2( 0, 84 )
 size_flags_vertical = 8
 theme = ExtResource( 1 )
-custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 1, 0.568627, 0.184314, 1 )
+custom_fonts/font = ExtResource( 2 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -32,8 +32,8 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_right = 404.0
-margin_bottom = 67.0
+margin_right = 403.0
+margin_bottom = 66.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
