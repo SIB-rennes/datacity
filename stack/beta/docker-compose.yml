@@ -6,7 +6,7 @@ networks:
     name: data-city-network
 
 services:
-  data-city:
+  data-city-beta:
     image: $DOCKER_REGISTRY_DEV/data-city:beta
     ports:
       - "60005:80"
