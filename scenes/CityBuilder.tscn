@@ -266,6 +266,7 @@ cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 cell_y_sort = true
 centered_textures = true
 format = 1
+tile_data = PoolIntArray( 1179656, 0, 0, 1441801, 0, 0 )
 script = ExtResource( 20 )
 
 [node name="Camera2D" type="Camera2D" parent="."]

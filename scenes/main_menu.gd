@@ -7,11 +7,11 @@ func on_fade_finished():
 		get_tree().change_scene("res://scenes/CityBuilder.tscn")
 	else:
 		print("No save found")
-		
+
 		PlayerData.must_load_save = false
-		
+
 		# If no save was found
-		get_tree().change_scene("res://scenes/formulaire.tscn")
+		get_tree().change_scene("res://scenes/Introduction.tscn")
 
 
 func _on_SkipIntro_pressed():

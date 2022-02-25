@@ -48,9 +48,9 @@ const TEXTURES = {
 
 # The increase in max popuation for each building
 const POPULATION_SPACE = {
-	"Maison 1": 10,
-	"Maison 2": 15,
-	"Maison 3": 25,
+	"Maison 1": 20,
+	"Maison 2": 10,
+	"Maison 3": 10,
 	"Immeuble": 80
 }
 
@@ -74,25 +74,15 @@ const SATISFACTION_POINTS = {
 
 # Buildings given every time the *population* gets to a certain level
 const BUILDINGS_FROM_POP = {
-	"Maison 1": 10,
-	"Maison 2": 10,
-	"Maison 3": 10,
+	"Maison 1": 50,
+	"Maison 2": 30,
+	"Maison 3": 30,
 	"Immeuble": 100,
 }
 
 # Buildings given every time the *MAX population* gets to a certain level
 const BUILDINGS_FROM_MAX_POP = {
-	"Pharmacie": 40,
-	"Hopital": 50,
-	"Supermarche":100,
-	"Ecole": 40,
-	
-	"Cafe": 40,
-	"Grand Cafe": 100,
-	"Parc": 200,
-	"Theatre": 300,
-	
-	"Commissariat": 180
+	"Cafe":70,
 }
 
 const PRIX = {

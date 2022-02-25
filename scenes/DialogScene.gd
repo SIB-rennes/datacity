@@ -41,12 +41,12 @@ var block
 
 
 # Display delay, to prevent the answers from popping too fast
-const DELAY_BEFORE_DISPLAY = 1.0
+const DELAY_BEFORE_DISPLAY = 0.75
 onready var timer_display = $TimerDisplay
 
 
 # Answer delay, to prevent clicking to fast on the buttons
-const DELAY_BEFORE_ANSWER = 1.0
+const DELAY_BEFORE_ANSWER = 0.75
 var answer_delay = 0.0
 
 
@@ -288,10 +288,14 @@ func is_data_block():
 func process_single_data_block():
 	# Get the block test
 	var text = block.text
+	var bg_path = null
 	
 	if text.begins_with("background="):
+		if "/bureau" in text:
+			bg_path = PlayerData.bureau
+		else:
 		# Extract the file path
-		var bg_path = text.substr("background=".length())
+			bg_path = text.substr("background=".length())
 		
 		set_dialog_background(bg_path)
 		

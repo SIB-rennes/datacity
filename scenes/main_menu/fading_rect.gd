@@ -3,6 +3,7 @@ extends ColorRect
 signal fade_finished
 
 func fade_in():
+	get_parent().show()
 	# Start fading
 	$AnimationPlayer.play("Fading")
 	
@@ -12,3 +13,4 @@ func fade_in():
 
 func _on_AnimationPlayer_animation_finished(_anim_name):
 	emit_signal("fade_finished")
+	get_parent().hide()

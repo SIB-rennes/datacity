@@ -1,6 +1,5 @@
 extends Node
 
-
 #====> Possible conditions :
 	# (x) represents the function parameter
 
@@ -13,11 +12,15 @@ extends Node
 # Dictionnary of events Names and conditions
 const EVENTS_CONDITIONS = {
 	"MairieConstruite": { # Dialogues after the first building
-		"built(x)": {"Mairie": [1, 1]},
+		"had_event(x)": ["Deliberations"],
 		"not had_event(x)": ["MairieConstruite"],
 	},
+	"Deliberations":{
+		"built(x)": {"Mairie": [1, 1]},
+		"not had_event(x)": ["Deliberations"],
+	},
 	"PremieresMaisons": { # Dialogues after the first houses
-		"built(x)": {"Maison 1": [1, 1], "Maison 2": [1, 1], "Maison 3": [1, 1]},
+		"built(x)": {"Maison 1": [1, 100], "Maison 2": [1, 100], "Maison 3": [1, 100]},
 		"not had_event(x)": ["PremieresMaisons"],
 	},
 	### <=====> ###  Pedagogical events
@@ -27,7 +30,7 @@ const EVENTS_CONDITIONS = {
 	},
 
 	"CentreAssociatif_construit":{
-		"built(x)": {"centre_asso": [1, 1]},
+		"built(x)": {"Centre Associatif": [1, 1]},
 		"not had_event(x)": ["CentreAssociatif_construit"],
 		"probability(x)": 1,
 		"population_over(x)": 0
@@ -112,13 +115,14 @@ const EVENTS_CONDITIONS = {
 
 const DIALOG_FILES = {
 	"MairieConstruite": "res://scenarios/beginning/mairie_built.json",
+	"Deliberations": "res://scenarios/beginning/deliberations.json",
 	"PremieresMaisons": "res://scenarios/beginning/premieres_maisons.json",
 	"CentreAssociatif": "res://scenarios/beginning/CentreAssociatif.json",
 	"CentreAssociatif_construit":"res://scenarios/pedagogical/CentreAssociatif_construit.json",
 	"PublierDonneesTransports": "res://scenarios/pedagogical/publier_donnees_transports.json",
 	"DonneesUrbanisme": "res://scenarios/pedagogical/donnees_urbanisme.json",
 	"AutomatiserDonnees": "res://scenarios/pedagogical/automatiser_publication_donnes.json",
-	
+
 	"InfosConference": "res://scenarios/pedagogical/infos_conference.json",
 	"CitoyenEnerve": "res://scenarios/pedagogical/citoyen_enerve.json",
 	
@@ -137,6 +141,7 @@ const DIALOG_FILES = {
 const SUMMARIES = {
 	"MairieConstruite": "Votre adjointe veut vous voir.",
 	"PremieresMaisons": "Votre adjointe veut vous voir.",
+	"Deliberations": "Votre adjointe veut vous voir.",
 	"CentreAssociatif": "L'adjointe souhaite s'entretenir avec vous.",
 	"CentreAssociatif_construit": "Le représentant du centre associatif souhaite vous voir.",
 	"PublierDonneesTransports": "Vous croisez un citoyen dans un parc.",
@@ -162,8 +167,6 @@ const SUMMARIES = {
 const OFFERED_BUILDINGS = {
 	"MairieConstruite": {
 		"Maison 1": 1,
-		"Maison 2": 1,
-		"Maison 3": 1,
 	},
 	"PremieresMaisons": {
 		"Hopital": 1,

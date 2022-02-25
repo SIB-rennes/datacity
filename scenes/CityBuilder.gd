@@ -59,7 +59,7 @@ func _ready():
 			
 			# Unblock the camera
 			$Camera2D.block_camera(false)
-			
+
 		# Problem while loaing, go back to introduction
 		else:
 			print("Could not load save")
@@ -70,8 +70,7 @@ func _ready():
 			get_tree().change_scene("res://scenes/Introduction.tscn")
 	else:
 		print ("Must not load save")
-	
-	
+
 	#Save the value of the occupied Tile
 	occupied_tile = buildings_map.tile_set.find_tile_by_name("Occupied")
 	preview_tile = buildings_map.tile_set.find_tile_by_name("FantomBuilding")
@@ -95,21 +94,17 @@ func trigger_scenaristic_event():
 		if not event_manager.DIALOG_FILES.has(event):
 			print("ERROR : no dialogue file specified for " + event)
 			return
-		
-		
 		# Get the dialogue file and check if it exists
 		var file_path = event_manager.DIALOG_FILES.get(event, null)
 		
 		if not File.new().file_exists(file_path):
 			print("ERROR : the dialogue file for " + event + " doesn't exist")
 			return
-		
-		
 		# Keep the event name
 		current_event = event
 		
 		ui.display_notification()
-		
+
 
 
 

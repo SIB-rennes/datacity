@@ -35,6 +35,10 @@ var data_points = 3000
 
 var must_load_save = true
 
+# Gender chosen by the player
+var gender = null
+# Bureau choice
+var bureau = "not defined"
 
 func _ready():
 	print("Loaded player data !")

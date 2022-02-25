@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://scenes/Introduction.gd" type="Script" id=1]
 [ext_resource path="res://scenes/DialogScene.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://themes/button_background_active.tres" type="StyleBox" id=15]
 [ext_resource path="res://themes/button_background.tres" type="StyleBox" id=16]
 [ext_resource path="res://themes/scrollbar_grabber.tres" type="StyleBox" id=17]
+[ext_resource path="res://scenes/formulaire.tscn" type="PackedScene" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 257.189, 203.165 )
@@ -275,6 +276,7 @@ __meta__ = {
 }
 
 [node name="NewsPaper" type="Area2D" parent="."]
+visible = false
 position = Vector2( -126.598, 363.534 )
 rotation = -0.455935
 scale = Vector2( 0.9, 0.9 )
@@ -335,9 +337,11 @@ position = Vector2( 597.367, 366.297 )
 rotation = -0.785397
 
 [node name="DialogScene" parent="." instance=ExtResource( 2 )]
-visible = false
 mouse_filter = 2
 theme = SubResource( 8 )
+
+[node name="formulaire" parent="." instance=ExtResource( 18 )]
+visible = false
 
 [node name="ZIndexer" type="Node2D" parent="."]
 z_index = 15

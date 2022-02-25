@@ -13,7 +13,6 @@ func save_string():
 	
 	return to_json(res)
 
-
 func load_string(string: String):
 	# Converts the string back to an array
 	var array = Array(parse_json(string))

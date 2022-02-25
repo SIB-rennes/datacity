@@ -4,6 +4,7 @@ signal start_fade
 
 
 enum {
+	WAITING_SCENE
 	WAITING_TO_ZOOM,
 	ZOOMING,
 	SHOWING_1,
@@ -13,7 +14,7 @@ enum {
 }
 
 # Current state
-var current_state = WAITING_TO_ZOOM
+var current_state = WAITING_SCENE
 
 # Sound Player
 onready var sound_player = $SoundPlayer
@@ -118,3 +119,5 @@ func show_next_newspaper():
 			emit_signal("start_fade")
 			
 
+func change_state():
+	current_state = WAITING_TO_ZOOM

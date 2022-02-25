@@ -3,18 +3,17 @@ extends Control
 
 var gender = "not defined" # Retient le sexe choisi par le joueur.
 var nom = "not defined" # Retient le nom choisi par le joueur.
-var prenom = "not defined" # Retient le prenom choisi par le joueur.
 var nom_ville = "not defined" # Retient le nom de la ville choisi par le joueur.
 var bureau = 0 # Retient qu'elle bureau le joueur à choisi.
 var aff = "nowhere" # Définit verre qu'elle partie du questionnaire, le message d'érreur doit revenir.
-
 # Called when the node enters the scene tree for the first time.
+
 func _ready():
 	aff = "part1"
 	print("gender: " + gender)
 	print("nom: " + nom)
-	print("prenom: " + prenom)
 	print("nom_ville: " + nom_ville)
+
 	return
 
 
@@ -24,8 +23,10 @@ func _ready():
 
 
 func _on_def_femme_pressed():
+	#Select Gender woman
 	if gender == "not defined":
 		gender = "woman"
+		PlayerData.gender = true
 		print("gender: " + gender)
 		$Panel_part1/def_femme.modulate = Color(0,1,1,1)
 		$Panel_confirmation/sexe.set_text("Sexe: F")
@@ -33,6 +34,7 @@ func _on_def_femme_pressed():
 	
 	if gender == "man":
 		gender = "woman"
+		PlayerData.gender = true
 		print("gender: " + gender)
 		$Panel_part1/def_femme.modulate = Color(0,1,1,1)
 		$Panel_part1/def_homme.modulate = Color(1,1,1,1)
@@ -41,8 +43,10 @@ func _on_def_femme_pressed():
 
 
 func _on_def_homme_pressed():
+	#Select Gender man
 	if gender == "not defined":
 		gender = "man"
+		PlayerData.gender = false
 		print("gender: " + gender)
 		$Panel_part1/def_homme.modulate = Color(0,1,1,1)
 		$Panel_confirmation/sexe.set_text("Sexe: M")
@@ -50,6 +54,7 @@ func _on_def_homme_pressed():
 	
 	if gender == "woman":
 		gender = "man"
+		PlayerData.gender = false
 		print("gender: " + gender)
 		$Panel_part1/def_homme.modulate = Color(0,1,1,1)
 		$Panel_part1/def_femme.modulate = Color(1,1,1,1)
@@ -57,32 +62,27 @@ func _on_def_homme_pressed():
 		return
 
 
-func _on_nom_text_changed():
+func _on_nom_text_changed(new_text):
+	#Name of the player
 	nom = $Panel_part1/label/nom.get_text()
 	print("nom: " + nom)
 	$Panel_confirmation/nom.set_text("Nom: " + nom)
 	return
 
-
-func _on_prenom_text_changed():
-	prenom = $Panel_part1/label2/prenom.get_text()
-	print("prenom: " + prenom)
-	$Panel_confirmation/prenom.set_text("Prenom: " + prenom)
-	return
-
-
-func _on_nom_ville_text_changed():
+func _on_nom_ville_text_changed(new_text):
+	#Name of the city
 	nom_ville = $Panel_part1/label3/nom_ville.get_text()
 	print("nom_ville: " + nom_ville)
 	$Panel_confirmation/ville.set_text("Ville: " + nom_ville)
 	return
 
 func _on_next_pressed():
-	if nom == "not defined" or prenom == "not defined" or nom_ville == "not defined" or gender == "not defined":
+	#Check if all field are filled
+	if nom == "not defined" or nom_ville == "not defined" or gender == "not defined":
 		$Panel_part1.visible = false
 		$Panel_alert.visible = true
 		return
-	if nom == "" or prenom == "" or nom_ville == "" or gender == "":
+	if nom == "" or nom_ville == "" or gender == "":
 		$Panel_part1.visible = false
 		$Panel_alert.visible = true
 		return
@@ -99,6 +99,7 @@ func _on_bureau1_pressed():
 		$Panel_part2/bureau3/Sprite.modulate = Color(1,1,1,0.25)
 		$Panel_confirmation/Sprite_bureau.get_stylebox("panel", "").texture = preload("res://assets/sprites/backgrounds/bureau_1.png")
 		$background.get_stylebox("panel", "").texture = preload("res://assets/sprites/backgrounds/bureau_1.png")
+		PlayerData.bureau = "bureau_1.png"
 		return
 		
 	if bureau == 2:
@@ -108,6 +109,7 @@ func _on_bureau1_pressed():
 		$Panel_part2/bureau3/Sprite.modulate = Color(1,1,1,0.25)
 		$Panel_confirmation/Sprite_bureau.get_stylebox("panel", "").texture = preload("res://assets/sprites/backgrounds/bureau_1.png")
 		$background.get_stylebox("panel", "").texture = preload("res://assets/sprites/backgrounds/bureau_1.png")
+		PlayerData.bureau = "bureau_1.png"
 		return
 		
 	if bureau == 3:
@@ -117,6 +119,7 @@ func _on_bureau1_pressed():
 		$Panel_part2/bureau3/Sprite.modulate = Color(1,1,1,0.25)
 		$Panel_confirmation/Sprite_bureau.get_stylebox("panel", "").texture = preload("res://assets/sprites/backgrounds/bureau_1.png")
 		$background.get_stylebox("panel", "").texture = preload("res://assets/sprites/backgrounds/bureau_1.png")
+		PlayerData.bureau = "bureau_1.png"
 		return
 
 
@@ -127,6 +130,7 @@ func _on_bureau2_pressed():
 		$Panel_part2/bureau3/Sprite.modulate = Color(1,1,1,0.25)
 		$Panel_confirmation/Sprite_bureau.get_stylebox("panel", "").texture = preload("res://assets/sprites/backgrounds/bureau_2.png")
 		$background.get_stylebox("panel", "").texture = preload("res://assets/sprites/backgrounds/bureau_2.png")
+		PlayerData.bureau = "bureau_2.png"
 		return
 		
 	if bureau == 1:
@@ -136,6 +140,7 @@ func _on_bureau2_pressed():
 		$Panel_part2/bureau3/Sprite.modulate = Color(1,1,1,0.25)
 		$Panel_confirmation/Sprite_bureau.get_stylebox("panel", "").texture = preload("res://assets/sprites/backgrounds/bureau_2.png")
 		$background.get_stylebox("panel", "").texture = preload("res://assets/sprites/backgrounds/bureau_2.png")
+		PlayerData.bureau = "bureau_2.png"
 		return
 		
 	if bureau == 3:
@@ -145,6 +150,7 @@ func _on_bureau2_pressed():
 		$Panel_part2/bureau3/Sprite.modulate = Color(1,1,1,0.25)
 		$Panel_confirmation/Sprite_bureau.get_stylebox("panel", "").texture = preload("res://assets/sprites/backgrounds/bureau_2.png")
 		$background.get_stylebox("panel", "").texture = preload("res://assets/sprites/backgrounds/bureau_2.png")
+		PlayerData.bureau = "bureau_2.png"
 		return
 
 
@@ -155,6 +161,7 @@ func _on_bureau3_pressed():
 		$Panel_part2/bureau2/Sprite.modulate = Color(1,1,1,0.25)
 		$Panel_confirmation/Sprite_bureau.get_stylebox("panel", "").texture = preload("res://assets/sprites/backgrounds/bureau_3.png")
 		$background.get_stylebox("panel", "").texture = preload("res://assets/sprites/backgrounds/bureau_3.png")
+		PlayerData.bureau = "bureau_3.png"
 		return
 		
 	if bureau == 1:
@@ -164,6 +171,7 @@ func _on_bureau3_pressed():
 		$Panel_part2/bureau2/Sprite.modulate = Color(1,1,1,0.25)
 		$Panel_confirmation/Sprite_bureau.get_stylebox("panel", "").texture = preload("res://assets/sprites/backgrounds/bureau_3.png")
 		$background.get_stylebox("panel", "").texture = preload("res://assets/sprites/backgrounds/bureau_3.png")
+		PlayerData.bureau = "bureau_3.png"
 		return
 		
 	if bureau == 2:
@@ -173,6 +181,7 @@ func _on_bureau3_pressed():
 		$Panel_part2/bureau2/Sprite.modulate = Color(1,1,1,0.25)
 		$Panel_confirmation/Sprite_bureau.get_stylebox("panel", "").texture = preload("res://assets/sprites/backgrounds/bureau_3.png")
 		$background.get_stylebox("panel", "").texture = preload("res://assets/sprites/backgrounds/bureau_3.png")
+		PlayerData.bureau = "bureau_3.png"
 		return
 
 
@@ -211,6 +220,6 @@ func _on_return_panel_confirmation_pressed():
 
 
 func _on_confirmer_pressed():
-	get_tree().change_scene("res://scenes/Introduction.tscn")
+#	get_tree().change_scene("res://scenes/CityBuilder.tscn")
+	get_parent().start_next_state()
 	return
-
