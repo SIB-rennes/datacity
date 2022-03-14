@@ -32,7 +32,9 @@ var sound_answer_click = preload("res://assets/sounds/clic_answer.wav")
 # Data for the scenarios
 var scenarios_data = ScenariosData.new()
 
-
+#historique
+var can_pass = true
+var historical_opened = false
 
 # Storing parser, data and block for the dialog parsing
 var parser
@@ -58,7 +60,7 @@ var buildings_gained: Array
 
 func _ready():
 	# Load a dialogue by default
-	start_dialog_event("res://scenarios/pedagogical/publier_donnees_transports.json")
+	start_dialog_event("res://scenarios/pedagogical/premier_batiment_de_commerce.json")
 	
 	# Connect the timer to the correct method
 	timer_display.connect("timeout", self, "_add_buttons")
@@ -113,17 +115,23 @@ func _physics_process(delta):
 
 # Process inputs
 func _input(event):
+	if historical_opened == false:
 	# if we touched the screen or the mouse
-	if event is InputEventScreenTouch or event is InputEventMouseButton:
-		if event.pressed:
-			process_player_click()
-			
-	# If we pressed space
-	elif event is InputEventKey:
-		if event.pressed and event.unicode == KEY_SPACE:
-			process_player_click()
+		if event is InputEventScreenTouch:
+			if event.pressed:
+				process_player_click()
+		
+		elif event is InputEventMouseButton:
+			if event.button_index == BUTTON_LEFT and event.pressed:
+				process_player_click()
+		
+		# If we pressed space
+		elif event is InputEventKey:
+			if event.pressed and event.unicode == KEY_SPACE:
+				process_player_click()
 
 func process_player_click():
+	$CanvasLayer/Historical.add_message(parser.current_block.text)
 	# Quit if not enought time passed
 	if answer_delay < DELAY_BEFORE_ANSWER:
 		pass
@@ -131,6 +139,7 @@ func process_player_click():
 	# If this is the last block
 	elif block.empty() or block.is_final:
 		print("That was the last dialog !")
+		$CanvasLayer/Historical.reboot_historical()
 		emit_signal("dialog_finished")
 		
 	# If we don't expect a call from a button
@@ -175,6 +184,7 @@ func player_pushed_button(key):
 			# Display the next dialog if not finished
 			if block.empty() or block.is_final:
 				print("That was the last dialog !")
+				$CanvasLayer/Historical.reboot_historical()
 				emit_signal("dialog_finished")
 			else:
 				update_dialog()
@@ -191,7 +201,7 @@ func update_dialog():
 	# Remove the old answer buttons
 	var old_buttons = answer_container.get_children()
 	for button in old_buttons:
-		answer_container.remove_child(button)
+		button.queue_free()
 	
 	# Reset the answer delay
 	answer_delay = 0.0
@@ -214,7 +224,7 @@ func _add_buttons():
 		
 		# Button action
 		button.connect("pressed", self, "player_pushed_button", [answer.key])
-
+		button.connect("historical_infos", $CanvasLayer/Historical, "_on_ButtonA_historical_infos")
 		
 		# Add it to the container
 		answer_container.add_child(button)
@@ -259,6 +269,7 @@ func set_character_name(name: String):
 	$UI/Name.show()
 	
 	$UI/Name.text = name
+	$CanvasLayer/Historical.speaker_name = name
 
 
 
@@ -289,9 +300,14 @@ func process_single_data_block():
 	# Get the block test
 	var text = block.text
 	var bg_path = null
+	var lien = null
 	
+	if text.begins_with("lien="):
+		lien = text.substr("lien=".length())
+		OS.shell_open(lien)
+		print(lien)
 	if text.begins_with("background="):
-		if "/bureau" in text:
+		if "/bureau/" in text:
 			bg_path = PlayerData.bureau
 		else:
 		# Extract the file path
@@ -373,3 +389,26 @@ func get_buildings_gained():
 # Return true if the dialog must occur again in the future
 func must_redo_dialog():
 	return redo
+
+
+func _on_historical_pressed():
+	$Character.hide()
+	$UI.hide()
+	can_pass = true
+	historical_opened = true
+	$CanvasLayer/Historical.show()
+
+
+func _on_historical_mouse_entered():
+	can_pass = false
+
+
+func _on_historical_mouse_exited():
+	can_pass = true
+
+
+func _on_Historical_close_historical():
+	$CanvasLayer/Historical.hide()
+	historical_opened = false
+	$Character.show()
+	$UI.show()

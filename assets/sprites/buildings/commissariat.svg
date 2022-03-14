@@ -1,0 +1,1504 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="530"
+   height="511"
+   viewBox="0 0 140.22916 135.20209"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="GA_commissariat_28022022.svg"
+   inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\Activdesign\datacity\assets\bâtiments\GA_commissariat_28022022.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.270491"
+     inkscape:cx="246.60602"
+     inkscape:cy="312.92574"
+     inkscape:document-units="mm"
+     inkscape:current-layer="g1431"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="axonomgrid"
+       id="grid1016" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Tanguy Herbert</dc:title>
+          </cc:Agent>
+        </dc:creator>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g11331"
+       transform="matrix(0.41544819,0,0,0.41544819,-673.1099,-69.328853)"
+       style="stroke-width:2.40704">
+      <g
+         id="g12634-3"
+         transform="translate(2731.9735,833.28938)"
+         inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\GA_commissariat_28012022.png"
+         inkscape:export-xdpi="43.705997"
+         inkscape:export-ydpi="43.705997"
+         style="stroke-width:2.40704">
+        <g
+           id="g12632-7"
+           transform="matrix(1.4939316,0,0,1.4939316,388.82045,-372.45894)"
+           style="opacity:1;stroke-width:1.61122" />
+      </g>
+      <g
+         id="g1431">
+        <path
+           style="fill:#c6cfce;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1789.0768,492.76078 168.8749,-97.49998 -168.8749,-97.50004 -168.875,97.50004 z"
+           id="path12478-6"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\case_ciment.png"
+           inkscape:export-xdpi="39.857891"
+           inkscape:export-ydpi="39.857891" />
+        <path
+           style="opacity:1;fill:#c6cfce;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1693.2444,228.98788 v 132.62279 l 99.7478,58.41461 c 0.6696,-46.22526 1.0435,-91.84617 0,-134.56995 z"
+           id="path12480-1"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#b2bbba;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1792.9922,420.02528 h 81.9968 v -73.3428 h -81.3478 z"
+           id="path12484-8"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#a8b1b0;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1922.916,322.76695 -41.3815,-23.89161 v -9.16813 l 42.5881,24.09704 v 8.24518 z"
+           id="path12486-4"
+           sodipodi:nodetypes="cccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#949d9c;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1874.989,420.02528 47.927,-27.67069 v -69.58764 l -47.927,23.91553 z"
+           id="path12488-2"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#949d9c;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1793.6412,346.68248 88.9997,-47.47489 v -58.7857 l -89.6487,45.03344 z"
+           id="path12490-3"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#e0e0e0;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1882.6409,299.20759 40.2751,23.55936 -47.927,23.91553 h -81.3478 z"
+           id="path12492-1"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1882.6409,240.42189 -89.6487,45.03344 -99.7478,-56.46745 82.2213,-47.34349 z"
+           id="path12494-4"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#6a78b8;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1813.9403,419.91691 h 40.0996 v -43.23486 h -39.7822 z"
+           id="path12496-2"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#dbebeb;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1816.5409,420.0365 h 34.5157 v -38.9866 h -34.2425 z"
+           id="path12498-1"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#6a78b8;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1816.2647,376.55672 h 35.4507 v -11.11238 h -35.1701 z"
+           id="path12500-6"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#dbebeb;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1817.5751,376.51827 h 32.8295 v -9.31441 h -32.5697 z"
+           id="path12502-3"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#0e0e24;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1797.578,365.53751 h 73.4199 v -15.28523 h -73.4289 z"
+           id="path12514-7"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#2e64a4;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1858.8435,293.4472 17.2163,-8.94604 v -22.58398 l -17.5126,8.65199 z"
+           id="path12516-9"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#c7d7d7;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1860.4992,290.8362 13.8467,-6.94349 v -18.92859 l -14.085,7.2516 z"
+           id="path12518-6"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#2e64a4;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1856.9121,298.78235 20.4458,-10.67388 v -4.99095 l -20.5126,10.32247 z"
+           id="path12520-0"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#d7d7d7;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="M 1836.0459,324.34431 V 287.8352 l 13.7946,-7.96432 v 37.00934 z"
+           id="path12522-6"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#c7d7d7;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1839.6157,292.05403 v 8.49175 l 5.972,-3.44795 v -8.23497 z"
+           id="path12524-6"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#568ccc;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1776.4414,322.77577 -67.3048,-38.85846 v -27.77746 l 67.9871,39.25242 z"
+           id="path12526-2"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#efffff;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1774.1156,317.09657 v -21.14823 l -61.7397,-35.64545 v 21.25814 z"
+           id="path12528-7"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#222c38;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1846.7012,300.08603 1.1777,-0.67999 c 0.3674,1.34187 0.317,2.72769 0,4.1416 l -0.8401,0.48506 c -0.072,-0.20374 -0.1231,-0.42314 0,-0.76903 l 0.5071,-0.29275 v -2.73615 l -0.856,0.49422 c -0.1095,-0.21432 -0.1482,-0.42864 0.012,-0.64296 z"
+           id="path12530-0"
+           sodipodi:nodetypes="ccccccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <g
+           id="g1076"
+           transform="matrix(-1.4939316,0,0,1.4939316,587.34029,292.96792)"
+           style="opacity:1;stroke-width:1.61122">
+          <g
+             id="g1088"
+             transform="translate(32.653608,-0.1336661)">
+            <path
+               style="fill:#2e64a4;fill-opacity:1;stroke:none;stroke-width:0.426299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -902.34607,48.87402 v 23.3532 L -921.7256,61.02465 V 37.8897 Z"
+               id="path1056"
+               sodipodi:nodetypes="ccccc"
+               inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+               inkscape:export-xdpi="96"
+               inkscape:export-ydpi="96" />
+            <path
+               style="fill:#c7d7d7;fill-opacity:1;stroke:none;stroke-width:0.426299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -904.0944,49.9814 v 19.17235 l -15.88287,-9.19701 V 40.96356 Z"
+               id="path1058"
+               sodipodi:nodetypes="ccccc"
+               inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+               inkscape:export-xdpi="96"
+               inkscape:export-ydpi="96" />
+            <path
+               style="fill:#92c8ff;fill-opacity:1;stroke:none;stroke-width:0.4263px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -918.58192,59.151132 14.48752,8.39141 v 1.611208 l -15.88287,-9.19701 z"
+               id="path1060"
+               sodipodi:nodetypes="ccccc" />
+            <path
+               style="fill:#22222e;fill-opacity:1;stroke:none;stroke-width:0.426299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -916.28408,43.05443 v 19.04255 l 1.76825,1.0209 V 44.02727 Z"
+               id="path1062"
+               sodipodi:nodetypes="ccccc"
+               inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+               inkscape:export-xdpi="96"
+               inkscape:export-ydpi="96" />
+            <path
+               style="fill:#22222e;fill-opacity:1;stroke:none;stroke-width:0.426299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -910.42151,46.39533 v 19.12372 l 1.76825,1.0209 V 47.36816 Z"
+               id="path1064"
+               sodipodi:nodetypes="ccccc"
+               inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+               inkscape:export-xdpi="96"
+               inkscape:export-ydpi="96" />
+            <path
+               style="fill:#0e0e24;fill-opacity:1;stroke:none;stroke-width:0.426299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -915.13205,43.70085 c 0.12862,6.40469 0.17696,12.77367 0,19.04255 l 0.61622,0.37448 V 44.02727 Z"
+               id="path1066"
+               sodipodi:nodetypes="ccccc"
+               inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+               inkscape:export-xdpi="96"
+               inkscape:export-ydpi="96" />
+            <path
+               style="fill:#0e0e24;fill-opacity:1;stroke:none;stroke-width:0.426299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -909.26948,47.12294 c 0.12861,6.40467 0.17694,12.77367 0,19.04254 l 0.61622,0.37447 v -19.0906 z"
+               id="path1068"
+               sodipodi:nodetypes="ccccc"
+               inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+               inkscape:export-xdpi="96"
+               inkscape:export-ydpi="96" />
+            <path
+               style="fill:#36364c;fill-opacity:1;stroke:none;stroke-width:0.426299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -915.66786,62.47145 c -0.12862,-6.40467 -0.17695,-12.77366 0,-19.04253 l -0.61622,-0.37449 v 19.09062 z"
+               id="path1070"
+               sodipodi:nodetypes="ccccc"
+               inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+               inkscape:export-xdpi="96"
+               inkscape:export-ydpi="96" />
+            <path
+               style="fill:#36364c;fill-opacity:1;stroke:none;stroke-width:0.426299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -909.8053,65.84547 c -0.12862,-6.40469 -0.17695,-12.77367 0,-19.04255 l -0.61621,-0.37447 v 19.0906 z"
+               id="path1072"
+               sodipodi:nodetypes="ccccc"
+               inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+               inkscape:export-xdpi="96"
+               inkscape:export-ydpi="96" />
+            <path
+               style="fill:#568ccc;fill-opacity:1;stroke:none;stroke-width:0.4263px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -919.97727,59.95674 1.39535,-0.805608 V 41.769169 l -1.39535,-0.805609 z"
+               id="path1074"
+               sodipodi:nodetypes="ccccc" />
+          </g>
+        </g>
+        <path
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1874.989,346.68248 18.7873,10.8469 v 17.48118 l -18.7054,-10.79954 z"
+           id="path12546-7"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#d7d7d7;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1893.7763,375.01056 5.9806,-3.45286 v -17.12331 l -5.9806,3.09499 z"
+           id="path12550-1"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#628abb;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1899.7569,354.43439 -18.5972,-10.7371 -6.1707,2.98519 18.7873,10.8469 z"
+           id="path12552-7"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#92c8ff;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1924.1226,313.80425 -41.7658,-24.11347 v 1.7446 l 39.9214,23.0486 z"
+           id="path12554-6"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#222c38;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1888.2247,324.44976 v -61.27852 h 2.1928 v 61.28126 c -0.731,0.36931 -1.4619,0.52364 -2.1928,-0.003 z"
+           id="path12556-95"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#222c38;fill-opacity:1;stroke:none;stroke-width:0.481403;stroke-linecap:round;stroke-linejoin:round"
+           id="path12558-1"
+           sodipodi:type="arc"
+           sodipodi:cx="1889.3912"
+           sodipodi:cy="261.76505"
+           sodipodi:rx="2.332988"
+           sodipodi:ry="2.332988"
+           sodipodi:start="0"
+           sodipodi:end="6.282941"
+           sodipodi:open="true"
+           sodipodi:arc-type="arc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96"
+           d="m 1891.7242,261.76505 a 2.332988,2.332988 0 0 1 -2.3328,2.33298 2.332988,2.332988 0 0 1 -2.3332,-2.3327 2.332988,2.332988 0 0 1 2.3326,-2.33327 2.332988,2.332988 0 0 1 2.3334,2.33242" />
+        <path
+           style="opacity:1;fill:#264e7f;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1874.989,358.50042 18.7873,10.8469 v 5.66324 l -18.7054,-10.79954 z"
+           id="path12560-7"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#002661;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1893.7763,375.01056 5.9806,-3.45286 v -5.30538 l -5.9806,3.095 z"
+           id="path12562-9"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#264e7f;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1874.989,346.68248 18.7873,10.8469 v 5.54854 l -18.7054,-10.79957 z"
+           id="path12564-9"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#002661;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1893.7763,363.07792 5.9806,-3.45286 v -5.19067 l -5.9806,3.09499 z"
+           id="path12566-0"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#0e0e24;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1889.4687,264.06368 c 0.3098,-0.009 0.6262,-0.0494 0.9488,-0.20958 v 60.5984 c -0.3784,0.18765 -0.4891,0.20809 -0.9488,0.30776 0.1781,-19.55329 0.1832,-42.99241 0,-60.69658 z"
+           id="path12576-49"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#36364c;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1888.949,264.06622 c -0.3098,-0.009 -0.4435,-0.10353 -0.731,-0.28987 v 60.6617 c 0.2637,0.21493 0.3533,0.29559 0.731,0.32662 -0.1706,-21.2192 -0.186,-42.65122 0,-60.69845 z"
+           id="path12590-1"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#36364c;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1888.949,264.06622 c -0.8963,-0.93033 -2.0973,-2.10873 -0.6291,-4.38712 -1.3403,0.65858 -1.9439,2.9911 -0.102,4.09725 0.2063,0.14492 0.4098,0.3192 0.7311,0.28987 z"
+           id="path12592-9"
+           sodipodi:nodetypes="cccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#0e0e24;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1889.4687,264.06368 c 1.1402,-1.04887 2.9598,-2.46658 0.6291,-4.523 1.5765,0.39596 2.5719,3.06855 0.3197,4.31342 -0.2064,0.14491 -0.6275,0.23891 -0.9488,0.20958 z"
+           id="path12594-0"
+           sodipodi:nodetypes="cccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#5e6874;fill-opacity:1;stroke:none;stroke-width:0.481403;stroke-linecap:round;stroke-linejoin:round"
+           id="path12596-0"
+           sodipodi:type="arc"
+           sodipodi:cx="1889.3502"
+           sodipodi:cy="260.28445"
+           sodipodi:rx="1.4242909"
+           sodipodi:ry="0.87093997"
+           sodipodi:start="0"
+           sodipodi:end="6.282941"
+           sodipodi:open="true"
+           sodipodi:arc-type="arc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96"
+           d="m 1890.7745,260.28445 a 1.4242909,0.87093997 0 0 1 -1.4242,0.87094 1.4242909,0.87093997 0 0 1 -1.4244,-0.87083 1.4242909,0.87093997 0 0 1 1.4241,-0.87105 1.4242909,0.87093997 0 0 1 1.4245,0.87073" />
+        <path
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1891.7242,261.76446 c 7.1565,8.4783 10.2537,18.25561 12.8176,28.20355 -2.3561,3.08435 -7.1096,3.68717 -11.2148,4.96109 -0.5598,-5.83371 -1.8534,-10.93367 -2.9697,-16.21088 l 0.06,-14.86412 c 0.8326,-0.42357 1.2647,-1.12257 1.3068,-2.08964 z"
+           id="path12598-4"
+           sodipodi:nodetypes="cccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           id="path12600-4"
+           style="opacity:1;fill:#871918;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1902.7774,283.59444 c -5.4936,4.26844 -5.7617,4.81844 -10.3843,4.81349 0.3857,2.09919 0.7165,4.25378 0.9341,6.52117 4.1052,-1.27392 8.8589,-1.87658 11.215,-4.96094 -0.5507,-2.1366 -1.13,-4.26404 -1.7648,-6.37372 z"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           id="path12602-3"
+           style="opacity:1;fill:#002661;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1891.7245,261.7643 c -0.1,0.967 -0.6164,1.59855 -1.307,2.08983 l -0.05,12.45022 c 2.8654,-1.04614 5.6206,-2.30413 7.8166,-4.63747 -1.7164,-3.44054 -3.8078,-6.7613 -6.4594,-9.90258 z"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="display:inline;opacity:1;fill:#948ea1;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1833.9425,381.22401 v 38.82935 h 0.7312 v -38.82925 z"
+           id="path12604-1"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#222c38;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1832.687,397.60343 h -2.672 c -0.3095,2.12523 -0.1688,4.18959 0,6.25019 h 2.7416 c 0.2513,-0.46384 0.1073,-0.54039 0,-0.87701 h -1.6188 c -0.05,-1.42051 -0.066,-3.08805 0,-4.50854 h 1.5492 c 0.1225,-0.32686 0.085,-0.60322 0,-0.86464 z"
+           id="path12606-7"
+           sodipodi:nodetypes="ccccccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#c6cfce;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1882.6409,240.42189 -107.1752,-58.7775 v -14.76714 l 108.6128,56.52793 z"
+           id="path12608-5"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#2e65a4;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1792.9922,285.45533 v -16.58939 l 91.0863,-45.46076 v 16.35909 z"
+           id="path12610-5"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#949d9c;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1691.4142,212.9001 1.8302,16.08778 82.2213,-47.34349 v -14.76714 z"
+           id="path12612-3"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#568ccc;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1792.9922,285.45533 -101.578,-57.23504 V 212.9001 l 101.578,55.96584 z"
+           id="path12614-0"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#6a78b8;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1793.6412,337.78893 v 8.89355 h 81.3478 v -9.58527 z"
+           id="path12616-4"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#2e65a4;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1874.989,346.68248 49.1336,-24.51879 v -8.35944 l -49.1336,23.29296 z"
+           id="path12618-1"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#92c8ff;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1874.989,337.09721 v -1.47081 h -76.0163 l -5.3315,2.16253 c 27.1984,0.18145 54.2791,-0.22481 81.3478,-0.69172 z"
+           id="path12620-0"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#92c8ff;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1874.989,337.09721 c 16.406,-7.76432 32.8513,-15.52864 49.1336,-23.29296 l -1.8008,-1.02976 -47.3328,22.85191 z"
+           id="path12622-0"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#92c8ff;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1884.0785,223.40518 -108.6128,-56.52793 v 3.26098 c 34.6976,18.17723 69.81,36.4137 105.808,54.77669 z"
+           id="path12624-3"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#92c8ff;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1775.4657,166.87725 -84.0515,46.02285 3.5696,2.00239 c 27.0095,-14.89106 54.2196,-29.74867 80.4819,-44.76426 z"
+           id="path12626-4"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#92c8ff;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1694.9838,214.90249 c 32.3108,18.52583 64.9525,36.55529 98.0084,53.96345 l 2.143,-1.04677 -97.5265,-54.39858 z"
+           id="path12628-9"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <path
+           style="opacity:1;fill:#92c8ff;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1795.1352,267.81917 c 28.8587,-14.15551 57.8143,-28.2142 86.1385,-42.90425 l -2.5885,-1.31651 -85.6499,43.05966 z"
+           id="path12630-2"
+           sodipodi:nodetypes="ccccc"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+        <g
+           id="g1032"
+           transform="matrix(1.4939316,0,0,1.4939316,3120.5213,276.14148)"
+           style="opacity:1;stroke-width:1.61122">
+          <path
+             style="fill:#568ccc;fill-opacity:1;stroke:none;stroke-width:0.426299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -902.34607,48.87402 v 23.3532 L -921.7256,61.02465 V 37.8897 Z"
+             id="path12482-7"
+             sodipodi:nodetypes="ccccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="fill:#efffff;fill-opacity:1;stroke:none;stroke-width:0.426299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -904.0944,49.9814 v 19.17235 l -15.88287,-9.19701 V 40.96356 Z"
+             id="path12512-1"
+             sodipodi:nodetypes="ccccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="fill:#92c8ff;fill-opacity:1;stroke:none;stroke-width:0.4263px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -918.58192,59.151132 14.48752,8.39141 v 1.611208 l -15.88287,-9.19701 z"
+             id="path1020"
+             sodipodi:nodetypes="ccccc" />
+          <path
+             style="fill:#22222e;fill-opacity:1;stroke:none;stroke-width:0.426299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -916.28408,43.05443 v 19.04255 l 1.76825,1.0209 V 44.02727 Z"
+             id="path12532-0"
+             sodipodi:nodetypes="ccccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="fill:#22222e;fill-opacity:1;stroke:none;stroke-width:0.426299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -910.42151,46.39533 v 19.12372 l 1.76825,1.0209 V 47.36816 Z"
+             id="path12534-1"
+             sodipodi:nodetypes="ccccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="fill:#0e0e24;fill-opacity:1;stroke:none;stroke-width:0.426299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -915.13205,43.70085 c 0.12862,6.40469 0.17696,12.77367 0,19.04255 l 0.61622,0.37448 V 44.02727 Z"
+             id="path12568-0"
+             sodipodi:nodetypes="ccccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="fill:#0e0e24;fill-opacity:1;stroke:none;stroke-width:0.426299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -909.26948,47.12294 c 0.12861,6.40467 0.17694,12.77367 0,19.04254 l 0.61622,0.37447 v -19.0906 z"
+             id="path12570-8"
+             sodipodi:nodetypes="ccccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="fill:#36364c;fill-opacity:1;stroke:none;stroke-width:0.426299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -915.66786,62.47145 c -0.12862,-6.40467 -0.17695,-12.77366 0,-19.04253 l -0.61622,-0.37449 v 19.09062 z"
+             id="path12578-9"
+             sodipodi:nodetypes="ccccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="fill:#36364c;fill-opacity:1;stroke:none;stroke-width:0.426299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -909.8053,65.84547 c -0.12862,-6.40469 -0.17695,-12.77367 0,-19.04255 l -0.61621,-0.37447 v 19.0906 z"
+             id="path12580-7"
+             sodipodi:nodetypes="ccccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="fill:#2e64a4;fill-opacity:1;stroke:none;stroke-width:0.4263px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -919.97727,59.95674 1.39535,-0.805608 V 41.769169 l -1.39535,-0.805609 z"
+             id="path1018"
+             sodipodi:nodetypes="ccccc" />
+        </g>
+        <g
+           id="g1054"
+           transform="matrix(1.4939316,0,0,1.4939316,3082.9993,254.47813)"
+           style="opacity:1;stroke-width:1.61122">
+          <path
+             style="fill:#568ccc;fill-opacity:1;stroke:none;stroke-width:0.426299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -902.34607,48.87402 v 23.3532 L -921.7256,61.02465 V 37.8897 Z"
+             id="path1034"
+             sodipodi:nodetypes="ccccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="fill:#efffff;fill-opacity:1;stroke:none;stroke-width:0.426299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -904.0944,49.9814 v 19.17235 l -15.88287,-9.19701 V 40.96356 Z"
+             id="path1036"
+             sodipodi:nodetypes="ccccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="fill:#92c8ff;fill-opacity:1;stroke:none;stroke-width:0.4263px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -918.58192,59.151132 14.48752,8.39141 v 1.611208 l -15.88287,-9.19701 z"
+             id="path1038"
+             sodipodi:nodetypes="ccccc" />
+          <path
+             style="fill:#22222e;fill-opacity:1;stroke:none;stroke-width:0.426299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -916.28408,43.05443 v 19.04255 l 1.76825,1.0209 V 44.02727 Z"
+             id="path1040"
+             sodipodi:nodetypes="ccccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="fill:#22222e;fill-opacity:1;stroke:none;stroke-width:0.426299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -910.42151,46.39533 v 19.12372 l 1.76825,1.0209 V 47.36816 Z"
+             id="path1042"
+             sodipodi:nodetypes="ccccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="fill:#0e0e24;fill-opacity:1;stroke:none;stroke-width:0.426299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -915.13205,43.70085 c 0.12862,6.40469 0.17696,12.77367 0,19.04255 l 0.61622,0.37448 V 44.02727 Z"
+             id="path1044"
+             sodipodi:nodetypes="ccccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="fill:#0e0e24;fill-opacity:1;stroke:none;stroke-width:0.426299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -909.26948,47.12294 c 0.12861,6.40467 0.17694,12.77367 0,19.04254 l 0.61622,0.37447 v -19.0906 z"
+             id="path1046"
+             sodipodi:nodetypes="ccccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="fill:#36364c;fill-opacity:1;stroke:none;stroke-width:0.426299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -915.66786,62.47145 c -0.12862,-6.40467 -0.17695,-12.77366 0,-19.04253 l -0.61622,-0.37449 v 19.09062 z"
+             id="path1048"
+             sodipodi:nodetypes="ccccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="fill:#36364c;fill-opacity:1;stroke:none;stroke-width:0.426299px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -909.8053,65.84547 c -0.12862,-6.40469 -0.17695,-12.77367 0,-19.04255 l -0.61621,-0.37447 v 19.0906 z"
+             id="path1050"
+             sodipodi:nodetypes="ccccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="fill:#2e64a4;fill-opacity:1;stroke:none;stroke-width:0.4263px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -919.97727,59.95674 1.39535,-0.805608 V 41.769169 l -1.39535,-0.805609 z"
+             id="path1052"
+             sodipodi:nodetypes="ccccc" />
+        </g>
+        <path
+           style="opacity:1;fill:#92c8ff;fill-opacity:1;stroke:none;stroke-width:0.636863px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1712.0259,281.74485 2.0845,-1.20352 60.0052,34.1482 v 2.40704 z"
+           id="path1138"
+           sodipodi:nodetypes="ccccc" />
+        <path
+           style="opacity:1;fill:#2e64a4;fill-opacity:1;stroke:none;stroke-width:0.636863px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1714.1104,280.54133 0.3501,-19.03492 -2.0846,-1.20352 -0.35,21.44196 z"
+           id="path1140"
+           sodipodi:nodetypes="ccccc" />
+        <path
+           style="opacity:1;fill:#92c8ff;fill-opacity:1;stroke:none;stroke-width:0.636863px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1874.6213,284.15188 -2.0846,-1.20351 -12.0375,5.76699 v 2.12084 z"
+           id="path1142"
+           sodipodi:nodetypes="ccccc" />
+        <path
+           style="opacity:1;fill:#568ccc;fill-opacity:1;stroke:none;stroke-width:0.636863px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1874.6213,284.15188 -0.2754,-19.18776 -2.0846,1.06043 0.2754,16.92382 z"
+           id="path1144"
+           sodipodi:nodetypes="ccccc" />
+        <path
+           style="fill:#808a94;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1805.0778,483.51326 -137.8753,-79.6185 38.9711,-22.5 137.8753,79.6185 z"
+           id="path10498-7"
+           inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\Activdesign\datacity\assets\GA_commerce_04022022.png"
+           inkscape:export-xdpi="39.857891"
+           inkscape:export-ydpi="39.857891"
+           sodipodi:nodetypes="ccccc" />
+        <g
+           id="g12750-1"
+           transform="matrix(0.77983761,0,0,0.77983761,2520.1433,528.43298)"
+           style="stroke-width:3.08659">
+          <g
+             id="g12748-8"
+             transform="translate(18.391287,10.876568)"
+             style="stroke-width:3.08659">
+            <path
+               style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1094.779,-178.72529 1.8342,-1.05893 v 1.41191 l -0.6114,0.35298 z"
+               id="path12636-9" />
+            <path
+               style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1007.3515,-160.01729 -0.6113,-0.35298 -32.4033,17.29606 2.4456,1.41193 c 11.9141,-4.90556 21.8657,-10.872 30.5551,-17.52071 0.4054,-0.31072 0.2287,-0.70876 0.014,-0.8343 z"
+               id="path12638-5"
+               sodipodi:nodetypes="ccccccc" />
+            <path
+               style="fill:#264e7f;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1062.9871,-203.43396 c 3.8622,1.13649 7.8925,2.67472 12.2276,4.94173 l 30.569,17.64905 c 4.2055,2.66183 8.2686,6.24043 12.2277,9.65806 -2.3153,4.1142 -0.7759,7.55847 0,11.5208 l -12.2277,-7.05962 -30.569,-17.64905 c -4.0703,-2.58547 -8.1462,-5.64236 -12.2276,-9.17751 -1.677,-3.35112 -1.5831,-6.64244 0,-9.88346 z"
+               id="path12640-4"
+               sodipodi:nodetypes="ccccccccc" />
+            <path
+               style="fill:#002661;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1038.5319,-142.01526 c 10.7044,-4.48259 21.1417,-10.14728 30.569,-17.64905 0.1882,-4.00133 2.8015,-9.58774 0,-11.54526 -1.4503,-0.78227 -4.8225,-0.29547 -5.9589,4.76886 -6.1875,6.81673 -12.3455,10.41231 -18.4912,10.68215 -2.0773,-1.60016 -4.1166,-0.90664 -6.1224,1.74194 -2.268,3.88907 -0.8498,7.95917 0,12.00136 z"
+               id="path12642-8"
+               sodipodi:nodetypes="cccccccc" />
+            <g
+               id="g12654-3"
+               transform="matrix(0.77607703,-0.05059837,0.05059837,0.77607703,-191.0005,-105.8252)"
+               style="stroke-width:3.96869">
+              <path
+                 style="fill:#494949;fill-opacity:1;stroke:none;stroke-width:1.05005px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                 d="m -1143.1535,-150 4.3301,-2.5 c 4.3301,-2.5 4.3301,-17.5 0,-20 -0.866,-0.5 -2.5981,-0.5 -4.3301,0.5 l -4.3302,2.5 4.3302,-0.5 z"
+                 id="path12644-2"
+                 sodipodi:nodetypes="ccccccc" />
+              <path
+                 style="fill:#111111;fill-opacity:1;stroke:none;stroke-width:1.05005px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                 d="m -1143.1536,-150 c 4.3301,-2.5 4.3301,-17.5 0,-20 -9.5262,-5.5 -9.5262,25.5 0,20 z"
+                 id="path12646-0"
+                 sodipodi:nodetypes="ccc" />
+              <path
+                 style="fill:#494949;fill-opacity:1;stroke:none;stroke-width:1.05005px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                 d="m -1143.7357,-152.9873 c 3.0366,-1.75317 3.0366,-12.27223 0,-14.0254 -6.6804,-3.857 -6.6804,17.88239 0,14.0254 z"
+                 id="path12648-2"
+                 sodipodi:nodetypes="ccc" />
+              <path
+                 style="fill:#c6cfce;fill-opacity:1;stroke:none;stroke-width:1.05005px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                 d="m -1143.4323,-153.92157 c 2.6321,-1.5196 2.6321,-10.63726 0,-12.15686 -5.7904,-3.34315 -5.7904,15.5 0,12.15686 z"
+                 id="path12650-7"
+                 sodipodi:nodetypes="ccc" />
+              <path
+                 style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.05005px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                 d="m -1143.4111,-155.55906 c 1.9231,-1.11023 1.9231,-7.77165 0,-8.88188 -4.2305,-2.44253 -4.2305,11.32441 0,8.88188 z"
+                 id="path12652-7"
+                 sodipodi:nodetypes="ccc" />
+            </g>
+            <path
+               style="fill:#c6cfce;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1093.5562,-175.90144 -1.2228,-0.70596 c -0.6114,-0.35298 -0.6114,-1.76491 0,-2.11789 l 1.2228,0.70596 z"
+               id="path12656-5"
+               sodipodi:nodetypes="ccccc" />
+            <path
+               style="fill:#264e7f;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1026.3043,-184.37299 -3.0569,-15.88414 -21.3983,-12.35434 -12.2276,9.17751 c 12.839,3.88279 24.4552,13.41327 36.6828,19.06097 z"
+               id="path12658-5"
+               sodipodi:nodetypes="ccccc" />
+            <path
+               style="fill:#264e7f;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1093.5562,-185.78491 c 3.8623,1.1365 7.8925,2.67472 12.2276,4.94174 l 30.569,17.64905 c 4.2055,2.66183 8.2687,5.75988 12.2277,9.17751 -2.3153,4.1142 -0.7758,8.03901 0,12.00135 l -12.2277,-7.05962 -30.569,-17.64905 c -4.0703,-2.58547 -8.1461,-5.64236 -12.2276,-9.17751 -1.677,-3.35112 -1.5831,-6.64245 0,-9.88347 z"
+               id="path12660-9"
+               sodipodi:nodetypes="ccccccccc" />
+            <path
+               style="fill:#002661;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1043.3732,-144.81537 -1.0051,-0.5803 0.5075,-1.89406 z"
+               id="path12662-1" />
+            <path
+               style="fill:#264e7f;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1056.8734,-166.72393 -3.0568,-15.88415 -21.3984,-12.35433 -12.2276,9.1775 c 12.839,3.88279 24.4552,13.41328 36.6828,19.06098 z"
+               id="path12664-2"
+               sodipodi:nodetypes="ccccc" />
+            <path
+               style="fill:#c6cfce;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1040.3661,-143.07421 v 0.23539 c 0.6757,1.11464 1.4058,2.13079 2.4456,2.58846 v -1.41192 z"
+               id="path12666-3"
+               sodipodi:nodetypes="ccccc" />
+            <path
+               style="fill:#9ea7a6;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1037.9205,-140.25036 c 11.571,-5.17147 22.4009,-10.74874 30.7795,-17.66829 0.1343,-0.1109 0.2679,-0.22215 0.4009,-0.33374 0.2164,-1.34193 -0.1871,-1.44906 -0.6114,-1.7649 0.4808,0.42624 0.063,0.75228 7e-4,0.82618 -8.7632,6.72889 -18.7919,12.70762 -30.6568,17.59785 z"
+               id="path12668-8"
+               sodipodi:nodetypes="csccccc" />
+            <path
+               style="fill:#628abb;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1056.8734,-166.72393 c 11.1288,-4.66193 22.4478,-9.11977 30.5691,-17.64906 6.8594,3.57673 12.8319,8.43311 18.3415,13.19387 -2.2561,-1.43302 -5.015,1.81761 -5.9555,4.73841 -5.4131,6.63215 -11.9601,10.2722 -18.4912,10.68215 -2.8975,-1.88749 -4.5446,-0.17249 -6.1224,1.74195 -5.572,-4.84135 -11.8689,-8.76888 -18.3415,-12.70732 z"
+               id="path12670-9"
+               sodipodi:nodetypes="ccccccc" />
+            <path
+               style="fill:#446c9d;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1013.9183,-166.44071 c -6.8409,-4.42194 -14.3327,-7.89726 -22.1681,-10.87265 2.9063,-1.75814 5.6287,-3.75288 8.313,-5.79636 5.8735,3.93964 11.8604,7.88011 17.2461,11.99711 -1.838,1.16152 -2.9427,3.12323 -3.391,4.6719 z"
+               id="path12672-1"
+               sodipodi:nodetypes="ccccc" />
+            <path
+               style="fill:#1e447f;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1056.8734,-166.72393 -3.0568,-15.88415 c 0.3653,0.0102 0.7781,0.007 1.2228,-0.005 l 3.1019,15.32749 z"
+               id="path12674-1"
+               sodipodi:nodetypes="ccccc" />
+            <path
+               style="fill:#446c9d;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1033.8836,-156.42827 c -4.0703,-4.90875 -7.7573,-10.60311 -10.8822,-16.02745 -3.965,1.40744 -8.0392,3.3633 -12.1076,5.73179 6.4304,3.85147 12.5455,8.08564 18.3415,12.70731 0.737,-1.02066 2.3606,-2.79542 4.6483,-2.41165 z"
+               id="path12676-3"
+               sodipodi:nodetypes="ccccc" />
+            <path
+               style="fill:#446c9d;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1081.3286,-194.96241 c 8.3766,-8.14937 18.6045,-13.98462 30.5691,-17.64905 l 21.3983,12.35433 c 0,0.51925 0.2033,1.11668 -0.083,1.53431 -4.589,6.68814 -14.86,13.26035 -29.317,16.12672 -0.379,0.0752 -0.776,-0.005 -1.1687,-0.012 z"
+               id="path12678-5"
+               sodipodi:nodetypes="cccsscc" />
+            <path
+               style="fill:#1e447f;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1027.2658,-183.53748 c 0.4988,-0.3232 0.5791,-0.46998 0.9615,-0.8355 l -3.0569,-15.88415 c 0.2802,1.48888 -0.4013,1.95233 -0.815,2.7276 z"
+               id="path12680-8"
+               sodipodi:nodetypes="ccccc" />
+            <path
+               style="fill:#1e447f;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1058.7074,-182.60808 c 9.4887,-2.2047 18.6438,-4.81434 28.5352,-14.93894 l 0.2633,1.15105 c -7.981,9.04212 -20.0566,13.07495 -28.5978,14.97214 z"
+               id="path12682-2"
+               sodipodi:nodetypes="ccccc" />
+            <path
+               style="fill:#1e447f;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1055.711,-167.25064 c 10.2822,-4.0543 20.4978,-8.15647 28.5841,-16.39035 l -0.4077,-1.3082 c -8.5308,7.17438 -18.3756,12.03622 -28.4917,16.42051 z"
+               id="path12684-3"
+               sodipodi:nodetypes="ccccc" />
+            <path
+               style="fill:#e5ebeb;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1058.5067,-181.42383 2.4804,12.89515 c 10.2384,-4.30197 20.2141,-9.01922 28.4917,-16.42051 l -2.3743,-11.44678 c -7.6721,7.95374 -17.4701,12.5218 -28.5978,14.97214 z"
+               id="path12686-3"
+               sodipodi:nodetypes="ccccc" />
+            <path
+               style="fill:#e5ebeb;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1032.2142,-154.82452 c -3.0185,-2.14869 -5.5488,-0.33869 -6.6575,3.24948 -0.1518,0.68674 -0.1829,1.51686 -0.068,2.04523 0.321,1.2013 8.2816,-1.75842 7.3365,-4.23577 -0.1443,-0.39264 -0.3316,-0.75663 -0.6113,-1.05894 z"
+               id="path12688-5"
+               sodipodi:nodetypes="ccccc" />
+            <path
+               style="fill:#e5ebeb;fill-opacity:1;stroke:none;stroke-width:0.816663px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1007.4892,-170.29004 c -1.9189,-1.83133 -4.5931,-0.11865 -5.4047,2.87734 -0.1055,0.57166 -0.107,1.25822 0,1.69132 0.3,0.98294 6.5513,-1.50336 5.8048,-3.61563 -0.1179,-0.32862 -0.1637,-0.71145 -0.4036,-0.95303 z"
+               id="path12690-8"
+               sodipodi:nodetypes="cccccc" />
+            <path
+               style="fill:#9ea7a6;fill-opacity:1;stroke:#767f7e;stroke-width:1.74392;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="m -1027.1158,-149.22467 c 4.8534,-1.87361 9.7433,-4.67133 14.6732,-8.47154 0,-1.41192 0,-2.11789 -1.2228,-2.82385 l -3.0569,1.76491 c 0,-2.11789 -1.8342,-1.05895 -3.057,-0.35297 -1.2226,0.70595 -3.0568,1.76489 -3.0568,3.88278 l -3.0569,1.7649 c -1.2228,0.70596 -1.2228,2.82385 -1.2228,4.23577 z"
+               id="path12692-9"
+               sodipodi:nodetypes="cccccccc" />
+            <path
+               style="fill:#c7d7d7;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1034.7289,-153.1652 c -1.2686,-0.90299 -2.3319,-0.14233 -2.7978,1.36561 -0.064,0.28861 -0.077,0.63747 -0.029,0.85952 0.1349,0.50485 3.4804,-0.73899 3.0832,-1.7801 -0.061,-0.16501 -0.1393,-0.31798 -0.2569,-0.44503 z"
+               id="path12694-6"
+               sodipodi:nodetypes="ccccc" />
+            <path
+               style="fill:#c7d7d7;fill-opacity:1;stroke:none;stroke-width:0.816663px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1008.423,-169.58885 c -0.8298,-0.7918 -1.986,-0.0512 -2.3368,1.24406 -0.045,0.24717 -0.046,0.54401 0,0.73127 0.1296,0.42498 2.8324,-0.65001 2.5097,-1.56327 -0.051,-0.14208 -0.071,-0.3076 -0.1745,-0.41206 z"
+               id="path12696-7"
+               sodipodi:nodetypes="cccccc" />
+            <path
+               style="fill:#efffff;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1058.0961,-168.13586 -2.4455,-13.41328 -8.5594,-4.94173 0.6115,12.35434 z"
+               id="path12698-9"
+               sodipodi:nodetypes="ccccc" />
+            <path
+               style="fill:#efffff;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1081.3286,-181.54914 0.6114,-11.64837 -0.6114,-0.35298 -9.1707,6.70664 z"
+               id="path12700-7"
+               sodipodi:nodetypes="ccccc" />
+            <path
+               style="fill:#efffff;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1069.7123,-174.84249 -0.6114,-12.35434 -9.1707,-5.29472 -0.6114,11.64838 z"
+               id="path12702-8"
+               sodipodi:nodetypes="ccccc" />
+            <path
+               style="fill:none;stroke:#c6cfce;stroke-width:2.05259;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="m -1056.8734,-156.1345 c -12.6908,-6.92963 -24.9273,-13.20061 -37.4608,-22.3189"
+               id="path12704-3"
+               sodipodi:nodetypes="cc" />
+            <path
+               style="fill:none;stroke:#9ea7a6;stroke-width:0.817945;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="m -1069.7123,-187.54981 -10.3935,-6.00068 -0.6114,12.95093 v 12.00136 c 0,1.41192 0,2.11787 0.6114,2.47085"
+               id="path12706-5"
+               sodipodi:nodetypes="ccccc" />
+            <path
+               style="fill:#b2bbba;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1058.846,-167.74736 c -0.307,-0.30751 -0.6356,-0.56658 -1.0593,-0.61164 v -0.61165 c -0.5298,-0.30583 -2.1188,-0.11776 -2.6486,1.41137 -0.2747,0.8342 -0.2773,1.2474 0,1.95272 0.5298,0.91747 2.6486,-0.91749 2.6486,-1.52914 v -0.61164 c 0.3638,0.0209 0.7151,0.25783 1.0593,0.61163 0.1392,0.14643 0.3703,-0.17694 0,-0.61165 z"
+               id="path12708-3"
+               sodipodi:nodetypes="ccccccccc" />
+            <path
+               style="fill:#c6cfce;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1058.8481,-167.71137 c -0.2708,-0.27121 -0.7777,-0.60273 -1.1514,-0.64248 v -0.41065 c -0.4673,-0.26972 -1.8687,-0.10386 -2.3359,1.24476 -0.2423,0.73574 -0.2446,1.10015 0,1.72221 0.4672,0.80917 2.3359,-0.80917 2.3359,-1.34862 v -0.66824 c 0.3209,0.0184 0.8478,0.33043 1.1514,0.64247 0.1228,0.12915 0.3266,-0.15606 0,-0.53945 z"
+               id="path12710-8"
+               sodipodi:nodetypes="ccccccccc" />
+            <path
+               style="fill:#628abb;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1078.7821,-195.41378 c 7.6264,-7.41952 16.9383,-12.73217 27.8313,-16.06841 l 19.9144,11.4401 c 0,0.47275 0.185,1.01667 -0.076,1.39689 -4.1781,6.08916 -13.5293,12.07276 -26.6915,14.68242 -0.345,0.0684 -0.7065,-0.004 -1.0641,-0.0109 z"
+               id="path12712-1"
+               sodipodi:nodetypes="cccsscc" />
+            <g
+               id="g12724-1"
+               transform="matrix(0.70596195,0,0,0.70596195,-286.18751,-59.560891)"
+               style="stroke-width:4.37217">
+              <path
+                 style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.15862;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                 id="path12714-6"
+                 sodipodi:type="arc"
+                 sodipodi:cx="-1060.9846"
+                 sodipodi:cy="-197.72296"
+                 sodipodi:rx="3.441803"
+                 sodipodi:ry="2.127151"
+                 sodipodi:start="0"
+                 sodipodi:end="6.282941"
+                 sodipodi:open="true"
+                 sodipodi:arc-type="arc"
+                 d="m -1057.5428,-197.72296 a 3.441803,2.127151 0 0 1 -3.4416,2.12715 3.441803,2.127151 0 0 1 -3.442,-2.12689 3.441803,2.127151 0 0 1 3.4412,-2.12741 3.441803,2.127151 0 0 1 3.4424,2.12663" />
+              <path
+                 style="fill:#c6cfce;fill-opacity:1;stroke:none;stroke-width:1.15681px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                 d="m -1064.4264,-197.84208 v 0.99551 c 0.9472,1.84657 6.1434,1.84657 6.909,0 v -1.02103 c -1.6317,2.3676 -5.0958,2.3676 -6.909,0.0255 z"
+                 id="path12716-8"
+                 sodipodi:nodetypes="cccccc" />
+              <path
+                 style="fill:#0026bf;fill-opacity:1;stroke:none;stroke-width:1.15681px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                 d="m -1062.9376,-201.17533 -0.7232,3.48912 c 0.7373,1.63619 4.7818,1.60071 5.3778,0 l -0.7317,-3.50048 c -1.3583,-0.57123 -2.6493,-0.90548 -3.9314,-0.0483 z"
+                 id="path12718-5"
+                 sodipodi:nodetypes="cccccc" />
+              <path
+                 style="opacity:1;fill:#264ee7;fill-opacity:1;stroke:none;stroke-width:1.15862;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                 id="path12720-7"
+                 sodipodi:type="arc"
+                 sodipodi:cx="-1060.9846"
+                 sodipodi:cy="-201.17268"
+                 sodipodi:rx="1.9609667"
+                 sodipodi:ry="1.211944"
+                 sodipodi:start="0"
+                 sodipodi:end="6.282941"
+                 sodipodi:open="true"
+                 sodipodi:arc-type="arc"
+                 d="m -1059.0237,-201.17268 a 1.9609667,1.211944 0 0 1 -1.9608,1.21194 1.9609667,1.211944 0 0 1 -1.9611,-1.2118 1.9609667,1.211944 0 0 1 1.9606,-1.21209 1.9609667,1.211944 0 0 1 1.9613,1.21165" />
+              <path
+                 style="opacity:1;fill:#628aff;fill-opacity:1;stroke:none;stroke-width:1.15862;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                 id="path12722-4"
+                 sodipodi:type="arc"
+                 sodipodi:cx="-1060.9846"
+                 sodipodi:cy="-201.70872"
+                 sodipodi:rx="1.3139077"
+                 sodipodi:ry="0.81203955"
+                 sodipodi:start="0"
+                 sodipodi:end="6.282941"
+                 sodipodi:open="true"
+                 sodipodi:arc-type="arc"
+                 d="m -1059.6707,-201.70872 a 1.3139077,0.81203955 0 0 1 -1.3138,0.81203 1.3139077,0.81203955 0 0 1 -1.314,-0.81194 1.3139077,0.81203955 0 0 1 1.3136,-0.81213 1.3139077,0.81203955 0 0 1 1.3142,0.81184" />
+            </g>
+            <path
+               style="fill:#002661;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1053.847,-150.85504 -0.7749,-0.46252 c 0.032,-0.94936 0.3999,-2.08199 0.6007,-3.12351 l 2.3426,-2.48079 0.9912,0.21624 z"
+               id="path12726-3"
+               sodipodi:nodetypes="cccccc" />
+            <g
+               id="g12738-8"
+               transform="matrix(0.70210576,-0.07368703,0.07368703,0.70210576,-274.69202,-141.14963)"
+               style="stroke-width:4.37217">
+              <path
+                 id="path12728-0"
+                 style="fill:#494949;fill-opacity:1;stroke:none;stroke-width:4.37217px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                 d="m -4117.4473,-521.20898 -15.0429,8.68554 18.0293,-2.08203 v 83.27539 l 13.0351,-7.52539 c 18.483,-24.86602 10.735,-76.34669 -16.0215,-82.35351 z"
+                 transform="scale(0.26458333)" />
+              <path
+                 style="fill:#111111;fill-opacity:1;stroke:none;stroke-width:1.15681px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                 d="m -1088.6179,-114.12288 c 4.7703,-2.75413 4.7703,-19.27892 0,-22.03305 -10.4945,-6.05909 -10.4945,28.09214 0,22.03305 z"
+                 id="path12730-7"
+                 sodipodi:nodetypes="ccc" />
+              <path
+                 style="fill:#494949;fill-opacity:1;stroke:none;stroke-width:1.15681px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                 d="m -1089.2591,-117.41385 c 3.3453,-1.93138 3.3453,-13.51973 0,-15.45112 -7.3595,-4.24907 -7.3595,19.70018 0,15.45112 z"
+                 id="path12732-0"
+                 sodipodi:nodetypes="ccc" />
+              <path
+                 style="fill:#c6cfce;fill-opacity:1;stroke:none;stroke-width:1.15681px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                 d="m -1088.9249,-118.44309 c 2.8997,-1.67407 2.8997,-11.71856 0,-13.39264 -6.379,-3.68299 -6.379,17.07562 0,13.39264 z"
+                 id="path12734-1"
+                 sodipodi:nodetypes="ccc" />
+              <path
+                 style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.15681px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                 d="m -1088.9015,-120.24704 c 2.1186,-1.22308 2.1186,-8.56165 0,-9.78474 -4.6606,-2.69082 -4.6606,12.47556 0,9.78474 z"
+                 id="path12736-8"
+                 sodipodi:nodetypes="ccc" />
+            </g>
+            <path
+               style="fill:#002661;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1043.3713,-144.81225 c -1.2991,-4.42201 -1.3085,-9.86224 -5.7997,-11.76421 -3.7861,-1.63762 -5.4695,4.04251 -5.4473,5.27257 -0.1749,-5.14306 2.3348,-7.4121 5.5663,-8.27974 l 8.5968,6.16724 c -0.7916,2.33564 -1.5737,8.00841 -1.9361,9.16309 -0.2136,-0.12383 -0.732,-0.41848 -0.98,-0.55895 z"
+               id="path12740-3"
+               sodipodi:nodetypes="ccccccc" />
+            <path
+               style="fill:#264e7f;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1042.3771,-144.23057 c -1.4426,-4.91027 -1.3791,-11.53287 -6.3661,-13.64485 -4.3618,-0.44193 -5.8804,2.0934 -6.1866,6.35513 0.31,-2.0122 0.7752,-3.96492 1.5523,-5.849 l 4.7664,-3.84534 9.546,6.8482 z"
+               id="path12742-7"
+               sodipodi:nodetypes="ccccccc" />
+            <path
+               id="path12744-6"
+               style="fill:#111111;fill-opacity:1;stroke:none;stroke-width:0.816661px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               d="m -1051.4962,-156.65881 c 0.5759,-0.1787 1.5459,-0.25027 2.3098,0.0766 l 0.078,-0.0175 0.01,0.0551 c 3.6423,1.58932 4.2992,5.53583 5.1387,9.33783 0.293,-4.75964 -1.7751,-9.8035 -5.5734,-10.24711 -0.7668,0.15104 -1.3066,0.47568 -1.9606,0.79513 z"
+               sodipodi:nodetypes="ccccccc" />
+            <path
+               style="opacity:1;mix-blend-mode:normal;fill:none;stroke:#9ea7a6;stroke-width:0.817945;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+               d="m -1056.9475,-152.78659 c -0.6078,-0.35215 -0.6078,-0.96358 -0.6078,-2.37221 v -11.97334 l -2.431,-14.08627 c -0.1246,-0.69372 -0.1738,-0.80497 -0.6077,-1.05646 l -9.1167,-5.28236 0.6077,13.0298 v 12.67766 c 0,1.40862 0,2.01705 0.6078,2.36921"
+               id="path12746-6"
+               sodipodi:nodetypes="ccccccccc"
+               inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\GA_commissariat_28012022.png"
+               inkscape:export-xdpi="43.705997"
+               inkscape:export-ydpi="43.705997" />
+          </g>
+        </g>
+        <path
+           style="fill:#388f0a;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1652.9177,400.22129 53.6936,-31 v -20.78383 l -53.6937,31.00001 z"
+           id="path12752-2"
+           sodipodi:nodetypes="ccccc" />
+        <path
+           style="fill:#60b732;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1652.9178,400.22127 -12.9904,-7.49998 v -20.78382 l 12.9903,7.49998 z"
+           id="path12754-3"
+           sodipodi:nodetypes="ccccc" />
+        <path
+           style="fill:#9cf36e;fill-opacity:1;stroke:none;stroke-width:0.636862px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 1706.6113,348.43746 -12.9904,-7.49999 -53.6936,31.00002 12.9903,7.49998 z"
+           id="path12756-3"
+           sodipodi:nodetypes="ccccc" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.0034px;line-height:1.25;font-family:Calibri;-inkscape-font-specification:Calibri;stroke-width:0.636862"
+           x="1808.4598"
+           y="361.01163"
+           id="text12764-0"><tspan
+             sodipodi:role="line"
+             id="tspan12762-9"
+             x="1808.4598"
+             y="361.01163"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Calibri;-inkscape-font-specification:'Calibri Bold';fill:#ffffff;fill-opacity:1;stroke-width:0.636862">Gendarmerie</tspan></text>
+        <g
+           id="g9846-7-3"
+           transform="matrix(2.2493436,0,0,2.2493436,1956.2529,822.50016)"
+           style="stroke-width:1.0701">
+          <path
+             style="opacity:1;fill:#646470;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.795258,-148.69295 -0.133371,-8.12425 h 1.050949 l 0.133372,8.12555 c -0.175161,0.0885 -0.350321,0.15125 -0.525479,0.16031 -0.175158,0.009 -0.350316,-0.0355 -0.525471,-0.16175 v 6e-5 z"
+             id="path9832-1-9"
+             sodipodi:nodetypes="ccccsccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#646470;fill-opacity:1;stroke:none;stroke-width:0.214021;stroke-linecap:round;stroke-linejoin:round"
+             id="path9834-1-6"
+             sodipodi:type="arc"
+             sodipodi:cx="-74.369576"
+             sodipodi:cy="-157.49118"
+             sodipodi:rx="1.1181738"
+             sodipodi:ry="1.1181738"
+             sodipodi:start="0"
+             sodipodi:end="6.282941"
+             sodipodi:open="true"
+             sodipodi:arc-type="arc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96"
+             d="m -73.251402,-157.49118 a 1.1181738,1.1181738 0 0 1 -1.118105,1.11817 1.1181738,1.1181738 0 0 1 -1.118242,-1.11803 1.1181738,1.1181738 0 0 1 1.117969,-1.11831 1.1181738,1.1181738 0 0 1 1.118378,1.1179" />
+          <path
+             style="opacity:1;fill:#50505c;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.33239,-156.38947 c 0.148459,-0.004 0.30013,-0.0237 0.45471,-0.10045 l 0.133372,7.79827 c -0.09068,0.045 -0.149278,0.0699 -0.212749,0.0896 -0.06347,0.0197 -0.13181,0.0341 -0.241962,0.0579 0.06213,-4.09614 -0.03399,-4.10211 -0.133371,-7.84533 z"
+             id="path9836-5-1"
+             sodipodi:nodetypes="cccsccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#787884;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.581515,-156.38825 c -0.148455,-0.004 -0.212531,-0.0496 -0.350359,-0.13893 l 0.133371,7.82861 c 0.0632,0.0515 0.105538,0.0869 0.154699,0.11132 0.04916,0.0244 0.105149,0.0378 0.195661,0.0452 -0.128118,-5.88012 -0.152929,-5.07485 -0.133372,-7.84623 z"
+             id="path9838-1-6"
+             sodipodi:nodetypes="cccsccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#787884;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.581515,-156.38825 c -0.429567,-0.44589 -1.005187,-1.01069 -0.301481,-2.1027 -0.64241,0.31566 -0.931699,1.43361 -0.04891,1.96377 0.09888,0.0694 0.196427,0.15299 0.350388,0.13893 z"
+             id="path9840-5-7"
+             sodipodi:nodetypes="cccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#50505c;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.33239,-156.38947 c 0.546484,-0.50271 1.418588,-1.1822 0.301482,-2.16782 0.755608,0.18978 1.232705,1.47072 0.153228,2.06737 -0.09889,0.0694 -0.300753,0.11451 -0.45471,0.10045 z"
+             id="path9842-4-7"
+             sodipodi:nodetypes="cccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#b4b4d4;fill-opacity:1;stroke:none;stroke-width:0.214021;stroke-linecap:round;stroke-linejoin:round"
+             id="path9844-0-7"
+             sodipodi:type="arc"
+             sodipodi:cx="-74.389198"
+             sodipodi:cy="-158.20079"
+             sodipodi:rx="0.68264598"
+             sodipodi:ry="0.41743135"
+             sodipodi:start="0"
+             sodipodi:end="6.282941"
+             sodipodi:open="true"
+             sodipodi:arc-type="arc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96"
+             d="m -73.706552,-158.20079 a 0.68264598,0.41743135 0 0 1 -0.682605,0.41743 0.68264598,0.41743135 0 0 1 -0.682687,-0.41738 0.68264598,0.41743135 0 0 1 0.682521,-0.41748 0.68264598,0.41743135 0 0 1 0.682771,0.41733" />
+        </g>
+        <g
+           id="g10955"
+           transform="matrix(2.2493436,0,0,2.2493436,1920.017,801.46663)"
+           style="stroke-width:1.0701">
+          <path
+             style="opacity:1;fill:#646470;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.795258,-148.69295 -0.133371,-8.12425 h 1.050949 l 0.133372,8.12555 c -0.175161,0.0885 -0.350321,0.15125 -0.525479,0.16031 -0.175158,0.009 -0.350316,-0.0355 -0.525471,-0.16175 v 6e-5 z"
+             id="path10941"
+             sodipodi:nodetypes="ccccsccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#646470;fill-opacity:1;stroke:none;stroke-width:0.214021;stroke-linecap:round;stroke-linejoin:round"
+             id="path10943"
+             sodipodi:type="arc"
+             sodipodi:cx="-74.369576"
+             sodipodi:cy="-157.49118"
+             sodipodi:rx="1.1181738"
+             sodipodi:ry="1.1181738"
+             sodipodi:start="0"
+             sodipodi:end="6.282941"
+             sodipodi:open="true"
+             sodipodi:arc-type="arc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96"
+             d="m -73.251402,-157.49118 a 1.1181738,1.1181738 0 0 1 -1.118105,1.11817 1.1181738,1.1181738 0 0 1 -1.118242,-1.11803 1.1181738,1.1181738 0 0 1 1.117969,-1.11831 1.1181738,1.1181738 0 0 1 1.118378,1.1179" />
+          <path
+             style="opacity:1;fill:#50505c;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.33239,-156.38947 c 0.148459,-0.004 0.30013,-0.0237 0.45471,-0.10045 l 0.133372,7.79827 c -0.09068,0.045 -0.149278,0.0699 -0.212749,0.0896 -0.06347,0.0197 -0.13181,0.0341 -0.241962,0.0579 0.06213,-4.09614 -0.03399,-4.10211 -0.133371,-7.84533 z"
+             id="path10945"
+             sodipodi:nodetypes="cccsccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#787884;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.581515,-156.38825 c -0.148455,-0.004 -0.212531,-0.0496 -0.350359,-0.13893 l 0.133371,7.82861 c 0.0632,0.0515 0.105538,0.0869 0.154699,0.11132 0.04916,0.0244 0.105149,0.0378 0.195661,0.0452 -0.128118,-5.88012 -0.152929,-5.07485 -0.133372,-7.84623 z"
+             id="path10947"
+             sodipodi:nodetypes="cccsccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#787884;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.581515,-156.38825 c -0.429567,-0.44589 -1.005187,-1.01069 -0.301481,-2.1027 -0.64241,0.31566 -0.931699,1.43361 -0.04891,1.96377 0.09888,0.0694 0.196427,0.15299 0.350388,0.13893 z"
+             id="path10949"
+             sodipodi:nodetypes="cccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#50505c;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.33239,-156.38947 c 0.546484,-0.50271 1.418588,-1.1822 0.301482,-2.16782 0.755608,0.18978 1.232705,1.47072 0.153228,2.06737 -0.09889,0.0694 -0.300753,0.11451 -0.45471,0.10045 z"
+             id="path10951"
+             sodipodi:nodetypes="cccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#b4b4d4;fill-opacity:1;stroke:none;stroke-width:0.214021;stroke-linecap:round;stroke-linejoin:round"
+             id="path10953"
+             sodipodi:type="arc"
+             sodipodi:cx="-74.389198"
+             sodipodi:cy="-158.20079"
+             sodipodi:rx="0.68264598"
+             sodipodi:ry="0.41743135"
+             sodipodi:start="0"
+             sodipodi:end="6.282941"
+             sodipodi:open="true"
+             sodipodi:arc-type="arc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96"
+             d="m -73.706552,-158.20079 a 0.68264598,0.41743135 0 0 1 -0.682605,0.41743 0.68264598,0.41743135 0 0 1 -0.682687,-0.41738 0.68264598,0.41743135 0 0 1 0.682521,-0.41748 0.68264598,0.41743135 0 0 1 0.682771,0.41733" />
+        </g>
+        <g
+           id="g10971"
+           transform="matrix(2.2493436,0,0,2.2493436,1883.6769,780.22484)"
+           style="stroke-width:1.0701">
+          <path
+             style="opacity:1;fill:#646470;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.795258,-148.69295 -0.133371,-8.12425 h 1.050949 l 0.133372,8.12555 c -0.175161,0.0885 -0.350321,0.15125 -0.525479,0.16031 -0.175158,0.009 -0.350316,-0.0355 -0.525471,-0.16175 v 6e-5 z"
+             id="path10957"
+             sodipodi:nodetypes="ccccsccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#646470;fill-opacity:1;stroke:none;stroke-width:0.214021;stroke-linecap:round;stroke-linejoin:round"
+             id="path10959"
+             sodipodi:type="arc"
+             sodipodi:cx="-74.369576"
+             sodipodi:cy="-157.49118"
+             sodipodi:rx="1.1181738"
+             sodipodi:ry="1.1181738"
+             sodipodi:start="0"
+             sodipodi:end="6.282941"
+             sodipodi:open="true"
+             sodipodi:arc-type="arc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96"
+             d="m -73.251402,-157.49118 a 1.1181738,1.1181738 0 0 1 -1.118105,1.11817 1.1181738,1.1181738 0 0 1 -1.118242,-1.11803 1.1181738,1.1181738 0 0 1 1.117969,-1.11831 1.1181738,1.1181738 0 0 1 1.118378,1.1179" />
+          <path
+             style="opacity:1;fill:#50505c;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.33239,-156.38947 c 0.148459,-0.004 0.30013,-0.0237 0.45471,-0.10045 l 0.133372,7.79827 c -0.09068,0.045 -0.149278,0.0699 -0.212749,0.0896 -0.06347,0.0197 -0.13181,0.0341 -0.241962,0.0579 0.06213,-4.09614 -0.03399,-4.10211 -0.133371,-7.84533 z"
+             id="path10961"
+             sodipodi:nodetypes="cccsccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#787884;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.581515,-156.38825 c -0.148455,-0.004 -0.212531,-0.0496 -0.350359,-0.13893 l 0.133371,7.82861 c 0.0632,0.0515 0.105538,0.0869 0.154699,0.11132 0.04916,0.0244 0.105149,0.0378 0.195661,0.0452 -0.128118,-5.88012 -0.152929,-5.07485 -0.133372,-7.84623 z"
+             id="path10963"
+             sodipodi:nodetypes="cccsccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#787884;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.581515,-156.38825 c -0.429567,-0.44589 -1.005187,-1.01069 -0.301481,-2.1027 -0.64241,0.31566 -0.931699,1.43361 -0.04891,1.96377 0.09888,0.0694 0.196427,0.15299 0.350388,0.13893 z"
+             id="path10965"
+             sodipodi:nodetypes="cccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#50505c;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.33239,-156.38947 c 0.546484,-0.50271 1.418588,-1.1822 0.301482,-2.16782 0.755608,0.18978 1.232705,1.47072 0.153228,2.06737 -0.09889,0.0694 -0.300753,0.11451 -0.45471,0.10045 z"
+             id="path10967"
+             sodipodi:nodetypes="cccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#b4b4d4;fill-opacity:1;stroke:none;stroke-width:0.214021;stroke-linecap:round;stroke-linejoin:round"
+             id="path10969"
+             sodipodi:type="arc"
+             sodipodi:cx="-74.389198"
+             sodipodi:cy="-158.20079"
+             sodipodi:rx="0.68264598"
+             sodipodi:ry="0.41743135"
+             sodipodi:start="0"
+             sodipodi:end="6.282941"
+             sodipodi:open="true"
+             sodipodi:arc-type="arc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96"
+             d="m -73.706552,-158.20079 a 0.68264598,0.41743135 0 0 1 -0.682605,0.41743 0.68264598,0.41743135 0 0 1 -0.682687,-0.41738 0.68264598,0.41743135 0 0 1 0.682521,-0.41748 0.68264598,0.41743135 0 0 1 0.682771,0.41733" />
+        </g>
+        <g
+           id="g10987"
+           transform="matrix(2.2493436,0,0,2.2493436,1850.6913,761.08143)"
+           style="stroke-width:1.0701">
+          <path
+             style="opacity:1;fill:#646470;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.795258,-148.69295 -0.133371,-8.12425 h 1.050949 l 0.133372,8.12555 c -0.175161,0.0885 -0.350321,0.15125 -0.525479,0.16031 -0.175158,0.009 -0.350316,-0.0355 -0.525471,-0.16175 v 6e-5 z"
+             id="path10973"
+             sodipodi:nodetypes="ccccsccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#646470;fill-opacity:1;stroke:none;stroke-width:0.214021;stroke-linecap:round;stroke-linejoin:round"
+             id="path10975"
+             sodipodi:type="arc"
+             sodipodi:cx="-74.369576"
+             sodipodi:cy="-157.49118"
+             sodipodi:rx="1.1181738"
+             sodipodi:ry="1.1181738"
+             sodipodi:start="0"
+             sodipodi:end="6.282941"
+             sodipodi:open="true"
+             sodipodi:arc-type="arc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96"
+             d="m -73.251402,-157.49118 a 1.1181738,1.1181738 0 0 1 -1.118105,1.11817 1.1181738,1.1181738 0 0 1 -1.118242,-1.11803 1.1181738,1.1181738 0 0 1 1.117969,-1.11831 1.1181738,1.1181738 0 0 1 1.118378,1.1179" />
+          <path
+             style="opacity:1;fill:#50505c;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.33239,-156.38947 c 0.148459,-0.004 0.30013,-0.0237 0.45471,-0.10045 l 0.133372,7.79827 c -0.09068,0.045 -0.149278,0.0699 -0.212749,0.0896 -0.06347,0.0197 -0.13181,0.0341 -0.241962,0.0579 0.06213,-4.09614 -0.03399,-4.10211 -0.133371,-7.84533 z"
+             id="path10977"
+             sodipodi:nodetypes="cccsccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#787884;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.581515,-156.38825 c -0.148455,-0.004 -0.212531,-0.0496 -0.350359,-0.13893 l 0.133371,7.82861 c 0.0632,0.0515 0.105538,0.0869 0.154699,0.11132 0.04916,0.0244 0.105149,0.0378 0.195661,0.0452 -0.128118,-5.88012 -0.152929,-5.07485 -0.133372,-7.84623 z"
+             id="path10979"
+             sodipodi:nodetypes="cccsccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#787884;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.581515,-156.38825 c -0.429567,-0.44589 -1.005187,-1.01069 -0.301481,-2.1027 -0.64241,0.31566 -0.931699,1.43361 -0.04891,1.96377 0.09888,0.0694 0.196427,0.15299 0.350388,0.13893 z"
+             id="path10981"
+             sodipodi:nodetypes="cccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#50505c;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.33239,-156.38947 c 0.546484,-0.50271 1.418588,-1.1822 0.301482,-2.16782 0.755608,0.18978 1.232705,1.47072 0.153228,2.06737 -0.09889,0.0694 -0.300753,0.11451 -0.45471,0.10045 z"
+             id="path10983"
+             sodipodi:nodetypes="cccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#b4b4d4;fill-opacity:1;stroke:none;stroke-width:0.214021;stroke-linecap:round;stroke-linejoin:round"
+             id="path10985"
+             sodipodi:type="arc"
+             sodipodi:cx="-74.389198"
+             sodipodi:cy="-158.20079"
+             sodipodi:rx="0.68264598"
+             sodipodi:ry="0.41743135"
+             sodipodi:start="0"
+             sodipodi:end="6.282941"
+             sodipodi:open="true"
+             sodipodi:arc-type="arc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96"
+             d="m -73.706552,-158.20079 a 0.68264598,0.41743135 0 0 1 -0.682605,0.41743 0.68264598,0.41743135 0 0 1 -0.682687,-0.41738 0.68264598,0.41743135 0 0 1 0.682521,-0.41748 0.68264598,0.41743135 0 0 1 0.682771,0.41733" />
+        </g>
+        <g
+           id="g11003"
+           transform="matrix(2.2493436,0,0,2.2493436,1823.596,744.88316)"
+           style="stroke-width:1.0701">
+          <path
+             style="opacity:1;fill:#646470;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.795258,-148.69295 -0.133371,-8.12425 h 1.050949 l 0.133372,8.12555 c -0.175161,0.0885 -0.350321,0.15125 -0.525479,0.16031 -0.175158,0.009 -0.350316,-0.0355 -0.525471,-0.16175 v 6e-5 z"
+             id="path10989"
+             sodipodi:nodetypes="ccccsccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#646470;fill-opacity:1;stroke:none;stroke-width:0.214021;stroke-linecap:round;stroke-linejoin:round"
+             id="path10991"
+             sodipodi:type="arc"
+             sodipodi:cx="-74.369576"
+             sodipodi:cy="-157.49118"
+             sodipodi:rx="1.1181738"
+             sodipodi:ry="1.1181738"
+             sodipodi:start="0"
+             sodipodi:end="6.282941"
+             sodipodi:open="true"
+             sodipodi:arc-type="arc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96"
+             d="m -73.251402,-157.49118 a 1.1181738,1.1181738 0 0 1 -1.118105,1.11817 1.1181738,1.1181738 0 0 1 -1.118242,-1.11803 1.1181738,1.1181738 0 0 1 1.117969,-1.11831 1.1181738,1.1181738 0 0 1 1.118378,1.1179" />
+          <path
+             style="opacity:1;fill:#50505c;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.33239,-156.38947 c 0.148459,-0.004 0.30013,-0.0237 0.45471,-0.10045 l 0.133372,7.79827 c -0.09068,0.045 -0.149278,0.0699 -0.212749,0.0896 -0.06347,0.0197 -0.13181,0.0341 -0.241962,0.0579 0.06213,-4.09614 -0.03399,-4.10211 -0.133371,-7.84533 z"
+             id="path10993"
+             sodipodi:nodetypes="cccsccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#787884;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.581515,-156.38825 c -0.148455,-0.004 -0.212531,-0.0496 -0.350359,-0.13893 l 0.133371,7.82861 c 0.0632,0.0515 0.105538,0.0869 0.154699,0.11132 0.04916,0.0244 0.105149,0.0378 0.195661,0.0452 -0.128118,-5.88012 -0.152929,-5.07485 -0.133372,-7.84623 z"
+             id="path10995"
+             sodipodi:nodetypes="cccsccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#787884;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.581515,-156.38825 c -0.429567,-0.44589 -1.005187,-1.01069 -0.301481,-2.1027 -0.64241,0.31566 -0.931699,1.43361 -0.04891,1.96377 0.09888,0.0694 0.196427,0.15299 0.350388,0.13893 z"
+             id="path10997"
+             sodipodi:nodetypes="cccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#50505c;fill-opacity:1;stroke:none;stroke-width:0.283134px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m -74.33239,-156.38947 c 0.546484,-0.50271 1.418588,-1.1822 0.301482,-2.16782 0.755608,0.18978 1.232705,1.47072 0.153228,2.06737 -0.09889,0.0694 -0.300753,0.11451 -0.45471,0.10045 z"
+             id="path10999"
+             sodipodi:nodetypes="cccc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96" />
+          <path
+             style="opacity:1;fill:#b4b4d4;fill-opacity:1;stroke:none;stroke-width:0.214021;stroke-linecap:round;stroke-linejoin:round"
+             id="path11001"
+             sodipodi:type="arc"
+             sodipodi:cx="-74.389198"
+             sodipodi:cy="-158.20079"
+             sodipodi:rx="0.68264598"
+             sodipodi:ry="0.41743135"
+             sodipodi:start="0"
+             sodipodi:end="6.282941"
+             sodipodi:open="true"
+             sodipodi:arc-type="arc"
+             inkscape:export-filename="C:\Users\tangh\OneDrive\Bureau\police.png"
+             inkscape:export-xdpi="96"
+             inkscape:export-ydpi="96"
+             d="m -73.706552,-158.20079 a 0.68264598,0.41743135 0 0 1 -0.682605,0.41743 0.68264598,0.41743135 0 0 1 -0.682687,-0.41738 0.68264598,0.41743135 0 0 1 0.682521,-0.41748 0.68264598,0.41743135 0 0 1 0.682771,0.41733" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

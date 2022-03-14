@@ -8,7 +8,6 @@ onready var text_label = $MainContainer/ScrollMargin/VBoxContainer/MarginContain
 
 func _ready():
 	text_label.connect("meta_clicked", self, "_on_RichTextLabel_meta_clicked")
-		
 
 
 func _on_RichTextLabel_meta_clicked(meta):

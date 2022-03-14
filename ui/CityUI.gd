@@ -16,12 +16,18 @@ signal closed_tutorial
 
 
 ## References to the UI Elements
-onready var population = $VBoxContainer/TopContainer/TopLeftContainer/Points/Population
-onready var datapoints = $VBoxContainer/TopContainer/TopLeftContainer/Points/DataPoints
+onready var population = $VBoxContainer/BottomContainer/HBoxBottomContainer/PopulationContainer/Population
+onready var datapoints = $VBoxContainer/BottomContainer/HBoxBottomContainer/DataPointsContainer/DataPoints
 onready var confirmation_dialog = $VBoxContainer/ConfirmationDialog
-
+onready var notification_button = $VBoxContainer/NotificationContainer/NotificationButton
+onready var notification_button_active = $VBoxContainer/NotificationContainer/NotificationButtonActive
+onready var event_message = $VBoxContainer/NotificationContainer/EventMessage
+onready var build_button = $VBoxContainer/BottomContainer/HBoxBottomContainer/BuildContainer/MarginContainer/BuildButton/BuildButton
 # Bars
-onready var bar_satisfaction = $VBoxContainer/TopContainer/TopLeftContainer/NeedContainer/Satisfaction
+onready var bar_satisfaction = $VBoxContainer/BottomContainer/HBoxBottomContainer/SatisfactionContainer/Satisfaction
+
+var can_use ="not defined"
+var tuto_completed = false
 
 func _ready():
 	# Hides the UI elements until the Tutorial is closed
@@ -35,7 +41,7 @@ func _ready():
 	
 	# Hides the close button
 	confirmation_dialog.get_close_button().hide()
-
+	print("...")
 
 ## Sets the population label
 func set_population(pop: int, pop_max: int):
@@ -51,6 +57,16 @@ func set_population(pop: int, pop_max: int):
 	
 	population.set_text(pop_str + " / " + pop_max_str)
 
+func update_bars():
+	# Player max population
+	var max_pop = PlayerData.city_data[PlayerData.POPULATION_MAX]
+	
+	if max_pop == 0:
+		return
+	
+	# Satisfaction
+	var satisfaction_percent = (50.0 * PlayerData.city_data[PlayerData.SATISFACTION]) / max_pop
+	bar_satisfaction.set_percentage(satisfaction_percent)
 
 ## Sets the population label
 func set_datapoints(points: int):
@@ -58,7 +74,7 @@ func set_datapoints(points: int):
 
 
 
-func update_bars():
+func update_build_buttonrs():
 	# Player max population
 	var max_pop = PlayerData.city_data[PlayerData.POPULATION_MAX]
 	
@@ -71,64 +87,61 @@ func update_bars():
 
 func show_current_building(building: String):
 	# Hide the Build button
-	$VBoxContainer/BottomContainer/BuildButton.hide()
+	build_button.hide()
 	
-	# Show the Cancel Contaienr
-	$VBoxContainer/BottomContainer/CancelContainer.show()
-	
-	# Set the button texture 
-	if building in BuildingsData.TEXTURES:
-		var texture = BuildingsData.TEXTURES.get(building)
-		$VBoxContainer/BottomContainer/CancelContainer/MarginContainer/Background/BuildingSprite.texture = texture
-	else:
-		print("No texture for the current building " + building)
+	# Show the Cancel Button
+	$VBoxContainer/BottomContainer/HBoxBottomContainer/BuildContainer/MarginContainer/CancelBuild/CancelButton.show()
+
 
 
 func show_build_button():
-	# Sho the Build button
-	$VBoxContainer/BottomContainer/BuildButton.show()
+	# Show the Build button
+	build_button.show()
 	
-	# Hide the Cancel Contaienr
-	$VBoxContainer/BottomContainer/CancelContainer.hide()
-
+	# Hide the Cancel Button
+	$VBoxContainer/BottomContainer/HBoxBottomContainer/BuildContainer/MarginContainer/CancelBuild/CancelButton.hide()
+	print("BUILD_BUTTON")
 
 
 func show_validation_popup():
 	confirmation_dialog.popup()
+	print("<<sqd")
 
 
 
 func display_notification():
 	#Show the active icon
-	$VBoxContainer/TopContainer/TopLeftContainer/NotificationButtonActive.show()
-	$VBoxContainer/TopContainer/TopLeftContainer/NotificationButton.hide()
+	notification_button_active.set_deferred("visible", true)
+	notification_button.set_deferred("visible", false)
 	
-	$VBoxContainer/TopContainer/TopLeftContainer/NotificationPlayer.play()
-
+	$VBoxContainer/NotificationContainer/NotificationPlayer.play()
+	print("N'est-ce pas ?")
 
 
 func show_notifications(text: String):
+	print("LA")
 	# Set the Notification text
-	$VBoxContainer/TopContainer/TopLeftContainer/EventMessage.set_string(text)
+	event_message.set_string(text)
 	
 	# Show it
-	$VBoxContainer/TopContainer/TopLeftContainer/EventMessage.show()
+	event_message.show()
 	
 	#Hides the buttons
-	$VBoxContainer/TopContainer/TopLeftContainer/NotificationButtonActive.hide()
-	$VBoxContainer/TopContainer/TopLeftContainer/NotificationButton.hide()
+	notification_button_active.set_deferred("visible", false)
+	notification_button.set_deferred("visible", false)
+	print("C'est LA !")
 
 
 # Has event is true if there is still an event in the notifications
 func close_notifications(has_event: bool):
 	# Hides the notifications details
-	$VBoxContainer/TopContainer/TopLeftContainer/EventMessage.hide()
+	event_message.set_deferred("visible", false)
 	
 	# Show the button 
 	if has_event:
-		$VBoxContainer/TopContainer/TopLeftContainer/NotificationButtonActive.show()
+		notification_button_active.set_deferred("visible", true)
 	else:
-		$VBoxContainer/TopContainer/TopLeftContainer/NotificationButton.show()
+		notification_button.set_deferred("visible", true)
 	
 
 
@@ -142,7 +155,9 @@ func close_tutorial():
 #==========> Signal Senders <==========#
 
 func _on_NotificationButton_pressed():
-	emit_signal("open_notifications")
+	if can_use == "event_button" or tuto_completed == true:
+			get_parent().get_node("dialog_tuto").hide()
+			emit_signal("open_notifications")
 
 
 func _on_HighScoreButton_pressed():
@@ -163,12 +178,6 @@ func _on_BuildButton_pressed():
 
 func _on_GuideButton_pressed():
 	emit_signal("open_guide")
-
-
-func _on_CancelBuildButton_pressed():
-	emit_signal("cancel_build")
-
-
 
 func _validate_pressed():
 	emit_signal("validate_position")
@@ -191,3 +200,7 @@ func _on_TutorialCity_close_tutorial():
 	$VBoxContainer.show()
 	
 	emit_signal("closed_tutorial")
+
+func _on_CancelButton_pressed():
+	emit_signal("cancel_build")
+	print("hey")

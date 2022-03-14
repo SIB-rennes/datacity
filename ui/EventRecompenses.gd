@@ -40,9 +40,10 @@ func set_points_gained(points: int):
 
 ## Adds a building button
 ## building_name is the displayed name of the building
-func add_building(building_name: String):
+func add_building(building_name: String, count: int):
 	var button = building_button.instance()
-	button.set_building(building_name)
+	button.result_aff = true
+	button.set_building(building_name, 0, count)
 	
 	# Add as a child
 	building_container.add_child(button)

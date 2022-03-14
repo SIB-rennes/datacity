@@ -7,13 +7,17 @@ signal selected_building(building_name)
 
 
 
+
 # Preload the Building buttons
 var building_button = preload("res://ui/building_button.tscn")
 
 # Building button container
 onready var building_container = $ScrollMargin/VBoxContainer/ScrollContainer/BuildingContainer
 
-
+func scrolling(value):
+	print(value)
+	$ScrollMargin/VBoxContainer/ScrollContainer.scroll_vertical_enabled = value
+	print($ScrollMargin/VBoxContainer/ScrollContainer.scroll_vertical_enabled)
 
 func hide():
 	# Remove each building button
@@ -28,7 +32,6 @@ func hide():
 func add_building(building_name: String, left: int):
 	var button = building_button.instance()
 	button.set_building(building_name, left)
-	
 	# Add as a child
 	building_container.add_child(button)
 	

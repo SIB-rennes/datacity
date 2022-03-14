@@ -1,7 +1,12 @@
 extends TileMap
 
+var tile
+var building_size
+var validation = false
+var can_place = false
 # Generates a string to save the buildings
 func save_string():
+	print("BA")
 	var res = []
 	
 	for coord in get_used_cells():
@@ -14,6 +19,7 @@ func save_string():
 	return to_json(res)
 
 func load_string(string: String):
+	print("BB")
 	# Converts the string back to an array
 	var array = Array(parse_json(string))
 	
@@ -27,7 +33,31 @@ func load_string(string: String):
 		var value = array.pop_back()
 		var y = array.pop_back()
 		var x = array.pop_back()
-		
 		set_cell(x, y, value)
 	
 	return true
+
+func set_preview_offset(building_to_place):
+	print("BC")
+	$preview/preview_tile/building.offset = BuildingsData.OFFSET[building_to_place]
+	$preview/preview_tile_2/building.offset = BuildingsData.OFFSET[building_to_place]
+	$preview/preview_tile_3/building.offset = BuildingsData.OFFSET[building_to_place]
+
+func _physics_process(delta):
+	if validation == false:
+		var mouse_pos = get_global_mouse_position()
+		tile = world_to_map(mouse_pos)
+		$preview.position = map_to_world(tile)
+		if can_place == true:
+			$preview/preview_tile.modulate  = Color(0, 1, 0)
+			$preview/preview_tile_2/building.modulate = Color(0, 1, 0)
+		else:
+			$preview/preview_tile.modulate = Color(1, 0, 0 )
+			$preview/preview_tile_2/building.modulate = Color(1, 0, 0)
+					
+					
+#		if get_cellv(tile) != -1:
+#			$preview/preview_tile.modulate = Color(1, 0, 0 )
+#			$preview/preview_tile_2/building.modulate = Color(1, 0, 0)
+#		else:
+#			$preview/preview_tile.modulate  = Color(0, 1, 0)

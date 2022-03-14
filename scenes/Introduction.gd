@@ -106,6 +106,7 @@ func start_next_state():
 			
 		# Starts the city game
 		State.STARTING_CITY:
+# warning-ignore:return_value_discarded
 			get_tree().change_scene("res://scenes/CityBuilder.tscn")
 
 

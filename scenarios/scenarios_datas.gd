@@ -9,9 +9,29 @@ class_name ScenariosData
 const INSTANCES_PATH = {
 	# Conference
 	"res://scenarios/dialog_conference.json": 
-		"res://scenarios/dialog_conference_variables.gd"
-}
+		"res://scenarios/dialog_conference_variables.gd",
+		
+	"res://scenarios/dialog_intro.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+	
+	"res://scenarios/beginning/tutorial.json":
+		"res://scenarios/dialogs_custom_variables.gd",
 
+	"res://scenarios/pedagogical/premier_batiment_de_commerce.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+
+	"res://scenarios/pedagogical/deblocage_complexe_sportif.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+	
+	"res://scenarios/pedagogical/annuaire_sante.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+	
+	"res://scenarios/pedagogical/risques.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+	
+	"res://scenarios/pedagogical/tourisme.json":
+		"res://scenarios/dialogs_custom_variables.gd"
+}
 
 
 

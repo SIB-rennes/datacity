@@ -1,34 +1,34 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://scenes/formulaire.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/backgrounds/bureau_3.png" type="Texture" id=2]
 [ext_resource path="res://assets/sprites/backgrounds/bureau_1.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/backgrounds/bureau_2.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/formulaire/GA_suivant_22022022.png" type="Texture" id=5]
-[ext_resource path="res://assets/sprites/formulaire/GA_portrait_f_22022022.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprites/formulaire/GA_portrait_fs_22022022.png" type="Texture" id=7]
-[ext_resource path="res://assets/sprites/formulaire/GA_portrait_m_22022022.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprites/formulaire/GA_portrait_ms_22022022.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/formulaire/GA_bouton_texte-s_25022022.svg" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/nouveau_formulaire/GA_fenetre_02032022.svg" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/nouveau_formulaire/GA_portrait_f_s_02032022.svg" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/nouveau_formulaire/GA_portrait_h_02032022.svg" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/nouveau_formulaire/GA_portrait_h_s_02032022.svg" type="Texture" id=9]
 [ext_resource path="res://assets/fonts/main_font.tres" type="DynamicFont" id=10]
-[ext_resource path="res://assets/sprites/formulaire/GA_portrait_mc_22022022.png" type="Texture" id=11]
-[ext_resource path="res://assets/sprites/formulaire/GA_barre_22022022.png" type="Texture" id=12]
-[ext_resource path="res://assets/sprites/formulaire/GA_fenetre2_22022022.png" type="Texture" id=13]
-[ext_resource path="res://assets/sprites/formulaire/GA_suivant_c_22022022.png" type="Texture" id=14]
-[ext_resource path="res://assets/sprites/formulaire/GA_suivant_s_22022022.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprites/formulaire/GA_fenetre_22022022.png" type="Texture" id=16]
-[ext_resource path="res://assets/sprites/formulaire/GA_retour_22022022.png" type="Texture" id=17]
-[ext_resource path="res://assets/sprites/formulaire/GA_portrait_fc_22022022.png" type="Texture" id=18]
-[ext_resource path="res://assets/sprites/formulaire/GA_erreur.png" type="Texture" id=19]
-[ext_resource path="res://assets/sprites/formulaire/GA_vide_04022022.png" type="Texture" id=20]
-[ext_resource path="res://assets/sprites/formulaire/GA_vide_c_22022022.png" type="Texture" id=21]
-[ext_resource path="res://assets/sprites/formulaire/GA_vide_22022022.png" type="Texture" id=22]
-[ext_resource path="res://assets/sprites/formulaire/GA_vide_s_22022022.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/nouveau_formulaire/GA_portrait_h_c_02032022.svg" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/nouveau_formulaire/GA_bouton_vide_02032022.svg" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/nouveau_formulaire/GA_bouton_texte_02032022.svg" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/formulaire/GA_bouton_texte-c_25022022.svg" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/nouveau_formulaire/GA_portrait_f_02032022.svg" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/nouveau_formulaire/GA_bouton_bureau_02032022.svg" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/formulaire/GA_bouton_retour_s_25022022.svg" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/nouveau_formulaire/GA_portrait_f_c_02032022.svg" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/nouveau_formulaire/GA_fenetre_erreur_02032022.svg" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/nouveau_formulaire/GA_bouton_vide_s_02032022.svg" type="Texture" id=20]
 [ext_resource path="res://themes/formulaire.tres" type="DynamicFont" id=24]
-[ext_resource path="res://assets/sprites/formulaire/GA_barre_c_22022022.png" type="Texture" id=25]
-[ext_resource path="res://assets/sprites/formulaire/GA_barre_s_22022022.png" type="Texture" id=26]
-[ext_resource path="res://assets/sprites/formulaire/fond_button_bureau.png" type="Texture" id=27]
-[ext_resource path="res://assets/sprites/formulaire/fond_button_bureau_hover.png" type="Texture" id=28]
-[ext_resource path="res://assets/sprites/formulaire/fond_button_bureau_pressed.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprites/nouveau_formulaire/GA_bouton_bureau_s_02032022.svg" type="Texture" id=25]
+[ext_resource path="res://assets/sprites/nouveau_formulaire/GA_bouton_bureau_c_02032022.svg" type="Texture" id=26]
+[ext_resource path="res://assets/sprites/nouveau_formulaire/GA_bouton_vide_c_02032022.svg" type="Texture" id=27]
+[ext_resource path="res://assets/sprites/formulaire/GA_bouton_continuer_25022022.svg" type="Texture" id=30]
+[ext_resource path="res://assets/sprites/formulaire/GA_bouton_continuer_s_25022022.svg" type="Texture" id=31]
+[ext_resource path="res://assets/sprites/formulaire/GA_bouton_continuer_c_25022022.svg" type="Texture" id=32]
+[ext_resource path="res://assets/sprites/formulaire/GA_bouton_retour_25022022.svg" type="Texture" id=36]
+[ext_resource path="res://assets/sprites/formulaire/GA_bouton_retour_c_25022022.svg" type="Texture" id=37]
 
 [sub_resource type="StreamTexture" id=7]
 flags = 4
@@ -39,169 +39,173 @@ texture = SubResource( 7 )
 region_rect = Rect2( 0, 0, 1920, 1080 )
 
 [sub_resource type="StyleBoxTexture" id=4]
-texture = ExtResource( 13 )
-region_rect = Rect2( 0, 0, 778, 1100 )
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 458, 558 )
 
 [sub_resource type="Theme" id=16]
 default_font = ExtResource( 24 )
 
 [sub_resource type="StyleBoxTexture" id=35]
-texture = ExtResource( 25 )
-region_rect = Rect2( 0, 0, 688, 37 )
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 220, 12 )
 
 [sub_resource type="StyleBoxTexture" id=31]
-texture = ExtResource( 26 )
-region_rect = Rect2( 0, 0, 688, 37 )
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 220, 12 )
 
 [sub_resource type="StyleBoxTexture" id=33]
-texture = ExtResource( 25 )
-region_rect = Rect2( 0, 0, 688, 37 )
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 220, 12 )
 
 [sub_resource type="StyleBoxTexture" id=34]
-texture = ExtResource( 26 )
-region_rect = Rect2( 0, 0, 688, 37 )
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 220, 12 )
 
 [sub_resource type="StyleBoxTexture" id=9]
 texture = ExtResource( 18 )
-region_rect = Rect2( 0, 0, 340, 526 )
+region_rect = Rect2( 0, 0, 159, 253 )
 
 [sub_resource type="StyleBoxTexture" id=10]
 texture = ExtResource( 7 )
-region_rect = Rect2( 0, 0, 340, 526 )
+region_rect = Rect2( 0, 0, 159, 253 )
 
 [sub_resource type="StyleBoxTexture" id=5]
-texture = ExtResource( 6 )
-region_rect = Rect2( 0, 0, 340, 526 )
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 159, 253 )
 
 [sub_resource type="StyleBoxTexture" id=14]
 texture = ExtResource( 11 )
-region_rect = Rect2( 0, 0, 340, 526 )
+region_rect = Rect2( 0, 0, 159, 253 )
 
 [sub_resource type="StyleBoxTexture" id=15]
 texture = ExtResource( 9 )
-region_rect = Rect2( 0, 0, 340, 526 )
+region_rect = Rect2( 0, 0, 159, 253 )
 
 [sub_resource type="StyleBoxTexture" id=6]
 texture = ExtResource( 8 )
-region_rect = Rect2( 0, 0, 340, 526 )
+region_rect = Rect2( 0, 0, 159, 253 )
 
 [sub_resource type="StyleBoxTexture" id=17]
-texture = ExtResource( 14 )
-region_rect = Rect2( 0, 0, 198, 65 )
+texture = ExtResource( 32 )
+region_rect = Rect2( 0, 0, 75, 24 )
 
 [sub_resource type="StyleBoxTexture" id=18]
-texture = ExtResource( 15 )
-region_rect = Rect2( 0, 0, 198, 65 )
-
-[sub_resource type="StreamTexture" id=13]
-flags = 4
-load_path = "res://.import/GA_suivant_22022022.png-9f4422c940964e5ff4c27923b5e53a43.stex"
+texture = ExtResource( 31 )
+region_rect = Rect2( 0, 0, 75, 24 )
 
 [sub_resource type="StyleBoxTexture" id=3]
-texture = SubResource( 13 )
-region_rect = Rect2( 0, 0, 198, 65 )
+texture = ExtResource( 30 )
+region_rect = Rect2( 0, 0, 232, 78 )
 
 [sub_resource type="StyleBoxTexture" id=19]
-texture = ExtResource( 16 )
-region_rect = Rect2( 0, 0, 778, 1100 )
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 458, 558 )
 
 [sub_resource type="StyleBoxTexture" id=40]
-texture = ExtResource( 28 )
-region_rect = Rect2( 0, 0, 613, 333 )
+texture = ExtResource( 26 )
+region_rect = Rect2( 0, 0, 369, 137 )
 
 [sub_resource type="StyleBoxTexture" id=41]
-texture = ExtResource( 29 )
-region_rect = Rect2( 0, 0, 613, 333 )
+texture = ExtResource( 25 )
+region_rect = Rect2( 0, 0, 369, 137 )
 
 [sub_resource type="StyleBoxTexture" id=42]
-texture = ExtResource( 27 )
-region_rect = Rect2( 0, 0, 613, 333 )
+texture = ExtResource( 16 )
+region_rect = Rect2( 0, 0, 369, 137 )
 
 [sub_resource type="StyleBoxTexture" id=43]
-texture = ExtResource( 28 )
-region_rect = Rect2( 0, 0, 613, 333 )
+texture = ExtResource( 26 )
+region_rect = Rect2( 0, 0, 369, 137 )
 
 [sub_resource type="StyleBoxTexture" id=44]
-texture = ExtResource( 29 )
-region_rect = Rect2( 0, 0, 613, 333 )
+texture = ExtResource( 25 )
+region_rect = Rect2( 0, 0, 369, 137 )
 
 [sub_resource type="StyleBoxTexture" id=45]
-texture = ExtResource( 27 )
-region_rect = Rect2( 0, 0, 613, 333 )
+texture = ExtResource( 16 )
+region_rect = Rect2( 0, 0, 369, 137 )
 
 [sub_resource type="StyleBoxTexture" id=46]
-texture = ExtResource( 28 )
-region_rect = Rect2( 0, 0, 613, 333 )
+texture = ExtResource( 26 )
+region_rect = Rect2( 0, 0, 369, 137 )
 
 [sub_resource type="StyleBoxTexture" id=47]
-texture = ExtResource( 29 )
-region_rect = Rect2( 0, 0, 613, 333 )
+texture = ExtResource( 25 )
+region_rect = Rect2( 0, 0, 369, 137 )
 
 [sub_resource type="StyleBoxTexture" id=48]
-texture = ExtResource( 27 )
-region_rect = Rect2( 0, 0, 613, 333 )
+texture = ExtResource( 16 )
+region_rect = Rect2( 0, 0, 369, 137 )
+
+[sub_resource type="StyleBoxTexture" id=49]
+texture = ExtResource( 37 )
+region_rect = Rect2( 0, 0, 75, 24 )
+
+[sub_resource type="StyleBoxTexture" id=50]
+texture = ExtResource( 17 )
+region_rect = Rect2( 0, 0, 75, 24 )
 
 [sub_resource type="StyleBoxTexture" id=20]
-texture = ExtResource( 17 )
-region_rect = Rect2( 0, 0, 198, 65 )
+texture = ExtResource( 36 )
+region_rect = Rect2( 0, 0, 232, 78 )
 
 [sub_resource type="StyleBoxTexture" id=21]
-texture = ExtResource( 14 )
-region_rect = Rect2( 0, 0, 198, 65 )
+texture = ExtResource( 32 )
+region_rect = Rect2( 0, 0, 75, 24 )
 
 [sub_resource type="StyleBoxTexture" id=22]
-texture = ExtResource( 15 )
-region_rect = Rect2( 0, 0, 198, 65 )
+texture = ExtResource( 31 )
+region_rect = Rect2( 0, 0, 75, 24 )
 
 [sub_resource type="StyleBoxTexture" id=23]
-texture = ExtResource( 5 )
-region_rect = Rect2( 0, 0, 198, 65 )
+texture = ExtResource( 30 )
+region_rect = Rect2( 0, 0, 232, 78 )
 
 [sub_resource type="StyleBoxTexture" id=24]
-texture = ExtResource( 13 )
-region_rect = Rect2( 0, 0, 778, 1100 )
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 458, 558 )
 
 [sub_resource type="StyleBoxTexture" id=25]
-texture = ExtResource( 21 )
-region_rect = Rect2( 0, 0, 198, 65 )
+texture = ExtResource( 27 )
+region_rect = Rect2( 0, 0, 150, 45 )
 
 [sub_resource type="StyleBoxTexture" id=26]
-texture = ExtResource( 23 )
-region_rect = Rect2( 0, 0, 198, 65 )
+texture = ExtResource( 20 )
+region_rect = Rect2( 0, 0, 150, 45 )
 
 [sub_resource type="StyleBoxTexture" id=27]
-texture = ExtResource( 20 )
-region_rect = Rect2( 0, 0, 198, 65 )
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 150, 45 )
 
 [sub_resource type="StyleBoxTexture" id=28]
-texture = ExtResource( 21 )
-region_rect = Rect2( 0, 0, 198, 65 )
+texture = ExtResource( 27 )
+region_rect = Rect2( 0, 0, 150, 45 )
 
 [sub_resource type="StyleBoxTexture" id=29]
-texture = ExtResource( 23 )
-region_rect = Rect2( 0, 0, 198, 65 )
+texture = ExtResource( 20 )
+region_rect = Rect2( 0, 0, 150, 45 )
 
 [sub_resource type="StyleBoxTexture" id=30]
-texture = ExtResource( 22 )
-region_rect = Rect2( 0, 0, 198, 65 )
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 150, 45 )
 
 [sub_resource type="StyleBoxTexture" id=2]
 
 [sub_resource type="StyleBoxTexture" id=39]
 texture = ExtResource( 19 )
-region_rect = Rect2( 0, 0, 613, 333 )
+region_rect = Rect2( 0, 0, 438, 226 )
 
 [sub_resource type="StyleBoxTexture" id=36]
-texture = ExtResource( 21 )
-region_rect = Rect2( 0, 0, 198, 65 )
+texture = ExtResource( 27 )
+region_rect = Rect2( 0, 0, 150, 45 )
 
 [sub_resource type="StyleBoxTexture" id=37]
-texture = ExtResource( 23 )
-region_rect = Rect2( 0, 0, 198, 65 )
+texture = ExtResource( 20 )
+region_rect = Rect2( 0, 0, 150, 45 )
 
 [sub_resource type="StyleBoxTexture" id=38]
-texture = ExtResource( 22 )
-region_rect = Rect2( 0, 0, 198, 65 )
+texture = ExtResource( 12 )
+region_rect = Rect2( 0, 0, 150, 45 )
 
 [node name="formulaire" type="Control"]
 anchor_right = 1.0
@@ -216,8 +220,10 @@ __meta__ = {
 }
 
 [node name="background" type="Panel" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_left = -0.470276
+margin_top = -2.4108
+margin_right = 1023.53
+margin_bottom = 597.589
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -235,11 +241,11 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="Panel_part1"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 35.5297
-margin_top = 33.5892
-margin_right = 223.53
-margin_bottom = 66.5892
-rect_scale = Vector2( 0.75, 1 )
+margin_left = 20.0
+margin_top = 35.0
+margin_right = 275.0
+margin_bottom = 80.0
+rect_scale = Vector2( 0.75, 0.75 )
 custom_fonts/font = ExtResource( 10 )
 text = "FORMULAIRE"
 __meta__ = {
@@ -263,7 +269,7 @@ __meta__ = {
 margin_left = -29.0
 margin_top = 50.0
 margin_right = 641.0
-margin_bottom = 95.0
+margin_bottom = 97.0
 focus_neighbour_top = NodePath("../../label3/nom_ville")
 focus_next = NodePath("../../label3/nom_ville")
 theme = SubResource( 16 )
@@ -310,6 +316,9 @@ custom_styles/focus = SubResource( 33 )
 custom_styles/normal = SubResource( 34 )
 context_menu_enabled = false
 clear_button_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="def_femme" type="Button" parent="Panel_part1"]
 margin_left = 54.0
@@ -364,7 +373,7 @@ __meta__ = {
 visible = false
 margin_left = 287.0
 margin_top = 7.0
-margin_right = 757.0
+margin_right = 735.0
 margin_bottom = 565.0
 custom_styles/panel = SubResource( 19 )
 __meta__ = {
@@ -373,19 +382,19 @@ __meta__ = {
 
 [node name="question" type="Label" parent="Panel_part2"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 30.5297
-margin_top = 25.5892
-margin_right = 434.53
-margin_bottom = 58.5892
-rect_scale = Vector2( 0.75, 1 )
+margin_left = 17.5297
+margin_top = 33.5892
+margin_right = 567.53
+margin_bottom = 78.5892
+rect_scale = Vector2( 0.75, 0.75 )
 custom_fonts/font = ExtResource( 10 )
 text = "Quel bureau souhaitez-vous ?"
 
 [node name="bureau1" type="Button" parent="Panel_part2"]
 margin_left = 41.5297
 margin_top = 67.5892
-margin_right = 411.53
-margin_bottom = 205.59
+margin_right = 410.53
+margin_bottom = 204.589
 custom_styles/hover = SubResource( 40 )
 custom_styles/pressed = SubResource( 41 )
 custom_styles/normal = SubResource( 42 )
@@ -437,15 +446,17 @@ margin_left = 18.0
 margin_top = 512.589
 margin_right = 134.0
 margin_bottom = 551.589
+custom_styles/hover = SubResource( 49 )
+custom_styles/pressed = SubResource( 50 )
 custom_styles/normal = SubResource( 20 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="next_panel_part2" type="Button" parent="Panel_part2"]
-margin_left = 336.53
+margin_left = 325.53
 margin_top = 511.589
-margin_right = 452.53
+margin_right = 441.53
 margin_bottom = 550.589
 custom_styles/hover = SubResource( 21 )
 custom_styles/pressed = SubResource( 22 )
@@ -458,8 +469,8 @@ __meta__ = {
 visible = false
 margin_left = 287.0
 margin_top = 8.0
-margin_right = 734.0
-margin_bottom = 570.0
+margin_right = 735.0
+margin_bottom = 566.0
 custom_styles/panel = SubResource( 24 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -467,11 +478,11 @@ __meta__ = {
 
 [node name="Label2" type="Label" parent="Panel_confirmation"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 37.5297
-margin_top = 54.5892
-margin_right = 200.53
-margin_bottom = 99.5892
-rect_scale = Vector2( 0.75, 1 )
+margin_left = 20.0
+margin_top = 35.0
+margin_right = 183.0
+margin_bottom = 80.0
+rect_scale = Vector2( 0.75, 0.75 )
 custom_fonts/font = ExtResource( 10 )
 text = "Résumé:"
 __meta__ = {
@@ -480,11 +491,11 @@ __meta__ = {
 
 [node name="Label3" type="Label" parent="Panel_confirmation"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 37.5297
+margin_left = 20.0
 margin_top = 317.589
-margin_right = 136.53
-margin_bottom = 347.589
-rect_scale = Vector2( 0.75, 1 )
+margin_right = 167.0
+margin_bottom = 362.589
+rect_scale = Vector2( 0.75, 0.75 )
 custom_fonts/font = ExtResource( 10 )
 text = "Bureau:"
 __meta__ = {
@@ -494,17 +505,17 @@ __meta__ = {
 [node name="fond" type="Sprite" parent="Panel_confirmation"]
 position = Vector2( 202.405, 140.995 )
 scale = Vector2( 0.509084, 1.04899 )
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 
 [node name="fond2" type="Sprite" parent="Panel_confirmation"]
 position = Vector2( 202.53, 210.495 )
 scale = Vector2( 0.509448, 0.967906 )
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 
 [node name="fond3" type="Sprite" parent="Panel_confirmation"]
 position = Vector2( 202.53, 278.495 )
 scale = Vector2( 0.509448, 1.02196 )
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 
 [node name="nom" type="Label" parent="Panel_confirmation"]
 self_modulate = Color( 0, 0, 0, 1 )
@@ -558,16 +569,15 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Panel_confirmation/confirmer"]
-self_modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -48.4703
-margin_top = -10.5
-margin_right = 139.53
-margin_bottom = 34.5
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = -71.47
+margin_top = -17.5
+margin_right = 116.53
+margin_bottom = 27.5
+rect_scale = Vector2( 0.75, 0.75 )
 custom_fonts/font = ExtResource( 10 )
 text = "Confirmer"
 __meta__ = {
@@ -587,18 +597,20 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Panel_confirmation/return_panel_confirmation"]
-self_modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -28.4703
-margin_top = -12.5
-margin_right = 96.5297
-margin_bottom = 32.5
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = -46.0
+margin_top = -17.5
+margin_right = 79.0
+margin_bottom = 27.5
+rect_scale = Vector2( 0.75, 0.75 )
 custom_fonts/font = ExtResource( 10 )
 text = "Retour"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Sprite_bureau" type="Panel" parent="Panel_confirmation"]
 margin_left = 17.5297
@@ -606,6 +618,9 @@ margin_top = 371.589
 margin_right = 277.529
 margin_bottom = 537.589
 custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Panel_alert" type="Panel" parent="."]
 visible = false
@@ -651,6 +666,9 @@ margin_bottom = -6.41077
 custom_styles/hover = SubResource( 36 )
 custom_styles/pressed = SubResource( 37 )
 custom_styles/normal = SubResource( 38 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="Panel_alert/return_panel_alert"]
 anchor_left = 0.5

@@ -13,8 +13,53 @@ const PRIX = "Prix"
 const SAVEFILE = "user://savegame.save"
 
 # List of building the player can build
+
+var building_limit = {
+	"Maison 1": 2,
+	"Office de tourisme": 1, 
+	"Etablissement de santé": 1,
+	"Supérette": 1,
+	"Complexe Sportif": 1,
+	"Grand Cafe": 1,
+	"Commissariat": 1,
+	"Grand Commissariat": 1,
+	"Grande Ecole": 1,
+	"Grand Hôpital": 1,
+	"Mairie": 1,
+	"Hopital": 1,
+	"Maison 2": 1, 
+	"Maison 3": 1,
+	"Immeuble": 1,
+	"Musee": 1,
+	"Parc": 1,
+	"Supermarche": 1,
+	"Ecole": 1,
+	"Theatre": 1,
+	"Centre Associatif": 1
+}
+
 var building_list = {
-	"Mairie" : 1 # Starts with only the Mairie
+	"Maison 1": 1,
+	"Maison 2": 1, 
+	"Maison 3": 1,
+	"Ecole": 1,
+	"Office de tourisme": 1, 
+	"Etablissement de santé": 1,
+	"Supérette": 1,
+	"Grand Cafe": 1,
+	"Commissariat": 1,
+	"Grand Commissariat": 1,
+	"Grande Ecole": 1,
+	"Grand Hôpital": 1,
+	"Mairie": 1,
+	"Hopital": 1,
+	"Immeuble": 1,
+	"Musee": 1,
+	"Parc": 1,
+	"Supermarche": 1,
+	"Complexe Sportif": 1,
+	"Theatre": 1,
+	"Centre Associatif": 1
 }
 
 # A Dictionnary of the event that occured
@@ -29,16 +74,22 @@ var city_data = {
 	PRIX: 0,
 }
 
-
+var options_selected = ""
+#for hide the tutorial panel.
+var save_found = false
 # Data points accumulated
-var data_points = 3000
+var data_points = 300
 
 var must_load_save = true
 
 # Gender chosen by the player
 var gender = null
+var city = "not defined"
 # Bureau choice
 var bureau = "not defined"
+
+#tuto variable
+var tuto_advancement = false
 
 func _ready():
 	print("Loaded player data !")
@@ -48,7 +99,7 @@ func _ready():
 static func use_building(building_name):
 	# REduce if not inifnite
 	if PlayerData.building_list[building_name] != PlayerData.INF_BUILDING:
-		PlayerData.building_list[building_name] -= 1
+		PlayerData.building_list[building_name] += 1
 	
 	
 	# Get the building bonus
@@ -84,7 +135,7 @@ static func add_building(building_name: String, amount: int):
 	
 	# Else if the building is not in infinite amount
 	elif PlayerData.building_list[building_name] != PlayerData.INF_BUILDING:
-		PlayerData.building_list[building_name] += amount
+		PlayerData.building_limit[building_name] += amount
 
 
 

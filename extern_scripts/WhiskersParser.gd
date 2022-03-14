@@ -150,6 +150,7 @@ func execute_expression(expression_text : String):
 	if error:
 		print("[ERROR]: unable to parse expression %s. Error: %s." % [expression_text, error])
 	else:
+		print(expression)
 		result = expression.execute([], base_instance, true)
 		if expression.has_execute_failed():
 			print("[ERROR]: unable to execute expression %s." % expression_text)
