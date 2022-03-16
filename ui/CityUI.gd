@@ -26,9 +26,6 @@ onready var build_button = $VBoxContainer/BottomContainer/HBoxBottomContainer/Bu
 # Bars
 onready var bar_satisfaction = $VBoxContainer/BottomContainer/HBoxBottomContainer/SatisfactionContainer/Satisfaction
 
-var can_use ="not defined"
-var tuto_completed = false
-
 func _ready():
 	# Hides the UI elements until the Tutorial is closed
 	$VBoxContainer.hide()
@@ -155,9 +152,9 @@ func close_tutorial():
 #==========> Signal Senders <==========#
 
 func _on_NotificationButton_pressed():
-	if can_use == "event_button" or tuto_completed == true:
-			get_parent().get_node("dialog_tuto").hide()
-			emit_signal("open_notifications")
+	if get_tree().get_current_scene().can_use == "event_button":
+		get_parent().get_node("dialog_tuto").hide()
+	emit_signal("open_notifications")
 
 
 func _on_HighScoreButton_pressed():

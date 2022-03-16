@@ -36,7 +36,7 @@ const SIZES = {
 const OFFSET = {
 	"Etablissement de santé": Vector2(0, -88.023),
 	"Office de tourisme": Vector2(-0.707,-77.886),
-	"Immeuble": Vector2(-267.973,-378.299),
+	"Immeuble": Vector2(-265.922,-110.165),
 	"Maison 1": Vector2(0,-91.457),
 	"Maison 2": Vector2(2.949,-48.174),
 	"Maison 3": Vector2(0,-90),
@@ -72,7 +72,7 @@ const TEXTURES = {
 	"Maison 1": preload("res://assets/sprites/buildings/maison_1.svg"),
 	"Maison 2": preload("res://assets/sprites/buildings/maison2droite.png"),
 	"Maison 3": preload("res://assets/sprites/buildings/maison3gauche.png"),
-	"Immeuble": preload("res://assets/sprites/buildings/batiment.png"),
+	"Immeuble": preload("res://assets/sprites/buildings/immeuble.svg"),
 	"Musee": preload("res://assets/sprites/buildings/musee.png"),
 	"Parc": preload("res://assets/sprites/buildings/parcdroit.png"),
 	"Supermarche": preload("res://assets/sprites/buildings/restaurantgauche.png"),

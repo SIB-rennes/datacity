@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=2]
+[gd_scene load_steps=77 format=2]
 
 [ext_resource path="res://scenes/formulaire.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/backgrounds/bureau_3.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://assets/sprites/nouveau_formulaire/GA_portrait_f_c_02032022.svg" type="Texture" id=18]
 [ext_resource path="res://assets/sprites/nouveau_formulaire/GA_fenetre_erreur_02032022.svg" type="Texture" id=19]
 [ext_resource path="res://assets/sprites/nouveau_formulaire/GA_bouton_vide_s_02032022.svg" type="Texture" id=20]
+[ext_resource path="res://assets/fonts/Kilogram-GvBO.otf" type="DynamicFontData" id=21]
 [ext_resource path="res://themes/formulaire.tres" type="DynamicFont" id=24]
 [ext_resource path="res://assets/sprites/nouveau_formulaire/GA_bouton_bureau_s_02032022.svg" type="Texture" id=25]
 [ext_resource path="res://assets/sprites/nouveau_formulaire/GA_bouton_bureau_c_02032022.svg" type="Texture" id=26]
@@ -207,6 +208,10 @@ region_rect = Rect2( 0, 0, 150, 45 )
 texture = ExtResource( 12 )
 region_rect = Rect2( 0, 0, 150, 45 )
 
+[sub_resource type="DynamicFont" id=51]
+size = 50
+font_data = ExtResource( 21 )
+
 [node name="formulaire" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -220,10 +225,8 @@ __meta__ = {
 }
 
 [node name="background" type="Panel" parent="."]
-margin_left = -0.470276
-margin_top = -2.4108
-margin_right = 1023.53
-margin_bottom = 597.589
+margin_right = 1024.0
+margin_bottom = 600.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -280,6 +283,7 @@ custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 10 )
 custom_styles/focus = SubResource( 35 )
 custom_styles/normal = SubResource( 31 )
+max_length = 20
 context_menu_enabled = false
 clear_button_enabled = true
 __meta__ = {
@@ -314,6 +318,7 @@ custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 10 )
 custom_styles/focus = SubResource( 33 )
 custom_styles/normal = SubResource( 34 )
+max_length = 20
 context_menu_enabled = false
 clear_button_enabled = true
 __meta__ = {
@@ -346,13 +351,13 @@ __meta__ = {
 
 [node name="sexe" type="Label" parent="Panel_part1"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = 116.53
+margin_left = 91.5297
 margin_top = 207.589
-margin_right = 574.53
+margin_right = 587.53
 margin_bottom = 252.589
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = ExtResource( 10 )
-text = "SEXE DU PERSONNAGE:"
+text = "GENRE DU PERSONNAGE:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -682,6 +687,15 @@ margin_bottom = 27.0
 rect_scale = Vector2( 0.75, 0.75 )
 custom_fonts/font = ExtResource( 10 )
 text = "Retour"
+
+[node name="Label" type="Label" parent="."]
+margin_right = 1023.0
+margin_bottom = 63.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 51 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="text_changed" from="Panel_part1/label/nom" to="." method="_on_nom_text_changed"]
 [connection signal="text_changed" from="Panel_part1/label3/nom_ville" to="." method="_on_nom_ville_text_changed"]

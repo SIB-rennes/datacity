@@ -35,7 +35,6 @@ var scenarios_data = ScenariosData.new()
 #historique
 var can_pass = true
 var historical_opened = false
-
 # Storing parser, data and block for the dialog parsing
 var parser
 var dialogue_data
@@ -60,7 +59,7 @@ var buildings_gained: Array
 
 func _ready():
 	# Load a dialogue by default
-	start_dialog_event("res://scenarios/pedagogical/premier_batiment_de_commerce.json")
+	start_dialog_event("res://scenarios/scenario_default.json")
 	
 	# Connect the timer to the correct method
 	timer_display.connect("timeout", self, "_add_buttons")
@@ -119,19 +118,22 @@ func _input(event):
 	# if we touched the screen or the mouse
 		if event is InputEventScreenTouch:
 			if event.pressed:
-				process_player_click()
+				if can_pass == true:
+					process_player_click()
 		
 		elif event is InputEventMouseButton:
 			if event.button_index == BUTTON_LEFT and event.pressed:
-				process_player_click()
+				if can_pass == true:
+					process_player_click()
 		
 		# If we pressed space
 		elif event is InputEventKey:
 			if event.pressed and event.unicode == KEY_SPACE:
-				process_player_click()
+				if can_pass == true:
+					process_player_click()
+
 
 func process_player_click():
-	$CanvasLayer/Historical.add_message(parser.current_block.text)
 	# Quit if not enought time passed
 	if answer_delay < DELAY_BEFORE_ANSWER:
 		pass
@@ -157,9 +159,8 @@ func process_player_click():
 			
 		# Process blocks with data
 		process_data_blocks()
-			
-			
 		update_dialog()
+		
 	
 
 
@@ -180,10 +181,10 @@ func player_pushed_button(key):
 			
 			# Process blocks with data
 			process_data_blocks()
-			
 			# Display the next dialog if not finished
 			if block.empty() or block.is_final:
 				print("That was the last dialog !")
+				yield(get_tree().create_timer(0.5), "timeout")
 				$CanvasLayer/Historical.reboot_historical()
 				emit_signal("dialog_finished")
 			else:
@@ -197,7 +198,7 @@ func update_dialog():
 	# Set the dialog line on the UI (if not a data block)
 	if not is_data_block():
 		dialog_line.text = block.text
-	
+		
 	# Remove the old answer buttons
 	var old_buttons = answer_container.get_children()
 	for button in old_buttons:
@@ -210,10 +211,12 @@ func update_dialog():
 	if not block.options.empty():
 		# Add the buttons after a delay
 		timer_display.start(DELAY_BEFORE_DISPLAY)
-
-
+	
+	if not is_data_block():
+		$CanvasLayer/Historical.add_message(parser.current_block.text)
 
 func _add_buttons():
+	$CanvasLayer/Historical.historical_cooldown_option = false
 	# Add the new buttons
 	for answer in block.options:
 		# Instanciate
@@ -304,6 +307,7 @@ func process_single_data_block():
 	
 	if text.begins_with("lien="):
 		lien = text.substr("lien=".length())
+# warning-ignore:return_value_discarded
 		OS.shell_open(lien)
 		print(lien)
 	if text.begins_with("background="):
@@ -371,8 +375,6 @@ func process_single_data_block():
 			
 		# The block contained data
 		return true
-		
-		
 	# Else
 	return false
 

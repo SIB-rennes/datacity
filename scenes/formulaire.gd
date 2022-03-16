@@ -13,14 +13,14 @@ func _ready():
 	print("gender: " + gender)
 	print("nom: " + nom)
 	print("nom_ville: " + nom_ville)
-
+	$Panel_part1/label/nom.set_virtual_keyboard_enabled(true)
+	$Panel_part1/label3/nom_ville.set_virtual_keyboard_enabled(true)
 	return
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
 
 func _on_def_femme_pressed():
 	#Select Gender woman
@@ -64,20 +64,27 @@ func _on_def_homme_pressed():
 
 func _on_nom_text_changed(new_text):
 	#Name of the player
-	nom = $Panel_part1/label/nom.get_text()
-	print("nom: " + nom)
-	$Panel_confirmation/nom.set_text("Nom: " + nom)
-	return
+#	nom = $Panel_part1/label/nom.text
+#	print("nom: " + nom)
+#	$Panel_confirmation/nom.set_text("Nom: " + nom)
+	pass
 
 func _on_nom_ville_text_changed(new_text):
-	#Name of the city
-	nom_ville = $Panel_part1/label3/nom_ville.get_text()
-	print("nom_ville: " + nom_ville)
-	$Panel_confirmation/ville.set_text("Ville: " + nom_ville)
-	PlayerData.city = nom_ville
-	return
+#	#Name of the city
+#	nom_ville = $Panel_part1/label3/nom_ville.text
+#	print("nom_ville: " + nom_ville)
+#	$Panel_confirmation/ville.set_text("Ville: " + nom_ville)
+#	PlayerData.city = nom_ville
+	pass
 
 func _on_next_pressed():
+	nom_ville = $Panel_part1/label3/nom_ville.text
+	$Panel_confirmation/ville.set_text("Ville: " + nom_ville)
+	PlayerData.city = nom_ville
+	print("nom: " + nom)
+	nom = $Panel_part1/label/nom.text
+	print("nom: " + nom)
+	$Panel_confirmation/nom.set_text("Nom: " + nom)
 	#Check if all field are filled
 	if nom == "not defined" or nom_ville == "not defined" or gender == "not defined":
 		$Panel_part1.visible = false
@@ -222,7 +229,7 @@ func _on_return_panel_confirmation_pressed():
 
 func _on_confirmer_pressed():
 	#skip intro***
-#	get_tree().change_scene("res://scenes/CityBuilder.tscn")
+
 	#***
 	get_parent().start_next_state()
 	return

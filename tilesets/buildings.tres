@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=30 format=2]
+[gd_resource type="TileSet" load_steps=31 format=2]
 
 [ext_resource path="res://assets/sprites/buildings/musee.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/buildings/grandeecole.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://assets/sprites/buildings/Ecole.svg" type="Texture" id=10]
 [ext_resource path="res://assets/sprites/buildings/grandhopital.png" type="Texture" id=11]
 [ext_resource path="res://assets/sprites/buildings/restaurantgauche.png" type="Texture" id=12]
+[ext_resource path="res://assets/textures/can_build_tile.png" type="Texture" id=13]
 [ext_resource path="res://assets/sprites/buildings/parcdroit.png" type="Texture" id=14]
 [ext_resource path="res://assets/sprites/buildings/pharmacie.png" type="Texture" id=15]
 [ext_resource path="res://assets/sprites/buildings/commissariat.svg" type="Texture" id=16]
@@ -36,7 +37,7 @@ resource_name = "Buildings"
 0/texture = ExtResource( 4 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 0 )
-0/region = Rect2( 16, 0, 96, 64 )
+0/region = Rect2( 0, 0, 531, 307 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
@@ -426,9 +427,9 @@ resource_name = "Buildings"
 46/z_index = 0
 47/name = "Immeuble"
 47/texture = ExtResource( 29 )
-47/tex_offset = Vector2( -267.973, -378.299 )
+47/tex_offset = Vector2( -265.922, -110.165 )
 47/modulate = Color( 1, 1, 1, 1 )
-47/region = Rect2( 0, 0, 1060, 1372 )
+47/region = Rect2( 0, 0, 1060, 834 )
 47/tile_mode = 0
 47/occluder_offset = Vector2( 0, 0 )
 47/navigation_offset = Vector2( 0, 0 )
@@ -438,3 +439,17 @@ resource_name = "Buildings"
 47/shape_one_way_margin = 0.0
 47/shapes = [  ]
 47/z_index = 0
+48/name = "can_build_tile"
+48/texture = ExtResource( 13 )
+48/tex_offset = Vector2( 0, 0 )
+48/modulate = Color( 1, 1, 1, 1 )
+48/region = Rect2( 0, 0, 531, 307 )
+48/tile_mode = 0
+48/occluder_offset = Vector2( 0, 0 )
+48/navigation_offset = Vector2( 0, 0 )
+48/shape_offset = Vector2( 0, 0 )
+48/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+48/shape_one_way = false
+48/shape_one_way_margin = 0.0
+48/shapes = [  ]
+48/z_index = 0

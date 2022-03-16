@@ -164,12 +164,12 @@ margin_bottom = 408.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_colors/default_color = Color( 0.266667, 0.113725, 0, 1 )
 custom_fonts/mono_font = ExtResource( 4 )
 custom_fonts/bold_italics_font = ExtResource( 4 )
 custom_fonts/italics_font = ExtResource( 4 )
 custom_fonts/bold_font = ExtResource( 4 )
 custom_fonts/normal_font = ExtResource( 4 )
-custom_colors/default_color = Color( 0.266667, 0.113725, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]
 Data City est un Serious Game sur l'Open Data, développé par le SIB : [color=#539CC7][url=https://www.sib.fr]www.sib.fr[/url][/color]
@@ -211,7 +211,7 @@ et parcourus avec l'aide de [color=#539CC7][url=https://github.com/LittleMouseGa
 
 [b][u]Sons[/u][/b]
 
-Notifications obtenus sur [color=#539CC7][url=https://notificationsounds.com/notification-sounds/definite-555]NotificationSounds.com[/url][/color] 
+Notifications obtenues sur [color=#539CC7][url=https://notificationsounds.com/notification-sounds/definite-555]NotificationSounds.com[/url][/color] 
 
 [/center]"
 text = "
@@ -254,7 +254,7 @@ et parcourus avec l'aide de Whiskers Parser
 
 Sons
 
-Notifications obtenus sur NotificationSounds.com 
+Notifications obtenues sur NotificationSounds.com 
 
 "
 

@@ -30,7 +30,49 @@ const INSTANCES_PATH = {
 		"res://scenarios/dialogs_custom_variables.gd",
 	
 	"res://scenarios/pedagogical/tourisme.json":
-		"res://scenarios/dialogs_custom_variables.gd"
+		"res://scenarios/dialogs_custom_variables.gd",
+	
+	"res://scenarios/pedagogical/CentreAssociatif_construit.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+	
+	"res://scenarios/pedagogical/donnees_urbanisme.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+
+	"res://scenarios/pedagogical/infos_conference.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+		
+	"res://scenarios/pedagogical/citoyen_enerve.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+		
+	"res://scenarios/pedagogical/retour_conferencier_1.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+		
+	"res://scenarios/pedagogical/retour_conferencier_3.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+		
+	"res://scenarios/pedagogical/retour_conferencier_2.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+
+	"res://scenarios/pedagogical/donnees_hopitaux.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+
+	"res://scenarios/pedagogical/droits_donnees.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+		
+	"res://scenarios/pedagogical/last_dialog.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+		
+	"res://scenarios/pedagogical/mairie_built.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+
+	"res://scenarios/pedagogical/deliberations.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+		
+	"res://scenarios/pedagogical/premieres_maisons.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+		
+	"res://scenarios/pedagogical/CentreAssociatif.json":
+		"res://scenarios/dialogs_custom_variables.gd",
 }
 
 

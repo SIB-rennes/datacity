@@ -5,6 +5,7 @@ signal close_historical
 
 var speaker_name = "nobody"
 
+var historical_cooldown_option = false
 var historical_message = preload("res://ui/historical_message.tscn")
 onready var message_container = $VBoxContainer/ScrollMargin/ScrollContainer/message_container
 
@@ -24,14 +25,15 @@ func reboot_historical():
 		child.queue_free()
 
 func historical_options(block):
-	print('test un deux test')
-	var message = historical_message.instance()
-	message.update_message(block)
-	message.update_name("Maire")
-	message.set_h_size_flags(8)
-	message_container.add_child(message)
+	if historical_cooldown_option == false:
+		print('test un deux test')
+		var message = historical_message.instance()
+		message.update_message(block)
+		message.update_name("Maire")
+		message.set_h_size_flags(8)
+		message_container.add_child(message)
+		historical_cooldown_option = true
 
 
 func _on_ButtonA_historical_infos():
-	print("je marche")
 	historical_options(PlayerData.options_selected)

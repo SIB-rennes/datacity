@@ -178,23 +178,26 @@ func _process(delta):
 		check_preview(building_to_place, $Map/Buildings.tile)
 
 func check_preview(building, pos):
+	var constructible = false
+	var occupied = false
 # Get the building size
 	var size = BuildingsData.get_size(building)
 	# Check each case
 	for x in range(pos.x, pos.x - size.x, - 1):
 		for y in range(pos.y, pos.y + size.y, + 1):
-			# If the case is not free
-			if buildings_map.get_cell(x, y) != TileMap.INVALID_CELL:
-				print(str("buildings_map: ", buildings_map.get_cell(x,y)))
-				print("can't place")
-				$Map/Buildings.can_place = false
-				return false
-				
-	$Map/Buildings.can_place = true
-	print("can place")
-	# Else the place is free
-	return true
-# warning-ignore:unreachable_code
+			# Check if a case is a constructible_tile
+			if buildings_map.get_cell(x,y) == 48:
+				constructible = true
+			else:
+				#check if the others case are occupied.
+				if buildings_map.get_cell(x, y) != TileMap.INVALID_CELL:
+					occupied = true
+#if there is a constructible tile and the other tile are not occupied, you can build.
+	if constructible && !occupied:
+		$Map/Buildings.can_place = true
+	else:
+		$Map/Buildings.can_place = false
+
 ## Called from the Map signal when the map is clicked
 func map_clicked(case_index, case_center_coords, _occupied):
 	# If Choosing the place
@@ -205,25 +208,40 @@ func map_clicked(case_index, case_center_coords, _occupied):
 			building_case = case_index
 			build_case_center = case_center_coords
 			$Map/Buildings/preview.position = case_center_coords
-			print(case_center_coords)
-			print($Map/Buildings/preview.position)
+	#		print(case_center_coords)
+	#		print($Map/Buildings/preview.position)
 			$Map/Buildings.validation = true
 			# Ask for validation
 			ask_validation()
+		else:
+			$Map/Buildings.can_place = false
+			print("meh.")
 
 
 func can_place(building, pos):
-	print("Can_place")
+	var constructible = false
+	var occupied = false
 	# Get the building size
 	var size = BuildingsData.get_size(building)
 	for x in range(pos.x, pos.x - size.x, - 1):
 		for y in range(pos.y, pos.y + size.y, + 1):
 			# If the case is not free
-			if buildings_map.get_cell(x, y) != TileMap.INVALID_CELL:
-				print(str("buildings_map: ", buildings_map.get_cell(x,y)))
-				return false
+#			if buildings_map.get_cell(x, y) != TileMap.INVALID_CELL or 
+			print("x : ", + x)
+			print("y : ", + y)
+			if buildings_map.get_cell(x,y) == 48:
+				constructible = true
+			else:
+				if buildings_map.get_cell(x, y) != TileMap.INVALID_CELL:
+					occupied = true
+
+	if constructible && !occupied:
+		return true
+	else:
+		return false
+				
 	# Else the place is free
-	return true
+
 
 
 func build(building: int, pos: Vector2):
@@ -269,7 +287,6 @@ func ask_validation():
 	state = State.ASK_VALIDATION
 	
 	# show the preview emplacements
-	show_preview()
 	
 	# Disable the camera
 	$Camera2D.block_camera(false)
@@ -278,23 +295,6 @@ func ask_validation():
 	# Show the validation popup after a small delay
 	yield(get_tree().create_timer(0.3), "timeout") # Delay
 	ui.show_validation_popup()
-
-func show_preview():
-	# Get the building size
-	var size = BuildingsData.get_size(building_to_place)
-	
-	for x in range(building_case.x, building_case.x - size.x, - 1):
-		for y in range(building_case.y, building_case.y + size.y, + 1):
-			buildings_map.set_cell(x, y, preview_tile)
-
-func hide_preview():
-	# Get the building size
-	var size = BuildingsData.get_size(building_to_place)
-	
-	for x in range(building_case.x, building_case.x - size.x, - 1):
-		for y in range(building_case.y, building_case.y + size.y, + 1):
-			buildings_map.set_cell(x, y, TileMap.INVALID_CELL)
-
 
 func set_building_menu():
 	# Add random buildings
@@ -350,6 +350,7 @@ func show_results(points_gained: int, buildings_gained: Array):
 #========> UI Calls <========#
 
 func _on_CityUI_open_notifications():
+	print(can_use)
 	if tuto_completed == true or can_use == "event_button":
 	# only if State.STANDARD
 		if state == State.STANDARD:
@@ -369,7 +370,6 @@ func _on_CityUI_open_settings():
 		# Here, open the Settings (not used)
 			pass
 
-
 func _on_CityUI_logout():
 	get_tree().quit()
 
@@ -380,7 +380,7 @@ func _on_CityUI_cancel_build():
 		
 		state = State.STANDARD
 		$Map/Buildings/preview.hide()
-
+		buildings_map.show_constructible_tile(false)
 
 func _on_CityUI_open_build():
 	if tuto_completed == true or can_use == "building_button" or can_use == "select_building" or can_use == "pose_building":
@@ -429,6 +429,7 @@ func _on_BuildMenu_selected_building(building_name):
 			yield(get_tree().create_timer(0.3), "timeout")
 			# Change state to choosing place
 			state = State.CHOOSING_PLACE
+
 func _on_BuildMenu_exited_build_menu():
 	if tuto_completed == true:
 		ui.show()
@@ -452,13 +453,10 @@ func _on_CityUI_open_guide():
 			$Camera2D.block_camera(true)
 
 func _on_CityUI_unvalidate_position():
-	# Reset the UI
-	ui.show_build_button()
 	# Hide the preview cases
-	hide_preview()
-	$Map/Buildings/preview.hide()
 	buildings_map.validation = false
-	state = State.STANDARD
+	yield(get_tree().create_timer(0.3), "timeout")
+	state = State.CHOOSING_PLACE
 
 
 func _on_CityUI_validate_position():
@@ -477,7 +475,7 @@ func _on_CityUI_validate_position():
 	update_ui()
 	$Map/Buildings/preview.hide()
 	state = State.STANDARD
-	
+	buildings_map.show_constructible_tile(false)
 	# Save the game 
 	save()
 
@@ -641,6 +639,10 @@ func load_save():
 	if not buildings_map.load_string(dic["buildings"]):
 		return false
 	
+	PlayerData.building_limit = dic["building_limit"]
+	PlayerData.bureau = dic["bureau"]
+	PlayerData.gender = dic["gender"]
+	PlayerData.city = dic["city_name"]
 	PlayerData.building_list = dic["building_list"]
 	PlayerData.event_occured = dic["event_occured"]
 	PlayerData.city_data = dic["city_data"]
@@ -662,6 +664,7 @@ func open_no_datapoints():
 		$Camera2D.block_camera(true)
 
 func update_preview():
+	buildings_map.show_constructible_tile(true)
 	buildings_map.validation = false
 	$Map/Buildings/preview.show()
 	buildings_map.set_preview_offset(building_name_to_place)
@@ -731,20 +734,20 @@ func listen_state_data():
 		State_tuto.INFO_BUILDING_2:
 			print("INFO_BUILDING_2")
 			$CanvasLayer/tuto_aff/tuto_infos_building.show()
-			dialog_tuto_line.set_text("Chaque bâtiments")
-			dialog_tuto_line.push_color(Color.red)
-			dialog_tuto_line.add_text(" coûte des datapoints")
-			dialog_tuto_line.push_color(Color.orange)
-			dialog_tuto_line.add_text(" et ne peuvent être construit")
-			dialog_tuto_line.push_color(Color.blue)
-			dialog_tuto_line.add_text(" qu'un certain nombre de fois.")
+			dialog_tuto_line.set_text("Certains bâtiments possèdent des")
+			dialog_tuto_line.push_color(Color.green)
+			dialog_tuto_line.add_text(" bonus.")
 			yield(get_tree().create_timer(0.5), "timeout")
 			can_click = true
 		
 		State_tuto.INFO_BUILDING_3:
-			dialog_tuto_line.set_text("Certains bâtiments possèdent des")
-			dialog_tuto_line.push_color(Color.green)
-			dialog_tuto_line.add_text(" bonus.")
+			dialog_tuto_line.set_text("Chaque bâtiment")
+			dialog_tuto_line.push_color(Color.red)
+			dialog_tuto_line.add_text(" coûte des datapoints")
+			dialog_tuto_line.push_color(Color.orange)
+			dialog_tuto_line.add_text(" et ne peut être construit")
+			dialog_tuto_line.push_color(Color.blue)
+			dialog_tuto_line.add_text(" qu'un certain nombre de fois.")
 			yield(get_tree().create_timer(0.5), "timeout")
 			can_click = true
 		
@@ -759,7 +762,6 @@ func listen_state_data():
 			dialog_tuto.rect_position = Vector2(492, 280)
 			$CanvasLayer/place_building_tuto.show()
 #			dialog_tuto_line.set_text("Cliquez sur un emplacement libre pour poser votre bâtiment.")
-#			yield(get_tree().create_timer(3), "timeout")
 			city_shadow.set_deferred("visible", false)
 			dialog_tuto.hide()
 			yield(get_tree().create_timer(0.5), "timeout")
@@ -778,7 +780,7 @@ func listen_state_data():
 			dialog_tuto_line.push_color(Color.red)
 			dialog_tuto_line.add_text(" datapoints.")
 			build_menu.scrolling(true)
-#			yield(get_tree().create_timer(0.5), "timeout")
+			yield(get_tree().create_timer(0.5), "timeout")
 			can_click = true
 
 
@@ -790,7 +792,7 @@ func listen_state_data():
 			print("10")
 			dialog_tuto.rect_position = Vector2(225, 400)
 			print("11")
-			dialog_tuto_line.set_text("Ici, vous pouvez voir que le bâtiment que vous venez de construire à augmenté, votre")
+			dialog_tuto_line.set_text("Ici, vous pouvez voir que le bâtiment que vous venez de construire a augmenté votre")
 			dialog_tuto_line.push_color(Color.green)
 			dialog_tuto_line.add_text(" population max.")
 			print("...")
@@ -815,7 +817,7 @@ func listen_state_data():
 			dialog_tuto.rect_position = Vector2(492, 280)
 			dialog_tuto_line.set_text("En posant des bâtiments, des")
 			dialog_tuto_line.push_color(Color.darkmagenta)
-			dialog_tuto_line.add_text(" événements")
+			dialog_tuto_line.add_text(" évènements")
 			dialog_tuto_line.push_color(Color.orange)
 			dialog_tuto_line.add_text(" liés à ce bâtiment peuvent se déclencher.")
 			yield(get_tree().create_timer(0.5), "timeout")
@@ -829,10 +831,9 @@ func listen_state_data():
 			dialog_tuto_line.push_color(Color.darkmagenta)
 			dialog_tuto_line.add_text(" notification")
 			dialog_tuto_line.push_color(Color.orange)
-			dialog_tuto_line.add_text(" s'affiche alors, appuyez sur le bouton pour lancer l'événement.")
+			dialog_tuto_line.add_text(" s'affiche alors, appuyez sur le bouton pour lancer l'évènement.")
 			$CanvasLayer/CityUI/AnimationPlayer.play("scale_anim_event")
 			yield(get_tree().create_timer(0.5), "timeout")
-			ui.can_use = "event_button"
 			can_use = "event_button"
 		
 		State_tuto.EVENT_LAUNCHED:
@@ -842,7 +843,7 @@ func listen_state_data():
 		State_tuto.EVENT_FINISH:
 			dialog_tuto.show()
 			dialog_tuto.rect_position = Vector2(165, 275)
-			dialog_tuto_line.set_text("À la fin de chaque événement, vous verrez vos gains ou pertes.")
+			dialog_tuto_line.set_text("À la fin de chaque évènement, vous verrez vos gains ou pertes.")
 			yield(get_tree().create_timer(0.5), "timeout")
 			can_click = true
 		
@@ -859,7 +860,7 @@ func listen_state_data():
 			dialog_tuto_line.push_color(Color.green)
 			dialog_tuto_line.add_text(" des bâtiments")
 			dialog_tuto_line.push_color(Color.orange)
-			dialog_tuto_line.add_text(", pouvant être construit après l'événement.")
+			dialog_tuto_line.add_text(", pouvant être construits après l'évènement.")
 			yield(get_tree().create_timer(0.5), "timeout")
 			can_click = true
 		
@@ -897,7 +898,6 @@ func listen_state_data():
 			city_shadow.set_deferred("visible", false)
 			dialog_tuto.set_deferred("visible", false)
 			tuto_completed = true
-			ui.tuto_completed = true
 			save()
 
 func set_next_tuto():

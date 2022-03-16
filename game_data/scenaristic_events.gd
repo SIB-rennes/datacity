@@ -40,6 +40,11 @@ const EVENTS_CONDITIONS = {
 		"not had_event(x)" : ["Etablissement de santé"],
 		"population_over(x)": 60
 	},
+	
+	"Deliberations":{
+		"not had_event(x)" : ["Deliberations"],
+		"population_over(x)":20
+	},
 	### <=====> ###  Pedagogical events
 	"CentreAssociatif":{
 		"had_event(x)": ["PremieresMaisons"],
@@ -164,7 +169,7 @@ const SUMMARIES = {
 	"CentreAssociatif": "L'adjointe souhaite s'entretenir avec vous.",
 	"CentreAssociatif_construit": "Le représentant du centre associatif souhaite vous voir.",
 	"DonneesUrbanisme": "Une citoyenne est venue vous voir.",
-	"InfosConference": "Vous croisez une citoyenne dans un parc.",
+	"InfosConference": "Vous croisez une citoyenne.",
 	"CitoyenEnerve": "Un citoyen tient à vous parler.",
 	"Commissariat" : "Une habitante souhaite vous voir. ",
 	"Tourisme": "Une citoyenne souhaite vous voir.",
@@ -217,6 +222,10 @@ const OFFERED_BUILDINGS = {
 	
 	"Tourisme": {
 		'Office de tourisme': 1
+	},
+	
+	"Deliberations": {
+		"Maison 1": 1
 	}
 }
 
