@@ -28,6 +28,7 @@ web:
     - godot -v --export "HTML5" ./build/web/index.html
     # bidouille pour avoir une ligne dans les logs nginx à chaque affichage de la page
     - sed -i '/<\/script>/i fetch("/?" + Date.now());' ./build/web/index.html
+    - echo "Build ${CI_COMMIT_SHORT_SHA} / $(date)" > ./build/web/infos.txt
   artifacts:
     paths:
       - build/web
