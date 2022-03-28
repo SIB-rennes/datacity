@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/sprites/backgrounds/conference.png" type="Texture" id=6]
 [ext_resource path="res://assets/sprites/ui/dialogs/libelle_personnage.png" type="Texture" id=7]
 [ext_resource path="res://assets/sprites/characters/medecin.svg" type="Texture" id=8]
-[ext_resource path="res://icon.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/icons/historique.png" type="Texture" id=9]
 [ext_resource path="res://ui/historical.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/fonts/main_font.ttf" type="DynamicFontData" id=11]
 [ext_resource path="res://ui/answer_button.tscn" type="PackedScene" id=12]
@@ -17,6 +17,9 @@
 [ext_resource path="res://themes/scrollbar_grabber.tres" type="StyleBox" id=15]
 [ext_resource path="res://themes/scrollbar.tres" type="StyleBox" id=16]
 [ext_resource path="res://themes/button_background_active.tres" type="StyleBox" id=17]
+[ext_resource path="res://assets/fonts/font_infos.tres" type="DynamicFont" id=18]
+[ext_resource path="res://assets/sprites/icons/historique_(hover).png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/icons/historique_(click).png" type="Texture" id=20]
 
 [sub_resource type="DynamicFont" id=1]
 size = 26
@@ -91,20 +94,6 @@ font_data = ExtResource( 11 )
 texture = ExtResource( 7 )
 region_rect = Rect2( 9.24641, 12.9536, 606.341, 96.1272 )
 
-[sub_resource type="StyleBoxTexture" id=4]
-texture = ExtResource( 9 )
-region_rect = Rect2( 0, 0, 1000, 1000 )
-modulate_color = Color( 0.607843, 0.631373, 0.74902, 1 )
-
-[sub_resource type="StyleBoxTexture" id=5]
-texture = ExtResource( 9 )
-region_rect = Rect2( 0, 0, 1000, 1000 )
-modulate_color = Color( 0.47451, 0.380392, 0.380392, 1 )
-
-[sub_resource type="StyleBoxTexture" id=6]
-texture = ExtResource( 9 )
-region_rect = Rect2( 0, 0, 1000, 1000 )
-
 [node name="DialogScene" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -139,7 +128,7 @@ margin_top = -600.0
 margin_right = 206.984
 texture = ExtResource( 8 )
 expand = true
-stretch_mode = 1
+stretch_mode = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -179,6 +168,7 @@ margin_bottom = 0.0519943
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/default_color = Color( 0.992157, 0.568627, 0.180392, 1 )
+custom_fonts/bold_font = ExtResource( 18 )
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 fit_content_height = true
@@ -230,17 +220,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="historical" type="Button" parent="UI"]
-margin_left = 37.0
-margin_top = 35.0
-margin_right = 110.0
-margin_bottom = 104.0
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/normal = SubResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="historical" type="TextureButton" parent="UI"]
+margin_right = 171.0
+margin_bottom = 170.0
+rect_scale = Vector2( 0.75, 0.75 )
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 20 )
+texture_hover = ExtResource( 19 )
 
 [node name="SoundPlayer" type="AudioStreamPlayer" parent="."]
 
@@ -253,6 +239,7 @@ position = Vector2( 857.247, 515.979 )
 scale = Vector2( 2.17138, 2.17138 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
 
 [node name="Historical" parent="CanvasLayer" instance=ExtResource( 10 )]
 visible = false

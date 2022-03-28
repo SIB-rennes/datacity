@@ -49,11 +49,13 @@ func _physics_process(delta):
 		tile = world_to_map(mouse_pos)
 		$preview.position = map_to_world(tile)
 		if can_place == true:
-			$preview/preview_tile.modulate  = Color(0, 1, 0)
-			$preview/preview_tile_2/building.modulate = Color(0, 1, 0)
+			$preview/preview_tile.modulate  = Color(0, 1, 0, 0.5)
+			$preview/preview_tile_2/building.modulate = Color(0, 1, 0, 0.5)
+			$preview/preview_tile_3/building.modulate = Color(0, 1, 0, 0.5)
 		else:
-			$preview/preview_tile.modulate = Color(1, 0, 0 )
-			$preview/preview_tile_2/building.modulate = Color(1, 0, 0)
+			$preview/preview_tile.modulate = Color(1, 0, 0, 0.5)
+			$preview/preview_tile_2/building.modulate = Color(1, 0, 0, 0.5)
+			$preview/preview_tile_3/building.modulate = Color(1, 0, 0, 0.5)
 					
 					
 func show_constructible_tile(value):

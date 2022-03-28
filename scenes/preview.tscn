@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://tilesets/buildings.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/Buildings.gd" type="Script" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://assets/sprites/buildings/preview_tile_3x3.png" type="Texture" id=5]
 [ext_resource path="res://assets/sprites/buildings/maison1droite.png" type="Texture" id=6]
 [ext_resource path="res://assets/sprites/buildings/mairiegauche.png" type="Texture" id=7]
-[ext_resource path="res://scenes/building_city_background.png" type="Texture" id=8]
 
 [node name="Buildings" type="TileMap"]
 scale = Vector2( 0.2, 0.2 )
@@ -19,7 +18,7 @@ cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 cell_y_sort = true
 centered_textures = true
 format = 1
-tile_data = PoolIntArray( 65533, 41, 0, 1179656, 0, 0, 1441801, 0, 0 )
+tile_data = PoolIntArray( 1179656, 0, 0, 1441801, 0, 0 )
 script = ExtResource( 2 )
 
 [node name="preview" type="Node2D" parent="."]
@@ -56,13 +55,3 @@ texture = ExtResource( 5 )
 
 [node name="building" type="Sprite" parent="preview/preview_tile_3"]
 visible = false
-
-[node name="TextureButton" type="TextureButton" parent="."]
-margin_left = -1085.0
-margin_top = -975.0
-margin_right = -850.0
-margin_bottom = -710.0
-texture_normal = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}

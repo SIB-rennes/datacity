@@ -5,7 +5,7 @@
 [resource]
 resource_local_to_scene = true
 size = 36
-outline_color = Color( 0.784314, 0.188235, 0.188235, 1 )
+outline_color = Color( 0.750488, 0.322475, 0.322475, 1 )
 use_mipmaps = true
 use_filter = true
 extra_spacing_top = 5

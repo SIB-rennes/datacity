@@ -4,12 +4,13 @@ onready var dialog_tuto_line = $CanvasLayer/dialog_tuto/text/DialogLine
 onready var dialog_tuto = $CanvasLayer/dialog_tuto
 onready var city_shadow = $CanvasModulate
 onready var ui_shadow = $CanvasLayer/CityUI/CanvasModulate
-onready var building_button = $CanvasLayer/CityUI/VBoxContainer/BottomContainer/HBoxBottomContainer/BuildContainer/MarginContainer/BuildButton/BuildButton
-onready var building_card_build = $CanvasLayer/BuildMenu/ScrollMargin/VBoxContainer/ScrollContainer/BuildingContainer/BuildingButton/Background
-onready var building_card_build_sprite = $CanvasLayer/BuildMenu/ScrollMargin/VBoxContainer/ScrollContainer/BuildingContainer/BuildingButton/Building/BuildingContainer/BuildingSprite
+onready var building_button = $CanvasLayer/CityUI/Panel/Panel/MarginBuild/HBoxContainer/BuildContainer/BuildButton
+onready var building_card_build = $CanvasLayer/BuildMenu/background/MarginContainer/ScrollContainer/building_container/BuildingButton/Background
+onready var building_card_build_sprite = $CanvasLayer/BuildMenu/background/MarginContainer/ScrollContainer/building_container/BuildingButton/Building/BuildingContainer/BuildingSprite
 onready var build_shadow = $CanvasLayer/BuildMenu/CanvasModulate
-onready var guide_button = $CanvasLayer/CityUI/VBoxContainer/TopRightContainer/GuideButton
-onready var building_card_button = $CanvasLayer/BuildMenu/ScrollMargin/VBoxContainer/ScrollContainer/BuildingContainer/BuildingButton
+onready var guide_button = $CanvasLayer/CityUI/Panel/MarginContainer/TopRightContainer/GuideButton
+onready var building_card_button = $CanvasLayer/BuildMenu/background/MarginContainer/ScrollContainer/building_container/BuildingButton
+onready var destroy_button = $CanvasLayer/CityUI/Panel/Panel/DestructionContainer/DestroyButton
 
 # Enum for the State Machine
 enum State {
@@ -31,6 +32,7 @@ enum State_tuto {
 	INFO_BUILDING_LAST,
 	BUILDING_POSE,
 	INFOS_UI,
+	INCOMES,
 	INFOS_UI_2,
 	INFOS_UI_LAST,
 	INFOS_EVENT,
@@ -49,13 +51,17 @@ enum State_tuto {
 # Current State
 var state = State.STANDARD
 
+#Event Timer:
+var timer_launched = false
+var timer_paused = false
+var notif_scenar = false
+
 # Manager for scenaristic events
 onready var event_manager = $EventManager
 onready var dialog_scene = $CanvasLayer/DialogScene
 
 # Name of current event
 var current_event = null
-
 
 # Reference to the UI
 onready var ui = $CanvasLayer/CityUI
@@ -74,7 +80,6 @@ var building_name_to_place : String
 var building_case : Vector2
 var build_case_center : Vector2
 
-
 # Dictionary to count each of the buildings
 var buildings_in_city : Dictionary
 
@@ -89,7 +94,31 @@ var can_use = "not_defined"
 #notification new building variable
 var notif_building = false
 
+#var
+var build_opened = false 
+var destruction_launched = false
+var destruction_now = false
+
+var case_index_saved
+var cancel_hovered = false
+var building = ""
+var building_id = 0
+
+var can_place_positions = []
+
 func _ready():
+	building_button.material.set_light_mode(0)
+	can_place_positions = buildings_map.get_used_cells_by_id(48)
+	if "AmenagementCyclable" in PlayerData.event_occured:
+		$Map/Roads_cycles_and_bus.show()
+		print("CYCLE")
+	else:
+		$Map/Roads_cycles_and_bus.hide()
+		print("NO_CYCLE")
+	$AnimationPlayer.play("ship")
+	$AnimationPlayer2.play("Wave")
+	$BirdAnimationPlayer.play("birds")
+	get_incomes()
 	if PlayerData.save_found == true:
 		tuto_completed = true
 	if tuto_completed == false:
@@ -97,7 +126,9 @@ func _ready():
 	print(PlayerData.gender)
 	$Map/Buildings/preview.hide()
 	dialog_tuto.rect_position = Vector2(492, 280)
-	$CanvasLayer/CityUI/TutorialCity.show()
+	$CanvasLayer/dialog_tuto/text.rect_size = Vector2(342, 192)
+	$CanvasLayer/dialog_tuto/text/DialogLine.rect_size = Vector2(327, 149)
+	$CanvasLayer/CityUI/Panel/TutorialCity.show()
 	# Blocks the camera if there is a tutorial
 	$Camera2D.block_camera(true)
 	
@@ -115,6 +146,12 @@ func _ready():
 			
 			# Unblock the camera
 			$Camera2D.block_camera(false)
+			if "AmenagementCyclable" in PlayerData.event_occured:
+				$Map/Roads_cycles_and_bus.show()
+				print("CYCLE")
+			else:
+				$Map/Roads_cycles_and_bus.hide()
+				print("NO_CYCLE")
 
 		# Problem while loaing, go back to introduction
 		else:
@@ -135,6 +172,11 @@ func _ready():
 	# Update the UI
 	update_ui()
 
+func get_incomes():
+	yield(get_tree().create_timer(1.0), "timeout")
+	PlayerData.data_points += PlayerData.incomes
+	ui.set_datapoints(PlayerData.data_points)
+	get_incomes()
 
 # Tries to trigger a scenaristic
 func trigger_scenaristic_event():
@@ -148,18 +190,25 @@ func trigger_scenaristic_event():
 	if event != null:
 		# If there is no corresponding dialog file
 		if not event_manager.DIALOG_FILES.has(event):
+			timer_launched = false
+			notif_scenar = false
 			print("ERROR : no dialogue file specified for " + event)
 			return
 		# Get the dialogue file and check if it exists
 		var file_path = event_manager.DIALOG_FILES.get(event, null)
 		
 		if not File.new().file_exists(file_path):
+			timer_launched = false
+			notif_scenar = false
 			print("ERROR : the dialogue file for " + event + " doesn't exist")
 			return
 		# Keep the event name
 		current_event = event
 		
 		ui.display_notification()
+	else:
+		timer_launched = false
+		notif_scenar = false
 
 func start_dialog():
 	if event_manager.DIALOG_FILES.has(current_event):
@@ -173,10 +222,15 @@ func start_dialog():
 		dialog_scene.start_dialog_event(dialog_path)
 
 # warning-ignore:unused_argument
-func _process(delta):
+func _physics_process(delta):
 	if state == State.CHOOSING_PLACE:
 		check_preview(building_to_place, $Map/Buildings.tile)
+	
+	if timer_launched == false && notif_scenar == false && tuto_completed == true:
+		timer_launched = true
+		$ScenaristicTimer.start()
 
+	
 func check_preview(building, pos):
 	var constructible = false
 	var occupied = false
@@ -199,24 +253,38 @@ func check_preview(building, pos):
 		$Map/Buildings.can_place = false
 
 ## Called from the Map signal when the map is clicked
+
+
 func map_clicked(case_index, case_center_coords, _occupied):
 	# If Choosing the place
-	if state == State.CHOOSING_PLACE:
-		if can_place(building_to_place, case_index):
-			print("troisième zone")
-			# Save the location
-			building_case = case_index
-			build_case_center = case_center_coords
-			$Map/Buildings/preview.position = case_center_coords
-	#		print(case_center_coords)
-	#		print($Map/Buildings/preview.position)
-			$Map/Buildings.validation = true
-			# Ask for validation
-			ask_validation()
-		else:
-			$Map/Buildings.can_place = false
-			print("meh.")
-
+	if destruction_launched == false:
+		if state == State.CHOOSING_PLACE:
+			if can_place(building_to_place, case_index):
+				# Save the location
+				building_case = case_index
+				build_case_center = case_center_coords
+				$Map/Buildings/preview.position = case_center_coords
+				$Map/Buildings.validation = true
+				# Ask for validation
+				ask_validation()
+			else:
+				$Map/Buildings.can_place = false
+	
+	# If the player destroy buildings when he click
+	if destruction_launched == true and build_opened == false and destruction_now == false:
+		if buildings_map.get_cell(case_index.x, case_index.y) != TileMap.INVALID_CELL:
+			if buildings_map.get_cell(case_index.x, case_index.y) != 48 && buildings_map.get_cell(case_index.x, case_index.y) != 28 && buildings_map.get_cell(case_index.x, case_index.y) != 1:
+				case_index_saved = case_index
+				building_id = buildings_map.get_cell(case_index_saved.x, case_index_saved.y)
+				building = buildings_map.tile_set.tile_get_name(building_id)
+				if building in PlayerData.building_list:
+					print("id : ", building_id)
+#					if building_id != 1:
+					print("name of this building : "+ building)
+					if cancel_hovered == false:
+#						if building in PlayerData.building_list:
+						destruction_now = true
+						ask_validation()
 
 func can_place(building, pos):
 	var constructible = false
@@ -242,8 +310,6 @@ func can_place(building, pos):
 				
 	# Else the place is free
 
-
-
 func build(building: int, pos: Vector2):
 	# Get the building size
 	var size = BuildingsData.get_size(building)
@@ -252,19 +318,64 @@ func build(building: int, pos: Vector2):
 	for x in range(pos.x, pos.x - size.x, - 1):
 		for y in range(pos.y, pos.y + size.y, + 1):
 			buildings_map.set_cell(x, y, 1)
-			
+
 	# Set the building at the main position
 	buildings_map.set_cellv(pos, building)
-	
-	
+
 	# Remove from the player list
 	PlayerData.use_building(building_name_to_place)
-	
+
 	# Add it to the Dictionary
 	if not building_name_to_place in buildings_in_city:
 		buildings_in_city[building_name_to_place] = 1
 	else:
 		buildings_in_city[building_name_to_place] += 1
+
+func destruction():
+	if destruction_launched == true and destruction_now == true:
+		ui.confirmation_container.hide()
+		ui.show_build_button()
+		state = State.STANDARD
+		PlayerData.recover(building)
+		
+		if building_id != 1 and building in PlayerData.building_list:
+			restore_can_place(case_index_saved)
+			if building in BuildingsData.MEDIUM_BUILDING or building in BuildingsData.BIG_BUILDING:
+				case_index_saved.x -= 1
+				restore_can_place(case_index_saved)
+				case_index_saved.y += 1
+				restore_can_place(case_index_saved)
+				case_index_saved.x += 1
+				restore_can_place(case_index_saved)
+				if building in BuildingsData.BIG_BUILDING:
+					case_index_saved.y += 1
+					restore_can_place(case_index_saved)
+					case_index_saved.x -= 1
+					restore_can_place(case_index_saved)
+					case_index_saved.x -= 1
+					restore_can_place(case_index_saved)
+					case_index_saved.y -= 1
+					restore_can_place(case_index_saved)
+					case_index_saved.y -= 1
+					restore_can_place(case_index_saved)
+		destroy_button.show()
+		
+		update_ui()
+		
+		$Camera2D.block_camera(false)
+		
+		build_opened = false
+		destruction_now = false
+		destruction_launched = false
+		
+		save()
+
+func restore_can_place(coords: Vector2):
+	if coords in can_place_positions:
+		buildings_map.set_cell(coords.x, coords.y, 48)
+	else:
+		buildings_map.set_cell(coords.x, coords.y, -1)
+
 
 func update_ui():
 	# set the population and datapoints
@@ -275,26 +386,20 @@ func update_ui():
 	
 	# Update the bars from the player data
 	ui.update_bars()
-	
-	
+
 	if current_event != null:
 		ui.display_notification()
 
-
-
 func ask_validation():
-
+	print("VALIDATION")
 	state = State.ASK_VALIDATION
-	
+
 	# show the preview emplacements
-	
+
 	# Disable the camera
-	$Camera2D.block_camera(false)
-	
-	
+	$Camera2D.block_camera(true)
 	# Show the validation popup after a small delay
-	yield(get_tree().create_timer(0.3), "timeout") # Delay
-	ui.show_validation_popup()
+	ui.show_validation_buttons()
 
 func set_building_menu():
 	# Add random buildings
@@ -306,6 +411,7 @@ func set_building_menu():
 			build_menu.add_building(b, count)
 
 func give_event_result():
+#	get_incomes()
 	# Give the building to the player *(given no matter the result)*
 	var new_buildings = event_manager.OFFERED_BUILDINGS.get(current_event, {})
 	
@@ -328,7 +434,7 @@ func show_results(points_gained: int, buildings_gained: Array):
 		state = State.STANDARD
 		return
 
-	
+
 	# Set the logical state
 	state = State.SHOWING_RESULTS
 	
@@ -345,23 +451,18 @@ func show_results(points_gained: int, buildings_gained: Array):
 
 		$CanvasLayer/EventResult.add_building(building, count)
 
-
-
 #========> UI Calls <========#
 
 func _on_CityUI_open_notifications():
-	print(can_use)
 	if tuto_completed == true or can_use == "event_button":
+		if build_opened == false:
 	# only if State.STANDARD
-		if state == State.STANDARD:
-			state = State.SHOWING_NOTIFICATION
-		
-		# Show the notification with the summary
-			var summary = event_manager.SUMMARIES.get(current_event, "No summary found for " + current_event)
-			ui.show_notifications(summary)
-
-
-
+			if state == State.STANDARD:
+				state = State.SHOWING_NOTIFICATION
+			
+			# Show the notification with the summary
+				var summary = event_manager.SUMMARIES.get(current_event, "No summary found for " + current_event)
+				ui.show_notifications(summary)
 
 func _on_CityUI_open_settings():
 	if tuto_completed == true:
@@ -373,31 +474,42 @@ func _on_CityUI_open_settings():
 func _on_CityUI_logout():
 	get_tree().quit()
 
-
 func _on_CityUI_cancel_build():
-	if state == State.CHOOSING_PLACE:
+	if state == State.CHOOSING_PLACE or state == State.ASK_VALIDATION:
 		ui.show_build_button()
 		
 		state = State.STANDARD
 		$Map/Buildings/preview.hide()
 		buildings_map.show_constructible_tile(false)
+		
+		if timer_paused == true:
+			timer_paused = false
+			$ScenaristicTimer.paused = false
+		build_opened = false
+		destroy_button.show()
+		destruction_launched = false
+		cancel_hovered = false
+		$Camera2D.block_camera(false)
+		ui.confirmation_container.hide()
 
 func _on_CityUI_open_build():
-	if tuto_completed == true or can_use == "building_button" or can_use == "select_building" or can_use == "pose_building":
-		if can_use == "building_button":
-			listen_state_data()
+	if build_opened == false:
+		if tuto_completed == true or can_use == "building_button" or can_use == "select_building" or can_use == "pose_building":
+			if can_use == "building_button":
+				listen_state_data()
 
-		if state == State.STANDARD:
-			ui.hide()
-			build_menu.show()
-			if can_use == "select_building" or can_use == "pose_building":
-				$CanvasLayer/place_building_tuto.hide()
-		
-		# Set the buildings 
-		set_building_menu()
-		
-		# Disable the camera
-		$Camera2D.block_camera(true)
+			if state == State.STANDARD:
+				build_menu.show()
+				if can_use == "select_building" or can_use == "pose_building":
+					$CanvasLayer/place_building_tuto.hide()
+			
+			# Set the buildings 
+			set_building_menu()
+			
+			# Disable the camera
+			$Camera2D.block_camera(true)
+			
+			build_opened = true
 
 func _on_BuildMenu_selected_building(building_name):
 	if tuto_completed == true or can_use == "building_button" or can_use == "select_building" or can_use == "pose_building":
@@ -429,14 +541,22 @@ func _on_BuildMenu_selected_building(building_name):
 			yield(get_tree().create_timer(0.3), "timeout")
 			# Change state to choosing place
 			state = State.CHOOSING_PLACE
+			build_menu.modulate_all(null)
 
 func _on_BuildMenu_exited_build_menu():
 	if tuto_completed == true:
 		ui.show()
 		build_menu.hide()
-	
 	# Disable the camera
 		$Camera2D.block_camera(false)
+		
+		build_opened = false
+		
+		if timer_launched == true:
+			timer_paused = false
+			$ScenaristicTimer.paused = false
+		build_menu.modulate_all(null)
+
 func _on_CityUI_open_guide():
 	if tuto_completed == true or can_use == "guide":
 		if can_use == "guide":
@@ -453,38 +573,55 @@ func _on_CityUI_open_guide():
 			$Camera2D.block_camera(true)
 
 func _on_CityUI_unvalidate_position():
+	if destruction_launched == false:
 	# Hide the preview cases
-	buildings_map.validation = false
-	yield(get_tree().create_timer(0.3), "timeout")
-	state = State.CHOOSING_PLACE
-
+		buildings_map.validation = false
+		ui.confirmation_container.hide()
+		yield(get_tree().create_timer(0.3), "timeout")
+		state = State.CHOOSING_PLACE
+		if timer_paused == true:
+			timer_paused = false
+			$ScenaristicTimer.paused = false
+	else:
+		ui.confirmation_container.hide()
+		state = State.CHOOSING_PLACE
+		buildings_map.validation = false
+		destruction_now = false
+	$Camera2D.block_camera(false)
 
 func _on_CityUI_validate_position():
-	if can_use == "pose_building":
-		listen_state_data()
-	# Reset the UI
-	ui.show_build_button()
-	
-	# Place the building
-	build(building_to_place, building_case)
-	
-	# Try to trigger an event
-	trigger_scenaristic_event()
-	
-	# Update the UI with player_data
-	update_ui()
-	$Map/Buildings/preview.hide()
-	state = State.STANDARD
-	buildings_map.show_constructible_tile(false)
-	# Save the game 
-	save()
-
+	if destruction_launched == false:
+		ui.confirmation_container.hide()
+		if can_use == "pose_building":
+			listen_state_data()
+		# Reset the UI
+		ui.show_build_button()
+		
+		# Place the building
+		build(building_to_place, building_case)
+		
+		# Try to trigger an event
+		trigger_scenaristic_event()
+		
+		# Update the UI with player_data
+		update_ui()
+		$Map/Buildings/preview.hide()
+		state = State.STANDARD
+		buildings_map.show_constructible_tile(false)
+		
+		if timer_paused == true:
+			timer_paused = false
+			$ScenaristicTimer.paused = false
+		
+		build_opened = false
+		$Camera2D.block_camera(false)
+		# Save the game 
+		save()
 
 func _on_CityUI_start_dialog():
 	if tuto_completed == true or can_use == "event_button":
 		if can_use == "event_button":
 			listen_state_data()
-
 		start_dialog()
 
 
@@ -503,20 +640,20 @@ func _on_DialogScene_dialog_finished():
 	
 	# Give the result of the event
 	give_event_result()
-	
-	
+
 	# If the Dialog must not be done again, save it
 	if not dialog_scene.must_redo_dialog():
 		# Add the event to the Player count
 		PlayerData.add_event_occurence(current_event)
-	
-	
+		print("CURRENT EVENT: ", current_event)
+
+
 	# Clear the current event
 	current_event = null
-	
+
 	# There is no notification waiting
 	ui.close_notifications(false)
-	
+
 	# Hide the dialog scene and stop it from managin inputs
 	dialog_scene.hide()
 	dialog_scene.set_process_input(false)
@@ -524,10 +661,14 @@ func _on_DialogScene_dialog_finished():
 	# Update the UI with the new scores
 	update_ui()
 	
-	
+	if "AmenagementCyclable" in PlayerData.event_occured:
+		$Map/Roads_cycles_and_bus.show()
+		print("CYCLE")
+	else:
+		$Map/Roads_cycles_and_bus.hide()
+		print("NO_CYCLE")
 	# Save the game state
 	save()
-
 
 func _on_GuidOpenData_close_guide():
 	if tuto_completed == true or can_use == "close_guide":
@@ -554,6 +695,9 @@ func _on_EventResult_close_results():
 
 		# Enable the camera
 		$Camera2D.block_camera(false)
+		
+		timer_launched = false
+		notif_scenar = false
 
 func _on_No_Datapoints_close_no_datapoints():
 	state = State.STANDARD
@@ -563,8 +707,6 @@ func _on_No_Datapoints_close_no_datapoints():
 
 	# Enable the camera
 	$Camera2D.block_camera(false)
-
-
 
 func _on_CityUI_closed_tutorial():
 	# Enable the camera
@@ -576,11 +718,9 @@ func _on_CityUI_closed_tutorial():
 		city_shadow.set_deferred("visible", true)
 		ui_shadow.set_deferred("visible", true)
 		dialog_tuto.show()
-
 		dialog_tuto_line.set_text("Bienvenue à ")
 		dialog_tuto_line.add_text(PlayerData.city)
-		dialog_tuto_line.add_text(", nous allons vous apprendre tout ce que vous devez savoir !")
-
+		dialog_tuto_line.add_text(", nous allons vous apprendre tout ce que vous devez savoir pour évoluer dans ce jeu !")
 
 func save():
 	if tuto_completed == true:
@@ -596,6 +736,7 @@ func save():
 			"data_points": PlayerData.data_points,
 			"tuto_completed": tuto_completed,
 			"city_name": PlayerData.city,
+			"player_incomes": PlayerData.incomes,
 			# Currently waiting event
 			"current_event": current_event,
 			
@@ -613,7 +754,6 @@ func save():
 		
 		print("Saved !")
 
-
 func load_save():
 	# Open the save
 	var file = File.new()
@@ -628,17 +768,16 @@ func load_save():
 
 	# Key list
 	var keys = ["building_list","building_limit", "bureau","gender","event_occured",
-	"city_data","data_points","city_name", "current_event","buildings","tuto_completed"]
+	"city_data","data_points","city_name", "current_event","buildings","tuto_completed", "player_incomes"]
 	
 	# Check each key	
 	for k in keys:
 		if not k in dic.keys():
 			return false
-	
 	# Try to load the buildings
 	if not buildings_map.load_string(dic["buildings"]):
 		return false
-	
+
 	PlayerData.building_limit = dic["building_limit"]
 	PlayerData.bureau = dic["bureau"]
 	PlayerData.gender = dic["gender"]
@@ -648,13 +787,10 @@ func load_save():
 	PlayerData.city_data = dic["city_data"]
 	PlayerData.data_points = dic["data_points"]
 	PlayerData.tuto_advancement = dic["tuto_completed"]
-	
+	PlayerData.incomes = dic["player_incomes"]
 	current_event = dic["current_event"]
-	
-	
 	return true
 # warning-ignore:unreachable_code
-
 
 func open_no_datapoints():
 	if state == State.STANDARD:
@@ -693,9 +829,6 @@ func update_preview():
 		$Map/Buildings/preview/preview_tile_3/building.show()
 		$Map/Buildings/preview/preview_tile_3/building.texture = BuildingsData.TEXTURES[building_name_to_place]
 
-
-
-
 func listen_state_data():
 
 	current_tuto = next_tuto
@@ -719,9 +852,9 @@ func listen_state_data():
 			
 		State_tuto.INFO_BUILDING:
 			print("INFO_BUTTON")
-			dialog_tuto.rect_position = Vector2(521, 281)
+			dialog_tuto.rect_position = Vector2(182, 265)
 			build_shadow.set_deferred("visible", true)
-			dialog_tuto_line.set_text("Dans ce menu, vous pouvez sélectionner un bâtiment afin de pouvoir le construire.")
+			dialog_tuto_line.set_text("Dans ce menu, vous pouvez voir les bâtiments qu'il vous est possible de construire dans votre ville.")
 			building_button.material.set_light_mode(0)
 			building_card_build.material.set_light_mode(1)
 			building_card_build_sprite.material.set_light_mode(1)
@@ -743,7 +876,7 @@ func listen_state_data():
 		State_tuto.INFO_BUILDING_3:
 			dialog_tuto_line.set_text("Chaque bâtiment")
 			dialog_tuto_line.push_color(Color.red)
-			dialog_tuto_line.add_text(" coûte des datapoints")
+			dialog_tuto_line.add_text(" coûte des Data Points")
 			dialog_tuto_line.push_color(Color.orange)
 			dialog_tuto_line.add_text(" et ne peut être construit")
 			dialog_tuto_line.push_color(Color.blue)
@@ -770,7 +903,10 @@ func listen_state_data():
 		State_tuto.INFOS_UI:
 			$CanvasLayer/place_building_tuto.hide()
 			dialog_tuto.set_deferred("visible", true)
+			$CanvasLayer/tuto_aff/tuto_points.rect_position = Vector2(321, 563)
+			$CanvasLayer/tuto_aff/tuto_points.rect_size = Vector2(220,46)
 			$CanvasLayer/tuto_aff/tuto_points.show()
+			
 			build_shadow.set_deferred("visible", false)
 			building_card_build.material.set_light_mode(0)
 			building_card_build_sprite.material.set_light_mode(0)
@@ -778,31 +914,42 @@ func listen_state_data():
 			dialog_tuto.rect_position = Vector2(372, 400)
 			dialog_tuto_line.set_text("Ici, vous pouvez voir que le prix du bâtiment construit, à été déduit de vos")
 			dialog_tuto_line.push_color(Color.red)
-			dialog_tuto_line.add_text(" datapoints.")
+			dialog_tuto_line.add_text(" Data Points.")
 			build_menu.scrolling(true)
 			yield(get_tree().create_timer(0.5), "timeout")
 			can_click = true
 
+		State_tuto.INCOMES:
+			$CanvasLayer/tuto_aff/tuto_points.rect_position = Vector2(459, 563)
+			$CanvasLayer/tuto_aff/tuto_points.rect_size = Vector2(82,46)
+			$CanvasLayer/dialog_tuto/text/DialogLine.rect_size = Vector2(416, 149)
+			$CanvasLayer/tuto_aff/tuto_points.show()
+			$CanvasLayer/dialog_tuto/text/DialogLine.rect_size = Vector2(350, 209)
+			$CanvasLayer/dialog_tuto/text.rect_size = Vector2(473, 208)
+			dialog_tuto_line.set_text("Ici, vous pouvez voir vos")
+			dialog_tuto_line.push_color(Color.red)
+			dialog_tuto_line.add_text(" revenus,")
+			dialog_tuto_line.push_color(Color.orange)
+			dialog_tuto_line.add_text(" il s'agit du nombre de Data Points que vous gagnez grâce à chaque seconde que vous passez dans le jeu.")
+			yield(get_tree().create_timer(0.5), "timeout")
+			can_click = true
 
 		State_tuto.INFOS_UI_2:
-			print("8")
+			$CanvasLayer/dialog_tuto/text.rect_size = Vector2(342, 192)
+			$CanvasLayer/dialog_tuto/text/DialogLine.rect_size = Vector2(330, 149)
 			$CanvasLayer/tuto_aff/tuto_points.hide()
-			print("9")
 			$CanvasLayer/tuto_aff/tuto_pop.show()
-			print("10")
-			dialog_tuto.rect_position = Vector2(225, 400)
-			print("11")
+			dialog_tuto.rect_position = Vector2(370, 420)
 			dialog_tuto_line.set_text("Ici, vous pouvez voir que le bâtiment que vous venez de construire a augmenté votre")
 			dialog_tuto_line.push_color(Color.green)
 			dialog_tuto_line.add_text(" population max.")
-			print("...")
 			yield(get_tree().create_timer(0.5), "timeout")
 			can_click = true
 
 		State_tuto.INFOS_UI_LAST:
 			$CanvasLayer/tuto_aff/tuto_pop.hide()
 			$CanvasLayer/tuto_aff/tuto_satisfaction.show()
-			dialog_tuto.rect_position = Vector2(168, 400)
+			dialog_tuto.rect_position = Vector2(149, 117)
 			dialog_tuto_line.set_text("Ici, vous pouvez voir la")
 			dialog_tuto_line.push_color(Color.blue)
 			dialog_tuto_line.add_text(" satisfaction")
@@ -815,18 +962,18 @@ func listen_state_data():
 			print("INFOS_EVENT:")
 			$CanvasLayer/tuto_aff/tuto_satisfaction.hide()
 			dialog_tuto.rect_position = Vector2(492, 280)
-			dialog_tuto_line.set_text("En posant des bâtiments, des")
+			dialog_tuto_line.set_text("En construisant vos bâtiments, des")
 			dialog_tuto_line.push_color(Color.darkmagenta)
 			dialog_tuto_line.add_text(" évènements")
 			dialog_tuto_line.push_color(Color.orange)
-			dialog_tuto_line.add_text(" liés à ce bâtiment peuvent se déclencher.")
+			dialog_tuto_line.add_text(" peuvent se déclencher.")
 			yield(get_tree().create_timer(0.5), "timeout")
 			can_click = true
 
 		State_tuto.EVENT_BUTTON:
 		#ui.display_notification()
 			print("EVENT_BUTTON")
-			dialog_tuto.rect_position = Vector2(492, 280)
+			dialog_tuto.rect_position = Vector2(492, 208)
 			dialog_tuto_line.set_text("Une")
 			dialog_tuto_line.push_color(Color.darkmagenta)
 			dialog_tuto_line.add_text(" notification")
@@ -843,7 +990,7 @@ func listen_state_data():
 		State_tuto.EVENT_FINISH:
 			dialog_tuto.show()
 			dialog_tuto.rect_position = Vector2(165, 275)
-			dialog_tuto_line.set_text("À la fin de chaque évènement, vous verrez vos gains ou pertes.")
+			dialog_tuto_line.set_text("À la fin de chaque évènement, vous verrez vos gains ou vos pertes.")
 			yield(get_tree().create_timer(0.5), "timeout")
 			can_click = true
 		
@@ -851,7 +998,7 @@ func listen_state_data():
 			$CanvasLayer/tuto_aff/tuto_infos_result.show()
 			dialog_tuto_line.set_text("Vous pourrez obtenir")
 			dialog_tuto_line.push_color(Color.red)
-			dialog_tuto_line.add_text(" des points de satisfaction ou des datapoints.")
+			dialog_tuto_line.add_text(" des points de satisfaction ou des Data Points.")
 			yield(get_tree().create_timer(0.5), "timeout")
 			can_click = true
 		
@@ -889,7 +1036,7 @@ func listen_state_data():
 		State_tuto.LAST_TUTO:
 			dialog_tuto.show()
 			dialog_tuto.rect_position = Vector2(492, 280)
-			dialog_tuto_line.set_text("Félicitations, je n'ai plus rien à vous apprendre, sauf l'Open Data !")
+			dialog_tuto_line.set_text("Félicitations, je n'ai plus rien à vous apprendre, A part peut-être sur l'Open Data !")
 			yield(get_tree().create_timer(0.5), "timeout")
 			can_click = true
 		
@@ -915,6 +1062,8 @@ func set_next_tuto():
 		State_tuto.BUILDING_POSE:
 			next_tuto = State_tuto.INFOS_UI
 		State_tuto.INFOS_UI:
+			next_tuto = State_tuto.INCOMES
+		State_tuto.INCOMES:
 			next_tuto = State_tuto.INFOS_UI_2
 		State_tuto.INFOS_UI_2:
 			next_tuto = State_tuto.INFOS_UI_LAST
@@ -946,3 +1095,32 @@ func _input(event):
 	if can_click == true:
 		if event is InputEventScreenTouch or event is InputEventMouseButton:
 			listen_state_data()
+
+
+func _on_ScenaristicTimer_timeout():
+	if notif_scenar == false && timer_launched == true:
+		notif_scenar = true
+		trigger_scenaristic_event()
+
+
+func _on_CityUI_cancel_hover():
+	cancel_hovered = true
+
+
+func _on_CityUI_destroy_button_pressed():
+	if tuto_completed == true and destruction_launched == false and build_opened == false:
+		#Change State to choosing place
+		state = State.CHOOSING_PLACE
+		destruction_launched = true
+		build_menu.hide()
+		destroy_button.hide()
+		ui.show_cancel_button()
+
+
+func _on_CityUI_stop_cancel_hover():
+	cancel_hovered = false
+
+
+func _on_CityUI_validate_destruction():
+	destruction()
+	$Camera2D.block_camera(false)

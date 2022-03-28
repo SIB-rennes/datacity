@@ -215,10 +215,8 @@ font_data = ExtResource( 21 )
 [node name="formulaire" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 0.470276
-margin_top = 1.4108
-margin_right = 0.470215
-margin_bottom = 1.41077
+margin_right = -6.10352e-05
+margin_bottom = -6.10352e-05
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -263,7 +261,7 @@ margin_right = 486.0
 margin_bottom = 141.589
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = ExtResource( 10 )
-text = "QUEL EST LE NOM DE CE MAIRE ?"
+text = "QUEL EST LE NOM DU MAIRE ?"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -298,7 +296,7 @@ margin_right = 553.53
 margin_bottom = 182.589
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = ExtResource( 10 )
-text = "QUEL EST LE NOM DE CETTE VILLE ?"
+text = "QUEL EST LE NOM DE LA VILLE ?"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -443,7 +441,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="Panel_part2/bureau3"]
 position = Vector2( 185.104, 67.9763 )
-scale = Vector2( 0.0529472, 0.0520555 )
+scale = Vector2( 0.114, 0.114 )
 texture = ExtResource( 2 )
 
 [node name="return_panel_part2" type="Button" parent="Panel_part2"]
@@ -697,8 +695,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="text_changed" from="Panel_part1/label/nom" to="." method="_on_nom_text_changed"]
-[connection signal="text_changed" from="Panel_part1/label3/nom_ville" to="." method="_on_nom_ville_text_changed"]
 [connection signal="pressed" from="Panel_part1/def_femme" to="." method="_on_def_femme_pressed"]
 [connection signal="pressed" from="Panel_part1/def_homme" to="." method="_on_def_homme_pressed"]
 [connection signal="pressed" from="Panel_part1/next" to="." method="_on_next_pressed"]

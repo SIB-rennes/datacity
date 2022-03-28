@@ -21,5 +21,5 @@ func _on_RichTextLabel_meta_clicked(meta):
 
 func _on_Button_pressed():
 	hide()
-
+	get_tree().get_current_scene().get_node("buttons").show()
 

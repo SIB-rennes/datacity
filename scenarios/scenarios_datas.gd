@@ -40,16 +40,16 @@ const INSTANCES_PATH = {
 
 	"res://scenarios/pedagogical/infos_conference.json":
 		"res://scenarios/dialogs_custom_variables.gd",
-		
+
 	"res://scenarios/pedagogical/citoyen_enerve.json":
 		"res://scenarios/dialogs_custom_variables.gd",
-		
+
 	"res://scenarios/pedagogical/retour_conferencier_1.json":
 		"res://scenarios/dialogs_custom_variables.gd",
-		
+
 	"res://scenarios/pedagogical/retour_conferencier_3.json":
 		"res://scenarios/dialogs_custom_variables.gd",
-		
+
 	"res://scenarios/pedagogical/retour_conferencier_2.json":
 		"res://scenarios/dialogs_custom_variables.gd",
 
@@ -58,24 +58,43 @@ const INSTANCES_PATH = {
 
 	"res://scenarios/pedagogical/droits_donnees.json":
 		"res://scenarios/dialogs_custom_variables.gd",
-		
+
 	"res://scenarios/pedagogical/last_dialog.json":
 		"res://scenarios/dialogs_custom_variables.gd",
-		
+
 	"res://scenarios/pedagogical/mairie_built.json":
 		"res://scenarios/dialogs_custom_variables.gd",
 
-	"res://scenarios/pedagogical/deliberations.json":
+	"res://scenarios/beginning/deliberations.json":
 		"res://scenarios/dialogs_custom_variables.gd",
-		
+
 	"res://scenarios/pedagogical/premieres_maisons.json":
 		"res://scenarios/dialogs_custom_variables.gd",
-		
+
 	"res://scenarios/pedagogical/CentreAssociatif.json":
 		"res://scenarios/dialogs_custom_variables.gd",
+
+	"res://scenarios/pedagogical/amenagements_cyclables.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+
+	"res://scenarios/pedagogical/dechets.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+	
+	"res://scenarios/pedagogical/pompiers.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+	
+	"res://scenarios/pedagogical/fichiers_associations.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+	
+	"res://scenarios/pedagogical/commerce_local.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+	
+	"res://scenarios/pedagogical/patrimoine.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+
+	"res://scenarios/pedagogical/qualite_air.json":
+		"res://scenarios/dialogs_custom_variables.gd",
 }
-
-
 
 #=====> Functions
 static func get_scenario_instance(scenario):

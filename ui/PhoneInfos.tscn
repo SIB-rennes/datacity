@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ui/PhoneInfos.gd" type="Script" id=1]
+[ext_resource path="res://themes/main_theme.tres" type="Theme" id=5]
+
+[node name="PhoneInfos" type="MarginContainer"]
+margin_right = 908.0
+margin_bottom = 283.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="Panel" parent="."]
+margin_right = 908.0
+margin_bottom = 283.0
+theme = ExtResource( 5 )
+
+[node name="MarginContainer" type="MarginContainer" parent="background"]
+margin_left = 12.0
+margin_top = 8.0
+margin_right = 897.0
+margin_bottom = 242.0
+theme = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="background/MarginContainer"]
+margin_right = 885.0
+margin_bottom = 234.0
+theme = ExtResource( 5 )
+custom_colors/default_color = Color( 0.992157, 0.501961, 0.0823529, 1 )
+bbcode_text = "                                   Attention!
+          			 Si vous jouez sur mobile
+	Nous vous conseillons de jouer en format 
+	portrait jusqu'à ce que vous ayez fini de 
+	remplir le formulaire."
+text = "                                   Attention!
+          			 Si vous jouez sur mobile
+	Nous vous conseillons de jouer en format 
+	portrait jusqu'à ce que vous ayez fini de 
+	remplir le formulaire."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextMargin" type="MarginContainer" parent="background"]
+margin_left = 336.847
+margin_top = 247.244
+margin_right = 557.847
+margin_bottom = 315.848
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="next" type="Button" parent="background/NextMargin"]
+margin_right = 221.0
+margin_bottom = 68.604
+theme = ExtResource( 5 )
+text = "OK"
+
+[connection signal="pressed" from="background/NextMargin/next" to="." method="_on_next_pressed"]

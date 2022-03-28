@@ -1,18 +1,20 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://assets/sprites/backgrounds/road_intersection.jpg" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/backgrounds/bg_menu.png" type="Texture" id=1]
 [ext_resource path="res://themes/main_theme.tres" type="Theme" id=2]
-[ext_resource path="res://assets/fonts/kilogram_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://scenes/main_menu.gd" type="Script" id=4]
 [ext_resource path="res://ui/fading_screen.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/fonts/main_button.tres" type="DynamicFont" id=6]
 [ext_resource path="res://ui/cluf.tscn" type="PackedScene" id=7]
 [ext_resource path="res://ui/credits.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/fonts/main_font.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://assets/sounds/musics/ouverture.ogg" type="AudioStream" id=10]
+[ext_resource path="res://ui/PhoneInfos.tscn" type="PackedScene" id=11]
+[ext_resource path="res://ui/confirmation_new_game.tscn" type="PackedScene" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 resource_local_to_scene = true
-size = 18
+size = 36
 outline_color = Color( 0.784314, 0.188235, 0.188235, 1 )
 use_mipmaps = true
 use_filter = true
@@ -36,59 +38,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-size_flags_horizontal = 3
-custom_constants/separation = 120
-alignment = 1
+[node name="buttons" type="Control" parent="."]
+margin_left = 57.0
+margin_top = 387.0
+margin_right = 97.0
+margin_bottom = 427.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TitleContainer" type="MarginContainer" parent="VBoxContainer"]
-margin_right = 1024.0
-margin_bottom = 240.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 2.0
-
-[node name="Label" type="Label" parent="VBoxContainer/TitleContainer"]
-margin_top = 55.0
-margin_right = 1024.0
-margin_bottom = 184.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 3 )
-text = "Data City"
-align = 1
-valign = 1
-uppercase = true
-
-[node name="ButtonContainer" type="MarginContainer" parent="VBoxContainer"]
-margin_left = 404.0
-margin_top = 360.0
-margin_right = 618.78
-margin_bottom = 431.604
-size_flags_horizontal = 4
-size_flags_vertical = 2
-size_flags_stretch_ratio = 2.0
-
-[node name="Button" type="Button" parent="VBoxContainer/ButtonContainer"]
-margin_right = 214.78
-margin_bottom = 71.604
+[node name="Button" type="Button" parent="buttons"]
+margin_left = -12.0
+margin_top = -115.0
+margin_right = 202.78
+margin_bottom = -43.396
 theme = ExtResource( 2 )
 custom_fonts/font = ExtResource( 6 )
 text = "     Jouer     "
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="CreditButton" type="Button" parent="."]
+[node name="CreditButton" type="Button" parent="buttons"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -51.0
-margin_top = 175.0
-margin_right = 51.0
-margin_bottom = 221.0
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 132.78
+margin_bottom = 46.604
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 1 )
 text = "Crédits"
@@ -96,15 +75,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="New_game" type="Button" parent="."]
+[node name="New_game" type="Button" parent="buttons"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -152.39
-margin_top = -34.302
-margin_right = 152.39
-margin_bottom = 34.302
+margin_left = -38.0
+margin_top = -242.0
+margin_right = 266.78
+margin_bottom = -173.396
 theme = ExtResource( 2 )
 text = "Nouvelle Partie"
 __meta__ = {
@@ -132,11 +111,29 @@ __meta__ = {
 
 [node name="CLUF" parent="." instance=ExtResource( 7 )]
 visible = false
-margin_top = -100.0
-margin_bottom = -100.0
 
-[connection signal="pressed" from="VBoxContainer/ButtonContainer/Button" to="ColorRect" method="fade_in"]
-[connection signal="pressed" from="CreditButton" to="Credits" method="show"]
-[connection signal="pressed" from="New_game" to="ColorRect" method="_on_New_game_pressed"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+autoplay = true
+
+[node name="PhoneInfos" parent="." instance=ExtResource( 11 )]
+margin_left = 63.0
+margin_top = 209.0
+margin_right = 971.0
+margin_bottom = 492.0
+
+[node name="confirmation_new_game" parent="." instance=ExtResource( 12 )]
+visible = false
+margin_left = 50.0
+margin_top = 199.0
+margin_right = 958.0
+margin_bottom = 433.0
+
+[connection signal="pressed" from="buttons/Button" to="ColorRect" method="fade_in"]
+[connection signal="pressed" from="buttons/CreditButton" to="." method="_on_CreditButton_pressed"]
+[connection signal="pressed" from="buttons/New_game" to="." method="_on_New_game_pressed"]
 [connection signal="fade_finished" from="ColorRect" to="." method="on_fade_finished"]
 [connection signal="pressed" from="SkipIntro" to="." method="_on_SkipIntro_pressed"]
+[connection signal="next_button_pressed" from="PhoneInfos" to="." method="_on_PhoneInfos_next_button_pressed"]
+[connection signal="Im_sure" from="confirmation_new_game" to="ColorRect" method="_on_confirmation_new_game_Im_sure"]
+[connection signal="No_its_a_mistake" from="confirmation_new_game" to="." method="_on_confirmation_new_game_No_its_a_mistake"]

@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="320"
+   height="544"
+   viewBox="0 0 84.666665 143.93334"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="GA_NAVIRE_F2_23022022.svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1050">
+      <stop
+         style="stop-color:#e64849;stop-opacity:1"
+         offset="0"
+         id="stop1046" />
+      <stop
+         style="stop-color:#be2021;stop-opacity:1"
+         offset="1"
+         id="stop1048" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1034">
+      <stop
+         style="stop-color:#83705f;stop-opacity:1"
+         offset="0"
+         id="stop1030" />
+      <stop
+         style="stop-color:#473423;stop-opacity:1"
+         offset="1"
+         id="stop1032" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1034"
+       id="linearGradient1036"
+       x1="386.00504"
+       y1="55.946335"
+       x2="392.59369"
+       y2="55.946335"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.41796747,0,0,0.41796747,-114.44076,27.356744)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1050"
+       id="linearGradient1052"
+       x1="380.38312"
+       y1="194.90912"
+       x2="402.89606"
+       y2="194.16077"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.41796747,0,0,0.41796747,-114.44076,27.356744)" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.3404274"
+     inkscape:cx="100.79991"
+     inkscape:cy="282.9369"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer2"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     units="px" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Calque 2"
+     style="display:inline">
+    <path
+       id="rect942"
+       style="fill:#82572d;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="M 47.912075,29.141733 53.895843,40.521035 53.623479,38.912955 48.459742,28.81719 Z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect921"
+       style="fill:#82572d;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="M 19.920204,90.764407 35.903965,99.121399 27.952653,109.14168 6.2082463,98.756287 Z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="path1025"
+       style="fill:#5a2f05;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 9.2889591,95.132033 18.1363069,9.952847 -0.442352,0.5253 -17.9427751,-9.92521 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect1022"
+       style="fill:#5a2f05;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 12.20926,92.71379 18.136307,9.95285 -0.442352,0.52529 -17.942775,-9.925202 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect957"
+       style="fill:#73378f;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 5.130722,91.778605 14.870605,-8.6004 -0.08112,7.586202 -13.7119577,7.99188 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect903"
+       style="fill:#be9369;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 58.428801,107.47909 25.087636,21.60654 0.622788,3.66658 -54.45365,-9.7884 L 12.832433,109.78505 4.4338616,95.802231 28.352923,101.98172 39.621268,97.476784 Z"
+       sodipodi:nodetypes="ccccccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect986"
+       style="fill:#966b40;fill-opacity:1;stroke-width:0.115808;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 12.7422,103.51326 56.542311,31.8342 -0.137499,0.24401 -56.542314,-31.8342 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect984"
+       style="fill:#966b40;fill-opacity:1;stroke-width:0.115808;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="M 10.447966,98.776517 71.235871,132.94579 71.098373,133.1898 10.310464,99.020526 Z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect1000"
+       style="fill:#966b40;fill-opacity:1;stroke-width:0.115808;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 21.414218,102.00431 51.341463,29.07456 -0.137503,0.24401 -51.341461,-29.07456 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect988"
+       style="fill:#966b40;fill-opacity:1;stroke-width:0.115808;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 51.861282,116.11597 25.528864,14.6533 -0.137503,0.24401 -25.528864,-14.6533 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect990"
+       style="fill:#966b40;fill-opacity:1;stroke-width:0.115808;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 56.444964,115.21346 24.261549,13.72173 -0.137503,0.244 -24.261549,-13.72172 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect992"
+       style="fill:#966b40;fill-opacity:1;stroke-width:0.115808;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 59.279845,113.37243 20.605788,11.97432 -0.137499,0.24401 -20.692612,-12.00586 -0.230685,0.13465 z"
+       sodipodi:nodetypes="cccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect876"
+       style="fill:#af4140;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 18.054071,110.66102 18.539541,10.46653 c 2.578679,3.56436 1.570237,6.93992 0,10.28592 L 18.054071,120.94694 c -1.690615,-4.14587 -0.636297,-7.12722 0,-10.28592 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect879"
+       style="fill:#9b2d2c;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 36.593608,121.12755 48.072992,10.54766 -0.06845,10.0619 -3.704366,2.13071 -44.300171,-12.45435 z"
+       sodipodi:nodetypes="cccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect882"
+       style="fill:#cd5f5e;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="M 1.2539024e-5,89.113005 18.054071,110.66102 v 10.28592 L 0.00135003,103.62444 Z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect885"
+       style="fill:#f5953e;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 36.600421,120.01825 48.063738,10.43187 0.0025,1.22509 -48.072988,-10.54766 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect888"
+       style="fill:#ff9f48;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 18.049001,109.33945 18.55142,10.6788 -0.0068,1.1093 -18.539537,-10.46653 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect933"
+       style="fill:#be9369;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="M 1.9664241,88.917283 19.960759,79.830068 21.015525,82.610254 5.130722,91.778605 Z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect1007"
+       style="fill:#966b40;fill-opacity:1;stroke-width:0.456191;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 4.8652471,87.114882 0.091088,-0.185206 4.6466112,2.268251 -0.2224109,0.131639 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect1005"
+       style="fill:#966b40;fill-opacity:1;stroke-width:0.456191;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 1.9664306,88.917287 0.091088,-0.185205 4.5031919,2.222458 -0.2068601,0.117817 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect891"
+       style="fill:#ffa952;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 0.00135003,87.534187 18.04765097,21.805263 0.0051,1.32157 L 0,89.113005 Z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect994"
+       style="fill:#966b40;fill-opacity:1;stroke-width:0.115808;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 57.775752,108.98727 9.82741,6.27647 0.204231,0.48255 -10.319245,-6.4212 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect960"
+       style="fill:#9b5fb7;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="M 20.001327,83.178205 46.127074,95.551421 42.354257,102.77251 19.920204,90.764402 Z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect981"
+       style="fill:#494949;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 52.250167,114.00451 10.469784,-6.26686 1.576097,4.05281 -11.633092,7.01739 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect906"
+       style="fill:url(#linearGradient1052);fill-opacity:1;stroke:none;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 28.352923,101.98172 23.372528,13.65082 c 0.8259,1.55243 1.736881,3.06009 2.231236,4.78702 L 27.425266,105.08488 8.8070259,97.249724 8.1072146,96.599696 Z"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect969"
+       style="fill:#9b5fb7;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 16.228511,88.796867 16.855971,9.95942 v 4.077073 L 16.229376,92.916279 Z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect897"
+       style="fill:#ffdb84;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 19.295631,108.77022 18.149903,10.47288 -0.845113,0.77515 -18.55142,-10.6788 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect900"
+       style="fill:#ffdb84;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 37.445534,119.2431 45.18551,9.83368 -4.16309,-4.23942 2.04137,-0.86365 4.154835,6.47641 -48.063738,-10.43187 z"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect909"
+       style="fill:#be2021;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 51.725451,115.63254 0.555972,-0.46123 2.524352,4.65428 -0.849088,0.59397 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect963"
+       style="fill:#d79bf3;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 19.920192,86.971306 16.653132,9.533462 -3.488842,2.251519 -16.855971,-9.959425 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect912"
+       style="fill:#f5d7f5;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 27.135886,101.29207 12.906003,-7.818921 23.083148,15.465691 c -3.70292,2.32817 -7.213006,4.84919 -11.399586,6.6937 -8.479728,-4.09237 -16.440052,-9.44615 -24.589565,-14.34047 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect915"
+       style="fill:#d27da7;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 51.725451,115.63254 11.399586,-6.6937 -0.23045,0.94099 -11.170749,6.48015 c -0.258781,-0.23528 -0.396806,-0.47391 0.0017,-0.72744 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect918"
+       style="fill:#faa5cf;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 27.135886,101.29207 24.589565,14.34047 -0.0017,0.72744 -24.557194,-14.15542 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect972"
+       style="fill:#faa5cf;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 36.538448,100.62078 c 4.000125,2.16769 8.14874,2.40497 11.998714,6.52465 v 2.73703 l -11.998714,-6.52464 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect975"
+       style="fill:#d27da7;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 48.537162,107.14543 c 1.194538,-2.57603 3.845547,-2.76874 6.109944,-3.59409 v 2.73704 l -6.109944,3.59408 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect1027"
+       style="fill:#473423;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 38.031374,112.86832 c 1.797991,-1.81245 4.313399,-6.05093 4.506425,-6.19289 0.546572,-0.40196 0.602095,-0.0583 0.663523,0.27647 0.04325,0.23567 -2.749427,4.37931 -4.561718,6.19289 -1.519474,1.52055 -5.161058,3.81019 -5.161058,3.81019 l -0.536469,-0.30975 c 0,0 3.585086,-2.26061 5.089297,-3.77691 z"
+       sodipodi:nodetypes="ssssccs"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect1009"
+       style="fill:#966b40;fill-opacity:1;stroke-width:0.456191;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 7.5601115,85.534225 0.091088,-0.185206 4.6414275,2.298487 -0.206857,0.117817 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect1013"
+       style="fill:#966b40;fill-opacity:1;stroke-width:0.456191;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 10.699025,83.5313 0.09109,-0.185206 4.843803,2.369776 -0.221213,0.128391 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect1015"
+       style="fill:#966b40;fill-opacity:1;stroke-width:0.456191;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 13.449345,81.770888 0.09109,-0.185206 4.984446,2.461703 -0.204102,0.118298 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect936"
+       style="fill:#d68145;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 1.299511,88.330331 18.74238,-9.37119 -0.08113,0.870927 -17.9943349,9.087215 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect939"
+       style="fill:#ffdb84;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 0.00135003,87.534187 18.74238897,-9.629812 1.298152,1.054766 -18.74238,9.37119 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect894"
+       style="fill:#ffdb84;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="M 1.3984773,87.010595 19.295631,108.77022 18.049001,109.33945 0.00135003,87.534187 Z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <g
+       id="g1087"
+       transform="matrix(0.49410779,0,0,0.41796747,-144.0125,27.356744)"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008">
+      <path
+         id="rect927"
+         style="fill:#ffffff;fill-opacity:1;stroke-width:1.02469;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+         d="m 314.28029,30.282721 24.25007,-59.131938 48.83352,-30.81543 -1.21714,40.881098 2.23798,189.784079 -86.91631,-48.51082 z"
+         sodipodi:nodetypes="ccccccc" />
+      <path
+         id="rect945"
+         style="fill:#111111;fill-opacity:1;stroke-width:1.22699;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+         d="m 354.22784,23.671431 13.96483,99.536759 -11.52697,-11.71277 -13.2458,3.50375 -8.80944,-13.052 -14.04076,3.09106 z"
+         sodipodi:nodetypes="ccccccc" />
+      <path
+         id="rect948"
+         style="fill:#111111;fill-opacity:1;stroke-width:1.22699;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+         d="m 355.6034,23.646181 5.49476,-3.488666 14.60839,6.852437 -15.05874,1.507051 z"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         id="path951"
+         style="fill:#111111;fill-opacity:1;stroke-width:1.22699;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+         d="m 352.77766,23.104237 -5.18593,3.933109 -15.12719,-5.615087 14.88148,-2.752912 z"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         id="path953"
+         style="fill:#111111;fill-opacity:1;stroke-width:1.22699;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+         d="m 354.41336,21.868712 -3.68373,-5.36593 6.32339,-14.8450553 2.04684,14.9949163 z"
+         sodipodi:nodetypes="ccccc" />
+    </g>
+    <path
+       id="rect924"
+       style="fill:url(#linearGradient1036);fill-opacity:1;stroke-width:0.426302;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="M 46.896786,2.8042578 48.464803,0 49.650627,2.8042578 V 101.48098 h -2.753841 z"
+       sodipodi:nodetypes="cccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="rect978"
+       style="fill:#ffe1ff;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       d="m 42.371924,97.16493 12.275182,6.38641 -6.109944,3.59409 -11.998714,-6.52465 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+    <path
+       id="path930"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.428287;stroke-linecap:round;paint-order:stroke fill markers;stop-color:#000000"
+       inkscape:transform-center-x="-4.7792819"
+       inkscape:transform-center-y="-0.34423066"
+       d="M 82.631044,129.07678 49.635426,99.920682 53.623479,38.912955 Z"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="C:\Users\killi\Documents\Boulot\Data city\final\png\animation\GA_NAVIRE_F2_28022022.png"
+       inkscape:export-xdpi="96.000008"
+       inkscape:export-ydpi="96.000008" />
+  </g>
+</svg>

@@ -11,8 +11,16 @@ var left_var = 0
 
 func _process(delta):
 	if building_set == true and result_aff == false:
-		if limit_var == left_var:
-			get_node(".").modulate = Color(606060)
+		if limit_var == 0 and left_var == 0:
+			get_node(".").modulate = Color("989898")
+			get_node("Building/BuildingContainer/BuildingSprite").modulate = Color("191919")
+#			6b6b6b
+#			454343
+#3a3838
+		else:
+			if limit_var == left_var:
+				get_node(".").modulate = Color("ef8f8f")
+				get_node("Building/BuildingContainer/BuildingSprite").modulate = Color("ef8f8f")
 ## Set the building display
 ## building_name is the displayed name of the building
 ## If the number left is -1, consider infinite
@@ -34,7 +42,7 @@ func set_building(building : String, left: int = PlayerData.INF_BUILDING, count 
 		if left == PlayerData.INF_BUILDING:
 			$Building/Left.text = ""
 		else:
-			$Building/Left.text = "Limite : " + String(left - 1)+ "/" + String(PlayerData.building_limit[building] - 1)
+			$Building/Left.text = "Limite: " + String(left - 1)+ "/" + String(PlayerData.building_limit[building] - 1)
 			limit_var = PlayerData.building_limit[building] - 1
 			left_var = left - 1
 	if result_aff == true:
@@ -53,15 +61,17 @@ func set_building_bonus(building : String):
 	
 	# If there is a bonus
 	if not bonus[0].empty():
-		$Building/Bonus.text = bonus[0] + " +" + String(bonus[1])
+		if building in BuildingsData.INCOMES:
+			$Building/Bonus.text = str(bonus[0] + ": + " + String(bonus[1]), "/s")
+		else:
+			$Building/Bonus.text = bonus[0] + ": + " + String(bonus[1])
 	else:
 		$Building/Bonus.text = ""
-
+	
+	
 func set_building_prix(building : String):
-	var prix = BuildingsData.get_buildings_price(building)
 	$Building/Prix.text = str("Prix: ", + BuildingsData.PRIX[building], " Datapoints")
 
 func _on_Button_pressed():
 	if not limit_var == left_var:
 		emit_signal("selected_building")
-

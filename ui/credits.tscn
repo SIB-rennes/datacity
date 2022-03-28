@@ -171,88 +171,114 @@ custom_fonts/italics_font = ExtResource( 4 )
 custom_fonts/bold_font = ExtResource( 4 )
 custom_fonts/normal_font = ExtResource( 4 )
 bbcode_enabled = true
-bbcode_text = "[center]
+bbcode_text = "	[center]
 Data City est un Serious Game sur l'Open Data, développé par le SIB : [color=#539CC7][url=https://www.sib.fr]www.sib.fr[/url][/color]
 
-
-[b][u]Développement[/u][/b]
+[b][u]Développement :[/u][/b]
 
 Mathis ROBERT
 
 
-[b][u]Graphismes[/u][/b]
+[b][u]Graphismes :[/u][/b]
 
 Sophie RHORBAL
 
 
-[b][u]Encadrants[/u][/b]
+[b][u]Encadrants :[/u][/b]
 
 Anne-Gaëlle LE GUEN
 Claudie DAVID
 
+[b][u]Chef de projet (stagiaire) :[/u][/b]
+
+Valentin BACHELOT-LALLIER
 
 
+[b][u]Game Design (stagiaires) :[/u][/b]
+
+Théo FACÉLINA
+Sacha HUREL
+Ozvan TOUFFET
 
 
-[b][u]Ressources visuelles[/u][/b]
+[b][u]Game Art (stagiaires) :[/u][/b]
 
-Fonds créés par [color=#539CC7][url=https://www.freepik.com/upklyak]upklyak / Freepik[/url][/color]
+Quentin DELEPORTE
+Olivier TEBAR
+Camille MEUNIER
+Tanguy HERBERT
+Carla GOMEZ
+Killian DORVAL
+Thomas SARRAZIN
+Chloé MICHEL
 
-Bâtiments créés par [color=#539CC7][url=http://www.freepik.com/macrovector]macrovector / Freepik[/url][/color]
+[b][u]Sound Design :[/u][/b]
 
-Icônes créées par [color=#539CC7][url=http://www.freepik.com]Freepik[/url][/color] à partir de [color=#539CC7][url=https://www.flaticon.com/]Flaticon[/url][/color]
+Jeremy LAIGLE
 
-
-[b][u]Dialogues[/u][/b]
+[b][u]Dialogues :[/u][/b]
 
 Dialogues créés avec [color=#539CC7][url=https://github.com/LittleMouseGames/whiskers]Whiskers[/url][/color] 
 et parcourus avec l'aide de [color=#539CC7][url=https://github.com/LittleMouseGames/whiskers-parser]Whiskers Parser[/url][/color]
 
 
-[b][u]Sons[/u][/b]
+[b][u]Sons :[/u][/b]
 
 Notifications obtenues sur [color=#539CC7][url=https://notificationsounds.com/notification-sounds/definite-555]NotificationSounds.com[/url][/color] 
 
 [/center]"
-text = "
+text = "	
 Data City est un Serious Game sur l'Open Data, développé par le SIB : www.sib.fr
 
-
-Développement
+Développement :
 
 Mathis ROBERT
 
 
-Graphismes
+Graphismes :
 
 Sophie RHORBAL
 
 
-Encadrants
+Encadrants :
 
 Anne-Gaëlle LE GUEN
 Claudie DAVID
 
+Chef de projet (stagiaire) :
+
+Valentin BACHELOT-LALLIER
 
 
+Game Design (stagiaires) :
+
+Théo FACÉLINA
+Sacha HUREL
+Ozvan TOUFFET
 
 
-Ressources visuelles
+Game Art (stagiaires) :
 
-Fonds créés par upklyak / Freepik
+Quentin DELEPORTE
+Olivier TEBAR
+Camille MEUNIER
+Tanguy HERBERT
+Carla GOMEZ
+Killian DORVAL
+Thomas SARRAZIN
+Chloé MICHEL
 
-Bâtiments créés par macrovector / Freepik
+Sound Design :
 
-Icônes créées par Freepik à partir de Flaticon
+Jeremy LAIGLE
 
-
-Dialogues
+Dialogues :
 
 Dialogues créés avec Whiskers 
 et parcourus avec l'aide de Whiskers Parser
 
 
-Sons
+Sons :
 
 Notifications obtenues sur NotificationSounds.com 
 

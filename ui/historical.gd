@@ -5,16 +5,19 @@ signal close_historical
 
 var speaker_name = "nobody"
 
+var you_speak = false
+
 var historical_cooldown_option = false
 var historical_message = preload("res://ui/historical_message.tscn")
 onready var message_container = $VBoxContainer/ScrollMargin/ScrollContainer/message_container
 
 func add_message(block):
-	var message = historical_message.instance()
-	message.update_message(block)
-	message.update_name(speaker_name)
-	message.set_h_size_flags(0)
-	message_container.add_child(message)
+	if block != "Début de l'historique:":
+		var message = historical_message.instance()
+		message.update_message(block)
+		message.update_name(speaker_name)
+		message.set_h_size_flags(0)
+		message_container.add_child(message)
 
 func _on_exit_button_pressed():
 	emit_signal("close_historical")
@@ -28,11 +31,13 @@ func historical_options(block):
 	if historical_cooldown_option == false:
 		print('test un deux test')
 		var message = historical_message.instance()
+		you_speak = true
 		message.update_message(block)
 		message.update_name("Maire")
 		message.set_h_size_flags(8)
 		message_container.add_child(message)
 		historical_cooldown_option = true
+		
 
 
 func _on_ButtonA_historical_infos():

@@ -197,7 +197,7 @@ func player_pushed_button(key):
 func update_dialog():
 	# Set the dialog line on the UI (if not a data block)
 	if not is_data_block():
-		dialog_line.text = block.text
+		dialog_line.bbcode_text = block.text
 		
 	# Remove the old answer buttons
 	var old_buttons = answer_container.get_children()
@@ -213,21 +213,23 @@ func update_dialog():
 		timer_display.start(DELAY_BEFORE_DISPLAY)
 	
 	if not is_data_block():
+		yield(get_tree().create_timer(0.5), "timeout")
 		$CanvasLayer/Historical.add_message(parser.current_block.text)
 
-func _add_buttons():
+func _add_buttons():	
 	$CanvasLayer/Historical.historical_cooldown_option = false
 	# Add the new buttons
 	for answer in block.options:
+		
 		# Instanciate
 		var button = answer_button.instance()
-		
+		button.connect("historical_infos", $CanvasLayer/Historical, "_on_ButtonA_historical_infos")
 		# Set text
 		button.set_text(answer.text)
 		
 		# Button action
 		button.connect("pressed", self, "player_pushed_button", [answer.key])
-		button.connect("historical_infos", $CanvasLayer/Historical, "_on_ButtonA_historical_infos")
+		
 		
 		# Add it to the container
 		answer_container.add_child(button)
@@ -394,11 +396,13 @@ func must_redo_dialog():
 
 
 func _on_historical_pressed():
-	$Character.hide()
-	$UI.hide()
-	can_pass = true
+	print("HISTORIQUE: ")
+#	$Character.hide()
+#	$UI.hide()
+	can_pass = false
 	historical_opened = true
 	$CanvasLayer/Historical.show()
+	print(" Historique Visible :", $CanvasLayer/Historical.visible)
 
 
 func _on_historical_mouse_entered():
@@ -412,5 +416,5 @@ func _on_historical_mouse_exited():
 func _on_Historical_close_historical():
 	$CanvasLayer/Historical.hide()
 	historical_opened = false
-	$Character.show()
-	$UI.show()
+#	$Character.show()
+#	$UI.show()

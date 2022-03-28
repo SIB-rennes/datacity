@@ -3,7 +3,7 @@
 [ext_resource path="res://themes/main_theme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/fonts/fallingsky_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://assets/sprites/ui/dialogs/libelle_personnage.png" type="Texture" id=3]
-[ext_resource path="res://assets/sprites/ui/bulle_notification.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/ui/bulle_dialogue.png" type="Texture" id=4]
 [ext_resource path="res://ui/historical_message.gd" type="Script" id=5]
 [ext_resource path="res://assets/fonts/fallingsky_font_dialogs.tres" type="DynamicFont" id=6]
 
@@ -25,46 +25,66 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_right = 392.0
-margin_bottom = 150.0
+margin_right = 535.0
+margin_bottom = 200.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 margin_right = 103.0
-margin_bottom = 150.0
+margin_bottom = 200.0
 
 [node name="speaker" type="Label" parent="HBoxContainer/VBoxContainer"]
 margin_right = 103.0
 margin_bottom = 31.0
 theme = ExtResource( 1 )
-custom_styles/normal = SubResource( 1 )
 custom_fonts/font = ExtResource( 2 )
+custom_styles/normal = SubResource( 1 )
 text = "speaker"
 align = 1
 valign = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
 margin_left = 107.0
-margin_right = 392.0
-margin_bottom = 150.0
+margin_right = 531.0
+margin_bottom = 200.0
 size_flags_horizontal = 3
 
 [node name="background" type="TextureRect" parent="HBoxContainer/MarginContainer"]
-margin_right = 285.0
-margin_bottom = 150.0
+margin_right = 424.0
+margin_bottom = 200.0
 texture = ExtResource( 4 )
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/background"]
-margin_left = 12.0
-margin_top = 19.0
-margin_right = 260.0
-margin_bottom = 133.0
+margin_left = 21.0
+margin_top = 9.0
+margin_right = 410.0
+margin_bottom = 190.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/MarginContainer/background/MarginContainer"]
-margin_right = 248.0
-margin_bottom = 114.0
-custom_fonts/normal_font = ExtResource( 6 )
+margin_right = 389.0
+margin_bottom = 181.0
 custom_colors/default_color = Color( 0.992157, 0.568627, 0.180392, 1 )
+custom_fonts/normal_font = ExtResource( 6 )
 text = "message"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 535.0
+margin_right = 535.0
+margin_bottom = 200.0
+
+[node name="speaker" type="Label" parent="HBoxContainer/VBoxContainer2"]
+visible = false
+margin_right = 103.0
+margin_bottom = 31.0
+theme = ExtResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_styles/normal = SubResource( 1 )
+text = "speaker"
+align = 1
+valign = 1
+
+[node name="Control" type="Control" parent="."]
+margin_right = 535.0
+margin_bottom = 200.0

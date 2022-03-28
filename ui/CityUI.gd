@@ -1,5 +1,5 @@
 extends MarginContainer
-class_name CityUI
+class_name NewCityUI
 
 # Custom signals
 signal open_notifications
@@ -10,25 +10,37 @@ signal open_settings
 signal open_build
 signal logout
 signal cancel_build
-signal unvalidate_position
-signal validate_position
 signal closed_tutorial
 
+signal unvalidate_position
+signal validate_position
+
+signal cancel_hover
+signal stop_cancel_hover
+
+signal destroy_button_pressed
+signal validate_destruction
 
 ## References to the UI Elements
-onready var population = $VBoxContainer/BottomContainer/HBoxBottomContainer/PopulationContainer/Population
-onready var datapoints = $VBoxContainer/BottomContainer/HBoxBottomContainer/DataPointsContainer/DataPoints
-onready var confirmation_dialog = $VBoxContainer/ConfirmationDialog
-onready var notification_button = $VBoxContainer/NotificationContainer/NotificationButton
-onready var notification_button_active = $VBoxContainer/NotificationContainer/NotificationButtonActive
-onready var event_message = $VBoxContainer/NotificationContainer/EventMessage
-onready var build_button = $VBoxContainer/BottomContainer/HBoxBottomContainer/BuildContainer/MarginContainer/BuildButton/BuildButton
+onready var population = $Panel/Panel/BottomContainer/HBoxBottomContainer/HBoxContainer/PopulationContainer/Population
+onready var datapoints = $Panel/Panel/BottomContainer/HBoxBottomContainer/HBoxContainer/DataPointsContainer/DataPoints
+onready var confirmation_dialog = $Panel/ConfirmationDialog
+onready var notification_button = $Panel/Panel/EventContainer/NotificationButton
+onready var event_message = $Panel/EventMessage
+onready var build_button = $Panel/Panel/MarginBuild/HBoxContainer/BuildContainer/BuildButton
 # Bars
-onready var bar_satisfaction = $VBoxContainer/BottomContainer/HBoxBottomContainer/SatisfactionContainer/Satisfaction
+onready var bar_satisfaction = $Panel/Panel2/Satisfaction
+
+onready var confirmation_container = $Panel/ConfirmationContainer
+
+var texture_inactiv = preload("res://assets/sprites/interface/elements/Adjointe_icone_16032022.png")
+var texture_activ = preload("res://assets/sprites/interface/elements/Adjointe_icone_notification_2_15032022.png")
+
+var activ_notif = false
 
 func _ready():
 	# Hides the UI elements until the Tutorial is closed
-	$VBoxContainer.hide()
+	$Panel.hide()
 	
 	# Connect the Confirmation Dialog
 	confirmation_dialog.get_cancel().connect("pressed", self, "_unvalidate_pressed")
@@ -68,6 +80,7 @@ func update_bars():
 ## Sets the population label
 func set_datapoints(points: int):
 	datapoints.set_text(String(points))
+	datapoints.set_incomes(str("+ ", PlayerData.incomes, "/s"))
 
 
 
@@ -87,7 +100,7 @@ func show_current_building(building: String):
 	build_button.hide()
 	
 	# Show the Cancel Button
-	$VBoxContainer/BottomContainer/HBoxBottomContainer/BuildContainer/MarginContainer/CancelBuild/CancelButton.show()
+	$Panel/Panel/MarginBuild/HBoxContainer/BuildContainer/CancelButton.show()
 
 
 
@@ -96,37 +109,23 @@ func show_build_button():
 	build_button.show()
 	
 	# Hide the Cancel Button
-	$VBoxContainer/BottomContainer/HBoxBottomContainer/BuildContainer/MarginContainer/CancelBuild/CancelButton.hide()
-	print("BUILD_BUTTON")
-
-
-func show_validation_popup():
-	confirmation_dialog.popup()
-	print("<<sqd")
-
+	$Panel/Panel/MarginBuild/HBoxContainer/BuildContainer/CancelButton.hide()
 
 
 func display_notification():
-	#Show the active icon
-	notification_button_active.set_deferred("visible", true)
-	notification_button.set_deferred("visible", false)
+	activ_notif = true
 	
-	$VBoxContainer/NotificationContainer/NotificationPlayer.play()
-	print("N'est-ce pas ?")
+	notification_button.texture_normal = texture_activ
+	
+	$Panel/Panel/EventContainer/NotificationPlayer.play()
 
 
 func show_notifications(text: String):
-	print("LA")
 	# Set the Notification text
 	event_message.set_string(text)
 	
 	# Show it
 	event_message.show()
-	
-	#Hides the buttons
-	notification_button_active.set_deferred("visible", false)
-	notification_button.set_deferred("visible", false)
-	print("C'est LA !")
 
 
 # Has event is true if there is still an event in the notifications
@@ -136,25 +135,42 @@ func close_notifications(has_event: bool):
 	
 	# Show the button 
 	if has_event:
-		notification_button_active.set_deferred("visible", true)
+		activ_notif = true
+		notification_button.texture_normal = texture_activ
 	else:
-		notification_button.set_deferred("visible", true)
+		activ_notif = false
+		notification_button.texture_normal = texture_inactiv
 	
+
+func show_validation_buttons():
+	var pos_mouse = get_global_mouse_position()
+	pos_mouse.x -= 70
+	pos_mouse.y -= 100
+	confirmation_container.set_position(pos_mouse)
+	confirmation_container.show()
 
 
 func close_tutorial():
 	# Removes the tutorial
-	$TutorialCity.queue_free()
+	$Panel/TutorialCity.queue_free()
 	
 	# Execute as if the user had closed it
 	_on_TutorialCity_close_tutorial()
 
+
+func show_cancel_button():
+	# Hide the Build button
+	build_button.hide()
+	
+	# Show the Cancel Button
+	$Panel/Panel/MarginBuild/HBoxContainer/BuildContainer/CancelButton.show()
+
 #==========> Signal Senders <==========#
 
 func _on_NotificationButton_pressed():
-	if get_tree().get_current_scene().can_use == "event_button":
-		get_parent().get_node("dialog_tuto").hide()
-	emit_signal("open_notifications")
+	if activ_notif == true:
+#		get_parent().get_node("dialog_tuto").hide()
+		emit_signal("open_notifications")
 
 
 func _on_HighScoreButton_pressed():
@@ -176,13 +192,6 @@ func _on_BuildButton_pressed():
 func _on_GuideButton_pressed():
 	emit_signal("open_guide")
 
-func _validate_pressed():
-	emit_signal("validate_position")
-
-
-func _unvalidate_pressed():
-	emit_signal("unvalidate_position")
-
 
 func _on_EventMessage_close_notification():
 	emit_signal("close_notifications")
@@ -194,10 +203,31 @@ func _on_EventMessage_start_dialogue():
 
 func _on_TutorialCity_close_tutorial():
 	# Show the UI
-	$VBoxContainer.show()
+	$Panel.show()
 	
 	emit_signal("closed_tutorial")
 
+
 func _on_CancelButton_pressed():
 	emit_signal("cancel_build")
-	print("hey")
+
+
+func _on_ValidateButton_pressed():
+	emit_signal("validate_position")
+	emit_signal("validate_destruction")
+
+
+func _on_UnvalidateButton_pressed():
+	emit_signal("unvalidate_position")
+
+
+func _on_CancelButton_mouse_entered():
+	emit_signal("cancel_hover")
+
+
+func _on_CancelButton_mouse_exited():
+	emit_signal("stop_cancel_hover")
+
+
+func _on_DestroyButton_pressed():
+	emit_signal("destroy_button_pressed")

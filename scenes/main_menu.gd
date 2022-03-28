@@ -2,9 +2,14 @@ extends Control
 
 var new_game = false
 var dir = Directory.new()
+var os = OS.get_name()
+onready var confirmation_new_game = $confirmation_new_game
+onready var credit_button = $buttons/CreditButton
 
 func _ready():
-	print("test")
+	$PhoneInfos.show()
+	$buttons.hide()
+	
 
 func on_fade_finished():
 	if new_game == true:
@@ -34,3 +39,24 @@ func _on_SkipIntro_pressed():
 	
 # warning-ignore:return_value_discarded
 	get_tree().change_scene("res://scenes/CityBuilder.tscn")
+
+
+func _on_PhoneInfos_next_button_pressed():
+	$PhoneInfos.hide()
+	$buttons.show()
+
+
+
+func _on_New_game_pressed():
+	$buttons.hide()
+	confirmation_new_game.show()
+
+
+func _on_confirmation_new_game_No_its_a_mistake():
+	$buttons.show()
+	confirmation_new_game.hide()
+
+
+func _on_CreditButton_pressed():
+	$Credits.show()
+	$buttons.hide()
