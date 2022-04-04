@@ -14,9 +14,6 @@ func _process(delta):
 		if limit_var == 0 and left_var == 0:
 			get_node(".").modulate = Color("989898")
 			get_node("Building/BuildingContainer/BuildingSprite").modulate = Color("191919")
-#			6b6b6b
-#			454343
-#3a3838
 		else:
 			if limit_var == left_var:
 				get_node(".").modulate = Color("ef8f8f")

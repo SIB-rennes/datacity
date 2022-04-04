@@ -74,7 +74,7 @@ func update_bars():
 		return
 	
 	# Satisfaction
-	var satisfaction_percent = (50.0 * PlayerData.city_data[PlayerData.SATISFACTION]) / max_pop
+	var satisfaction_percent = (70.0 * PlayerData.city_data[PlayerData.SATISFACTION]) / max_pop
 	bar_satisfaction.set_percentage(satisfaction_percent)
 
 ## Sets the population label
@@ -113,11 +113,13 @@ func show_build_button():
 
 
 func display_notification():
+	print("NOTIF :", activ_notif)
+	if activ_notif == false:
+		$Panel/Panel/EventContainer/NotificationPlayer.play()
+
 	activ_notif = true
 	
 	notification_button.texture_normal = texture_activ
-	
-	$Panel/Panel/EventContainer/NotificationPlayer.play()
 
 
 func show_notifications(text: String):

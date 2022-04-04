@@ -1,11 +1,10 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scenes/Introduction.gd" type="Script" id=1]
 [ext_resource path="res://scenes/DialogScene.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/sprites/backgrounds/bureau_de_haut-01.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/introduction/journaux-01.png" type="Texture" id=4]
 [ext_resource path="res://scenes/news_paper_manager.gd" type="Script" id=5]
-[ext_resource path="res://ui/blinking_mouse.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/sounds/paper_slide.wav" type="AudioStream" id=7]
 [ext_resource path="res://scenes/introduction/newspaper.gd" type="Script" id=8]
 [ext_resource path="res://ui/fading_screen.tscn" type="PackedScene" id=9]
@@ -323,18 +322,15 @@ script = ExtResource( 8 )
 anims/put_back = SubResource( 5 )
 
 [node name="Newspaper_1" type="Sprite" parent="NewsPaper"]
-position = Vector2( 451.193, 244.298 )
-scale = Vector2( 0.325, 0.325 )
+position = Vector2( 282.901, 226.32 )
+rotation = 0.0468501
+scale = Vector2( 0.377111, 0.377111 )
 z_index = 4
 texture = ExtResource( 4 )
 script = ExtResource( 8 )
 
 [node name="Animation" type="AnimationPlayer" parent="NewsPaper/Newspaper_1"]
 anims/put_back = SubResource( 6 )
-
-[node name="MouseCursor" parent="NewsPaper" instance=ExtResource( 6 )]
-position = Vector2( 597.367, 366.297 )
-rotation = -0.785397
 
 [node name="DialogScene" parent="." instance=ExtResource( 2 )]
 mouse_filter = 2

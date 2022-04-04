@@ -40,6 +40,16 @@ var parser
 var dialogue_data
 var block
 
+#desk view
+var desk_opened = false
+var doc_1_took = false
+var doc_2_took = false
+var doc_3_took = false
+var doc_4_took = false
+var bureau_1_desk_view = preload("res://assets/sprites/backgrounds/bureau_1_haut.png")
+var bureau_2_desk_view = preload("res://assets/sprites/backgrounds/bureau_2_haut.png")
+var bureau_3_desk_view = preload("res://assets/sprites/backgrounds/bureau_3_haut.png")
+var can_show_desk = false
 
 # Display delay, to prevent the answers from popping too fast
 const DELAY_BEFORE_DISPLAY = 0.75
@@ -58,20 +68,25 @@ var buildings_gained: Array
 
 
 func _ready():
+	if PlayerData.bureau == "bureau_1.png":
+		$bureau_ui/bureau.StyleBoxTexture.texture
 	# Load a dialogue by default
 	start_dialog_event("res://scenarios/scenario_default.json")
-	
 	# Connect the timer to the correct method
 	timer_display.connect("timeout", self, "_add_buttons")
+	
 
 
 
 # Instance is the script that contains functions
 # and the variable declaration for Whiskers logic
 func start_dialog_event(dialog_json, show_tutorial = false):
-	# Show the mouse cursor if a tutorial
-	if show_tutorial:
-		$MouseCursor.show()
+	if PlayerData.can_show_desk == true:
+		print("can_show desk ", PlayerData.can_show_desk)
+		$UI/infos_button.show()
+	else:
+		print("show desk ", PlayerData.can_show_desk)
+		$UI/infos_button.hide()
 	
 	# Hides the name by default
 	$UI/Name.hide()
@@ -104,6 +119,11 @@ func start_dialog_event(dialog_json, show_tutorial = false):
 	# Update the dialog
 	update_dialog()
 
+	# Show the mouse cursor if a tutorial
+	if show_tutorial:
+		yield(get_tree().create_timer(1),"timeout")
+		$MouseCursor.show()
+		$MouseCursor/AnimationPlayer.play("cursor")
 
 
 func _physics_process(delta):
@@ -114,7 +134,7 @@ func _physics_process(delta):
 
 # Process inputs
 func _input(event):
-	if historical_opened == false:
+	if historical_opened == false && desk_opened == false:
 	# if we touched the screen or the mouse
 		if event is InputEventScreenTouch:
 			if event.pressed:
@@ -125,15 +145,16 @@ func _input(event):
 			if event.button_index == BUTTON_LEFT and event.pressed:
 				if can_pass == true:
 					process_player_click()
-		
-		# If we pressed space
-		elif event is InputEventKey:
-			if event.pressed and event.unicode == KEY_SPACE:
-				if can_pass == true:
-					process_player_click()
-
+#
+#		# If we pressed space
+#		elif event is InputEventKey:
+#			if event.pressed and event.unicode == KEY_SPACE:
+#				if can_pass == true:
+#					process_player_click()
+#
 
 func process_player_click():
+			# Hide the mouse
 	# Quit if not enought time passed
 	if answer_delay < DELAY_BEFORE_ANSWER:
 		pass
@@ -152,11 +173,7 @@ func process_player_click():
 		# Play a soundy sound !
 		sound_player.stream = sound_dialog_click
 		sound_player.play()
-		
-		# Hide the mouse
-		$MouseCursor.hide()
-		
-			
+
 		# Process blocks with data
 		process_data_blocks()
 		update_dialog()
@@ -195,6 +212,8 @@ func player_pushed_button(key):
 
 
 func update_dialog():
+	$MouseCursor.hide()
+	$MouseCursor/AnimationPlayer.stop()
 	# Set the dialog line on the UI (if not a data block)
 	if not is_data_block():
 		dialog_line.bbcode_text = block.text
@@ -418,3 +437,108 @@ func _on_Historical_close_historical():
 	historical_opened = false
 #	$Character.show()
 #	$UI.show()
+
+
+func _on_infos_button_pressed():
+	desk_opened = true
+	can_pass = true
+	$bureau_ui.show()
+	$Background.hide()
+	$Character.hide()
+	$UI.hide()
+
+func _on_close_bureau_pressed():
+	$bureau_ui.hide()
+	$Background.show()
+	$Character.show()
+	$UI.show()
+	yield(get_tree().create_timer(0.5), "timeout")
+	desk_opened = false
+
+
+func _on_infos_button_mouse_entered():
+	can_pass = false
+
+func _on_infos_button_mouse_exited():
+	can_pass = true
+
+
+func _on_bureau_ui_visibility_changed():
+	if $bureau_ui.visible == false:
+		$bureau_ui/bureau/CanvasLayer/doc_1.hide()
+		if "RetourConferencier_1" in PlayerData.event_occured:
+			$bureau_ui/bureau/CanvasLayer2/doc_2.hide()
+		if "RetourConferencier_2" in PlayerData.event_occured:
+			$bureau_ui/bureau/CanvasLayer3/doc_3.hide()
+		if "RetourConferencier_3" in PlayerData.event_occured:
+			$bureau_ui/bureau/CanvasLayer4/doc_4.hide()
+	else:
+		$bureau_ui/bureau/CanvasLayer/doc_1.show()
+		if "RetourConferencier_1" in PlayerData.event_occured:
+			$bureau_ui/bureau/CanvasLayer2/doc_2.show()
+		if "RetourConferencier_2" in PlayerData.event_occured:
+			$bureau_ui/bureau/CanvasLayer3/doc_3.show()
+		if "RetourConferencier_3" in PlayerData.event_occured:
+			$bureau_ui/bureau/CanvasLayer4/doc_4.show()
+
+func _on_put_document_pressed():
+	if doc_1_took == true:
+		$bureau_ui/bureau/close_bureau.show()
+		$bureau_ui/bureau/CanvasLayer5/put_document.hide()
+		$AnimationDocument.play_backwards("take_doc_1")
+		yield(get_tree().create_timer(1), "timeout")
+		doc_1_took = false
+	elif doc_2_took == true:
+		$bureau_ui/bureau/close_bureau.show()
+		$bureau_ui/bureau/CanvasLayer5/put_document.hide()
+		$AnimationDocument.play_backwards("take_doc_2")
+		yield(get_tree().create_timer(1), "timeout")
+		doc_2_took = false
+	elif doc_3_took == true:
+		$bureau_ui/bureau/close_bureau.show()
+		$bureau_ui/bureau/CanvasLayer5/put_document.hide()
+		$AnimationDocument.play_backwards("take_doc_3")
+		yield(get_tree().create_timer(1), "timeout")
+		doc_3_took = false
+	elif doc_4_took == true:
+		$bureau_ui/bureau/close_bureau.show()
+		$bureau_ui/bureau/CanvasLayer5/put_document.hide()
+		$AnimationDocument.play_backwards("take_doc_4")
+		yield(get_tree().create_timer(1), "timeout")
+		doc_4_took = false
+
+func _on_doc_1_pressed():
+	if desk_opened == true:
+		if doc_1_took == false and doc_2_took == false and doc_3_took == false and doc_4_took == false:
+			doc_1_took = true
+			$bureau_ui/bureau/close_bureau.hide()
+			$AnimationDocument.play("take_doc_1")
+			yield(get_tree().create_timer(1), "timeout")
+			$bureau_ui/bureau/CanvasLayer5/put_document.show()
+
+func _on_doc_2_pressed():
+	if desk_opened == true:
+		if doc_1_took == false and doc_2_took == false and doc_3_took == false and doc_4_took == false:
+			doc_2_took = true
+			$bureau_ui/bureau/close_bureau.hide()
+			$AnimationDocument.play("take_doc_2")
+			yield(get_tree().create_timer(1), "timeout")
+			$bureau_ui/bureau/CanvasLayer5/put_document.show()
+
+func _on_doc_3_pressed():
+	if desk_opened == true:
+		if doc_1_took == false and doc_2_took == false and doc_3_took == false and doc_4_took == false:
+			doc_3_took = true
+			$bureau_ui/bureau/close_bureau.hide()
+			$AnimationDocument.play("take_doc_3")
+			yield(get_tree().create_timer(1), "timeout")
+			$bureau_ui/bureau/CanvasLayer5/put_document.show()
+
+func _on_doc_4_pressed():
+	if desk_opened == true:
+		if doc_1_took == false and doc_2_took == false and doc_3_took == false and doc_4_took == false:
+			doc_3_took = true
+			$bureau_ui/bureau/close_bureau.hide()
+			$AnimationDocument.play("take_doc_3")
+			yield(get_tree().create_timer(1), "timeout")
+			$bureau_ui/bureau/CanvasLayer5/put_document.show()

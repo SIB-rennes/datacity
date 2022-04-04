@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=82 format=2]
 
 [ext_resource path="res://scenes/formulaire.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/backgrounds/bureau_3.png" type="Texture" id=2]
@@ -21,13 +21,20 @@
 [ext_resource path="res://assets/sprites/nouveau_formulaire/GA_fenetre_erreur_02032022.svg" type="Texture" id=19]
 [ext_resource path="res://assets/sprites/nouveau_formulaire/GA_bouton_vide_s_02032022.svg" type="Texture" id=20]
 [ext_resource path="res://assets/fonts/Kilogram-GvBO.otf" type="DynamicFontData" id=21]
+[ext_resource path="res://themes/formulaire1.tres" type="StyleBox" id=22]
+[ext_resource path="res://themes/box_normal.tres" type="StyleBox" id=23]
 [ext_resource path="res://themes/formulaire.tres" type="DynamicFont" id=24]
 [ext_resource path="res://assets/sprites/nouveau_formulaire/GA_bouton_bureau_s_02032022.svg" type="Texture" id=25]
 [ext_resource path="res://assets/sprites/nouveau_formulaire/GA_bouton_bureau_c_02032022.svg" type="Texture" id=26]
 [ext_resource path="res://assets/sprites/nouveau_formulaire/GA_bouton_vide_c_02032022.svg" type="Texture" id=27]
+[ext_resource path="res://themes/box_hover.tres" type="StyleBox" id=28]
+[ext_resource path="res://themes/box_pressed.tres" type="StyleBox" id=29]
 [ext_resource path="res://assets/sprites/formulaire/GA_bouton_continuer_25022022.svg" type="Texture" id=30]
 [ext_resource path="res://assets/sprites/formulaire/GA_bouton_continuer_s_25022022.svg" type="Texture" id=31]
 [ext_resource path="res://assets/sprites/formulaire/GA_bouton_continuer_c_25022022.svg" type="Texture" id=32]
+[ext_resource path="res://assets/sprites/backgrounds/map_2.png" type="Texture" id=33]
+[ext_resource path="res://assets/sprites/backgrounds/map_1.png" type="Texture" id=34]
+[ext_resource path="res://assets/sprites/backgrounds/map_3.png" type="Texture" id=35]
 [ext_resource path="res://assets/sprites/formulaire/GA_bouton_retour_25022022.svg" type="Texture" id=36]
 [ext_resource path="res://assets/sprites/formulaire/GA_bouton_retour_c_25022022.svg" type="Texture" id=37]
 
@@ -101,18 +108,6 @@ region_rect = Rect2( 0, 0, 232, 78 )
 [sub_resource type="StyleBoxTexture" id=19]
 texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 458, 558 )
-
-[sub_resource type="StyleBoxTexture" id=40]
-texture = ExtResource( 26 )
-region_rect = Rect2( 0, 0, 369, 137 )
-
-[sub_resource type="StyleBoxTexture" id=41]
-texture = ExtResource( 25 )
-region_rect = Rect2( 0, 0, 369, 137 )
-
-[sub_resource type="StyleBoxTexture" id=42]
-texture = ExtResource( 16 )
-region_rect = Rect2( 0, 0, 369, 137 )
 
 [sub_resource type="StyleBoxTexture" id=43]
 texture = ExtResource( 26 )
@@ -191,6 +186,8 @@ texture = ExtResource( 12 )
 region_rect = Rect2( 0, 0, 150, 45 )
 
 [sub_resource type="StyleBoxTexture" id=2]
+
+[sub_resource type="StyleBoxTexture" id=52]
 
 [sub_resource type="StyleBoxTexture" id=39]
 texture = ExtResource( 19 )
@@ -398,9 +395,9 @@ margin_left = 41.5297
 margin_top = 67.5892
 margin_right = 410.53
 margin_bottom = 204.589
-custom_styles/hover = SubResource( 40 )
-custom_styles/pressed = SubResource( 41 )
-custom_styles/normal = SubResource( 42 )
+custom_styles/hover = ExtResource( 28 )
+custom_styles/pressed = ExtResource( 29 )
+custom_styles/normal = ExtResource( 23 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -412,9 +409,9 @@ texture = ExtResource( 3 )
 
 [node name="bureau2" type="Button" parent="Panel_part2"]
 margin_left = 41.5297
-margin_top = 209.589
+margin_top = 212.589
 margin_right = 410.53
-margin_bottom = 346.589
+margin_bottom = 349.589
 custom_styles/hover = SubResource( 43 )
 custom_styles/pressed = SubResource( 44 )
 custom_styles/normal = SubResource( 45 )
@@ -468,6 +465,105 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Panel_choix_ville" type="Panel" parent="."]
+visible = false
+margin_left = 287.0
+margin_top = 7.0
+margin_right = 735.0
+margin_bottom = 565.0
+custom_styles/panel = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel_choix_ville"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 17.53
+margin_top = 33.589
+margin_right = 568.53
+margin_bottom = 78.589
+rect_scale = Vector2( 0.75, 0.75 )
+custom_fonts/font = ExtResource( 10 )
+text = "Quelle ville souhaitez-vous ?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ville_1" type="Button" parent="Panel_choix_ville"]
+margin_left = 41.53
+margin_top = 67.589
+margin_right = 410.53
+margin_bottom = 204.589
+custom_styles/hover = ExtResource( 28 )
+custom_styles/pressed = ExtResource( 29 )
+custom_styles/normal = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Panel_choix_ville/ville_1"]
+position = Vector2( 194.47, 67.411 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 34 )
+
+[node name="ville_2" type="Button" parent="Panel_choix_ville"]
+margin_left = 41.53
+margin_top = 212.589
+margin_right = 410.53
+margin_bottom = 349.589
+custom_styles/hover = ExtResource( 28 )
+custom_styles/pressed = ExtResource( 29 )
+custom_styles/normal = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Panel_choix_ville/ville_2"]
+position = Vector2( 194.47, 68.411 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 33 )
+
+[node name="ville_3" type="Button" parent="Panel_choix_ville"]
+margin_left = 41.53
+margin_top = 357.589
+margin_right = 410.53
+margin_bottom = 494.589
+custom_styles/hover = ExtResource( 28 )
+custom_styles/pressed = ExtResource( 29 )
+custom_styles/normal = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Panel_choix_ville/ville_3"]
+position = Vector2( 194.47, 68.4109 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 35 )
+
+[node name="return_panel_part3" type="Button" parent="Panel_choix_ville"]
+margin_left = 18.0
+margin_top = 512.589
+margin_right = 134.0
+margin_bottom = 551.589
+custom_styles/hover = SubResource( 49 )
+custom_styles/pressed = SubResource( 50 )
+custom_styles/normal = SubResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="next_panel_part3" type="Button" parent="Panel_choix_ville"]
+margin_left = 325.53
+margin_top = 511.589
+margin_right = 441.53
+margin_bottom = 550.589
+custom_styles/hover = SubResource( 21 )
+custom_styles/pressed = SubResource( 22 )
+custom_styles/normal = SubResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Panel_confirmation" type="Panel" parent="."]
 visible = false
 margin_left = 287.0
@@ -506,26 +602,26 @@ __meta__ = {
 }
 
 [node name="fond" type="Sprite" parent="Panel_confirmation"]
-position = Vector2( 202.405, 140.995 )
+position = Vector2( 202.405, 100.995 )
 scale = Vector2( 0.509084, 1.04899 )
 texture = ExtResource( 13 )
 
 [node name="fond2" type="Sprite" parent="Panel_confirmation"]
-position = Vector2( 202.53, 210.495 )
+position = Vector2( 202.53, 150.495 )
 scale = Vector2( 0.509448, 0.967906 )
 texture = ExtResource( 13 )
 
 [node name="fond3" type="Sprite" parent="Panel_confirmation"]
-position = Vector2( 202.53, 278.495 )
+position = Vector2( 202.53, 199.495 )
 scale = Vector2( 0.509448, 1.02196 )
 texture = ExtResource( 13 )
 
 [node name="nom" type="Label" parent="Panel_confirmation"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 42.5297
-margin_top = 129.589
+margin_left = 42.53
+margin_top = 89.589
 margin_right = 140.53
-margin_bottom = 174.589
+margin_bottom = 134.589
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = ExtResource( 10 )
 text = "Nom:"
@@ -535,10 +631,10 @@ __meta__ = {
 
 [node name="ville" type="Label" parent="Panel_confirmation"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 38.5297
-margin_top = 266.589
+margin_left = 38.53
+margin_top = 186.589
 margin_right = 174.53
-margin_bottom = 311.589
+margin_bottom = 231.589
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = ExtResource( 10 )
 text = "Ville:"
@@ -548,10 +644,10 @@ __meta__ = {
 
 [node name="sexe" type="Label" parent="Panel_confirmation"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 38.5297
-margin_top = 198.589
+margin_left = 38.53
+margin_top = 138.589
 margin_right = 174.53
-margin_bottom = 243.589
+margin_bottom = 183.589
 rect_scale = Vector2( 0.5, 0.5 )
 custom_fonts/font = ExtResource( 10 )
 text = "Sexe:"
@@ -616,11 +712,21 @@ __meta__ = {
 }
 
 [node name="Sprite_bureau" type="Panel" parent="Panel_confirmation"]
-margin_left = 17.5297
+margin_left = 17.53
 margin_top = 371.589
 margin_right = 277.529
 margin_bottom = 537.589
 custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite_ville" type="Panel" parent="Panel_confirmation"]
+margin_left = 129.0
+margin_top = 230.0
+margin_right = 321.0
+margin_bottom = 328.0
+custom_styles/panel = SubResource( 52 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -687,6 +793,7 @@ custom_fonts/font = ExtResource( 10 )
 text = "Retour"
 
 [node name="Label" type="Label" parent="."]
+visible = false
 margin_right = 1023.0
 margin_bottom = 63.0
 custom_colors/font_color = Color( 1, 0, 0, 1 )
@@ -703,6 +810,11 @@ __meta__ = {
 [connection signal="pressed" from="Panel_part2/bureau3" to="." method="_on_bureau3_pressed"]
 [connection signal="pressed" from="Panel_part2/return_panel_part2" to="." method="_on_return_panel_part2_pressed"]
 [connection signal="pressed" from="Panel_part2/next_panel_part2" to="." method="_on_next_panel_part2_pressed"]
+[connection signal="pressed" from="Panel_choix_ville/ville_1" to="." method="_on_ville_1_pressed"]
+[connection signal="pressed" from="Panel_choix_ville/ville_2" to="." method="_on_ville_2_pressed"]
+[connection signal="pressed" from="Panel_choix_ville/ville_3" to="." method="_on_ville_3_pressed"]
+[connection signal="pressed" from="Panel_choix_ville/return_panel_part3" to="." method="_on_return_panel_part3_pressed"]
+[connection signal="pressed" from="Panel_choix_ville/next_panel_part3" to="." method="_on_next_panel_part3_pressed"]
 [connection signal="pressed" from="Panel_confirmation/confirmer" to="." method="_on_confirmer_pressed"]
 [connection signal="pressed" from="Panel_confirmation/return_panel_confirmation" to="." method="_on_return_panel_confirmation_pressed"]
 [connection signal="pressed" from="Panel_alert/return_panel_alert" to="." method="_on_return_panel_alert_pressed"]

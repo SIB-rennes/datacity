@@ -19,9 +19,6 @@ var current_state = WAITING_SCENE
 # Sound Player
 onready var sound_player = $SoundPlayer
 
-# Mouse cursor blinking
-onready var mouse_cursor = $MouseCursor
-
 # Newspapers
 onready var newspaper = [$Newspaper_1, $Newspaper_2, $Newspaper_3]
 
@@ -75,9 +72,7 @@ func trigger_zoom():
 	$ZoomPlayer.play("PaperZoom")
 	
 	print("Playing zoom !")
-	
-	# Deactivates the mouse animation
-	mouse_cursor.hide()
+
 	
 	# Play a sound !
 	sound_player.play()

@@ -6,8 +6,8 @@ var nom = "not defined" # Retient le nom choisi par le joueur.
 var nom_ville = "not defined" # Retient le nom de la ville choisi par le joueur.
 var bureau = 0 # Retient qu'elle bureau le joueur à choisi.
 var aff = "nowhere" # Définit verre qu'elle partie du questionnaire, le message d'érreur doit revenir.
+var ville = 0
 # Called when the node enters the scene tree for the first time.
-
 func _ready():
 	aff = "part1"
 	print("gender: " + gender)
@@ -91,6 +91,7 @@ func _on_bureau1_pressed():
 		$Panel_part2/bureau3/Sprite.modulate = Color(1,1,1,0.25)
 		$Panel_confirmation/Sprite_bureau.get_stylebox("panel", "").texture = preload("res://assets/sprites/backgrounds/bureau_1.png")
 		$background.get_stylebox("panel", "").texture = preload("res://assets/sprites/backgrounds/bureau_1.png")
+		
 		PlayerData.bureau = "bureau_1.png"
 		return
 		
@@ -190,8 +191,9 @@ func _on_next_panel_part2_pressed():
 		$Panel_alert.visible = true
 		return
 	else:
+		aff = "part3"
 		$Panel_part2.visible = false
-		$Panel_confirmation.visible = true
+		$Panel_choix_ville.visible = true
 		return
 
 
@@ -203,11 +205,14 @@ func _on_return_panel_alert_pressed():
 	if aff == "part2":
 		$Panel_alert.visible = false
 		$Panel_part2.visible = true
+	if aff == "part3":
+		$Panel_alert.visible = false
+		$Panel_choix_ville.visible = true
 
 
 func _on_return_panel_confirmation_pressed():
 	$Panel_confirmation.visible = false
-	$Panel_part2.visible = true
+	$Panel_choix_ville.visible = true
 	return
 
 
@@ -215,5 +220,46 @@ func _on_confirmer_pressed():
 	#skip intro***
 #	get_tree().change_scene("res://scenes/CityBuilder.tscn")
 	#***
+	print("PARENT :!", get_parent())
 	get_parent().start_next_state()
 	return
+
+
+func _on_ville_1_pressed():
+	ville = 1
+	PlayerData.map = "map1"
+	$Panel_confirmation/Sprite_ville.get_stylebox("panel", "").texture = preload("res://assets/sprites/backgrounds/map_1.png")
+	return
+
+
+func _on_ville_2_pressed():
+	ville = 2
+	PlayerData.map = "map2"
+	$Panel_confirmation/Sprite_ville.get_stylebox("panel", "").texture = preload("res://assets/sprites/backgrounds/map_2.png")
+	return
+
+
+func _on_ville_3_pressed():
+	ville = 3
+	PlayerData.map = "map3"
+	$Panel_confirmation/Sprite_ville.get_stylebox("panel", "").texture = preload("res://assets/sprites/backgrounds/map_3.png")
+	return
+
+
+func _on_return_panel_part3_pressed():
+	aff = "part2"
+	$Panel_choix_ville.visible = false
+	$Panel_part2.visible = true
+
+
+func _on_next_panel_part3_pressed():
+	if ville == 0:
+		$Panel_choix_ville.visible = false
+		$Panel_alert.visible = true
+		print(ville)
+		return
+	else:
+		$Panel_choix_ville.visible = false
+		$Panel_confirmation.visible = true
+		print(ville)
+		print($Panel_confirmation/Sprite_bureau.get_stylebox("panel", "").texture)

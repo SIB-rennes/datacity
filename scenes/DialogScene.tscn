@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://scenes/DialogScene.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/fallingsky.otf" type="DynamicFontData" id=2]
@@ -20,6 +20,17 @@
 [ext_resource path="res://assets/fonts/font_infos.tres" type="DynamicFont" id=18]
 [ext_resource path="res://assets/sprites/icons/historique_(hover).png" type="Texture" id=19]
 [ext_resource path="res://assets/sprites/icons/historique_(click).png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/backgrounds/bureau_1_haut.png" type="Texture" id=21]
+[ext_resource path="res://themes/exit_button.tres" type="StyleBox" id=22]
+[ext_resource path="res://themes/doc_3.tres" type="StyleBox" id=23]
+[ext_resource path="res://themes/doc_4.tres" type="StyleBox" id=24]
+[ext_resource path="res://themes/doc_1.tres" type="StyleBox" id=25]
+[ext_resource path="res://themes/doc_2.tres" type="StyleBox" id=26]
+[ext_resource path="res://assets/sprites/icons/guide_small.png" type="Texture" id=27]
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 21 )
+region_rect = Rect2( 0, 0, 1920, 1080 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 26
@@ -94,6 +105,405 @@ font_data = ExtResource( 11 )
 texture = ExtResource( 7 )
 region_rect = Rect2( 9.24641, 12.9536, 606.341, 96.1272 )
 
+[sub_resource type="Animation" id=16]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("bureau_ui/bureau/CanvasLayer:layer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("bureau_ui/bureau/CanvasLayer/doc_1:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -49.299, 346.46 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("bureau_ui/bureau/CanvasLayer/doc_1:rect_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 249, 312 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("bureau_ui/bureau/CanvasLayer/doc_1:rect_rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -18.2 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("bureau_ui/bureau/CanvasLayer2/doc_2:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 82.277, 285.405 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("bureau_ui/bureau/CanvasLayer2/doc_2:rect_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 270, 338 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("bureau_ui/bureau/CanvasLayer2/doc_2:rect_rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -8.2 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("bureau_ui/bureau/CanvasLayer3/doc_3:rect_position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 239.906, 249.252 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("bureau_ui/bureau/CanvasLayer3/doc_3:rect_size")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 280, 351 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("bureau_ui/bureau/CanvasLayer3/doc_3:rect_rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 4.3 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("bureau_ui/bureau/CanvasLayer4/doc_4:rect_position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 382.934, 256.668 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("bureau_ui/bureau/CanvasLayer4/doc_4:rect_size")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 280, 351 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("bureau_ui/bureau/CanvasLayer4/doc_4:rect_rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 19.3 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("bureau_ui/bureau/CanvasLayer2:layer")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("bureau_ui/bureau/CanvasLayer3:layer")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("bureau_ui/bureau/CanvasLayer4:layer")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "take_doc_1"
+tracks/0/type = "value"
+tracks/0/path = NodePath("bureau_ui/bureau/CanvasLayer:layer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("bureau_ui/bureau/CanvasLayer/doc_1:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -49.299, 346.46 ), Vector2( 313.26, 38.22 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("bureau_ui/bureau/CanvasLayer/doc_1:rect_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 249, 312 ), Vector2( 428, 537 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("bureau_ui/bureau/CanvasLayer/doc_1:rect_rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -18.2, 0.0 ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "take_doc_2"
+tracks/0/type = "value"
+tracks/0/path = NodePath("bureau_ui/bureau/CanvasLayer2/doc_2:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 82.277, 285.405 ), Vector2( 264, 30 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("bureau_ui/bureau/CanvasLayer2/doc_2:rect_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 270, 338 ), Vector2( 476, 536 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("bureau_ui/bureau/CanvasLayer2/doc_2:rect_rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -8.2, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("bureau_ui/bureau/CanvasLayer2:layer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 3 ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "take_doc_3"
+tracks/0/type = "value"
+tracks/0/path = NodePath("bureau_ui/bureau/CanvasLayer3/doc_3:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 239.906, 249.252 ), Vector2( 293, 32.694 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("bureau_ui/bureau/CanvasLayer3/doc_3:rect_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 280, 351 ), Vector2( 446, 559 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("bureau_ui/bureau/CanvasLayer3/doc_3:rect_rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 4.3, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("bureau_ui/bureau/CanvasLayer3:layer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 3 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "take_doc_4"
+tracks/0/type = "value"
+tracks/0/path = NodePath("bureau_ui/bureau/CanvasLayer4/doc_4:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 382.934, 256.668 ), Vector2( 292.308, 36.108 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("bureau_ui/bureau/CanvasLayer4/doc_4:rect_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 280, 351 ), Vector2( 445, 557 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("bureau_ui/bureau/CanvasLayer4/doc_4:rect_rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 19.3, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("bureau_ui/bureau/CanvasLayer4:layer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 2 ]
+}
+
 [node name="DialogScene" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -129,6 +539,115 @@ margin_right = 206.984
 texture = ExtResource( 8 )
 expand = true
 stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bureau_ui" type="MarginContainer" parent="."]
+visible = false
+margin_right = 1024.0
+margin_bottom = 599.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bureau" type="Panel" parent="bureau_ui"]
+margin_right = 1024.0
+margin_bottom = 599.0
+custom_styles/panel = SubResource( 11 )
+
+[node name="close_bureau" type="Button" parent="bureau_ui/bureau"]
+margin_left = 903.0
+margin_top = 29.0
+margin_right = 980.0
+margin_bottom = 106.0
+custom_styles/hover = ExtResource( 22 )
+custom_styles/pressed = ExtResource( 22 )
+custom_styles/normal = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="bureau_ui/bureau"]
+layer = 2
+
+[node name="doc_1" type="Button" parent="bureau_ui/bureau/CanvasLayer"]
+visible = false
+margin_left = -49.299
+margin_top = 346.46
+margin_right = 199.701
+margin_bottom = 658.46
+rect_rotation = -18.2
+custom_styles/hover = ExtResource( 25 )
+custom_styles/pressed = ExtResource( 25 )
+custom_styles/normal = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="bureau_ui/bureau"]
+layer = 2
+
+[node name="doc_2" type="Button" parent="bureau_ui/bureau/CanvasLayer2"]
+visible = false
+margin_left = 82.277
+margin_top = 285.405
+margin_right = 352.277
+margin_bottom = 623.405
+rect_rotation = -8.2
+custom_styles/hover = ExtResource( 26 )
+custom_styles/pressed = ExtResource( 26 )
+custom_styles/normal = ExtResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="bureau_ui/bureau"]
+layer = 2
+
+[node name="doc_3" type="Button" parent="bureau_ui/bureau/CanvasLayer3"]
+visible = false
+margin_left = 239.906
+margin_top = 249.252
+margin_right = 519.906
+margin_bottom = 600.252
+rect_rotation = 4.3
+custom_styles/hover = ExtResource( 23 )
+custom_styles/pressed = ExtResource( 23 )
+custom_styles/normal = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer4" type="CanvasLayer" parent="bureau_ui/bureau"]
+layer = 2
+
+[node name="doc_4" type="Button" parent="bureau_ui/bureau/CanvasLayer4"]
+visible = false
+margin_left = 382.934
+margin_top = 256.668
+margin_right = 662.934
+margin_bottom = 607.668
+rect_rotation = 19.3
+custom_styles/hover = ExtResource( 24 )
+custom_styles/pressed = ExtResource( 24 )
+custom_styles/normal = ExtResource( 24 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer5" type="CanvasLayer" parent="bureau_ui/bureau"]
+layer = 5
+
+[node name="put_document" type="Button" parent="bureau_ui/bureau/CanvasLayer5"]
+visible = false
+margin_left = 632.0
+margin_top = 66.0
+margin_right = 692.0
+margin_bottom = 126.0
+custom_styles/hover = ExtResource( 22 )
+custom_styles/pressed = ExtResource( 22 )
+custom_styles/normal = ExtResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -192,7 +711,6 @@ __meta__ = {
 }
 
 [node name="ButtonA" parent="UI/AnswerContainer" instance=ExtResource( 12 )]
-visible = false
 margin_top = 342.0
 margin_right = 417.0
 margin_bottom = 426.0
@@ -227,6 +745,19 @@ rect_scale = Vector2( 0.75, 0.75 )
 texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 20 )
 texture_hover = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="infos_button" type="TextureButton" parent="UI"]
+margin_left = 903.0
+margin_top = 29.0
+margin_right = 943.0
+margin_bottom = 69.0
+texture_normal = ExtResource( 27 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="SoundPlayer" type="AudioStreamPlayer" parent="."]
 
@@ -235,8 +766,8 @@ one_shot = true
 
 [node name="MouseCursor" parent="." instance=ExtResource( 4 )]
 visible = false
-position = Vector2( 857.247, 515.979 )
-scale = Vector2( 2.17138, 2.17138 )
+position = Vector2( 926, 419 )
+scale = Vector2( 0.25, 0.25 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 3
@@ -244,8 +775,25 @@ layer = 3
 [node name="Historical" parent="CanvasLayer" instance=ExtResource( 10 )]
 visible = false
 
+[node name="AnimationDocument" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 16 )
+anims/take_doc_1 = SubResource( 12 )
+anims/take_doc_2 = SubResource( 13 )
+anims/take_doc_3 = SubResource( 14 )
+anims/take_doc_4 = SubResource( 15 )
+
+[connection signal="visibility_changed" from="bureau_ui" to="." method="_on_bureau_ui_visibility_changed"]
+[connection signal="pressed" from="bureau_ui/bureau/close_bureau" to="." method="_on_close_bureau_pressed"]
+[connection signal="pressed" from="bureau_ui/bureau/CanvasLayer/doc_1" to="." method="_on_doc_1_pressed"]
+[connection signal="pressed" from="bureau_ui/bureau/CanvasLayer2/doc_2" to="." method="_on_doc_2_pressed"]
+[connection signal="pressed" from="bureau_ui/bureau/CanvasLayer3/doc_3" to="." method="_on_doc_3_pressed"]
+[connection signal="pressed" from="bureau_ui/bureau/CanvasLayer4/doc_4" to="." method="_on_doc_4_pressed"]
+[connection signal="pressed" from="bureau_ui/bureau/CanvasLayer5/put_document" to="." method="_on_put_document_pressed"]
 [connection signal="historical_infos" from="UI/AnswerContainer/ButtonA" to="CanvasLayer/Historical" method="_on_ButtonA_historical_infos"]
 [connection signal="mouse_entered" from="UI/historical" to="." method="_on_historical_mouse_entered"]
 [connection signal="mouse_exited" from="UI/historical" to="." method="_on_historical_mouse_exited"]
 [connection signal="pressed" from="UI/historical" to="." method="_on_historical_pressed"]
+[connection signal="mouse_entered" from="UI/infos_button" to="." method="_on_infos_button_mouse_entered"]
+[connection signal="mouse_exited" from="UI/infos_button" to="." method="_on_infos_button_mouse_exited"]
+[connection signal="pressed" from="UI/infos_button" to="." method="_on_infos_button_pressed"]
 [connection signal="close_historical" from="CanvasLayer/Historical" to="." method="_on_Historical_close_historical"]

@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/sprites/ui/dialogs/bg_construire.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/interface/icon/new/icon_decoration.png" type="Texture" id=2]
 [ext_resource path="res://assets/sprites/interface/icon/new/icon_exit.png" type="Texture" id=3]
+[ext_resource path="res://themes/main_theme.tres" type="Theme" id=4]
 [ext_resource path="res://ui/building_button.tscn" type="PackedScene" id=8]
 [ext_resource path="res://ui/BuildMenu.gd" type="Script" id=9]
 [ext_resource path="res://assets/sprites/interface/icon/new/icon_associatif.png" type="Texture" id=12]
@@ -64,63 +66,81 @@ margin_bottom = 385.0
 
 [node name="FilterContainer" type="MarginContainer" parent="background"]
 margin_left = 970.0
-margin_top = 50.0
+margin_top = 126.414
 margin_right = 1235.0
-margin_bottom = 599.0
+margin_bottom = 675.414
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GridContainer" type="GridContainer" parent="background/FilterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="background/FilterContainer"]
 margin_right = 265.0
 margin_bottom = 549.0
+custom_constants/separation = -20
+
+[node name="GridContainer" type="GridContainer" parent="background/FilterContainer/VBoxContainer"]
+margin_right = 265.0
+margin_bottom = 394.0
 columns = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="admin" type="TextureButton" parent="background/FilterContainer/GridContainer"]
+[node name="admin" type="TextureButton" parent="background/FilterContainer/VBoxContainer/GridContainer"]
 margin_right = 128.0
 margin_bottom = 129.0
 texture_normal = ExtResource( 16 )
 
-[node name="assosiatif" type="TextureButton" parent="background/FilterContainer/GridContainer"]
+[node name="assosiatif" type="TextureButton" parent="background/FilterContainer/VBoxContainer/GridContainer"]
 margin_left = 132.0
 margin_right = 261.0
 margin_bottom = 129.0
 texture_normal = ExtResource( 12 )
 
-[node name="commercial" type="TextureButton" parent="background/FilterContainer/GridContainer"]
+[node name="commercial" type="TextureButton" parent="background/FilterContainer/VBoxContainer/GridContainer"]
 margin_top = 133.0
 margin_right = 128.0
 margin_bottom = 262.0
 texture_normal = ExtResource( 13 )
 
-[node name="habitation" type="TextureButton" parent="background/FilterContainer/GridContainer"]
+[node name="habitation" type="TextureButton" parent="background/FilterContainer/VBoxContainer/GridContainer"]
 margin_left = 132.0
 margin_top = 133.0
 margin_right = 261.0
 margin_bottom = 262.0
 texture_normal = ExtResource( 17 )
 
-[node name="loisir" type="TextureButton" parent="background/FilterContainer/GridContainer"]
+[node name="loisir" type="TextureButton" parent="background/FilterContainer/VBoxContainer/GridContainer"]
 margin_top = 266.0
 margin_right = 128.0
 margin_bottom = 394.0
 texture_normal = ExtResource( 14 )
 
-[node name="sante" type="TextureButton" parent="background/FilterContainer/GridContainer"]
+[node name="sante" type="TextureButton" parent="background/FilterContainer/VBoxContainer/GridContainer"]
 margin_left = 132.0
 margin_top = 266.0
 margin_right = 261.0
 margin_bottom = 394.0
 texture_normal = ExtResource( 15 )
 
+[node name="HBoxContainer" type="HBoxContainer" parent="background/FilterContainer/VBoxContainer"]
+margin_top = 374.0
+margin_right = 265.0
+margin_bottom = 503.0
+rect_pivot_offset = Vector2( -763.2, -94.9454 )
+alignment = 1
+
+[node name="decoration" type="TextureButton" parent="background/FilterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 68.0
+margin_right = 196.0
+margin_bottom = 129.0
+texture_normal = ExtResource( 2 )
+
 [node name="BottomContainer" type="MarginContainer" parent="background"]
-margin_left = 1037.4
-margin_top = 470.0
-margin_right = 1165.4
-margin_bottom = 621.0
+margin_left = 1044.89
+margin_top = -12.455
+margin_right = 1172.89
+margin_bottom = 138.545
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -130,10 +150,31 @@ margin_right = 128.0
 margin_bottom = 151.0
 texture_normal = ExtResource( 3 )
 
-[connection signal="pressed" from="background/FilterContainer/GridContainer/admin" to="." method="_on_admin_pressed"]
-[connection signal="pressed" from="background/FilterContainer/GridContainer/assosiatif" to="." method="_on_assosiatif_pressed"]
-[connection signal="pressed" from="background/FilterContainer/GridContainer/commercial" to="." method="_on_commercial_pressed"]
-[connection signal="pressed" from="background/FilterContainer/GridContainer/habitation" to="." method="_on_habitation_pressed"]
-[connection signal="pressed" from="background/FilterContainer/GridContainer/loisir" to="." method="_on_loisir_pressed"]
-[connection signal="pressed" from="background/FilterContainer/GridContainer/sante" to="." method="_on_sante_pressed"]
+[node name="Panel" type="Panel" parent="background"]
+margin_left = 21.0
+margin_top = -51.0
+margin_right = 538.0
+margin_bottom = 7.0
+theme = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="activ_filter" type="Label" parent="background/Panel"]
+margin_left = 14.4891
+margin_top = 8.60571
+margin_right = 132.489
+margin_bottom = 53.6057
+text = "Filtre : "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="background/FilterContainer/VBoxContainer/GridContainer/admin" to="." method="_on_admin_pressed"]
+[connection signal="pressed" from="background/FilterContainer/VBoxContainer/GridContainer/assosiatif" to="." method="_on_assosiatif_pressed"]
+[connection signal="pressed" from="background/FilterContainer/VBoxContainer/GridContainer/commercial" to="." method="_on_commercial_pressed"]
+[connection signal="pressed" from="background/FilterContainer/VBoxContainer/GridContainer/habitation" to="." method="_on_habitation_pressed"]
+[connection signal="pressed" from="background/FilterContainer/VBoxContainer/GridContainer/loisir" to="." method="_on_loisir_pressed"]
+[connection signal="pressed" from="background/FilterContainer/VBoxContainer/GridContainer/sante" to="." method="_on_sante_pressed"]
+[connection signal="pressed" from="background/FilterContainer/VBoxContainer/HBoxContainer/decoration" to="." method="_on_decoration_pressed"]
 [connection signal="pressed" from="background/BottomContainer/QuitButton" to="." method="_on_QuitButton_pressed"]

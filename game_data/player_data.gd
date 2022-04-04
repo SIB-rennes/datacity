@@ -16,7 +16,8 @@ const SAVEFILE = "user://savegame.save"
 
 var building_limit = {
 	"Maison 1": 2,
-	"Office de tourisme": 1, 
+	"Office de tourisme": 1,
+	"Maison 2": 1,
 	"Etablissement de santé": 1,
 	"Supérette": 1,
 	"Complexe Sportif": 1,
@@ -25,57 +26,89 @@ var building_limit = {
 	"Maison 3": 1,
 	"Immeuble": 1,
 	"Musee": 1,
+	"Espace vert": 1,
 	"Supermarché": 1,
 	"Ecole": 1,
 	"Theatre": 1,
 	"Centre Associatif": 1,
 	"Caserne": 1,
-	"Déchetterie": 1
+	"Déchetterie": 1,
+	"Hôpital": 1,
+	"Monument obelisque": 2,
+	"Monument Breizh": 2,
+	"Monument chevalier": 2,
+	"Monument loup": 2,
+	"Poste": 1,
+	"Lycée": 1,
+	"Place de marché": 1,
+	"Médiatheque": 1,
 }
 
 var building_list = {
 	"Maison 1": 1,
-	"Grande maison": 1, 
+	"Grande maison": 1,
+	"Maison 2": 1,
 	"Maison 3": 1,
 	"Ecole": 1,
+	"Lycée": 1,
 	"Office de tourisme": 1, 
 	"Etablissement de santé": 1,
+	"Hôpital": 1,
 	"Supérette": 1,
 	"Commissariat": 1,
+	"Poste": 1,
 	"Immeuble": 1,
 	"Musee": 1,
+	"Espace vert": 1,
 	"Supermarché": 1,
 	"Complexe Sportif": 1,
 	"Theatre": 1,
 	"Centre Associatif": 1,
 	"Caserne": 1,
-	"Déchetterie": 1
+	"Déchetterie": 1,
+	"Monument obelisque": 1,
+	"Monument Breizh": 1,
+	"Monument chevalier": 1,
+	"Monument loup": 1,
+	"Place de marché": 1,
+	"Médiatheque": 1,
 }
 
 
 var building_limit_max = {
 	#The real limit is the number -1 (it's substract by 1)
-	"Maison 1":51,
+	"Maison 1":999,
+	"Maison 2": 999,
 	"Office de tourisme": 2, 
-	"Etablissement de santé": 6,
-	"Supérette": 6,
+	"Etablissement de santé": 4,
+	"Supérette": 4,
 	"Complexe Sportif": 2,
-	"Commissariat": 4,
+	"Commissariat": 3,
 	"Mairie": 2,
-	"Hopital": 3,
-	"Grande maison": 6, 
-	"Maison 3": 51,
-	"Immeuble": 11,
+	"Hôpital": 2,
+	"Grande maison": 999, 
+	"Maison 3": 999,
+	"Immeuble": 5,
 	"Musee": 2,
 	"Supermarché": 2,
-	"Ecole": 6,
+	"Ecole": 3,
+	"Lycée": 2,
 	"Theatre": 2,
 	"Centre Associatif": 2,
 	"Caserne": 3,
-	"Déchetterie": 2
+	"Déchetterie": 2,
+	"Monument obelisque": 2,
+	"Monument Breizh": 2,
+	"Monument chevalier": 2,
+	"Monument loup": 2,
+	"Poste": 2,
+	"Espace vert": 6,
+	"Place de marché": 2,
+	"Médiatheque": 4,
 }
 
 var building_grade={
+	"Maison 2": 1,
 	"Maison 1": 1,
 	"Grande maison": 1,
 	"Maison 3": 1,
@@ -84,10 +117,11 @@ var building_grade={
 }
 
 # A Dictionnary of the event that occured
-var event_occured = {}
+var event_occured = {
+}
 
 
-# City data
+# City datas
 var city_data = {
 	POPULATION: 0, # The population
 	POPULATION_MAX: 0, # Max population
@@ -99,7 +133,7 @@ var options_selected = ""
 #for hide the tutorial panel.
 var save_found = false
 # Data points accumulated
-var data_points = 500
+var data_points = 250
 
 #up buildings limits of all building, depending on population
 var limit_level = "0"
@@ -114,8 +148,16 @@ var city = "not defined"
 # Bureau choice
 var bureau = "not defined"
 
+#map choice
+var map = "not defined"
+
 #tuto variable
 var tuto_advancement = false
+
+var can_show_desk = false
+
+#to save "can_place" tiles position
+var can_place_position
 
 func _ready():
 	print("Loaded player data !")

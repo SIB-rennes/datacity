@@ -8,11 +8,10 @@ extends Node
 # "population_space(x)" : [min, max]
 # "population(x)" : [min, max]
 
-
 # Dictionnary of events Names and conditions
 const EVENTS_CONDITIONS = {
 	"Tutorial":{
-		"built(x)": {"Maison 1": [1, 1]},
+		"built(x)": {"Maison 1": [1, 100]},
 		"not had_event(x)": ["Tutorial"],
 	},
 
@@ -21,151 +20,164 @@ const EVENTS_CONDITIONS = {
 		"not had_event(x)": ["MairieConstruite"],
 	},
 
-	"PremierCommerce":{
-		"had_event(x)" : ["Tutorial"],
-		"not had_event(x)" : ["PremierCommerce"],
-	},
-	
-	"CommerceLocal": {
-		"had_event(x)": ["PremierCommerce"],
-		"not had_event(x)": ["CommerceLocal"],
-		"population_over(x)": 100
-	},
-
 	"PremieresMaisons": { # Dialogues after the first houses
-		"built(x)": {"Maison 1": [1, 100], "Grande maison": [1, 100], "Maison 3": [1, 100]},
+		"built(x)": {"Maison 1": [2, 100]},
 		"not had_event(x)": ["PremieresMaisons"],
 	},
 
+	"PremierCommerce":{
+		"had_event(x)" : ["PremieresMaisons"],
+		"not had_event(x)" : ["PremierCommerce"],
+		"probability(x)": 1
+	},
+
 	"ComplexeSportif":{
+		"had_event(x)" : ["PremieresMaisons"],
 		"not had_event(x)" : ["ComplexeSportif"],
-		"population_over(x)": 40
+		"probability(x)": .5
 	},
 	
 	"FichierAssociations":{
 		"had_event(x)": ["ComplexeSportif", "CentreAssociatif_construit"],
 		"not had_event(x)": ["FichierAssociations"],
-		"population_over(x)": 100
-	},
-	
-	"Etablissement de santé":{
-		"not had_event(x)" : ["Etablissement de santé"],
-		"population_over(x)": 60
-	},
-	
-	"QualiteAir":{
-		"had_event(x)": ["Etablissement de santé"],
-		"not had_event(x)" : ["QualiteAir"],
-		"population_over(x)": 90
-	},
-	
-	"Deliberations":{
-		"not had_event(x)" : ["Deliberations"],
-		"population_over(x)": 20
-	},
-	### <=====> ###  Pedagogical events
-	"CentreAssociatif":{
-		"had_event(x)": ["PremieresMaisons"],
-		"not had_event(x)": ["CentreAssociatif"],
-		"population_over(x)" : 100
-	},
-	
-	"Commissariat":{
-		"had_event(x)": ["Deliberations"],
-		"not had_event(x)": ["Commissariat"],
-		"population_over(x)" : 80
 	},
 
-	"Tourisme":{
-		"not had_event(x)": ["Tourisme"],
-		"population_over(x)" : 80
+	"Etablissement de santé":{
+		"had_event(x)" : ["PremieresMaisons"],
+		"not had_event(x)" : ["Etablissement de santé"],
+		"probability(x)": .5
+	},
+
+	"Deliberations":{
+		"had_event(x)" : ["PremieresMaisons"],
+		"not had_event(x)" : ["Deliberations"],
+		"probability(x)":.5
+	},
+
+	"AmenagementCyclable": {
+		"had_event(x)" : ["PremieresMaisons"],
+		"not had_event(x)": ["AmenagementCyclable"],
+		"probability(x)": .5
+	},
+
+
+	### <=====> ###  Pedagogical events
+	"RetourConferencier_1": {
+		"had_event(x)":  ["PremieresMaisons", "PremierCommerce", "ComplexeSportif", "Etablissement de santé", "Deliberations", "AmenagementCyclable"],
+		"not had_event(x)": ["RetourConferencier_1"], # Not again 
+		"probability(x)": 1, # 30% chance after each building
+		"population_over(x)": 80 # The event won't trigger if the population count is under x
 	},
 	
+	"CentreAssociatif":{
+		"had_event(x)": ["RetourConferencier_1"],
+		"not had_event(x)": ["CentreAssociatif"],
+		"probability(x)": .5,
+	},
+
 	"CentreAssociatif_construit":{
-		"built(x)": {"Centre Associatif": [1, 1]},
-		"not had_event(x)": ["CentreAssociatif_construit"],
-		"probability(x)": 1,
-		"population_over(x)": 0
-	},
-	
+			"built(x)": {"Centre Associatif": [1, 100]},
+			"not had_event(x)": ["CentreAssociatif_construit"],
+			"probability(x)": 1,
+		},
+
+	"Commissariat":{
+			"had_event(x)": ["RetourConferencier_1"],
+			"not had_event(x)": ["Commissariat"],
+			"probability(x)": .5,
+		},
+		
 	"Patrimoine":{
+		"had_event(x)": ["RetourConferencier_1"],
 		"not had_event(x)": ["Patrimoine"],
 		"probability(x)": .5,
-		"population_over(x)": 30
-	},
-
-	"DonneesUrbanisme": {
-		"had_event(x)": ["PremieresMaisons"],
-		"not had_event(x)": ["DonneesUrbanisme"], # Not again 
-		"probability(x)": .3, # 30% chance after each building
-		"population_over(x)": 80 # The event won't trigger if the population count is under x
-	},
+		},
 
 	"InfosConference": {
-		"had_event(x)": ["PremieresMaisons"],
+		"had_event(x)": ["RetourConferencier_1"],
 		"not had_event(x)": ["InfosConference"], # Not again 
-		"probability(x)": .3, # 30% chance after each building
-		"population_over(x)": 80 # The event won't trigger if the population count is under x
-	},
-
-	"RetourConferencier_1": {
-		"had_event(x)":  ["PremieresMaisons"],
-		"not had_event(x)": ["RetourConferencier_1"], # Not again 
-		"probability(x)": .3, # 30% chance after each building
-		"population_over(x)": 80 # The event won't trigger if the population count is under x
-	},
-	"RetourConferencier_2": {
-		"had_event(x)":  ["RetourConferencier_1"], # Need the previous Event
-		"not had_event(x)": ["RetourConferencier_2"], # Not again 
-		"probability(x)": .3, # 30% chance after each building
-		"population_over(x)": 80 # The event won't trigger if the population count is under x
-	},
-	"RetourConferencier_3": {
-		"had_event(x)":  ["RetourConferencier_2"], # Need the previous Event
-		"not had_event(x)": ["RetourConferencier_3"], # Not again 
 		"probability(x)": .5, # 30% chance after each building
-		"population_over(x)": 80
-	},
-	"AmenagementCyclable": {
-		"had_event(x)": ["Commissariat"],
-		"not had_event(x)": ["AmenagementCyclable"],
-	},
-	
-	"Dechetterie":{
-		"had_event(x)": ["Commissariat"],
-		"not had_event(x)": ["Dechetterie"],
-		"probability(x)": .3,
-		"population_over(x)": 120
-	},
-	"Pompier":{
-		"not had_event(x)":["Pompier"],
-		"probability(x)": .7,
-		"population_over(x)": 50
 	},
 	
 	"DonneesHopitaux": {
-		"had_event(x)":  ["PremieresMaisons"],
+		"built(x)": {"Etablissement de santé": [1, 100]},
+		"had_event(x)": ["RetourConferencier_1"],
 		"not had_event(x)": ["DonneesHopitaux"], # Not again 
-		"probability(x)": .2, # 30% chance after each building
-		"population_over(x)": 80 # The event won't trigger if the population count is under x
+		"probability(x)": .5, # 30% chance after each building
 	},
-	
-	
+
+	"RetourConferencier_2": {
+			"had_event(x)":  ["FichierAssociations", "DonneesHopitaux", "Commissariat", "Patrimoine"], # Need the previous Event
+			"not had_event(x)": ["RetourConferencier_2"], # Not again 
+			"probability(x)": 1, # 30% chance after each building
+			"population_over(x)": 80 # The event won't trigger if the population count is under x
+		},
+
+	"Dechetterie":{
+		"had_event(x)": ["RetourConferencier_2"],
+		"not had_event(x)": ["Dechetterie"],
+		"probability(x)": .5, # 30% chance after each building
+	},
+
+	"QualiteAir":{
+		"built(x)": {"Etablissement de santé": [1, 100]},
+		"had_event(x)": ["RetourConferencier_2"],
+		"not had_event(x)" : ["QualiteAir"],
+		"probability(x)": .5, # 30% chance after each building
+	},
+
 	"DroitsDonnees": {
-		"had_event(x)":  ["PremieresMaisons"],
+		"had_event(x)":  ["RetourConferencier_2"],
 		"not had_event(x)": ["DroitsDonnees"], # Not again 
-		"probability(x)": .2, # 30% chance after each building
-		"population_over(x)": 80 # The event won't trigger if the population count is under x
+		"probability(x)": .5, # 30% chance after each building
+	},
+
+	"DonneesUrbanisme": {
+		"had_event(x)": ["RetourConferencier_2"],
+		"not had_event(x)": ["DonneesUrbanisme"], # Not again 
+		"probability(x)": .5, # 30% chance after each building
+	},
+
+	"CommerceLocal": {
+		"had_event(x)": ["RetourConferencier_2"],
+		"not had_event(x)": ["CommerceLocal"],
+		"probability(x)": .5, # 30% chance after each building
+	},
+
+	"RetourConferencier_3": {
+		"had_event(x)":  ["CommerceLocal", "DonneesUrbanisme", "DroitsDonnees", "QualiteAir", "Dechetterie"], # Need the previous Event
+		"not had_event(x)": ["RetourConferencier_3"], # Not again 
+		"probability(x)": 1, # 30% chance after each building
+		"population_over(x)": 100 # The event won't trigger if the population count is under x
+	},
+
+	"Pompier":{
+			"had_event(x)": ["RetourConferencier_3"],
+			"not had_event(x)":["Pompier"],
+			"probability(x)": .3, # 30% chance after each building
+	},
+
+		"Tourisme":{
+		"had_event(x)": ["RetourConferencier_3"],
+		"not had_event(x)": ["Tourisme"],
+		"probability(x)": .3, # 30% chance after each building
 	},
 	
-	
+	"EnergieRenouvelable":{
+		"built(x)": {"Espace vert": [1, 999]},
+		"had_event(x)": ["RetourConferencier_3"],
+		"not had_event(x)": ["EnergieRenouvelable"],
+		"probability(x)": .3, # 30% chance after each building
+	},
+
+
 	# Dernier Scénario
 	"DernierScenario": {
 		"had_event(x)":  ["Tutorial", "MairieConstruite", "PremierCommerce", "Commissariat", "ComplexeSportif",
 		"Deliberations", "PremieresMaisons", "CentreAssociatif", "CentreAssociatif_construit", "DonneesUrbanisme",
 		"InfosConference", "Etablissement de santé", "RetourConferencier_1", "RetourConferencier_2", "RetourConferencier_3"
 		,"DonneesHopitaux", "Tourisme", "AmenagementCyclable", "DroitsDonnees", "Dechetterie", "Pompier",
-		"FichierAssociations", "CommerceLocal", "Patrimoine", "QualiteAir"],
+		"FichierAssociations", "CommerceLocal", "Patrimoine", "QualiteAir", "EnergieRenouvelable"],
 		"not had_event(x)": ["DernierScenario"], # Not again 
 	},
 }
@@ -197,6 +209,7 @@ const DIALOG_FILES = {
 	"CommerceLocal": "res://scenarios/pedagogical/commerce_local.json",
 	"Patrimoine": "res://scenarios/pedagogical/patrimoine.json",
 	"QualiteAir": "res://scenarios/pedagogical/qualite_air.json",
+	"EnergieRenouvelable": "res://scenarios/pedagogical/energierenouvelable.json",
 	"DernierScenario": "res://scenarios/last_dialog.json",
 }
 
@@ -224,16 +237,21 @@ const SUMMARIES = {
 	"Dechetterie": "Un citoyen souhaite vous voir.",
 	"Pompier": "Une citoyenne souhaite vous voir.",
 	"QualiteAir": "Le personnel de santé souhaite vous montrer quelque chose.",
-	"Patrimoine": "Un citoyen souhaite vous voir.",
+	"Patrimoine": "Vous croisez un citoyen dans le parc.",
 	"FichierAssociations": "L'adjointe souhaite vous parler.",
 	"DernierScenario": "Votre adjointe a un message pour vous.",
+	"EnergieRenouvelable": "Vous croisez un citoyen.",
 }
 
 
-# Buildings offered at the end of the dialog, no matter the result
+# defined how many building the scenarios give you
+#"Scenario"{
+#	"name": how much the limit up,
+#} 
+#Retefer to scenarios in Whisker (you need a node with building=name in scenario to defined wich building you won)
 const OFFERED_BUILDINGS = {
 	"Tutorial": {
-		"Maison 1": 1,
+		"Maison 1": 2,
 	},
 	
 	"MairieConstruite": {
@@ -249,8 +267,7 @@ const OFFERED_BUILDINGS = {
 	},
 
 	"PremieresMaisons": {
-		"Maison 1": 2,
-		"Ecole": 1,
+		"Espace vert": 1,
 	},
 	"CentreAssociatif": {
 		"Centre Associatif": 1,

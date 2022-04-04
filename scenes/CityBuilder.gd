@@ -11,6 +11,9 @@ onready var build_shadow = $CanvasLayer/BuildMenu/CanvasModulate
 onready var guide_button = $CanvasLayer/CityUI/Panel/MarginContainer/TopRightContainer/GuideButton
 onready var building_card_button = $CanvasLayer/BuildMenu/background/MarginContainer/ScrollContainer/building_container/BuildingButton
 onready var destroy_button = $CanvasLayer/CityUI/Panel/Panel/DestructionContainer/DestroyButton
+onready var map_1 = $Map
+onready var map_2 = $Map2
+onready var map_3 = $Map3
 
 # Enum for the State Machine
 enum State {
@@ -69,7 +72,8 @@ onready var build_menu = $CanvasLayer/BuildMenu
 
 # the buildings Tilemap
 onready var buildings_map = $Map/Buildings
-
+onready var buildings_map2 = $Map2/Buildings
+onready var buildings_map3 = $Map3/Buildings
 # Value of the Occupied and preview Tile
 var occupied_tile : int
 var preview_tile : int
@@ -107,79 +111,145 @@ var building_id = 0
 var can_place_positions = []
 
 func _ready():
+	print("PLAYER DATA MAP : ", PlayerData.map)
 	building_button.material.set_light_mode(0)
-	can_place_positions = buildings_map.get_used_cells_by_id(48)
-	if "AmenagementCyclable" in PlayerData.event_occured:
-		$Map/Roads_cycles_and_bus.show()
-		print("CYCLE")
-	else:
-		$Map/Roads_cycles_and_bus.hide()
-		print("NO_CYCLE")
-	$AnimationPlayer.play("ship")
-	$AnimationPlayer2.play("Wave")
-	$BirdAnimationPlayer.play("birds")
-	get_incomes()
-	if PlayerData.save_found == true:
-		tuto_completed = true
-	if tuto_completed == false:
-		ui.close_tutorial()
-	print(PlayerData.gender)
-	$Map/Buildings/preview.hide()
-	dialog_tuto.rect_position = Vector2(492, 280)
-	$CanvasLayer/dialog_tuto/text.rect_size = Vector2(342, 192)
-	$CanvasLayer/dialog_tuto/text/DialogLine.rect_size = Vector2(327, 149)
-	$CanvasLayer/CityUI/Panel/TutorialCity.show()
-	# Blocks the camera if there is a tutorial
-	$Camera2D.block_camera(true)
-	
-	# Tries to load a save
-	if PlayerData.must_load_save:
-		print ("Must load save")
-		if load_save():
-			if PlayerData.tuto_advancement == true:
-				tuto_completed = true
-				
-			print("Save loaded !")
-			# Hides the tutorial
-			ui.close_tutorial()
-			update_ui()
-			
-			# Unblock the camera
-			$Camera2D.block_camera(false)
-			if "AmenagementCyclable" in PlayerData.event_occured:
-				$Map/Roads_cycles_and_bus.show()
-				print("CYCLE")
-			else:
-				$Map/Roads_cycles_and_bus.hide()
-				print("NO_CYCLE")
-
-		# Problem while loaing, go back to introduction
+	if PlayerData.map == "map1":
+		PlayerData.can_place_position = buildings_map.get_used_cells_by_id(48)
+		print("CAN PLACE POSITION", can_place_positions)
+		print("PLAYER DATA CAN PLACE POSITION", PlayerData.can_place_position)
+		print("MAP 1 !!")
+		map_1.show()
+		if "AmenagementCyclable" in PlayerData.event_occured:
+			$Map/Roads_cycles_and_bus.show()
+			print("CYCLE")
 		else:
-			print("Could not load save")
-			
-			PlayerData.must_load_save = false
-			
-			# Start the introduction
-# warning-ignore:return_value_discarded
-			get_tree().change_scene("res://scenes/Introduction.tscn")
-	else:
-		print ("Must not load save")
+			$Map/Roads_cycles_and_bus.hide()
+			print("NO_CYCLE")
+		$AnimationPlayer.play("ship")
+		$AnimationPlayer2.play("Wave")
+		$BirdAnimationPlayer.play("birds")
+#		get_incomes()
+		if PlayerData.save_found == true:
+			tuto_completed = true
+		if tuto_completed == false:
+			ui.close_tutorial()
+		print(PlayerData.gender)
+		$Map/Buildings/preview.hide()
+		$Map2/Buildings/preview.hide()
+		$Map3/Buildings/preview.hide()
+		dialog_tuto.rect_position = Vector2(492, 280)
+		$CanvasLayer/dialog_tuto/text.rect_size = Vector2(342, 192)
+		$CanvasLayer/dialog_tuto/text/DialogLine.rect_size = Vector2(327, 149)
+		$CanvasLayer/CityUI/Panel/TutorialCity.show()
+		# Blocks the camera if there is a tutorial
+		$Camera2D.block_camera(true)
+	if PlayerData.map == "map2":
+		can_place_positions = buildings_map2.get_used_cells_by_id(48)
+		PlayerData.can_place_position = can_place_positions
+		print("MAP 2 !!")
+		map_2.show()
+		if "AmenagementCyclable" in PlayerData.event_occured:
+			$Map2/Roads_cycles_and_bus.show()
+			print("CYCLE")
+		else:
+			$Map2/Roads_cycles_and_bus.hide()
+			print("NO_CYCLE")
+		$BirdAnimationPlayer.play("birds")
+#		get_incomes()
+		if PlayerData.save_found == true:
+			tuto_completed = true
+		if tuto_completed == false:
+			ui.close_tutorial()
+		print(PlayerData.gender)
+		$Map/Buildings/preview.hide()
+		$Map2/Buildings/preview.hide()
+		$Map3/Buildings/preview.hide()
+		dialog_tuto.rect_position = Vector2(492, 280)
+		$CanvasLayer/dialog_tuto/text.rect_size = Vector2(342, 192)
+		$CanvasLayer/dialog_tuto/text/DialogLine.rect_size = Vector2(327, 149)
+		$CanvasLayer/CityUI/Panel/TutorialCity.show()
+		# Blocks the camera if there is a tutorial
+		$Camera2D.block_camera(true)
+	if PlayerData.map == "map3":
+		can_place_positions = buildings_map3.get_used_cells_by_id(48)
+		PlayerData.can_place_position = can_place_positions
+		print("MAP 3 !!")
+		map_3.show()
+		if "AmenagementCyclable" in PlayerData.event_occured:
+			$Map3/Roads_cycles_and_bus.show()
+			print("CYCLE")
+		else:
+			$Map3/Roads_cycles_and_bus.hide()
+			print("NO_CYCLE")
+		$BirdAnimationPlayer.play("birds")
+#		get_incomes()
+		if PlayerData.save_found == true:
+			tuto_completed = true
+		if tuto_completed == false:
+			ui.close_tutorial()
+		print(PlayerData.gender)
+		$Map/Buildings/preview.hide()
+		$Map2/Buildings/preview.hide()
+		$Map3/Buildings/preview.hide()
+		dialog_tuto.rect_position = Vector2(492, 280)
+		$CanvasLayer/dialog_tuto/text.rect_size = Vector2(342, 192)
+		$CanvasLayer/dialog_tuto/text/DialogLine.rect_size = Vector2(327, 149)
+		$CanvasLayer/CityUI/Panel/TutorialCity.show()
+		# Blocks the camera if there is a tutorial
+		$Camera2D.block_camera(true)
 
-	#Save the value of the occupied Tile
-	occupied_tile = buildings_map.tile_set.find_tile_by_name("Occupied")
-	preview_tile = buildings_map.tile_set.find_tile_by_name("FantomBuilding")
-	
-	# Update the UI
-	update_ui()
+	if PlayerData.must_load_save:
+#			get_incomes()
+			print ("Must load save")
+			if load_save():
+				if PlayerData.tuto_advancement == true:
+					tuto_completed = true
+				print(PlayerData.map)
+				if PlayerData.map == "map1":
+					$Map.show()
+					$Map/Buildings/preview.hide()
+					$Map2/Buildings/preview.hide()
+					$Map3/Buildings/preview.hide()
+					$AnimationPlayer.play("ship")
+					$AnimationPlayer2.play("Wave")
+					$BirdAnimationPlayer.play("birds")
+				if PlayerData.map == "map2":
+					print("SAVE MAP2")
+					$Map2.show()
+					$Map/Buildings/preview.hide()
+					$Map3/Buildings/preview.hide()
+					$Map2/Buildings/preview.hide()
+					$BirdAnimationPlayer.play("birds")
+				if PlayerData.map == "map3":
+					$Map3.show()
+					$Map/Buildings/preview.hide()
+					$Map2/Buildings/preview.hide()
+					$Map3/Buildings/preview.hide()
+					$BirdAnimationPlayer.play("birds")
+				print("MAP LOAD: ", PlayerData.map)
+				print("Save loaded !")
+				# Hides the tutorial
+				ui.close_tutorial()
+				update_ui()
+#Save the value of the occupied Tile
+	if PlayerData.map == "map1":
+		occupied_tile = buildings_map.tile_set.find_tile_by_name("Occupied")
+		preview_tile = buildings_map.tile_set.find_tile_by_name("FantomBuilding")
+	elif PlayerData.map == "map2":
+		occupied_tile = buildings_map2.tile_set.find_tile_by_name("Occupied")
+		preview_tile = buildings_map2.tile_set.find_tile_by_name("FantomBuilding")
+	elif PlayerData.map == "map3":
+		occupied_tile = buildings_map3.tile_set.find_tile_by_name("Occupied")
+		preview_tile = buildings_map3.tile_set.find_tile_by_name("FantomBuilding")
+	$CanvasLayer/DialogScene.can_show_desk = true
 
-func get_incomes():
-	yield(get_tree().create_timer(1.0), "timeout")
-	PlayerData.data_points += PlayerData.incomes
-	ui.set_datapoints(PlayerData.data_points)
-	get_incomes()
+#func get_incomes():
+#
+#	get_incomes()
 
 # Tries to trigger a scenaristic
 func trigger_scenaristic_event():
+	print("try to trigger")
 	if current_event != null:
 		return
 	
@@ -211,6 +281,7 @@ func trigger_scenaristic_event():
 		notif_scenar = false
 
 func start_dialog():
+	PlayerData.can_show_desk = true
 	if event_manager.DIALOG_FILES.has(current_event):
 		state = State.SHOWING_DIALOG
 		
@@ -223,9 +294,15 @@ func start_dialog():
 
 # warning-ignore:unused_argument
 func _physics_process(delta):
-	if state == State.CHOOSING_PLACE:
-		check_preview(building_to_place, $Map/Buildings.tile)
-	
+	if PlayerData.map == "map1":
+		if state == State.CHOOSING_PLACE:
+			check_preview(building_to_place, $Map/Buildings.tile)
+	elif PlayerData.map == "map2":
+		if state == State.CHOOSING_PLACE:
+			check_preview(building_to_place, $Map2/Buildings.tile)
+	elif PlayerData.map == "map3":
+		if state == State.CHOOSING_PLACE:
+			check_preview(building_to_place, $Map3/Buildings.tile)
 	if timer_launched == false && notif_scenar == false && tuto_completed == true:
 		timer_launched = true
 		$ScenaristicTimer.start()
@@ -239,18 +316,43 @@ func check_preview(building, pos):
 	# Check each case
 	for x in range(pos.x, pos.x - size.x, - 1):
 		for y in range(pos.y, pos.y + size.y, + 1):
-			# Check if a case is a constructible_tile
-			if buildings_map.get_cell(x,y) == 48:
-				constructible = true
-			else:
+			if PlayerData.map == "map1":
+				if buildings_map.get_cell(x,y) == 48:
+					constructible = true
+				else:
+					#check if the others case are occupied.
+					if buildings_map.get_cell(x, y) != TileMap.INVALID_CELL:
+						occupied = true
+			elif PlayerData.map == "map2":
+				if buildings_map2.get_cell(x,y) == 48:
+					constructible = true
+				else:
 				#check if the others case are occupied.
-				if buildings_map.get_cell(x, y) != TileMap.INVALID_CELL:
-					occupied = true
+					if buildings_map2.get_cell(x, y) != TileMap.INVALID_CELL:
+						occupied = true
+			elif PlayerData.map == "map3":
+				if buildings_map3.get_cell(x,y) == 48:
+					constructible = true
+				else:
+				#check if the others case are occupied.
+					if buildings_map3.get_cell(x, y) != TileMap.INVALID_CELL:
+						occupied = true
+			# Check if a case is a constructible_tile
 #if there is a constructible tile and the other tile are not occupied, you can build.
 	if constructible && !occupied:
-		$Map/Buildings.can_place = true
+		if PlayerData.map == "map1":
+			$Map/Buildings.can_place = true
+		elif PlayerData.map == "map2":
+			$Map2/Buildings.can_place = true
+		elif PlayerData.map == "map3":
+			$Map3/Buildings.can_place = true
 	else:
-		$Map/Buildings.can_place = false
+		if PlayerData.map == "map1":
+			$Map/Buildings.can_place = false
+		elif PlayerData.map == "map2":
+			$Map2/Buildings.can_place = false
+		elif PlayerData.map == "map3":
+			$Map3/Buildings.can_place = false
 
 ## Called from the Map signal when the map is clicked
 
@@ -263,28 +365,70 @@ func map_clicked(case_index, case_center_coords, _occupied):
 				# Save the location
 				building_case = case_index
 				build_case_center = case_center_coords
-				$Map/Buildings/preview.position = case_center_coords
-				$Map/Buildings.validation = true
-				# Ask for validation
+				if PlayerData.map == "map1":
+					$Map/Buildings/preview.position = case_center_coords
+					$Map/Buildings.validation = true
+				elif PlayerData.map == "map2":
+					$Map2/Buildings/preview.position = case_center_coords
+					$Map2/Buildings.validation = true
+				elif PlayerData.map == "map3":
+					$Map3/Buildings/preview.position = case_center_coords
+					$Map3/Buildings.validation = true
+			# Ask for validation
 				ask_validation()
 			else:
-				$Map/Buildings.can_place = false
-	
+				if PlayerData.map == "map1":
+					$Map/Buildings.can_place = false
+				elif PlayerData.map == "map2":
+					$Map2/Buildings.can_place = false
+				elif PlayerData.map == "map3":
+					$Map3/Buildings.can_place = false
+
 	# If the player destroy buildings when he click
 	if destruction_launched == true and build_opened == false and destruction_now == false:
-		if buildings_map.get_cell(case_index.x, case_index.y) != TileMap.INVALID_CELL:
-			if buildings_map.get_cell(case_index.x, case_index.y) != 48 && buildings_map.get_cell(case_index.x, case_index.y) != 28 && buildings_map.get_cell(case_index.x, case_index.y) != 1:
-				case_index_saved = case_index
-				building_id = buildings_map.get_cell(case_index_saved.x, case_index_saved.y)
-				building = buildings_map.tile_set.tile_get_name(building_id)
-				if building in PlayerData.building_list:
-					print("id : ", building_id)
-#					if building_id != 1:
-					print("name of this building : "+ building)
-					if cancel_hovered == false:
-#						if building in PlayerData.building_list:
-						destruction_now = true
-						ask_validation()
+		if PlayerData.map == "map1":
+			if buildings_map.get_cell(case_index.x, case_index.y) != TileMap.INVALID_CELL:
+				if buildings_map.get_cell(case_index.x, case_index.y) != 48 && buildings_map.get_cell(case_index.x, case_index.y) != 28 && buildings_map.get_cell(case_index.x, case_index.y) != 1:
+					case_index_saved = case_index
+					building_id = buildings_map.get_cell(case_index_saved.x, case_index_saved.y)
+					building = buildings_map.tile_set.tile_get_name(building_id)
+					if building in PlayerData.building_list:
+						print("id : ", building_id)
+	#					if building_id != 1:
+						print("name of this building : "+ building)
+						if cancel_hovered == false:
+	#						if building in PlayerData.building_list:
+							destruction_now = true
+							ask_validation()
+
+		elif PlayerData.map == "map2":
+			if buildings_map2.get_cell(case_index.x, case_index.y) != TileMap.INVALID_CELL:
+				if buildings_map2.get_cell(case_index.x, case_index.y) != 48 && buildings_map2.get_cell(case_index.x, case_index.y) != 28 && buildings_map2.get_cell(case_index.x, case_index.y) != 1:
+					case_index_saved = case_index
+					building_id = buildings_map2.get_cell(case_index_saved.x, case_index_saved.y)
+					building = buildings_map2.tile_set.tile_get_name(building_id)
+					if building in PlayerData.building_list:
+						print("id : ", building_id)
+	#					if building_id != 1:
+						print("name of this building : " + building)
+						if cancel_hovered == false:
+	#						if building in PlayerData.building_list:
+							destruction_now = true
+							ask_validation()
+		elif PlayerData.map == "map3":
+			if buildings_map3.get_cell(case_index.x, case_index.y) != TileMap.INVALID_CELL:
+				if buildings_map3.get_cell(case_index.x, case_index.y) != 48 && buildings_map3.get_cell(case_index.x, case_index.y) != 28 && buildings_map3.get_cell(case_index.x, case_index.y) != 1:
+					case_index_saved = case_index
+					building_id = buildings_map3.get_cell(case_index_saved.x, case_index_saved.y)
+					building = buildings_map3.tile_set.tile_get_name(building_id)
+					if building in PlayerData.building_list:
+						print("id : ", building_id)
+	#					if building_id != 1:
+						print("name of this building : "+ building)
+						if cancel_hovered == false:
+	#						if building in PlayerData.building_list:
+							destruction_now = true
+							ask_validation()
 
 func can_place(building, pos):
 	var constructible = false
@@ -297,11 +441,31 @@ func can_place(building, pos):
 #			if buildings_map.get_cell(x, y) != TileMap.INVALID_CELL or 
 			print("x : ", + x)
 			print("y : ", + y)
-			if buildings_map.get_cell(x,y) == 48:
-				constructible = true
-			else:
-				if buildings_map.get_cell(x, y) != TileMap.INVALID_CELL:
-					occupied = true
+			if PlayerData.map == "map1":
+				if buildings_map.get_cell(x,y) == 48:
+					print("constructible map1")
+					constructible = true
+				else:
+					if buildings_map.get_cell(x, y) != TileMap.INVALID_CELL:
+						print("occupied map1")
+						occupied = true
+			elif PlayerData.map == "map2":
+				if buildings_map2.get_cell(x,y) == 48:
+					print("constructible map2")
+					constructible = true
+				else:
+					if buildings_map2.get_cell(x, y) != TileMap.INVALID_CELL:
+						print("occupied map2")
+						occupied = true
+			elif PlayerData.map == "map3":
+				if buildings_map3.get_cell(x,y) == 48:
+					print("constructible map3")
+					constructible = true
+				else:
+					if buildings_map3.get_cell(x, y) != TileMap.INVALID_CELL:
+						print("occupied map3")
+						occupied = true
+
 
 	if constructible && !occupied:
 		return true
@@ -317,11 +481,20 @@ func build(building: int, pos: Vector2):
 	# Occupy cases
 	for x in range(pos.x, pos.x - size.x, - 1):
 		for y in range(pos.y, pos.y + size.y, + 1):
-			buildings_map.set_cell(x, y, 1)
+			if PlayerData.map == "map1":
+				buildings_map.set_cell(x, y, 1)
+			elif PlayerData.map == "map2":
+				buildings_map2.set_cell(x, y, 1)
+			elif PlayerData.map == "map3":
+				buildings_map3.set_cell(x, y, 1)
 
 	# Set the building at the main position
-	buildings_map.set_cellv(pos, building)
-
+	if PlayerData.map == "map1":
+		buildings_map.set_cellv(pos, building)
+	elif PlayerData.map == "map2":
+		buildings_map2.set_cellv(pos, building)
+	elif PlayerData.map == "map3":
+		buildings_map3.set_cellv(pos, building)
 	# Remove from the player list
 	PlayerData.use_building(building_name_to_place)
 
@@ -371,11 +544,30 @@ func destruction():
 		save()
 
 func restore_can_place(coords: Vector2):
-	if coords in can_place_positions:
-		buildings_map.set_cell(coords.x, coords.y, 48)
-	else:
-		buildings_map.set_cell(coords.x, coords.y, -1)
-
+	print(PlayerData.map)
+	if PlayerData.map == "map1":
+		print("RESTORE MAP 1")
+		if coords in PlayerData.can_place_position:
+			print("COORDS IN CAN PLACE", coords)
+			buildings_map.set_cell(coords.x, coords.y, 48)
+		else:
+			#It's bug when you reload the game, the tiles where you put buildings will not restore "can_place" tiles (but it's works correctly when while you don't reload)
+			print("NO COORDS ? !! BEFORE", coords)
+#			print("CAN PLACE_POS:", PlayerData.can_place_position)
+			print("NO COORDS ? !!", coords)
+			buildings_map.set_cell(coords.x, coords.y, -1)
+	elif PlayerData.map == "map2":
+		print("RESTORE MAP 2")
+		if coords in PlayerData.can_place_position:
+			buildings_map2.set_cell(coords.x, coords.y, 48)
+		else:
+			buildings_map2.set_cell(coords.x, coords.y, -1)
+	elif PlayerData.map == "map3":
+		print("RESTORE MAP 3")
+		if coords in PlayerData.can_place_position:
+			buildings_map3.set_cell(coords.x, coords.y, 48)
+		else:
+			buildings_map3.set_cell(coords.x, coords.y, -1)
 
 func update_ui():
 	# set the population and datapoints
@@ -411,7 +603,6 @@ func set_building_menu():
 			build_menu.add_building(b, count)
 
 func give_event_result():
-#	get_incomes()
 	# Give the building to the player *(given no matter the result)*
 	var new_buildings = event_manager.OFFERED_BUILDINGS.get(current_event, {})
 	
@@ -479,8 +670,16 @@ func _on_CityUI_cancel_build():
 		ui.show_build_button()
 		
 		state = State.STANDARD
+		state = State.STANDARD
 		$Map/Buildings/preview.hide()
-		buildings_map.show_constructible_tile(false)
+		$Map2/Buildings/preview.hide()
+		$Map3/Buildings/preview.hide()
+		if PlayerData.map == "map1":
+			buildings_map.show_constructible_tile(false)
+		if PlayerData.map == "map2":
+			buildings_map2.show_constructible_tile(false)
+		if PlayerData.map == "map1":
+			buildings_map3.show_constructible_tile(false)
 		
 		if timer_paused == true:
 			timer_paused = false
@@ -504,12 +703,12 @@ func _on_CityUI_open_build():
 					$CanvasLayer/place_building_tuto.hide()
 			
 			# Set the buildings 
-			set_building_menu()
-			
-			# Disable the camera
-			$Camera2D.block_camera(true)
-			
-			build_opened = true
+				set_building_menu()
+				
+				# Disable the camera
+				$Camera2D.block_camera(true)
+				
+				build_opened = true
 
 func _on_BuildMenu_selected_building(building_name):
 	if tuto_completed == true or can_use == "building_button" or can_use == "select_building" or can_use == "pose_building":
@@ -521,8 +720,12 @@ func _on_BuildMenu_selected_building(building_name):
 		else:
 		# Save the building
 			building_name_to_place = building_name
-			building_to_place = buildings_map.tile_set.find_tile_by_name(building_name)
-			
+			if PlayerData.map == "map1":
+				building_to_place = buildings_map.tile_set.find_tile_by_name(building_name)
+			elif PlayerData.map == "map2":
+				building_to_place = buildings_map2.tile_set.find_tile_by_name(building_name)
+			elif PlayerData.map == "map3":
+				building_to_place = buildings_map3.tile_set.find_tile_by_name(building_name)
 			# Update UI Elements displayed
 			ui.show()
 			build_menu.hide()
@@ -575,7 +778,12 @@ func _on_CityUI_open_guide():
 func _on_CityUI_unvalidate_position():
 	if destruction_launched == false:
 	# Hide the preview cases
-		buildings_map.validation = false
+		if PlayerData.map == "map1":
+			buildings_map.validation = false
+		if PlayerData.map == "map2":
+			buildings_map2.validation = false
+		if PlayerData.map == "map3":
+			buildings_map3.validation = false
 		ui.confirmation_container.hide()
 		yield(get_tree().create_timer(0.3), "timeout")
 		state = State.CHOOSING_PLACE
@@ -605,9 +813,19 @@ func _on_CityUI_validate_position():
 		
 		# Update the UI with player_data
 		update_ui()
-		$Map/Buildings/preview.hide()
+		if PlayerData.map == "map1":
+			$Map/Buildings/preview.hide()
+		elif PlayerData.map == "map2":
+			$Map2/Buildings/preview.hide()
+		elif PlayerData.map == "map3":
+			$Map3/Buildings/preview.hide()
 		state = State.STANDARD
-		buildings_map.show_constructible_tile(false)
+		if PlayerData.map == "map1":
+			buildings_map.show_constructible_tile(false)
+		if PlayerData.map == "map2":
+			buildings_map2.show_constructible_tile(false)
+		if PlayerData.map == "map3":
+			buildings_map3.show_constructible_tile(false)
 		
 		if timer_paused == true:
 			timer_paused = false
@@ -650,7 +868,7 @@ func _on_DialogScene_dialog_finished():
 
 	# Clear the current event
 	current_event = null
-
+	notif_scenar = false
 	# There is no notification waiting
 	ui.close_notifications(false)
 
@@ -662,11 +880,24 @@ func _on_DialogScene_dialog_finished():
 	update_ui()
 	
 	if "AmenagementCyclable" in PlayerData.event_occured:
-		$Map/Roads_cycles_and_bus.show()
-		print("CYCLE")
-	else:
-		$Map/Roads_cycles_and_bus.hide()
-		print("NO_CYCLE")
+		if PlayerData.map == "map1":
+			$Map/Roads_cycles_and_bus.show()
+			print("CYCLE")
+		else:
+			$Map/Roads_cycles_and_bus.hide()
+			print("NO_CYCLE")
+		if PlayerData.map == "map2":
+			$Map2/Roads_cycles_and_bus.show()
+			print("CYCLE")
+		else:
+			$Map2/Roads_cycles_and_bus.hide()
+			print("NO_CYCLE")
+		if PlayerData.map == "map3":
+			$Map3/Roads_cycles_and_bus.show()
+			print("CYCLE")
+		else:
+			$Map3/Roads_cycles_and_bus.hide()
+			print("NO_CYCLE")
 	# Save the game state
 	save()
 
@@ -737,11 +968,16 @@ func save():
 			"tuto_completed": tuto_completed,
 			"city_name": PlayerData.city,
 			"player_incomes": PlayerData.incomes,
+			"map": PlayerData.map,
 			# Currently waiting event
 			"current_event": current_event,
-			
+			# Save the position of "can place" tiles, for restore them at destruction.
+			"can_place_positions": PlayerData.can_place_position,
 			# Grid of buildings
-			"buildings": buildings_map.save_string()
+
+			"buildings": buildings_map.save_string(),
+			"buildings2": buildings_map2.save_string(),
+			"buildings3": buildings_map3.save_string(),
 		}
 		
 		# Save 
@@ -768,15 +1004,27 @@ func load_save():
 
 	# Key list
 	var keys = ["building_list","building_limit", "bureau","gender","event_occured",
-	"city_data","data_points","city_name", "current_event","buildings","tuto_completed", "player_incomes"]
+	"city_data","data_points","city_name", "current_event","buildings","buildings2", "buildings3","tuto_completed", "player_incomes", "map", "can_place_positions"]
 	
 	# Check each key	
 	for k in keys:
 		if not k in dic.keys():
 			return false
 	# Try to load the buildings
-	if not buildings_map.load_string(dic["buildings"]):
-		return false
+	if PlayerData.map == "map1":
+		if not buildings_map.load_string(dic["buildings"]):
+			return false
+	elif PlayerData.map == "map2":
+		if not buildings_map2.load_string(dic["buildings2"]):
+			return false
+	elif PlayerData.map == "map3":
+		if not buildings_map3.load_string(dic["buildings3"]):
+			return false
+
+	buildings_map.load_string(dic["buildings"])
+	buildings_map2.load_string(dic["buildings2"])
+	buildings_map3.load_string(dic["buildings3"])
+	PlayerData.can_place_position = dic["can_place_positions"]
 
 	PlayerData.building_limit = dic["building_limit"]
 	PlayerData.bureau = dic["bureau"]
@@ -786,6 +1034,7 @@ func load_save():
 	PlayerData.event_occured = dic["event_occured"]
 	PlayerData.city_data = dic["city_data"]
 	PlayerData.data_points = dic["data_points"]
+	PlayerData.map = dic["map"]
 	PlayerData.tuto_advancement = dic["tuto_completed"]
 	PlayerData.incomes = dic["player_incomes"]
 	current_event = dic["current_event"]
@@ -800,34 +1049,99 @@ func open_no_datapoints():
 		$Camera2D.block_camera(true)
 
 func update_preview():
-	buildings_map.show_constructible_tile(true)
-	buildings_map.validation = false
-	$Map/Buildings/preview.show()
+	if PlayerData.map == "map1":
+		buildings_map.show_constructible_tile(true)
+		buildings_map.validation = false
+	elif PlayerData.map == "map2":
+		buildings_map2.show_constructible_tile(true)
+		buildings_map2.validation = false
+	elif PlayerData.map == "map3":
+		buildings_map3.show_constructible_tile(true)
+		buildings_map3.validation = false
+	if PlayerData.map == "map1":
+		$Map/Buildings/preview.show()
+	elif PlayerData.map == "map2":
+		$Map2/Buildings/preview.show()
+	elif PlayerData.map == "map3":
+		$Map3/Buildings/preview.show()
 	buildings_map.set_preview_offset(building_name_to_place)
+	buildings_map2.set_preview_offset(building_name_to_place)
+	buildings_map3.set_preview_offset(building_name_to_place)
 	if BuildingsData.SIZES[building_name_to_place] == Vector2(1,1):
-		$Map/Buildings/preview/preview_tile.show()
-		$Map/Buildings/preview/preview_tile_2.hide()
-		$Map/Buildings/preview/preview_tile_3.hide()
-		$Map/Buildings/preview/preview_tile/building.show()
-		$Map/Buildings/preview/preview_tile_2/building.hide()
-		$Map/Buildings/preview/preview_tile_3/building.hide()
-		$Map/Buildings/preview/preview_tile/building.texture = BuildingsData.TEXTURES[building_name_to_place]
+		if PlayerData.map == "map1":
+			$Map/Buildings/preview/preview_tile.show()
+			$Map/Buildings/preview/preview_tile_2.hide()
+			$Map/Buildings/preview/preview_tile_3.hide()
+			$Map/Buildings/preview/preview_tile/building.show()
+			$Map/Buildings/preview/preview_tile_2/building.hide()
+			$Map/Buildings/preview/preview_tile_3/building.hide()
+			$Map/Buildings/preview/preview_tile/building.texture = BuildingsData.TEXTURES[building_name_to_place]
+		elif PlayerData.map == "map2":
+			$Map2/Buildings/preview/preview_tile.show()
+			$Map2/Buildings/preview/preview_tile_2.hide()
+			$Map2/Buildings/preview/preview_tile_3.hide()
+			$Map2/Buildings/preview/preview_tile/building.show()
+			$Map2/Buildings/preview/preview_tile_2/building.hide()
+			$Map2/Buildings/preview/preview_tile_3/building.hide()
+			$Map2/Buildings/preview/preview_tile/building.texture = BuildingsData.TEXTURES[building_name_to_place]
+		elif PlayerData.map == "map3":
+			$Map3/Buildings/preview/preview_tile.show()
+			$Map3/Buildings/preview/preview_tile_2.hide()
+			$Map3/Buildings/preview/preview_tile_3.hide()
+			$Map3/Buildings/preview/preview_tile/building.show()
+			$Map3/Buildings/preview/preview_tile_2/building.hide()
+			$Map3/Buildings/preview/preview_tile_3/building.hide()
+			$Map3/Buildings/preview/preview_tile/building.texture = BuildingsData.TEXTURES[building_name_to_place]
 	if BuildingsData.SIZES[building_name_to_place]  == Vector2(2,2):
-		$Map/Buildings/preview/preview_tile.hide()
-		$Map/Buildings/preview/preview_tile_2.show()
-		$Map/Buildings/preview/preview_tile_3.hide()
-		$Map/Buildings/preview/preview_tile/building.hide()
-		$Map/Buildings/preview/preview_tile_2/building.show()
-		$Map/Buildings/preview/preview_tile_3/building.hide()
-		$Map/Buildings/preview/preview_tile_2/building.texture = BuildingsData.TEXTURES[building_name_to_place]
+		if PlayerData.map == "map1":
+			$Map/Buildings/preview/preview_tile.hide()
+			$Map/Buildings/preview/preview_tile_2.show()
+			$Map/Buildings/preview/preview_tile_3.hide()
+			$Map/Buildings/preview/preview_tile/building.hide()
+			$Map/Buildings/preview/preview_tile_2/building.show()
+			$Map/Buildings/preview/preview_tile_3/building.hide()
+			$Map/Buildings/preview/preview_tile_2/building.texture = BuildingsData.TEXTURES[building_name_to_place]
+		elif PlayerData.map == "map2":
+			$Map2/Buildings/preview/preview_tile.hide()
+			$Map2/Buildings/preview/preview_tile_2.show()
+			$Map2/Buildings/preview/preview_tile_3.hide()
+			$Map2/Buildings/preview/preview_tile/building.hide()
+			$Map2/Buildings/preview/preview_tile_2/building.show()
+			$Map2/Buildings/preview/preview_tile_3/building.hide()
+			$Map2/Buildings/preview/preview_tile_2/building.texture = BuildingsData.TEXTURES[building_name_to_place]
+		elif PlayerData.map == "map3":
+			$Map3/Buildings/preview/preview_tile.hide()
+			$Map3/Buildings/preview/preview_tile_2.show()
+			$Map3/Buildings/preview/preview_tile_3.hide()
+			$Map3/Buildings/preview/preview_tile/building.hide()
+			$Map3/Buildings/preview/preview_tile_2/building.show()
+			$Map3/Buildings/preview/preview_tile_3/building.hide()
+			$Map3/Buildings/preview/preview_tile_2/building.texture = BuildingsData.TEXTURES[building_name_to_place]
 	if BuildingsData.SIZES[building_name_to_place] == Vector2(3,3):
-		$Map/Buildings/preview/preview_tile.hide()
-		$Map/Buildings/preview/preview_tile_2.hide()
-		$Map/Buildings/preview/preview_tile_3.show()
-		$Map/Buildings/preview/preview_tile/building.hide()
-		$Map/Buildings/preview/preview_tile_2/building.hide()
-		$Map/Buildings/preview/preview_tile_3/building.show()
-		$Map/Buildings/preview/preview_tile_3/building.texture = BuildingsData.TEXTURES[building_name_to_place]
+		if PlayerData.map == "map1":
+			$Map/Buildings/preview/preview_tile.hide()
+			$Map/Buildings/preview/preview_tile_2.hide()
+			$Map/Buildings/preview/preview_tile_3.show()
+			$Map/Buildings/preview/preview_tile/building.hide()
+			$Map/Buildings/preview/preview_tile_2/building.hide()
+			$Map/Buildings/preview/preview_tile_3/building.show()
+			$Map/Buildings/preview/preview_tile_3/building.texture = BuildingsData.TEXTURES[building_name_to_place]
+		elif PlayerData.map == "map2":
+			$Map2/Buildings/preview/preview_tile.hide()
+			$Map2/Buildings/preview/preview_tile_2.hide()
+			$Map2/Buildings/preview/preview_tile_3.show()
+			$Map2/Buildings/preview/preview_tile/building.hide()
+			$Map2/Buildings/preview/preview_tile_2/building.hide()
+			$Map2/Buildings/preview/preview_tile_3/building.show()
+			$Map2/Buildings/preview/preview_tile_3/building.texture = BuildingsData.TEXTURES[building_name_to_place]
+		elif PlayerData.map == "map3":
+			$Map3/Buildings/preview/preview_tile.hide()
+			$Map3/Buildings/preview/preview_tile_2.hide()
+			$Map3/Buildings/preview/preview_tile_3.show()
+			$Map3/Buildings/preview/preview_tile/building.hide()
+			$Map3/Buildings/preview/preview_tile_2/building.hide()
+			$Map3/Buildings/preview/preview_tile_3/building.show()
+			$Map3/Buildings/preview/preview_tile_3/building.texture = BuildingsData.TEXTURES[building_name_to_place]
 
 func listen_state_data():
 
@@ -1036,7 +1350,7 @@ func listen_state_data():
 		State_tuto.LAST_TUTO:
 			dialog_tuto.show()
 			dialog_tuto.rect_position = Vector2(492, 280)
-			dialog_tuto_line.set_text("Félicitations, je n'ai plus rien à vous apprendre, A part peut-être sur l'Open Data !")
+			dialog_tuto_line.set_text("Félicitations, je n'ai plus rien à vous apprendre, à part peut-être sur l'Open Data !")
 			yield(get_tree().create_timer(0.5), "timeout")
 			can_click = true
 		
@@ -1124,3 +1438,8 @@ func _on_CityUI_stop_cancel_hover():
 func _on_CityUI_validate_destruction():
 	destruction()
 	$Camera2D.block_camera(false)
+
+
+func _on_Incomes_timeout():
+	PlayerData.data_points += PlayerData.incomes
+	ui.set_datapoints(PlayerData.data_points)

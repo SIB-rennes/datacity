@@ -14,7 +14,9 @@ const DIALOG_INTRO = "res://scenarios/dialog_intro.json"
 const DIALOG_CONFERENCE = "res://scenarios/dialog_conference.json"
 const DIALOG_POST_CONFERENCE = "res://scenarios/dialog_post_conference.json"
 
-
+var desk_1 = preload("res://assets/sprites/backgrounds/bureau_1_haut.png")
+var desk_2 = preload("res://assets/sprites/backgrounds/bureau_2_haut.png")
+var desk_3 = preload("res://assets/sprites/backgrounds/bureau_3_haut.png")
 
 enum State {
 	PRE_INTRO,
@@ -34,6 +36,7 @@ var next_state = State.FORMULAIRE_SCENE
 
 
 func _ready():
+
 	$formulaire.hide()
 	#skip intro: debug
 #	get_tree().change_scene("res://scenes/CityBuilder.tscn")
@@ -43,7 +46,7 @@ func _ready():
 	
 	dialog_scene.set_process_input(true)
 	
-	dialog_scene.start_dialog_event(DIALOG_PRE_INTRO)
+	dialog_scene.start_dialog_event(DIALOG_PRE_INTRO, true)
 	
 
 func start_next_state():
@@ -79,7 +82,13 @@ func start_next_state():
 			dialog_scene.hide()
 			
 			$NewsPaper.change_state()
-			
+			print("BUREAU :", PlayerData.bureau)
+			if PlayerData.bureau == "bureau_1.png":
+				$Background.texture = desk_1
+			elif PlayerData.bureau == "bureau_2.png":
+				$Background.texture = desk_2
+			elif PlayerData.bureau == "bureau_3.png":
+				$Background.texture = desk_3
 			$Background.show()
 			$NewsPaper.show()
 		
@@ -92,7 +101,7 @@ func start_next_state():
 		
 			# Shows the Dialog scene
 			dialog_scene.show()
-			dialog_scene.start_dialog_event(DIALOG_INTRO, true)
+			dialog_scene.start_dialog_event(DIALOG_INTRO)
 			
 		# Starts the conference dialog
 		State.CONFERENCE:

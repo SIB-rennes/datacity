@@ -196,6 +196,18 @@ tracks/6/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("../Panel/Panel2/Satisfaction/VBoxContainer/Sprite:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 90.0 ]
+}
 
 [sub_resource type="Animation" id=20]
 length = 2.0
@@ -378,6 +390,9 @@ margin_right = 73.4242
 margin_bottom = 48.8591
 rect_scale = Vector2( 1, 1 )
 custom_constants/margin_right = -58
+
+[node name="Sprite" parent="Panel/Panel2/Satisfaction/VBoxContainer" index="1"]
+rotation = 1.5708
 
 [node name="Label" parent="Panel/Panel2/Satisfaction/VBoxContainer" index="2"]
 margin_right = 95.0

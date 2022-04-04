@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=47 format=2]
+[gd_resource type="TileSet" load_steps=52 format=2]
 
 [ext_resource path="res://assets/sprites/buildings/musee.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/buildings/grandeecole.png" type="Texture" id=2]
@@ -46,6 +46,11 @@
 [ext_resource path="res://assets/sprites/decor/monument_loup.png" type="Texture" id=44]
 [ext_resource path="res://assets/sprites/decor/monument_obelisque.png" type="Texture" id=45]
 [ext_resource path="res://assets/sprites/decor/phare_mer.png" type="Texture" id=46]
+[ext_resource path="res://assets/sprites/buildings/maison2droite.png" type="Texture" id=47]
+[ext_resource path="res://assets/sprites/buildings/lycee.png" type="Texture" id=48]
+[ext_resource path="res://assets/sprites/buildings/espace_vert.png" type="Texture" id=49]
+[ext_resource path="res://assets/sprites/buildings/Place_de_marche.png" type="Texture" id=50]
+[ext_resource path="res://assets/sprites/buildings/Mediatheque.png" type="Texture" id=51]
 
 [resource]
 resource_name = "Buildings"
@@ -133,20 +138,6 @@ resource_name = "Buildings"
 14/shape_one_way_margin = 0.0
 14/shapes = [  ]
 14/z_index = 0
-15/name = "Hopital"
-15/texture = ExtResource( 7 )
-15/tex_offset = Vector2( 200, -160 )
-15/modulate = Color( 1, 1, 1, 1 )
-15/region = Rect2( 0, 0, 640, 576 )
-15/tile_mode = 0
-15/occluder_offset = Vector2( 0, 0 )
-15/navigation_offset = Vector2( 0, 0 )
-15/shape_offset = Vector2( 0, 0 )
-15/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-15/shape_one_way = false
-15/shape_one_way_margin = 0.0
-15/shapes = [  ]
-15/z_index = 0
 18/name = "Grande maison"
 18/texture = ExtResource( 3 )
 18/tex_offset = Vector2( -258.268, -73.563 )
@@ -623,7 +614,7 @@ resource_name = "Buildings"
 60/shape_one_way_margin = 0.0
 60/shapes = [  ]
 60/z_index = 0
-61/name = "monument_brz.png 61"
+61/name = "Monument Breizh"
 61/texture = ExtResource( 42 )
 61/tex_offset = Vector2( 0, -11.156 )
 61/modulate = Color( 1, 1, 1, 1 )
@@ -637,7 +628,7 @@ resource_name = "Buildings"
 61/shape_one_way_margin = 0.0
 61/shapes = [  ]
 61/z_index = 0
-62/name = "monument_chevalier.png 62"
+62/name = "Monument chevalier"
 62/texture = ExtResource( 43 )
 62/tex_offset = Vector2( -263.777, -46.302 )
 62/modulate = Color( 1, 1, 1, 1 )
@@ -651,7 +642,7 @@ resource_name = "Buildings"
 62/shape_one_way_margin = 0.0
 62/shapes = [  ]
 62/z_index = 0
-63/name = "monument_loup.png 63"
+63/name = "Monument loup"
 63/texture = ExtResource( 44 )
 63/tex_offset = Vector2( -263.945, -46.657 )
 63/modulate = Color( 1, 1, 1, 1 )
@@ -665,7 +656,7 @@ resource_name = "Buildings"
 63/shape_one_way_margin = 0.0
 63/shapes = [  ]
 63/z_index = 0
-64/name = "monument_obelisque.png 64"
+64/name = "Monument obelisque"
 64/texture = ExtResource( 45 )
 64/tex_offset = Vector2( 0, -56.68 )
 64/modulate = Color( 1, 1, 1, 1 )
@@ -693,3 +684,87 @@ resource_name = "Buildings"
 65/shape_one_way_margin = 0.0
 65/shapes = [  ]
 65/z_index = 0
+66/name = "Maison 2"
+66/texture = ExtResource( 47 )
+66/tex_offset = Vector2( 0, -43.419 )
+66/modulate = Color( 1, 1, 1, 1 )
+66/region = Rect2( 0, 0, 530, 395 )
+66/tile_mode = 0
+66/occluder_offset = Vector2( 0, 0 )
+66/navigation_offset = Vector2( 0, 0 )
+66/shape_offset = Vector2( 0, 0 )
+66/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+66/shape_one_way = false
+66/shape_one_way_margin = 0.0
+66/shapes = [  ]
+66/z_index = 0
+67/name = "Hôpital"
+67/texture = ExtResource( 7 )
+67/tex_offset = Vector2( -265.266, -227.055 )
+67/modulate = Color( 1, 1, 1, 1 )
+67/region = Rect2( 0, 0, 1060, 1065 )
+67/tile_mode = 0
+67/occluder_offset = Vector2( 0, 0 )
+67/navigation_offset = Vector2( 0, 0 )
+67/shape_offset = Vector2( 0, 0 )
+67/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+67/shape_one_way = false
+67/shape_one_way_margin = 0.0
+67/shapes = [  ]
+67/z_index = 0
+68/name = "Lycée"
+68/texture = ExtResource( 48 )
+68/tex_offset = Vector2( -265.007, -126.073 )
+68/modulate = Color( 1, 1, 1, 1 )
+68/region = Rect2( 0, 0, 1060, 857 )
+68/tile_mode = 0
+68/occluder_offset = Vector2( 0, 0 )
+68/navigation_offset = Vector2( 0, 0 )
+68/shape_offset = Vector2( 0, 0 )
+68/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+68/shape_one_way = false
+68/shape_one_way_margin = 0.0
+68/shapes = [  ]
+68/z_index = 0
+69/name = "Espace vert"
+69/texture = ExtResource( 49 )
+69/tex_offset = Vector2( -264.909, -71.994 )
+69/modulate = Color( 1, 1, 1, 1 )
+69/region = Rect2( 0, 0, 1060, 757 )
+69/tile_mode = 0
+69/occluder_offset = Vector2( 0, 0 )
+69/navigation_offset = Vector2( 0, 0 )
+69/shape_offset = Vector2( 0, 0 )
+69/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+69/shape_one_way = false
+69/shape_one_way_margin = 0.0
+69/shapes = [  ]
+69/z_index = 0
+70/name = "Place de marché"
+70/texture = ExtResource( 50 )
+70/tex_offset = Vector2( -264.406, -9.526 )
+70/modulate = Color( 1, 1, 1, 1 )
+70/region = Rect2( 0, 0, 1060, 633 )
+70/tile_mode = 0
+70/occluder_offset = Vector2( 0, 0 )
+70/navigation_offset = Vector2( 0, 0 )
+70/shape_offset = Vector2( 0, 0 )
+70/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+70/shape_one_way = false
+70/shape_one_way_margin = 0.0
+70/shapes = [  ]
+70/z_index = 0
+71/name = "Médiatheque"
+71/texture = ExtResource( 51 )
+71/tex_offset = Vector2( -266.678, -47.894 )
+71/modulate = Color( 1, 1, 1, 1 )
+71/region = Rect2( 0, 0, 1060, 707 )
+71/tile_mode = 0
+71/occluder_offset = Vector2( 0, 0 )
+71/navigation_offset = Vector2( 0, 0 )
+71/shape_offset = Vector2( 0, 0 )
+71/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+71/shape_one_way = false
+71/shape_one_way_margin = 0.0
+71/shapes = [  ]
+71/z_index = 0

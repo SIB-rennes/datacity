@@ -94,6 +94,12 @@ const INSTANCES_PATH = {
 
 	"res://scenarios/pedagogical/qualite_air.json":
 		"res://scenarios/dialogs_custom_variables.gd",
+	
+	"res://scenarios/pedagogical/energierenouvelable.json":
+		"res://scenarios/dialogs_custom_variables.gd",
+	
+	"res://scenarios/last_dialog.json":
+		"res://scenarios/dialogs_custom_variables.gd",
 }
 
 #=====> Functions
