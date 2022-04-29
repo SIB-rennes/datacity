@@ -1,22 +1,6 @@
 stages:
   - export
-  - image
   - deploy
-
-variables:
-  http_proxy: http://pro01.sib.fr:3128
-  https_proxy: http://pro01.sib.fr:3128
-  no_proxy: sib.fr
-
-workflow:
-  rules:
-    - if: '$CI_COMMIT_BRANCH == "main"'
-      variables:
-        VERSION: 'main'
-    - if: '$CI_COMMIT_BRANCH == "beta"'
-      variables:
-        VERSION: 'beta'
-
 
 web:
   image: barichello/godot-ci:3.3
@@ -32,23 +16,23 @@ web:
   artifacts:
     paths:
       - build/web
-    expire_in: 15 min
-
-build-image:
-  stage: image
-  variables:
-      IMAGE: $DOCKER_REGISTRY_DEV/data-city:$VERSION
-  script:
-    - docker build . -t $IMAGE
-    - docker push $IMAGE
+    expire_in: 1 day
 
 deploy:
   stage: deploy
-  dependencies: []
+  needs:
+    - job: web
+      artifacts: true
   script:
     - |
-      ssh ${SSH_TARGET} "
-        export DOCKER_REGISTRY_DEV=${DOCKER_REGISTRY_DEV}
-        docker network create -d overlay --attachable data-city-network || true
-        docker stack deploy --compose-file - serious-game
-      " < stack/${VERSION}/docker-compose.yml
+      ssh -o StrictHostKeyChecking=no ${SSH_DEPLOY_TARGET} "
+        rm -rf ~/datacity_new
+        mkdir -p ~/datacity_new
+      "
+      scp -o StrictHostKeyChecking=no build/web/* "${SSH_DEPLOY_TARGET}:~/datacity_new"
+      ssh -o StrictHostKeyChecking=no ${SSH_DEPLOY_TARGET} "
+        rm -rf /opt/datacity/*
+        mv ~/datacity_new/* /opt/datacity/
+        rmdir ~/datacity_new
+      "
+  when: manual
